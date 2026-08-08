@@ -1,0 +1,991 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>視覺光學互動教室｜106–115 國考完整題庫</title>
+<style>
+:root{
+  --primary:#173f6b; --primary-2:#245a91; --accent:#1f8f88; --warning:#d97a24;
+  --bg:#f4f7fb; --card:#ffffff; --text:#1d2a38; --muted:#64748b; --line:#d9e2ec;
+  --success:#15803d; --danger:#b42318; --shadow:0 10px 28px rgba(31,54,78,.10);
+  --radius:18px; --sidebar:270px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;background:var(--bg);color:var(--text)}
+button,input,select{font:inherit} button{cursor:pointer} a{color:inherit;text-decoration:none}
+.app{display:grid;grid-template-columns:var(--sidebar) 1fr;min-height:100vh}
+.sidebar{position:fixed;inset:0 auto 0 0;width:var(--sidebar);background:linear-gradient(180deg,#102d4d,#173f6b);color:#fff;padding:22px 16px;overflow:auto;z-index:20}
+.brand{padding:8px 10px 22px}.brand h1{font-size:20px;margin:0 0 5px}.brand p{margin:0;color:#c8d8e8;font-size:13px;line-height:1.5}
+.nav{display:grid;gap:7px}.nav button{width:100%;border:0;border-radius:12px;background:transparent;color:#dbe8f5;padding:11px 12px;text-align:left;display:flex;gap:10px;align-items:center}.nav button:hover,.nav button.active{background:rgba(255,255,255,.12);color:#fff}.nav .num{font-size:11px;min-width:28px;padding:4px 6px;border-radius:999px;background:rgba(255,255,255,.13);text-align:center}
+.sidebar-footer{margin-top:18px;padding:14px 10px;border-top:1px solid rgba(255,255,255,.14);font-size:12px;color:#c8d8e8}
+.main{grid-column:2;padding:28px;min-width:0}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.menu-btn{display:none;border:0;background:var(--card);box-shadow:var(--shadow);border-radius:12px;padding:10px 12px}.progress-wrap{flex:1;max-width:620px}.progress-label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px}.progress{height:8px;border-radius:999px;background:#e4ebf2;overflow:hidden}.progress>span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#63b7ac);width:0%;transition:.3s}
+.view{display:none;animation:fade .22s ease}.view.active{display:block}@keyframes fade{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}
+.hero{background:linear-gradient(135deg,#153b65,#235d94);color:#fff;border-radius:26px;padding:36px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(255,255,255,.2);border-radius:50%;right:-80px;top:-70px}.hero h2{font-size:clamp(30px,5vw,52px);line-height:1.1;margin:0 0 10px}.hero p{max-width:760px;color:#d9e8f5;font-size:17px;line-height:1.75}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.btn{border:0;border-radius:12px;padding:11px 16px;font-weight:700}.btn.primary{background:#fff;color:#153b65}.btn.secondary{background:rgba(255,255,255,.13);color:#fff;border:1px solid rgba(255,255,255,.18)}.btn.blue{background:var(--primary);color:#fff}.btn.ghost{background:#edf3f8;color:var(--primary)}
+.grid{display:grid;gap:18px}.grid.cols-4{grid-template-columns:repeat(4,1fr)}.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}.section{margin-top:24px}.section h3{font-size:22px;margin:0 0 14px}.card{background:var(--card);border:1px solid #e5edf4;border-radius:var(--radius);padding:20px;box-shadow:0 5px 16px rgba(31,54,78,.06)}.stat strong{display:block;font-size:28px;margin:6px 0}.muted{color:var(--muted)}
+.learning-map{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.node{background:#eef5fb;border:1px solid #d7e6f2;color:#173f6b;border-radius:999px;padding:10px 14px;font-weight:700}.arrow{color:#87a0b7}.tip{border-left:5px solid var(--warning);background:#fff8ef;padding:16px 18px;border-radius:12px;margin:16px 0}.tip strong{color:#9a4e0d}.concept{border-left:5px solid var(--accent);background:#effaf8;padding:16px 18px;border-radius:12px}.formula{background:#102f4f;color:#fff;border-radius:14px;padding:15px 18px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:18px;overflow:auto}.formula small{display:block;color:#b9d5ea;margin-top:6px;font-family:inherit;font-size:12px}
+.chapter-head{margin-bottom:18px}.chapter-head .kicker{color:var(--accent);font-weight:800}.chapter-head h2{font-size:34px;margin:4px 0 6px}.chapter-head p{color:var(--muted);max-width:850px;line-height:1.7}.lesson-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:18px;align-items:start}.lab{background:#f9fbfd;border:1px solid #dbe6ee;border-radius:16px;padding:18px}.controls{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.field label{display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:6px}.field input[type=range]{width:100%}.field input[type=number],.field select{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff}.readout{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.readout div{background:#fff;border:1px solid #dce7ef;border-radius:12px;padding:12px}.readout b{display:block;font-size:18px;margin-top:4px}.svg-box{width:100%;aspect-ratio:16/8;border-radius:14px;background:#fff;border:1px solid #dce7ef;overflow:hidden}.svg-box svg{width:100%;height:100%;display:block}.ray{stroke:#d97706;stroke-width:3}.ray.virtual{stroke-dasharray:7 6;opacity:.75}.axis{stroke:#90a4b7;stroke-width:1.5}.normal{stroke:#5b7188;stroke-dasharray:5 5}.lens{stroke:#2563a1;stroke-width:5;fill:none}.object{stroke:#1f8f88;stroke-width:4}.image-line{stroke:#7c3aed;stroke-width:4}.label{font-size:12px;fill:#334155}.focus{fill:#d97706}
+.accordion details{border:1px solid #dce7ef;border-radius:12px;background:#fff;padding:12px 14px;margin-top:10px}.accordion summary{cursor:pointer;font-weight:800}.check-options{display:grid;gap:8px;margin-top:12px}.check-options button,.quiz-options button{border:1px solid #d8e2eb;border-radius:12px;background:#fff;padding:12px 14px;text-align:left}.check-options button:hover,.quiz-options button:hover{border-color:#8eb4d4;background:#f6fbff}.feedback{margin-top:10px;padding:12px;border-radius:12px;display:none}.feedback.show{display:block}.feedback.ok{background:#eef9f0;color:#166534}.feedback.bad{background:#fff0ee;color:#991b1b}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.result-box{background:#f7fafc;border:1px solid #dce7ef;border-radius:14px;padding:16px}.result-box h4{margin-top:0}.result-list{display:grid;gap:8px}.result-list div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed #dce7ef;padding-bottom:7px}.result-list div:last-child{border-bottom:0}.steps{display:none;margin-top:12px}.steps.show{display:block}
+.quiz-toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.quiz-toolbar button{border:1px solid #d8e2eb;background:#fff;border-radius:10px;padding:9px 12px}.quiz-card .meta{display:flex;flex-wrap:wrap;gap:7px;font-size:12px;color:var(--muted);margin-bottom:10px}.tag{background:#edf3f8;border-radius:999px;padding:4px 8px}.quiz-question{font-size:19px;font-weight:800;line-height:1.6}.quiz-options{display:grid;gap:10px;margin-top:14px}.quiz-options button.correct{border-color:#5fa56c;background:#edf9f0}.quiz-options button.wrong{border-color:#cf7f76;background:#fff1ef}.quiz-explain{display:none;margin-top:16px;background:#f8fafc;border:1px solid #dfe7ef;border-radius:14px;padding:16px;line-height:1.75}.quiz-explain.show{display:block}.quiz-nav{display:flex;justify-content:space-between;gap:10px;margin-top:14px}.weak-bars{display:grid;gap:10px}.bar-row{display:grid;grid-template-columns:100px 1fr 52px;align-items:center;gap:10px}.mini-bar{height:9px;background:#e8eef4;border-radius:999px;overflow:hidden}.mini-bar span{height:100%;display:block;background:var(--accent)}
+.formula-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.formula-card h4{margin:0 0 8px}.formula-card .eq{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:20px;color:var(--primary);font-weight:800;margin:9px 0}.formula-card ul{margin:8px 0 0;padding-left:18px;color:var(--muted);line-height:1.7}.sign-tool{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.sign-box{border:1px solid #dce7ef;border-radius:14px;padding:14px;text-align:center;background:#fff}.sign-box strong{display:block;margin:6px 0}.footer-nav{display:flex;justify-content:space-between;gap:10px;margin-top:24px}.top-btn{position:fixed;right:18px;bottom:18px;border:0;background:var(--primary);color:#fff;border-radius:50%;width:44px;height:44px;box-shadow:var(--shadow);display:none;z-index:30}
+@media (max-width:1050px){.grid.cols-4{grid-template-columns:repeat(2,1fr)}.lesson-layout,.calc-grid{grid-template-columns:1fr}.formula-list{grid-template-columns:1fr}.controls{grid-template-columns:1fr 1fr}.readout{grid-template-columns:1fr 1fr}}
+@media (max-width:780px){.app{display:block}.sidebar{transform:translateX(-100%);transition:.25s;width:min(86vw,300px)}.sidebar.open{transform:translateX(0)}.main{padding:16px}.menu-btn{display:inline-block}.topbar{position:sticky;top:0;background:rgba(244,247,251,.92);backdrop-filter:blur(10px);z-index:15;padding:7px 0}.hero{padding:25px}.grid.cols-4,.grid.cols-3,.grid.cols-2,.sign-tool{grid-template-columns:1fr}.controls,.readout{grid-template-columns:1fr}.chapter-head h2{font-size:28px}.bar-row{grid-template-columns:80px 1fr 45px}.svg-box{aspect-ratio:4/3}}
+
+.stats-grid{grid-template-columns:repeat(auto-fit,minmax(155px,1fr))}
+.source-note{font-size:13px;color:var(--muted);line-height:1.65;border-top:1px solid var(--line);padding-top:12px;margin-top:14px}
+.book-map{display:grid;grid-template-columns:160px 1fr;gap:14px;align-items:start}
+.book-chip{background:#eaf3fb;color:var(--primary);border-radius:13px;padding:12px;font-weight:800;text-align:center}
+.objective-list{margin:0;padding-left:20px;line-height:1.8}.objective-list li+li{margin-top:3px}
+.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.compare-grid>div{border:1px solid var(--line);border-radius:13px;padding:14px;background:#fff}.compare-grid strong{display:block;color:var(--primary);margin-bottom:5px}
+.share-chart{display:grid;gap:10px}.share-row{display:grid;grid-template-columns:58px 1fr 72px;gap:10px;align-items:center}.share-track{height:16px;background:#e5edf4;border-radius:999px;overflow:hidden}.share-fill{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#69b8ad);border-radius:999px}.share-row b{text-align:right;color:var(--primary)}
+.data-table{width:100%;border-collapse:collapse;font-size:14px}.data-table th,.data-table td{padding:9px 8px;border-bottom:1px solid var(--line);text-align:center}.data-table th{background:#eef5fb;color:var(--primary);position:sticky;top:0}.table-scroll{overflow:auto;max-height:490px;border:1px solid var(--line);border-radius:14px}
+.quiz-filters{display:grid;grid-template-columns:repeat(4,minmax(130px,1fr));gap:9px;margin:12px 0}.quiz-filters input,.quiz-filters select{width:100%;border:1px solid var(--line);border-radius:10px;padding:10px;background:#fff}.quiz-summary{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:10px;color:var(--muted);font-size:13px}.answer-source{margin-top:10px;font-size:12px;color:var(--muted)}
+.chapter-badge{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;background:#e9f7f5;color:#11645f;font-size:12px;font-weight:800}
+.method-note{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:15px;line-height:1.7}
+.solve-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.solve-card{overflow:hidden}.solve-card h3{margin-bottom:4px}.solve-card p{color:var(--muted);font-size:14px;line-height:1.65}.solve-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}.solve-step{padding:11px;border-radius:12px;background:#eef5fb;text-align:center;font-size:13px}.solve-step b{display:block;color:var(--primary);font-size:15px;margin-bottom:3px}
+.optic-sketch{height:170px;position:relative;overflow:hidden;border:1px solid var(--line);border-radius:14px;background-color:#fbfdff;background-image:linear-gradient(#eaf0f5 1px,transparent 1px),linear-gradient(90deg,#eaf0f5 1px,transparent 1px);background-size:16px 16px;margin:12px 0}.optic-axis{position:absolute;left:5%;right:5%;top:50%;height:3px;background:#17324d;border-radius:3px}.optic-marker{position:absolute;bottom:50%;width:3px;background:#17324d}.optic-marker::before{content:'';position:absolute;left:-5px;top:-1px;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:10px solid #17324d}.optic-marker.object{height:55px;left:10%;background:#2f80ed}.optic-marker.lens1{height:110px;left:43%}.optic-marker.lens2{height:110px;left:65%}.optic-marker.image{height:42px;left:88%;background:#18a08f}.optic-label{position:absolute;font-size:12px;font-weight:800;color:#17324d;transform:translateX(-50%)}.optic-dash{position:absolute;border-top:2px dashed #64748b;height:1px}.plate-shape{position:absolute;left:39%;top:16%;width:24%;height:68%;border:3px solid #17324d;background:rgba(47,128,237,.08)}.plate-dot{position:absolute;width:11px;height:11px;border-radius:50%;background:#17324d;left:50%;transform:translateX(-50%)}.plate-dot.real{bottom:17%}.plate-dot.apparent{bottom:36%;background:#18a08f}.decay-stack{height:auto;padding:18px 22px;display:grid;gap:17px}.decay-level{height:4px;background:#17324d;position:relative}.decay-level span{position:absolute;right:0;top:-22px;font-weight:800}.pinhole-screen{position:absolute;left:54%;top:18%;height:64%;width:4px;background:#17324d}.pinhole-screen::after{content:'';position:absolute;left:-3px;top:48%;width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid #17324d}.ray{position:absolute;height:2px;background:#2f80ed;transform-origin:left center;left:14%;width:65%;top:28%}.ray.r1{transform:rotate(17deg)}.ray.r2{top:72%;transform:rotate(-17deg)}
+.visual-hint-actions{display:flex;justify-content:flex-end;margin-top:14px}.visual-hint{display:none;margin-top:12px;border:1px solid #b9d7ef;border-radius:14px;background:#f5faff;padding:16px}.visual-hint.show{display:block}.visual-hint h4{margin:0 0 10px;color:var(--primary)}.hint-layout{display:grid;grid-template-columns:180px 1fr;gap:16px;align-items:center}.hint-sketch{height:116px;position:relative;overflow:hidden;border-radius:12px;background:#fff;border:1px solid var(--line)}.hint-sketch .optic-axis{top:55%}.hint-sketch .optic-marker{bottom:45%}.hint-sketch .optic-marker.lens1{left:42%;height:75px}.hint-sketch .optic-marker.lens2{left:67%;height:75px}.hint-sketch .optic-marker.object{left:11%;height:40px}.hint-sketch .optic-marker.image{left:88%;height:31px}.hint-list{margin:0;padding-left:20px;line-height:1.75}.hint-formula{display:inline-block;margin-top:8px;padding:7px 10px;border-radius:9px;background:#eaf3fb;color:#17324d;font-weight:800}
+@media(max-width:900px){.compare-grid{grid-template-columns:1fr}.quiz-filters{grid-template-columns:1fr 1fr}.book-map{grid-template-columns:1fr}.book-chip{text-align:left}}
+@media(max-width:760px){.solve-grid{grid-template-columns:1fr}.solve-steps{grid-template-columns:1fr 1fr}.hint-layout{grid-template-columns:1fr}.hint-sketch{height:130px}}
+@media(max-width:560px){.quiz-filters{grid-template-columns:1fr}.share-row{grid-template-columns:48px 1fr 62px}.data-table{font-size:12px}.data-table th,.data-table td{padding:8px 5px}.solve-steps{grid-template-columns:1fr}}
+
+
+/* 逐題完整解析 */
+.visual-hint{background:#f8fbff;border-color:#a9cdea;padding:0;overflow:hidden}.solution-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;background:linear-gradient(135deg,#eaf5ff,#f7fbff);border-bottom:1px solid #cfe2f2}.solution-head h4{font-size:21px;margin:2px 0 0}.solution-kicker{font-size:11px;letter-spacing:.12em;font-weight:900;color:#2563a1}.reviewed-badge{padding:6px 10px;border-radius:999px;background:#dcf3eb;color:#11645f;font-size:12px;font-weight:900;white-space:nowrap}.solution-visual{margin:18px 20px 0;border:1px solid #d4e2ed;border-radius:15px;background:#fff;overflow:hidden}.visual-caption{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 14px;background:#f2f7fb;border-bottom:1px solid #dce8f1;font-size:13px}.visual-caption b{color:#17324d}.visual-caption span,.visual-note{color:#64748b}.visual-note{font-size:12px;line-height:1.55;margin:0;padding:10px 14px;border-top:1px solid #e5edf4}.solution-flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:22px 16px}.flow-node{display:inline-flex;align-items:center;min-height:46px;padding:9px 12px;border:1px solid #b9d7ef;border-radius:11px;background:#f7fbff;color:#17324d;font-size:13px;font-weight:800;text-align:center}.flow-arrow{color:#2f80ed;font-weight:900;font-size:20px}.axis-scroll{overflow-x:auto}.position-axis{position:relative;display:grid;grid-template-columns:repeat(var(--axis-count),minmax(112px,1fr));min-width:max(620px,100%);height:245px;padding:0 22px}.position-axis:before{content:'';position:absolute;left:24px;right:24px;top:132px;height:3px;background:#17324d;border-radius:4px}.position-axis:after{content:'光軸';position:absolute;right:25px;top:139px;color:#64748b;font-size:11px}.axis-item{position:relative;min-width:0}.axis-label{position:absolute;top:16px;left:50%;width:118px;transform:translateX(-50%);text-align:center;line-height:1.25}.axis-label b{display:block;color:#17324d;font-size:13px}.axis-label span{display:block;color:#64748b;font-size:11px;margin-top:4px}.axis-symbol{position:absolute;left:50%;top:77px;height:55px;border-left:4px solid #2f80ed;transform:translateX(-50%)}.axis-symbol:before{content:'';position:absolute;left:-8px;top:-1px;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:10px solid #2f80ed}.axis-item.image-down .axis-symbol{top:132px;border-color:#7c3aed}.axis-item.image-down .axis-symbol:before{top:auto;bottom:-1px;border-bottom:0;border-top:10px solid #7c3aed}.axis-item.virtual .axis-symbol,.axis-item.intermediate .axis-symbol{border-left-style:dashed;border-color:#7c3aed}.axis-item.virtual .axis-symbol:before,.axis-item.intermediate .axis-symbol:before{border-bottom-color:#7c3aed}.axis-item.intermediate .axis-symbol{border-color:#d97706}.axis-item.intermediate .axis-symbol:before{border-bottom-color:#d97706}.axis-item.intermediate.image-down .axis-symbol:before{border-top-color:#d97706;border-bottom-color:transparent}.axis-item.lens .axis-symbol{top:54px;height:156px;border-left:5px solid #2563a1}.axis-item.lens .axis-symbol:before,.axis-item.lens .axis-symbol:after{content:'';position:absolute;left:-10px;width:14px;height:14px;border:3px solid #2563a1;border-left:0;border-bottom:0;background:#fff;transform:rotate(45deg)}.axis-item.lens .axis-symbol:before{top:-4px}.axis-item.lens .axis-symbol:after{bottom:-4px;transform:rotate(-45deg)}.axis-item.mirror .axis-symbol,.axis-item.surface .axis-symbol{top:61px;height:142px;border-left:6px solid #17324d}.axis-item.mirror .axis-symbol{border-left-style:double;border-left-width:9px}.axis-item.focus .axis-symbol{top:126px;width:13px;height:13px;border:0;border-radius:50%;background:#d97706}.axis-item.focus .axis-symbol:before{display:none}.axis-item.aperture .axis-symbol{top:67px;height:60px;border-color:#17324d;box-shadow:0 74px 0 #17324d}.axis-item.aperture .axis-symbol:before{display:none}.solution-formula{margin:16px 20px 0;padding:13px 15px;border-radius:12px;background:#eaf3fb;display:grid;gap:5px}.solution-formula span{font-size:11px;font-weight:900;letter-spacing:.06em;color:#52708d}.solution-formula b{color:#17324d;font-size:16px;line-height:1.55}.solution-steps{list-style:none;margin:15px 20px 0;padding:0;display:grid;gap:10px}.solution-steps li{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:start;padding:12px;border:1px solid #dce7ef;border-radius:12px;background:#fff}.solution-steps li>span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#2563a1;color:#fff;font-weight:900}.solution-steps p{margin:3px 0 0;line-height:1.72;color:#334155}.solution-answer{margin:15px 20px 0;padding:14px 16px;border:1px solid #9fd2b8;border-radius:12px;background:#effaf4;display:grid;gap:4px}.solution-answer span{font-size:11px;font-weight:900;letter-spacing:.08em;color:#26734d}.solution-answer b{font-size:16px;color:#145638;line-height:1.55}.solution-source{padding:13px 20px 18px;color:#64748b;font-size:12px}.solution-warning{margin:18px;padding:15px;border-radius:12px;background:#fff4e5;color:#8a4d08}.refraction-diagram{display:block;width:100%;max-height:275px}.diagram-text{font:800 16px system-ui;fill:#17324d}.diagram-angle{font:800 15px system-ui;fill:#7c3aed}.diagram-small{font:12px system-ui;fill:#64748b}.two-lens-scroll{overflow-x:auto}.two-lens-diagram{display:block;width:100%;min-width:720px;background:#fff}.diagram-axis{stroke:#17324d;stroke-width:3}.actual-ray{fill:none;stroke:#2563a1;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}.actual-ray.ray-b{stroke:#18a08f}.would-ray{fill:none;stroke:#d97706;stroke-width:2.5;stroke-dasharray:7 6}.object-arrow{stroke:#2f80ed;stroke-width:5}.lens-line{stroke:#2563a1;stroke-width:5}.lens-line.negative{stroke:#7c3aed}.lens-cap{fill:none;stroke:#2563a1;stroke-width:3}.lens-cap.negative{stroke:#7c3aed}.intermediate-arrow{stroke:#d97706;stroke-width:4;stroke-dasharray:6 4}.intermediate-head{fill:none;stroke:#d97706;stroke-width:3}.final-arrow{stroke:#7c3aed;stroke-width:5}
+@media(max-width:560px){.solution-head{padding:15px}.solution-head h4{font-size:19px}.solution-visual,.solution-formula,.solution-steps,.solution-answer{margin-left:12px;margin-right:12px}.solution-flow{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto}.flow-node{min-width:120px}.visual-caption{align-items:flex-start;flex-direction:column}.solution-steps li{grid-template-columns:28px 1fr;padding:10px}.solution-steps li>span{width:27px;height:27px}.solution-source{padding-left:12px;padding-right:12px}}
+
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><h1>視覺光學互動教室</h1><p>教科書前6章 × 106–115國考</p></div>
+    <nav class="nav" id="nav"></nav>
+    <div class="sidebar-footer">單檔離線版｜學習紀錄儲存於此瀏覽器</div>
+  </aside>
+  <main class="main">
+    <div class="topbar">
+      <button class="menu-btn" id="menuBtn">☰ 章節</button>
+      <div class="progress-wrap"><div class="progress-label"><span>章節完成進度</span><span id="progressText">0%</span></div><div class="progress"><span id="progressBar"></span></div></div>
+    </div>
+
+    <section class="view active" id="dashboard">
+      <div class="hero">
+        <h2>從光的基本性質到厚透鏡</h2>
+        <p>整合《Geometrical and Visual Optics》第1–6章、106–115年完整題庫與年度出題占比。用互動圖、即時計算和113題逐題完整解析，建立可操作的光學直覺。</p>
+        <div class="actions">
+          <button class="btn primary" data-go="ch1">開始學習</button>
+          <button class="btn secondary" data-go="ch2">互動實驗室</button>
+          <button class="btn secondary" data-go="quiz">國考挑戰</button>
+          <button class="btn secondary" data-go="formula">公式速查</button>
+        </div>
+      </div>
+      <div class="section grid stats-grid">
+        <div class="card stat"><span class="muted">今日練習</span><strong id="statToday">0</strong><span>題</span></div>
+        <div class="card stat"><span class="muted">總答題</span><strong id="statTotal">0</strong><span>題</span></div>
+        <div class="card stat"><span class="muted">正確率</span><strong id="statRate">0%</strong><span>持續累積</span></div>
+        <div class="card stat"><span class="muted">最弱章節</span><strong id="statWeak" style="font-size:20px">尚無資料</strong><span>建議優先複習</span></div><div class="card stat"><span class="muted">完整題庫</span><strong>113</strong><span>106–115 年</span></div><div class="card stat"><span class="muted">近五年占比</span><strong>19.6%</strong><span>平均每五題一題</span></div>
+      </div>
+      <div class="section card">
+        <h3>學習地圖</h3>
+        <div class="learning-map"><span class="node">光</span><span class="arrow">→</span><span class="node">折射</span><span class="arrow">→</span><span class="node">聚散度</span><span class="arrow">→</span><span class="node">球面折射</span><span class="arrow">→</span><span class="node">薄透鏡</span><span class="arrow">→</span><span class="node">厚透鏡</span><span class="arrow">→</span><span class="node">國考應用</span></div>
+      </div>
+      <div class="section grid cols-2">
+        <div class="card"><h3>你會建立的直覺</h3><p class="muted">看到光線方向就能判斷聚散度正負；看到物體相對 F、2F 的位置，就能預測像的位置與性質。</p></div>
+        <div class="card"><h3>考試導向</h3><p class="muted">教材重點與附件歷屆題整合，特別強化焦距/屈光力換算、凹凸透鏡成像、折射方向與厚透鏡等高頻概念。</p></div>
+      </div>
+    </section>
+
+    <section class="view" id="ch1">
+      <div class="chapter-head"><div class="kicker">CHAPTER 1</div><h2>光的基本性質</h2><p>先理解光怎麼走、速度如何改變，以及波長、頻率與能量之間的關係，後面的折射與成像才會有直覺。</p></div>
+      <div class="grid cols-2">
+        <div class="card"><div class="concept"><b>一句話理解</b><br>光在均勻介質中近似直線前進；進入不同介質時，速度與波長會改變，但頻率保持不變。</div><h3>折射率 Refractive Index</h3><div class="formula">n = c / v<small>c：真空光速；v：光在介質中的速度</small></div><p>折射率越高，代表光在該介質中傳播越慢。常見近似：空氣 1.00、水 1.33、一般玻璃約 1.50。</p><div class="tip"><strong>Exam Tip</strong><br>光進入不同介質：頻率不變；速度與波長改變。</div></div>
+        <div class="card"><h3>電磁光譜與光能量</h3><p>可見光只是電磁光譜的一小段。對同一介質而言，光速固定，因此 <b>v = λf</b>；頻率越高，波長越短，單一光子的能量越高。</p><div class="formula">v = λ f　　E = h f</div><div class="tip"><strong>考點</strong><br>短波（藍、紫）頻率較高、單一光子能量較高；長波（紅）相反。</div><h3>光的二象性</h3><p>干涉、繞射凸顯波動性；光電效應等現象則需要粒子（光子）觀點解釋。</p></div>
+      </div>
+      <div class="section card"><h3>針孔成像</h3><p>依光直線前進與相似三角形形成<b>倒立實像</b>。孔徑變小可減少模糊、增加景深，但過小會因繞射使影像變差。</p><div class="tip"><strong>Exam Tip</strong><br>「針孔成像為直立實像」是錯誤敘述；正確為倒立實像。</div></div>
+      <div class="section card"><h3>你覺得呢？</h3><p>光從空氣進入玻璃後，哪一個物理量維持不變？</p><div class="check-options" data-check="freq"><button data-answer="0">A. 速度</button><button data-answer="1">B. 波長</button><button data-answer="2">C. 頻率</button></div><div class="feedback" id="freqFeedback"></div></div>
+      <div class="section card"><div class="book-map"><div class="book-chip">Textbook Ch.1<br>Basic Terms and Concepts</div><div><h3>第一章知識骨架</h3><ul class="objective-list"><li>電磁光譜、可見光約 380–700 nm，以及波長、頻率和光子能量的反向關係。</li><li>光源、波前、光線與光束（pencil）的關係；發散、會聚與平行光束。</li><li>短波長光子能量較高；跨介質時頻率不變，速度與波長改變。</li></ul></div></div></div>
+      <div class="footer-nav"><button class="btn ghost" data-go="dashboard">← 首頁</button><button class="btn blue" data-go="ch2">下一節：Snell’s Law →</button></div>
+    </section>
+
+    <section class="view" id="ch2">
+      <div class="chapter-head"><div class="kicker">CHAPTER 2</div><h2>折射率與 Snell’s Law</h2><p>折射不是背「靠近法線／遠離法線」而已，而是比較兩側折射率與光速，再用 Snell 定律定量理解。</p></div>
+      <div class="lesson-layout">
+        <div class="card"><h3>Snell’s Law 模擬器</h3><div class="lab"><div class="controls">
+          <div class="field"><label>n₁ <span id="n1Val">1.00</span></label><input id="n1" type="range" min="1" max="2.2" step="0.01" value="1"></div>
+          <div class="field"><label>n₂ <span id="n2Val">1.50</span></label><input id="n2" type="range" min="1" max="2.2" step="0.01" value="1.5"></div>
+          <div class="field"><label>入射角 θ₁ <span id="a1Val">40°</span></label><input id="a1" type="range" min="0" max="89" step="1" value="40"></div>
+        </div><div class="svg-box" style="margin-top:12px"><svg id="snellSvg" viewBox="0 0 800 400"></svg></div><div class="readout"><div>折射角<b id="a2Out">—</b></div><div>光線趨勢<b id="bendOut">—</b></div><div>狀態<b id="tirOut">—</b></div></div></div></div>
+        <div class="card"><div class="concept"><b>一句話理解</b><br>由低折射率進高折射率：靠近法線；由高折射率進低折射率：遠離法線。</div><h3>核心公式</h3><div class="formula">n₁ sin θ₁ = n₂ sin θ₂</div><p>角度都是相對「法線」量，不是相對介面。</p><div class="tip"><strong>常見錯誤</strong><br>入射角 0° 時，即使速度改變，光線方向不偏折。</div><div class="accordion"><details><summary>為何折射率高會靠近法線？</summary><p>光進入較高折射率介質後速度下降。由 Snell 定律，若 n₂&gt;n₁，則 sinθ₂ 必須較小，因此 θ₂ 較小，更靠近法線。</p></details></div></div>
+      </div>
+      <div class="section card"><div class="book-map"><div class="book-chip">Textbook Ch.1<br>Refraction</div><div><h3>從方向判斷到定量計算</h3><ul class="objective-list"><li>所有角度均相對法線；入射角為 0° 時方向不偏折。</li><li>低 n 進入高 n 靠近法線，高 n 進入低 n 遠離法線。</li><li>先用方向建立直覺，再使用 Snell’s Law 計算折射角。</li></ul></div></div></div>
+      <div class="footer-nav"><button class="btn ghost" data-go="ch1">← 上一節</button><button class="btn blue" data-go="ch3">下一節：臨界角 →</button></div>
+    </section>
+
+    <section class="view" id="ch3">
+      <div class="chapter-head"><div class="kicker">CHAPTER 3</div><h2>臨界角與全反射</h2><p>只有光從「高折射率」往「低折射率」前進時，才可能發生全反射。</p></div>
+      <div class="lesson-layout">
+        <div class="card"><h3>臨界角模擬器</h3><div class="lab"><div class="controls">
+          <div class="field"><label>n₁（入射側）</label><input id="cn1" type="number" min="1" step="0.01" value="1.50"></div>
+          <div class="field"><label>n₂（折射側）</label><input id="cn2" type="number" min="1" step="0.01" value="1.00"></div>
+          <div class="field"><label>入射角 <span id="caVal">45°</span></label><input id="ca" type="range" min="0" max="89" value="45"></div>
+        </div><div class="svg-box" style="margin-top:12px"><svg id="criticalSvg" viewBox="0 0 800 400"></svg></div><div class="readout"><div>臨界角<b id="criticalOut">—</b></div><div>目前狀態<b id="criticalState">—</b></div><div>判斷條件<b>n₁ &gt; n₂</b></div></div></div></div>
+        <div class="card"><h3>臨界角 Critical Angle</h3><div class="formula">sin θc = n₂ / n₁　（n₁ &gt; n₂）</div><p>當折射角剛好等於 90°，對應的入射角就是臨界角；再增加入射角，就沒有折射光進入第二介質，形成全反射。</p><div class="tip"><strong>Exam Tip</strong><br>高 n → 低 n 才談得上臨界角與全反射。</div></div>
+      </div>
+      <div class="section card"><div class="book-map"><div class="book-chip">Textbook Ch.1<br>Total Internal Reflection</div><div><h3>全反射判斷三步驟</h3><div class="compare-grid"><div><strong>1. 方向</strong>必須由高折射率介質進入低折射率介質。</div><div><strong>2. 臨界角</strong>θc=sin⁻¹(n₂/n₁)，只在 n₁&gt;n₂ 時存在。</div><div><strong>3. 比較</strong>θi&gt;θc 才是全反射；相等時折射光沿介面前進。</div></div></div></div></div>
+      <div class="footer-nav"><button class="btn ghost" data-go="ch2">← 上一節</button><button class="btn blue" data-go="ch4">下一節：聚散度 →</button></div>
+    </section>
+
+    <section class="view" id="ch4">
+      <div class="chapter-head"><div class="kicker">CHAPTER 4</div><h2>聚散度 Vergence</h2><p>聚散度把「光正在發散還是會聚」用屈光度量化，是後續球面折射與透鏡成像最核心的語言。</p></div>
+      <div class="lesson-layout">
+        <div class="card"><h3>Vergence 模擬器</h3><div class="controls"><div class="field"><label>介質折射率 n</label><input id="vn" type="number" value="1.00" min="1" step="0.01"></div><div class="field"><label>距離 |l|（m）</label><input id="vl" type="number" value="0.50" min="0.01" step="0.01"></div><div class="field"><label>光線型態</label><select id="vtype"><option value="diverge">發散光（鏡左）</option><option value="converge">會聚光（鏡右）</option></select></div></div><div class="svg-box" style="margin-top:12px"><svg id="vergenceSvg" viewBox="0 0 800 400"></svg></div><div class="readout"><div>聚散度 L<b id="vOut">—</b></div><div>符號<b id="vSign">—</b></div><div>直覺<b id="vMeaning">—</b></div></div></div>
+        <div class="card"><div class="formula">L = n / l</div><p>在本教材採用的幾何光學符號直覺中：光學系統左側的點光源形成發散光，取負；光線往右側某點會聚，取正。</p><div class="tip"><strong>Exam Tip</strong><br>距離務必換成公尺，結果單位才是 Diopter（D）。</div><div class="concept"><b>記憶法</b><br>「鏡左散負、鏡右聚正」。</div></div>
+      </div>
+      <div class="section card"><div class="book-map"><div class="book-chip">Textbook Ch.3<br>The Vergence Relationship</div><div><h3>聚散度解題流程</h3><ul class="objective-list"><li>物方：L=n/l；像方：L′=n′/l′，折射率取光線實際所在介質。</li><li>光學面只改變聚散度：L′=L+F。</li><li>L′&gt;0 為會聚光形成實像；L′&lt;0 為發散光形成虛像；橫向放大率 ML=L/L′。</li></ul></div></div></div>
+      <div class="footer-nav"><button class="btn ghost" data-go="ch3">← 上一節</button><button class="btn blue" data-go="ch5">下一節：球面折射 →</button></div>
+    </section>
+
+    <section class="view" id="ch5">
+      <div class="chapter-head"><div class="kicker">CHAPTER 5</div><h2>球面折射</h2><p>兩個介質之間只要有折射率差，加上曲率，就會產生屈光力。</p></div>
+      <div class="grid cols-2"><div class="card"><div class="concept"><b>一句話理解</b><br>折射率差越大、表面越彎（|r| 越小），球面的屈光能力越強。</div><h3>球面屈光力</h3><div class="formula">F = (n₂ − n₁) / r</div><p>r 以公尺代入。教材符號：曲率中心在頂點右側時 r 為正；在左側為負。</p><div class="tip"><strong>常見錯誤</strong><br>公式分子應是 n₂ − n₁；教材掃描若出現 n₂ − n₂，屬明顯誤植。</div></div><div class="card"><h3>球面成像的聚散度觀念</h3><div class="formula">L′ = L + F</div><p>先把入射光轉成物方聚散度 L，再加上表面的屈光力 F，即得到像方聚散度 L′。若已知像方介質折射率 n′，可由 l′ = n′ / L′ 求像距。</p><div class="tip"><strong>考點</strong><br>這種做法比硬背多套「物距像距公式」更適合視覺光學國考。</div></div></div>
+      <div class="section card"><h3>正負號判斷小工具</h3><div class="sign-tool"><div class="sign-box">← 物／光源<strong>鏡左</strong><span>發散：L &lt; 0</span></div><div class="sign-box">光學面 | ○ →<strong>圓心在右</strong><span>r &gt; 0</span></div><div class="sign-box">→ 像／聚焦點<strong>鏡右</strong><span>會聚：L′ &gt; 0</span></div></div></div>
+      <div class="section card"><div class="book-map"><div class="book-chip">Textbook Ch.2<br>Spherical Surfaces</div><div><h3>球面折射的四個核心</h3><ul class="objective-list"><li>光由左向右：圓心在頂點右側 r&gt;0，左側 r&lt;0。</li><li>表面屈光力 F=(n′−n)/r；曲率越大（|r|越小），屈光力越強。</li><li>平行光與主、次焦點；F=n′/f′=−n/f。</li><li>會聚光形成可投影的倒立實像；發散光形成不可投影的正立虛像。</li></ul></div></div></div>
+      <div class="footer-nav"><button class="btn ghost" data-go="ch4">← 上一節</button><button class="btn blue" data-go="ch6">下一節：薄透鏡 →</button></div>
+    </section>
+
+    <section class="view" id="ch6">
+      <div class="chapter-head"><div class="kicker">CHAPTER 6</div><h2>薄透鏡與成像</h2><p>透鏡成像最重要的是三件事：焦距、物體相對 F/2F 的位置、以及像距與放大率的符號。</p></div>
+      <div class="card"><h3>凸透鏡成像模擬器</h3><div class="controls"><div class="field"><label>焦距 f（cm）</label><input id="lf" type="number" value="10" min="2" max="30"></div><div class="field" style="grid-column:span 2"><label>物距 dₒ <span id="loVal">25 cm</span></label><input id="lo" type="range" value="25" min="3" max="40"></div></div><div class="svg-box" style="margin-top:12px"><svg id="convexSvg" viewBox="0 0 900 430"></svg></div><div class="readout"><div>物體位置<b id="objZone">—</b></div><div>影像位置<b id="imgZone">—</b></div><div>影像性質<b id="imgNature">—</b></div></div><div class="tip"><strong>Exam Tip</strong><br>凸透鏡物體在 F 內 → 正立、放大、虛像；物體在 2F → 等大、倒立、實像。</div></div>
+      <div class="section card"><h3>凹透鏡成像模擬器</h3><div class="controls"><div class="field"><label>|f|（cm）</label><input id="df" type="number" value="10" min="2" max="30"></div><div class="field" style="grid-column:span 2"><label>物距 <span id="doVal">22 cm</span></label><input id="do" type="range" value="22" min="5" max="40"></div></div><div class="svg-box" style="margin-top:12px"><svg id="concaveSvg" viewBox="0 0 900 430"></svg></div><div class="tip"><strong>國考必記</strong><br>凹透鏡＋實物：成像固定為<b>正立、縮小、虛像</b>。</div></div>
+      <div class="section calc-grid"><div class="card"><h3>薄透鏡計算器</h3><div class="field"><label>屈光力 F（D）</label><input id="thinF" type="number" value="20" step="0.25"></div><div class="field"><label>物距 dₒ（cm，實物填正值）</label><input id="thinDo" type="number" value="8" step="0.1"></div><div class="field"><label>物體高度 hₒ（mm）</label><input id="thinH" type="number" value="15" step="0.1"></div><button class="btn blue" id="thinCalc" style="margin-top:12px">計算</button></div><div class="result-box"><h4>結果</h4><div class="result-list" id="thinResult"></div><button class="btn ghost" id="thinStepsBtn" style="margin-top:10px">查看計算步驟</button><div class="steps" id="thinSteps"></div></div></div>
+      <div class="section card"><div class="book-map"><div class="book-chip">Textbook Ch.4<br>Thin Lenses</div><div><h3>三條主光線與成像規則</h3><div class="compare-grid"><div><strong>光心光線</strong>通過薄透鏡光心，近似不偏折。</div><div><strong>平行光線</strong>正透鏡通過次焦點；負透鏡看似由次焦點發出。</div><div><strong>焦點光線</strong>通過或朝向主焦點後，出射平行主軸。</div></div><p class="source-note">正透鏡物在焦內形成正立放大虛像；負透鏡對實物固定形成正立、縮小、虛像。牛頓關係：xx′=f²。</p></div></div></div>
+      <div class="footer-nav"><button class="btn ghost" data-go="ch5">← 上一節</button><button class="btn blue" data-go="chMulti">下一節：多折射面系統 →</button></div>
+    </section>
+
+    <section class="view" id="ch7">
+      <div class="chapter-head"><div class="kicker">CHAPTER 7</div><h2>厚透鏡</h2><p>當兩個折射面之間的厚度不能忽略，就不能只把兩面屈光力直接相加。</p></div>
+      <div class="calc-grid"><div class="card"><h3>厚透鏡計算器</h3><div class="field"><label>前表面屈光力 F₁（D）</label><input id="tF1" type="number" value="10" step="0.1"></div><div class="field"><label>後表面屈光力 F₂（D）</label><input id="tF2" type="number" value="-3" step="0.1"></div><div class="field"><label>中心厚度 t（mm）</label><input id="tt" type="number" value="30" step="0.1"></div><div class="field"><label>鏡片折射率 n</label><input id="tn" type="number" value="1.6" step="0.01"></div><button class="btn blue" id="thickCalc" style="margin-top:12px">計算</button></div><div class="result-box"><h4>結果</h4><div class="result-list" id="thickResult"></div><div class="tip"><strong>注意</strong><br>厚度 t 必須以公尺代入。下列 Front/Back Vertex Power 採教材常用 paraxial thick-lens 關係。</div></div></div>
+      <div class="section grid cols-3"><div class="card"><h3>Equivalent Power</h3><div class="formula">Fₑ = F₁ + F₂ − (t/n)F₁F₂</div><p>描述整個厚透鏡對平行近軸光的等效屈光能力。</p></div><div class="card"><h3>Back Vertex Power</h3><div class="formula">Fᵥ′ = F₂ + F₁ / (1 − tF₁/n)</div><p>與遠用鏡片度數量測概念密切相關。</p></div><div class="card"><h3>Front Vertex Power</h3><div class="formula">Fᵥ = F₁ + F₂ / (1 − tF₂/n)</div><p>由前頂點參考的頂點屈光力。</p></div></div>
+      <div class="section card"><div class="book-map"><div class="book-chip">Textbook Ch.6<br>Optical Properties of Thick Lenses</div><div><h3>等效透鏡與六個基點</h3><p>厚透鏡可逐面計算，也可用兩個主平面 H、H′ 建立不存在於實體中的等效薄透鏡。物距和像距改由主平面量起。</p><div class="compare-grid"><div><strong>頂點屈光力</strong>後頂點屈光力用於遠用鏡片量測；前頂點屈光力可用於近用附加度。</div><div><strong>主平面</strong>位置隨前後表面形狀改變，甚至可能落在鏡片外。</div><div><strong>基點</strong>F、F′、H、H′、N、N′ 六點可描述近軸等效光學系統。</div></div></div></div></div>
+      <div class="footer-nav"><button class="btn ghost" data-go="chMulti">← 上一節</button><button class="btn blue" data-go="stats">下一節：年度占比 →</button></div>
+    </section>
+
+    
+    <section class="view" id="chMulti">
+      <div class="chapter-head"><div class="kicker">TEXTBOOK CHAPTER 5</div><h2>多折射面光學系統</h2><p>前一個光學面形成的像，會成為下一個光學面的物。距離傳遞與光線所在介質，是多透鏡題最容易出錯的兩點。</p></div>
+      <div class="grid cols-2"><div class="card"><div class="concept"><b>逐面解題演算法</b><br>求 L → 加上 F 得 L′ → 傳遞到下一面 → 將新的聚散度當成下一面的 L。</div><ol class="objective-list"><li>畫出光由左向右的簡圖並標示間距。</li><li>在第一片前求物方聚散度 L₁。</li><li>L₁′=L₁+F₁；傳遞 d 後，L₂=L₁′/(1−dL₁′)。</li><li>L₂′=L₂+F₂；由符號判斷最終實像或虛像。</li><li>總放大率為各面放大率相乘。</li></ol></div><div class="card"><h3>虛物 Virtual Object</h3><p>若入射到下一光學面的光線原本正在會聚，但在抵達會聚點前先遇到下一面，該會聚點就是下一面的虛物。</p><div class="formula">虛物：入射光為會聚光，因此 L &gt; 0</div><div class="tip"><strong>Exam Tip</strong><br>不要只看物點畫在鏡片哪一側；要看抵達該面的光束究竟在發散還是會聚。</div></div></div>
+      <div class="section calc-grid"><div class="card"><h3>雙薄透鏡計算器</h3><div class="field"><label>第一片 F₁（D）</label><input id="mlF1" type="number" value="-5" step="0.25"></div><div class="field"><label>第二片 F₂（D）</label><input id="mlF2" type="number" value="15" step="0.25"></div><div class="field"><label>鏡片間距 d（cm）</label><input id="mlD" type="number" value="2" min="0" step="0.1"></div><div class="field"><label>物距（第一片前，cm）</label><input id="mlDo" type="number" value="15" min="0.1" step="0.1"></div><button class="btn blue" id="multiCalc" style="margin-top:12px">逐面計算</button></div><div class="result-box"><h4>計算結果</h4><div class="result-list" id="multiResult"></div><div class="source-note">像距以第二片透鏡為基準；正值在右側，負值在左側。</div></div></div>
+      <div class="footer-nav"><button class="btn ghost" data-go="ch6">← 上一節</button><button class="btn blue" data-go="ch7">下一節：厚透鏡 →</button></div>
+    </section>
+
+
+    <section class="view" id="stats">
+      <div class="chapter-head"><div class="kicker">EXAM DATA</div><h2>106–115 年出題占比</h2><p>觀察「光學成像與基本光學」在驗光師視覺光學考試中的年度比重，將讀書時間放在真正高頻的概念上。</p></div>
+      <div class="grid cols-4 stats-grid"><div class="card stat"><span class="muted">完整題庫</span><strong>113</strong><span>題</span></div><div class="card stat"><span class="muted">十年整體占比</span><strong>14.15%</strong><span>92 / 650 題</span></div><div class="card stat"><span class="muted">近五年平均</span><strong>19.6%</strong><span>49 / 250 題</span></div><div class="card stat"><span class="muted">最高年度</span><strong>26%</strong><span>113 年</span></div></div>
+      <div class="section grid cols-2"><div class="card"><h3>年度占比圖</h3><p class="muted">橫軸上限為 30%；數字標示為實際占比。</p><div class="share-chart"><div class="share-row"><span>106 年</span><div class="share-track"><span class="share-fill" style="width:26.7%"></span></div><b>8%</b></div><div class="share-row"><span>107 年</span><div class="share-track"><span class="share-fill" style="width:36.7%"></span></div><b>11%</b></div><div class="share-row"><span>108 年</span><div class="share-track"><span class="share-fill" style="width:30.0%"></span></div><b>9%</b></div><div class="share-row"><span>109 年</span><div class="share-track"><span class="share-fill" style="width:53.3%"></span></div><b>16%</b></div><div class="share-row"><span>110 年</span><div class="share-track"><span class="share-fill" style="width:46.7%"></span></div><b>14%</b></div><div class="share-row"><span>111 年</span><div class="share-track"><span class="share-fill" style="width:73.3%"></span></div><b>22%</b></div><div class="share-row"><span>112 年</span><div class="share-track"><span class="share-fill" style="width:73.3%"></span></div><b>22%</b></div><div class="share-row"><span>113 年</span><div class="share-track"><span class="share-fill" style="width:86.7%"></span></div><b>26%</b></div><div class="share-row"><span>114 年</span><div class="share-track"><span class="share-fill" style="width:53.3%"></span></div><b>16%</b></div><div class="share-row"><span>115 年</span><div class="share-track"><span class="share-fill" style="width:40.0%"></span></div><b>12%</b></div></div></div><div class="card"><h3>如何解讀</h3><ul class="objective-list"><li>111–115 年共 49/250 題，平均 <b>19.6%</b>，約每五題就有一題。</li><li>113 年達 <b>26%</b>，是本資料範圍的高峰。</li><li>106–108 年各包含高考與特考兩份驗光師試卷，因此年度分母為 100 題。</li><li>106–107 完整題庫另保留驗光生題目，但占比計算只採驗光師題目。</li></ul><div class="tip"><strong>複習策略</strong><br>優先掌握聚散度正負、球面折射、薄透鏡成像與厚透鏡公式，再用年度篩選進行題組練習。</div></div></div>
+      <div class="section card"><h3>年度資料表</h3><div class="table-scroll"><table class="data-table"><thead><tr><th>年度</th><th>完整題庫收錄</th><th>驗光師相關題</th><th>視覺光學總題數</th><th>占比</th></tr></thead><tbody><tr><td>106</td><td>19</td><td>8</td><td>100</td><td><b>8%</b></td></tr><tr><td>107</td><td>21</td><td>11</td><td>100</td><td><b>11%</b></td></tr><tr><td>108</td><td>9</td><td>9</td><td>100</td><td><b>9%</b></td></tr><tr><td>109</td><td>8</td><td>8</td><td>50</td><td><b>16%</b></td></tr><tr><td>110</td><td>7</td><td>7</td><td>50</td><td><b>14%</b></td></tr><tr><td>111</td><td>11</td><td>11</td><td>50</td><td><b>22%</b></td></tr><tr><td>112</td><td>11</td><td>11</td><td>50</td><td><b>22%</b></td></tr><tr><td>113</td><td>13</td><td>13</td><td>50</td><td><b>26%</b></td></tr><tr><td>114</td><td>8</td><td>8</td><td>50</td><td><b>16%</b></td></tr><tr><td>115</td><td>6</td><td>6</td><td>50</td><td><b>12%</b></td></tr></tbody></table></div><div class="method-note" style="margin-top:14px"><b>計算方法：</b>驗光師相關題數 ÷ 當年度驗光師視覺光學總題數。每份試卷50題；106–108年合併高考與特考。111–115年依已確認納入題目計算，不包含邊界候選題。</div></div>
+      <div class="footer-nav"><button class="btn ghost" data-go="ch7">← 上一節</button><button class="btn blue" data-go="visualSolve">下一節：圖解解題法 →</button></div>
+    </section>
+
+    <section class="view" id="visualSolve">
+      <div class="chapter-head"><div class="kicker">VISUAL PROBLEM SOLVING</div><h2>圖解解題法</h2><p>先畫位置、再列聚散度，最後判讀像的性質。題庫中的 113 題均已依實際題目數值重建解析，不再只顯示共用示意模板。</p></div>
+      <div class="solve-steps"><div class="solve-step"><b>1　標位置</b>物、面、鏡片與觀察方向</div><div class="solve-step"><b>2　定正負</b>發散負、會聚正；距離用 m</div><div class="solve-step"><b>3　分段算</b>每一面都做 L′＝L＋F</div><div class="solve-step"><b>4　寫結論</b>位置、實虛、正倒、倍率</div></div>
+      <div class="solve-grid">
+        <div class="card solve-card"><h3>兩片透鏡：一次像接力</h3><p>第一片形成的一次像，就是第二片的物。先在軸上標出鏡距，再判斷第二片看到的是實物還是虛物。</p><div class="optic-sketch" aria-hidden="true"><div class="optic-axis"></div><div class="optic-marker object"></div><div class="optic-marker lens1"></div><div class="optic-marker lens2"></div><div class="optic-marker image"></div><span class="optic-label" style="left:10%;top:18%">物</span><span class="optic-label" style="left:43%;top:7%">F₁</span><span class="optic-label" style="left:65%;top:7%">F₂</span><span class="optic-label" style="left:88%;top:24%">最終像</span><span class="optic-dash" style="left:43%;right:35%;top:74%"></span></div><div class="hint-formula">L₁′＝L₁＋F₁ → 傳遞 d → L₂′＝L₂＋F₂</div></div>
+        <div class="card solve-card"><h3>平板視深：位置改變、大小不變</h3><p>平面折射面的屈光力 F＝0，但兩側折射率不同，因此物的視深改變；軸向觀察時橫向放大率為 1。</p><div class="optic-sketch" aria-hidden="true"><div class="plate-shape"></div><div class="plate-dot real"></div><div class="plate-dot apparent"></div><span class="optic-label" style="left:50%;bottom:6%">真實位置</span><span class="optic-label" style="left:50%;bottom:44%;color:#11776d">視位置</span><span class="optic-label" style="left:51%;top:6%">n ≠ 1</span></div><div class="hint-formula">L′＝L；n/l＝n′/l′</div></div>
+        <div class="card solve-card"><h3>透光率：逐層相乘</h3><p>厚度增加時不是固定百分點相減。每 1 mm 的透光率若為 T，厚度 d mm 的總透光率為 Tᵈ。</p><div class="optic-sketch decay-stack" aria-hidden="true"><div class="decay-level"><span>100%</span></div><div class="decay-level" style="width:72%"><span>T</span></div><div class="decay-level" style="width:52%"><span>T²</span></div><div class="decay-level" style="width:37%"><span>T³</span></div></div><div class="hint-formula">T總＝T每層ᵈ</div></div>
+        <div class="card solve-card"><h3>針孔：交叉後上下倒轉</h3><p>上方物點的光通過針孔後到達像面下方，下方物點則到達上方，因此形成倒立實像。</p><div class="optic-sketch" aria-hidden="true"><div class="pinhole-screen"></div><div class="ray r1"></div><div class="ray r2"></div><span class="optic-label" style="left:13%;top:12%">物</span><span class="optic-label" style="left:87%;top:12%">倒立實像</span></div><div class="hint-formula">h′/h＝−v/u</div></div>
+      </div>
+      <div class="section tip"><strong>使用方式</strong><br>進入題庫後，每一題都可按「顯示完整解析」。每題均提供依題目數值重建的位置圖、公式、代入計算與答案結論。</div>
+      <div class="footer-nav"><button class="btn ghost" data-go="stats">← 上一節</button><button class="btn blue" data-go="quiz">開始圖解練習 →</button></div>
+    </section>
+
+<section class="view" id="quiz">
+      <div class="chapter-head"><div class="kicker">QUESTION BANK</div><h2>106–115 年完整國考題庫</h2><p>共113題，每題均有逐步計算與題目專屬圖解。可依年度、教科書章節、考試類別與關鍵字篩選；答題紀錄、錯題與章節正確率只儲存在目前瀏覽器。</p></div>
+      <div class="quiz-toolbar"><button data-mode="all">全部題目</button><button data-mode="random">隨機 10 題</button><button data-mode="wrong">我的錯題</button></div>
+      <div class="quiz-filters"><select id="yearFilter"><option value="">全部年度</option></select><select id="chapterFilter"><option value="">全部章節</option></select><select id="typeFilter"><option value="">全部考試類別</option></select><input id="questionSearch" type="search" placeholder="搜尋題幹或來源" aria-label="搜尋題目"></div>
+      <div class="quiz-summary"><span id="quizCount">共 113 題</span><span>113／113 題完整解析已覆蓋</span></div>
+      <div class="card quiz-card"><div class="meta" id="quizMeta"></div><div class="quiz-question" id="quizQuestion"></div><div class="quiz-options" id="quizOptions"></div><div class="visual-hint-actions"><button class="btn ghost" id="visualHintBtn">顯示完整解析</button></div><div class="visual-hint" id="visualHint"></div><div class="quiz-explain" id="quizExplain"></div><div class="quiz-nav"><button class="btn ghost" id="prevQ">← 上一題</button><span class="muted" id="qCounter"></span><button class="btn blue" id="nextQ">下一題 →</button></div></div>
+      <div class="section card"><h3>章節正確率</h3><div class="weak-bars" id="chapterBars"></div></div>
+      <div class="footer-nav"><button class="btn ghost" data-go="visualSolve">← 上一節</button><button class="btn blue" data-go="formula">下一節：公式總整理 →</button></div>
+    </section>
+
+    <section class="view" id="formula">
+      <div class="chapter-head"><div class="kicker">CHAPTER 9</div><h2>公式總整理</h2><p>先看物理意義，再看公式。單位與正負號是國考計算最常失分的地方。</p></div>
+      <div class="formula-list" id="formulaList"></div>
+      <div class="section card"><h3>最後 30 秒檢查</h3><div class="grid cols-3"><div class="tip">距離換成 <b>m</b> 才能直接得到 D。</div><div class="tip">Snell 角度相對 <b>法線</b>。</div><div class="tip">凹透鏡＋實物 → <b>正立縮小虛像</b>。</div></div></div>
+      <div class="footer-nav"><button class="btn ghost" data-go="quiz">← 上一節</button><button class="btn blue" data-go="dashboard">回到首頁 →</button></div>
+    </section>
+  </main>
+</div>
+<button class="top-btn" id="topBtn" title="回到頂端">↑</button>
+<script>
+// ---------- SPA navigation ----------
+const chapters=[
+  ['dashboard','首頁｜學習儀表板'],['ch1','01 光的基本性質'],['ch2','02 Snell’s Law'],['ch3','03 臨界角與全反射'],['ch4','04 聚散度 Vergence'],['ch5','05 球面折射'],['ch6','06 薄透鏡與成像'],['chMulti','07 多折射面系統'],['ch7','08 厚透鏡'],['stats','09 年度出題占比'],['visualSolve','10 圖解解題法'],['quiz','11 國考完整題庫'],['formula','12 公式總整理']
+];
+const nav=document.getElementById('nav');
+chapters.forEach(([id,label],i)=>{const b=document.createElement('button');b.dataset.go=id;b.innerHTML=`<span class="num">${i===0?'HOME':String(i).padStart(2,'0')}</span><span>${label.replace(/^\d+\s/,'')}</span>`;nav.appendChild(b)});
+const completed=new Set(JSON.parse(localStorage.getItem('opticsCompleted')||'[]'));
+function go(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('[data-go]').forEach(b=>b.classList.toggle('active',b.dataset.go===id));if(id!=='dashboard'){completed.add(id);localStorage.setItem('opticsCompleted',JSON.stringify([...completed]));}updateProgress();document.getElementById('sidebar').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});if(id==='dashboard')updateDashboard();if(id==='quiz'){renderQuiz();renderChapterBars();}}
+document.addEventListener('click',e=>{const t=e.target.closest('[data-go]');if(t)go(t.dataset.go)});
+document.getElementById('menuBtn').onclick=()=>document.getElementById('sidebar').classList.toggle('open');
+function updateProgress(){const pct=Math.min(100,Math.round((completed.size/Math.max(1,chapters.length-1))*100));document.getElementById('progressBar').style.width=pct+'%';document.getElementById('progressText').textContent=pct+'%'} updateProgress();
+const topBtn=document.getElementById('topBtn');window.addEventListener('scroll',()=>topBtn.style.display=scrollY>500?'block':'none');topBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+// ---------- Helpers ----------
+const deg=r=>r*180/Math.PI, rad=d=>d*Math.PI/180;
+function lineEnd(cx,cy,angleDeg,len,down=true){const a=rad(angleDeg);return [cx+Math.sin(a)*len,cy+(down?1:-1)*Math.cos(a)*len]}
+function svgLine(x1,y1,x2,y2,cls='ray'){return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" class="${cls}"/>`}
+
+// ---------- Snell's Law simulation ----------
+const n1=document.getElementById('n1'), n2=document.getElementById('n2'), a1=document.getElementById('a1');
+function polarPoint(cx,cy,r,degFromUp,side=1,down=false){
+  const a=rad(degFromUp);
+  return [cx + side*Math.sin(a)*r, cy + (down?1:-1)*Math.cos(a)*r];
+}
+function angleArc(cx,cy,r,startDeg,endDeg,side=1,down=false){
+  const p1=polarPoint(cx,cy,r,startDeg,side,down), p2=polarPoint(cx,cy,r,endDeg,side,down);
+  const large=Math.abs(endDeg-startDeg)>180?1:0;
+  return `<path d="M ${p1[0]} ${p1[1]} A ${r} ${r} 0 ${large} ${side>0?1:0} ${p2[0]} ${p2[1]}" fill="none" stroke="#d14343" stroke-width="2.5"/>`;
+}
+function drawSnell(){
+  const N1=+n1.value,N2=+n2.value,A1=+a1.value;
+  document.getElementById('n1Val').textContent=N1.toFixed(2);
+  document.getElementById('n2Val').textContent=N2.toFixed(2);
+  document.getElementById('a1Val').textContent=A1+'°';
+  const ratio=N1*Math.sin(rad(A1))/N2;
+  const cx=400,cy=200,len=170;
+  let html=`<defs><marker id="arrowRay" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#d97706"/></marker></defs>
+    <rect x="0" y="0" width="800" height="200" fill="#edf7ff"/>
+    <rect x="0" y="200" width="800" height="200" fill="#f4fbf7"/>
+    <line x1="0" y1="200" x2="800" y2="200" class="axis"/>
+    <line x1="400" y1="20" x2="400" y2="380" class="normal"/>
+    <text x="20" y="35" class="label">n₁ = ${N1.toFixed(2)}</text>
+    <text x="20" y="235" class="label">n₂ = ${N2.toFixed(2)}</text>
+    <text x="410" y="35" class="label">法線 Normal</text>
+    <text x="650" y="190" class="label">介面 Surface</text>`;
+
+  // 正確幾何：入射光由左上方射向交界點，角度由法線量起。
+  const p=polarPoint(cx,cy,len,A1,-1,false);
+  html+=`<line x1="${p[0]}" y1="${p[1]}" x2="${cx}" y2="${cy}" class="ray" marker-end="url(#arrowRay)"/>`;
+  html+=angleArc(cx,cy,52,0,A1,-1,false);
+  const t1=polarPoint(cx,cy,72,Math.max(8,A1/2),-1,false);
+  html+=`<text x="${t1[0]-15}" y="${t1[1]}" font-size="18" fill="#9f2f2f">θ₁</text>`;
+
+  if(ratio>1){
+    // 全反射：反射角 = 入射角，反射光回到 n₁ 的右上方。
+    const r=polarPoint(cx,cy,len,A1,1,false);
+    html+=`<line x1="${cx}" y1="${cy}" x2="${r[0]}" y2="${r[1]}" class="ray" marker-end="url(#arrowRay)"/>`;
+    html+=angleArc(cx,cy,52,0,A1,1,false);
+    document.getElementById('a2Out').textContent='—';
+    document.getElementById('bendOut').textContent='全反射';
+    document.getElementById('tirOut').textContent='TIR';
+  }else{
+    const A2=deg(Math.asin(ratio));
+    // 折射光由交界點進入 n₂，往右下方前進。
+    const q=polarPoint(cx,cy,len,A2,1,true);
+    html+=`<line x1="${cx}" y1="${cy}" x2="${q[0]}" y2="${q[1]}" class="ray" marker-end="url(#arrowRay)"/>`;
+    html+=angleArc(cx,cy,52,0,A2,1,true);
+    const t2=polarPoint(cx,cy,75,Math.max(8,A2/2),1,true);
+    html+=`<text x="${t2[0]+4}" y="${t2[1]+10}" font-size="18" fill="#9f2f2f">θ₂</text>`;
+    document.getElementById('a2Out').textContent=A2.toFixed(1)+'°';
+    document.getElementById('bendOut').textContent=A2<A1?'靠近法線':A2>A1?'遠離法線':'不偏折';
+    document.getElementById('tirOut').textContent='一般折射';
+  }
+  document.getElementById('snellSvg').innerHTML=html;
+}
+[n1,n2,a1].forEach(x=>x.addEventListener('input',drawSnell));drawSnell();
+
+// ---------- Critical angle ----------
+const cn1=document.getElementById('cn1'),cn2=document.getElementById('cn2'),ca=document.getElementById('ca');
+function drawCritical(){const N1=+cn1.value,N2=+cn2.value,A=+ca.value;document.getElementById('caVal').textContent=A+'°';let crit=null;if(N1>N2)crit=deg(Math.asin(N2/N1));document.getElementById('criticalOut').textContent=crit===null?'不存在':crit.toFixed(1)+'°';let state='無全反射條件';if(crit!==null)state=A<crit?'一般折射':Math.abs(A-crit)<.7?'臨界狀態':'全反射';document.getElementById('criticalState').textContent=state;let html=`<rect width="800" height="200" fill="#f2f8ff"/><rect y="200" width="800" height="200" fill="#f7fbf6"/><line x1="0" y1="200" x2="800" y2="200" class="axis"/><line x1="400" y1="25" x2="400" y2="375" class="normal"/>`;const p=polarPoint(400,200,170,A,-1,false);html+=svgLine(p[0],p[1],400,200);const ratio=N1*Math.sin(rad(A))/N2;if(ratio<=1){const A2=deg(Math.asin(ratio));const q=polarPoint(400,200,175,A2,1,true);html+=svgLine(400,200,q[0],q[1]);}else{const refl=polarPoint(400,200,170,A,1,false);html+=svgLine(400,200,refl[0],refl[1]);}document.getElementById('criticalSvg').innerHTML=html}
+[cn1,cn2,ca].forEach(x=>x.addEventListener('input',drawCritical));drawCritical();
+
+// ---------- Vergence ----------
+function drawVergence(){const n=+document.getElementById('vn').value,l=Math.max(.001,+document.getElementById('vl').value),type=document.getElementById('vtype').value;const sign=type==='diverge'?-1:1,L=sign*n/l;document.getElementById('vOut').textContent=L.toFixed(2)+' D';document.getElementById('vSign').textContent=L<0?'負（發散）':'正（會聚）';document.getElementById('vMeaning').textContent=type==='diverge'?'光由左側點光源散開':'光將聚焦於右側';let html=`<line x1="400" y1="20" x2="400" y2="380" class="lens"/><line x1="20" y1="200" x2="780" y2="200" class="axis"/>`;if(type==='diverge'){html+=`<circle cx="120" cy="200" r="5" fill="#1f8f88"/>`;[130,170,230,270].forEach(y=>html+=svgLine(120,200,400,y));}else{html+=`<circle cx="680" cy="200" r="5" fill="#7c3aed"/>`;[130,170,230,270].forEach(y=>html+=svgLine(400,y,680,200));}document.getElementById('vergenceSvg').innerHTML=html}
+['vn','vl','vtype'].forEach(id=>document.getElementById(id).addEventListener('input',drawVergence));drawVergence();
+
+// ---------- Lens ray tracing ----------
+function lensGeometry(svgId,f,doCm,diverging=false){const W=900,H=430,cx=450,axisY=230,scale=Math.min(10,150/Math.max(.1,Math.abs(f)),380/Math.max(1,doCm));const fpx=Math.abs(f)*scale;const objX=cx-doCm*scale;const objH=100,objTop=axisY-objH;let F=diverging?-Math.abs(f):Math.abs(f);let di=1/(1/F-1/doCm);let m=-di/doCm;let imgH=m*objH,imgX=cx+di*scale;if(!Number.isFinite(di)){imgX=2000;imgH=0}imgX=Math.max(-1000,Math.min(1800,imgX));const imgTipY=axisY-imgH;const lensPath=diverging?`<path d="M425 70 Q451 230 425 390" class="lens"/><path d="M475 70 Q449 230 475 390" class="lens"/><line x1="425" y1="70" x2="475" y2="70" class="lens"/><line x1="425" y1="390" x2="475" y2="390" class="lens"/>`:`<path d="M450 55 Q420 230 450 405 M450 55 Q480 230 450 405" class="lens"/>`;let html=`<line x1="25" y1="${axisY}" x2="875" y2="${axisY}" class="axis"/>${lensPath}`;
+  const fl=cx-fpx, fr=cx+fpx;[fl,fr,cx-2*fpx,cx+2*fpx].forEach((x,i)=>{html+=`<circle cx="${x}" cy="${axisY}" r="4" class="focus"/><text x="${x-12}" y="${axisY+22}" class="label">${i<2?'F':'2F'}</text>`});
+  html+=`<line x1="${objX}" y1="${axisY}" x2="${objX}" y2="${objTop}" class="object"/><polygon points="${objX-7},${objTop+12} ${objX},${objTop} ${objX+7},${objTop+12}" fill="#1f8f88"/>`;
+  if(Math.abs(imgX)<1200 && Math.abs(imgH)<700){html+=`<line x1="${imgX}" y1="${axisY}" x2="${imgX}" y2="${imgTipY}" class="image-line" ${di<0?'stroke-dasharray="7 6"':''}/>`;}
+  // principal rays
+  if(!diverging){
+    const lensY1=objTop;
+    const slope=(axisY-lensY1)/fpx; const endX=850,endY=lensY1+slope*(endX-cx); html+=svgLine(objX,objTop,cx,lensY1)+svgLine(cx,lensY1,endX,endY);
+    const slope2=(axisY-objTop)/(cx-objX); const endY2=objTop+slope2*(850-objX); html+=svgLine(objX,objTop,850,endY2);
+    if(di<0){const backX=Math.max(30,imgX), backY=imgTipY;html+=svgLine(cx,lensY1,backX,backY,'ray virtual')}
+  }else{
+    const lensY1=objTop;
+    const slopeOut=(lensY1-axisY)/(cx-fl); const endX=850, endY=lensY1+slopeOut*(endX-cx);
+    html+=svgLine(objX,objTop,cx,lensY1)+svgLine(cx,lensY1,endX,endY)+svgLine(cx,lensY1,imgX,imgTipY,'ray virtual');
+    const slope2=(axisY-objTop)/(cx-objX); const endY2=objTop+slope2*(850-objX); html+=svgLine(objX,objTop,850,endY2);
+  }
+  document.getElementById(svgId).innerHTML=html;return{di,m};}
+function drawConvex(){const f=+document.getElementById('lf').value,doCm=+document.getElementById('lo').value;document.getElementById('loVal').textContent=doCm+' cm';const {di,m}=lensGeometry('convexSvg',f,doCm,false);let oz=doCm>2*f?'2F 外':Math.abs(doCm-2*f)<1e-7?'2F':doCm>f?'F～2F':Math.abs(doCm-f)<1e-7?'F':'F 內';let iz,nat;if(Math.abs(doCm-f)<1e-7){iz='無限遠';nat='出射近似平行光'}else if(di<0){iz='鏡片同側（虛像）';nat='正立、放大、虛像'}else{iz=di>2*f?'2F 外':Math.abs(di-2*f)<1e-7?'2F':'F～2F';nat=(Math.abs(Math.abs(m)-1)<.08?'等大':Math.abs(m)>1?'放大':'縮小')+'、倒立、實像'}document.getElementById('objZone').textContent=oz;document.getElementById('imgZone').textContent=iz;document.getElementById('imgNature').textContent=nat}
+['lf','lo'].forEach(id=>document.getElementById(id).addEventListener('input',drawConvex));drawConvex();
+function drawConcave(){const f=+document.getElementById('df').value,doCm=+document.getElementById('do').value;document.getElementById('doVal').textContent=doCm+' cm';lensGeometry('concaveSvg',f,doCm,true)}['df','do'].forEach(id=>document.getElementById(id).addEventListener('input',drawConcave));drawConcave();
+
+
+// ---------- Multiple thin-lens system ----------
+function calcMulti(){const F1=+document.getElementById('mlF1').value,F2=+document.getElementById('mlF2').value,d=+document.getElementById('mlD').value/100,doCm=+document.getElementById('mlDo').value;if(!Number.isFinite(F1+F2+d+doCm)||doCm<=0||d<0){document.getElementById('multiResult').innerHTML='<div><b>請輸入有效數值</b></div>';return}const L1=-100/doCm,L1p=L1+F1,transfer=1-d*L1p;if(Math.abs(transfer)<1e-10){document.getElementById('multiResult').innerHTML='<div><span>狀態</span><b>第二片位於第一片焦點</b></div>';return}const L2=L1p/transfer,L2p=L2+F2,di=Math.abs(L2p)<1e-10?Infinity:100/L2p,Fe=F1+F2-d*F1*F2,m1=Math.abs(L1p)<1e-10?Infinity:L1/L1p,m2=Math.abs(L2p)<1e-10?Infinity:L2/L2p,m=m1*m2,nature=!Number.isFinite(di)?'像在無限遠':`${di>0?'實像':'虛像'}、${m<0?'倒立':'正立'}、${Math.abs(m)>1?'放大':Math.abs(m)<1?'縮小':'等大'}`;const fmt=x=>Number.isFinite(x)?x.toFixed(2):'∞';document.getElementById('multiResult').innerHTML=`<div><span>第一片像方 L₁′</span><b>${fmt(L1p)} D</b></div><div><span>第二片物方 L₂</span><b>${fmt(L2)} D</b></div><div><span>最終像距</span><b>${fmt(di)} cm</b></div><div><span>等效屈光力</span><b>${fmt(Fe)} D</b></div><div><span>總放大率</span><b>${fmt(m)}</b></div><div><span>成像性質</span><b>${nature}</b></div>`}
+document.getElementById('multiCalc').onclick=calcMulti;calcMulti();
+
+// ---------- Thin lens calculator ----------
+function calcThin(){const F=+document.getElementById('thinF').value,doCm=+document.getElementById('thinDo').value,h=+document.getElementById('thinH').value;if(!F||!doCm)return;const fM=1/F,fCm=fM*100;const denom=1/fCm-1/doCm,diCm=Math.abs(denom)<1e-12?Infinity:1/denom,m=-diCm/doCm,hi=m*h;const nature=!Number.isFinite(diCm)?'像在無限遠、出射光平行':diCm>0?`${m<0?'倒立':'正立'}、${Math.abs(m)>1?'放大':Math.abs(m)<1?'縮小':'等大'}、實像`:`${m>0?'正立':'倒立'}、${Math.abs(m)>1?'放大':Math.abs(m)<1?'縮小':'等大'}、虛像`;document.getElementById('thinResult').innerHTML=`<div><span>焦距 f</span><b>${fCm.toFixed(2)} cm</b></div><div><span>像距 dᵢ</span><b>${diCm.toFixed(2)} cm</b></div><div><span>放大率 m</span><b>${m.toFixed(3)}</b></div><div><span>像高 hᵢ</span><b>${hi.toFixed(2)} mm</b></div><div><span>成像性質</span><b>${nature}</b></div>`;document.getElementById('thinSteps').innerHTML=`<ol><li>焦距：f = 1/F = 1/${F} m = ${fCm.toFixed(2)} cm</li><li>薄透鏡公式：1/f = 1/dₒ + 1/dᵢ</li><li>1/dᵢ = 1/${fCm.toFixed(2)} − 1/${doCm}，得到 dᵢ = ${diCm.toFixed(2)} cm</li><li>放大率：m = −dᵢ/dₒ = ${m.toFixed(3)}</li><li>像高：hᵢ = m·hₒ = ${hi.toFixed(2)} mm</li></ol>`}
+document.getElementById('thinCalc').onclick=calcThin;document.getElementById('thinStepsBtn').onclick=()=>document.getElementById('thinSteps').classList.toggle('show');calcThin();
+
+// ---------- Thick lens calculator ----------
+function calcThick(){const F1=+document.getElementById('tF1').value,F2=+document.getElementById('tF2').value,t=+document.getElementById('tt').value/1000,n=+document.getElementById('tn').value;if(!n||t<0){document.getElementById('thickResult').innerHTML='<div><b>請輸入有效折射率與厚度</b></div>';return}const Fe=F1+F2-(t/n)*F1*F2,dB=1-(t/n)*F1,dF=1-(t/n)*F2,BVP=Math.abs(dB)<1e-12?Infinity:F2+F1/dB,FVP=Math.abs(dF)<1e-12?Infinity:F1+F2/dF,AH1=Math.abs(Fe)<1e-12?Infinity:(t/n)*(F2/Fe)*1000,A2Hp=Math.abs(Fe)<1e-12?Infinity:-(t/n)*(F1/Fe)*1000,fmt=x=>Number.isFinite(x)?x.toFixed(2):'∞';document.getElementById('thickResult').innerHTML=`<div><span>Equivalent Power</span><b>${fmt(Fe)} D</b></div><div><span>Back Vertex Power</span><b>${fmt(BVP)} D</b></div><div><span>Front Vertex Power</span><b>${fmt(FVP)} D</b></div><div><span>A₁→H</span><b>${fmt(AH1)} mm</b></div><div><span>A₂→H′</span><b>${fmt(A2Hp)} mm</b></div>`}
+document.getElementById('thickCalc').onclick=calcThick;calcThick();
+
+// ---------- Concept checks ----------
+document.querySelector('[data-check="freq"]').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const ok=+b.dataset.answer===2,f=document.getElementById('freqFeedback');f.className='feedback show '+(ok?'ok':'bad');f.innerHTML=ok?'✓ 正確。跨介質時光源決定的頻率維持不變；速度與波長改變。':'✗ 再想一下。光跨介質後速度會變，因此波長也會變；頻率不變。'});
+
+// ---------- Quiz engine ----------
+const questions=[{"uid":"106-特師-1","year":106,"examType":"特師","sourceNumber":1,"source":"106 特師第 1 題","chapter":"第4章｜薄透鏡","q":"用一個-3.00 D(diopter)的凹透鏡片看一個直徑40 cm 的圓形時鐘,若放在距離時鐘1 m 處,則看到的時鐘直徑大小為何?","opts":["5 cm","10 cm","15 cm","20 cm"],"ans":1,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"106-國生-3","year":106,"examType":"國生","sourceNumber":3,"source":"106 國生第 3 題","chapter":"第4章｜薄透鏡","q":"一個高度為 5 cm 物體位在一個凸透鏡前40 cm,此玻璃凸透鏡屈光力是+6.00 D,則此物體所形成的像是正立或倒立?影像的高度 大約是多少?","opts":["倒立,1.5 cm","正立,1.5 cm","倒立,3.5 cm","正立,3.5 cm"],"ans":2,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"106-特師-4","year":106,"examType":"特師","sourceNumber":4,"source":"106 特師第 4 題","chapter":"第1章｜基本名詞與概念","q":"以針孔相機攝影,已知一樹高200 cm,位於針孔相機左方4 m 處,經過一長度為10 cm 的針孔相機後成像,其成像高度為何?","opts":["5 cm","10 cm","15 cm","20 cm."],"ans":0,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"106-國生-5","year":106,"examType":"國生","sourceNumber":5,"source":"106 國生第 5 題","chapter":"延伸｜反射與臨床成像","q":"假設一個人站在平面鏡前50 cm 處,則此人的影像會在鏡子後面多少距離?","opts":["25 cm","35 cm","50 cm","100 cm"],"ans":2,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"106-特師-6","year":106,"examType":"特師","sourceNumber":6,"source":"106 特師第 6 題","chapter":"延伸｜反射與臨床成像","q":"一凹面鏡的曲率半徑為50 cm,若一物體位於該凹面鏡左側1 m 處,其放大率為何?","opts":["1/2","1/3","1/4","1/5"],"ans":1,"formula":"反射定律與鏡面成像","exp":"先辨識鏡面種類，再判斷焦點、實虛像與放大率。"},{"uid":"106-國師-8","year":106,"examType":"國師","sourceNumber":8,"source":"106 國師第 8 題","chapter":"第4章｜薄透鏡","q":"假設鏡片在空氣中,某物體位在鏡片左側第一焦點(primary focal point)前8 公分,其成像的位置在於鏡片右側第二焦點 (secondary focal point)後50 公分,其鏡片的屈光度為:","opts":["+1D","+5 D","+10 D","+20 D"],"ans":1,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"106-特師-17","year":106,"examType":"特師","sourceNumber":17,"source":"106 特師第 17 題","chapter":"第1章｜基本名詞與概念","q":"有一新月型的薄透鏡,前表面屈率半徑為5 cm,後表面屈率半徑為12.5 cm,折射率為1.5,求此透鏡的屈光度?","opts":["6 D","3 D","10 D","20 D"],"ans":0,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"106-特生-23","year":106,"examType":"特生","sourceNumber":23,"source":"106 特生第 23 題","chapter":"延伸｜反射與臨床成像","q":"遠視眼需配戴何種鏡片矯正?是因為何種理由?","opts":["凹透鏡,因為凹透鏡能發散光線","凹透鏡,因為凹透鏡能會聚光線","凸透鏡,因為凸透鏡能發散光線","凸透鏡,因為凸透鏡能會聚光線"],"ans":3,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"106-特生-24","year":106,"examType":"特生","sourceNumber":24,"source":"106 特生第 24 題","chapter":"第4章｜薄透鏡","q":"一實物體放在凹面鏡的焦距內,其成像為何?","opts":["縮小正立虛像","縮小倒立實像","放大倒立實像","放大正立虛像"],"ans":3,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"106-特生-25","year":106,"examType":"特生","sourceNumber":25,"source":"106 特生第 25 題","chapter":"延伸｜反射與臨床成像","q":"一物體經凸面鏡所成的像為何?","opts":["放大倒立實像","放大倒立虛像","縮小正立虛像","縮小正立實像"],"ans":2,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"106-特生-26","year":106,"examType":"特生","sourceNumber":26,"source":"106 特生第 26 題","chapter":"第4章｜薄透鏡","q":"物體放在一凸透鏡的二倍焦距上,其成像位於何處?","opts":["一倍焦距內","介於一倍焦距至二倍焦距之間","二倍焦距上","二倍焦距後至無限遠"],"ans":2,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"106-特生-28","year":106,"examType":"特生","sourceNumber":28,"source":"106 特生第 28 題","chapter":"第4章｜薄透鏡","q":"欲使凸透鏡產生較原物大之實像,物體應放在何處?","opts":["焦點內","二倍焦距外","二倍焦距與焦點間","放於任何位置均可產生較原物大之實像"],"ans":2,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"106-特生-29","year":106,"examType":"特生","sourceNumber":29,"source":"106 特生第 29 題","chapter":"延伸｜反射與臨床成像","q":"一物體經平面鏡所成的像為何?","opts":["倒立實像","倒立虛像","正立虛像","正立實像"],"ans":2,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"106-特生-30","year":106,"examType":"特生","sourceNumber":30,"source":"106 特生第 30 題","chapter":"第4章｜薄透鏡","q":"平行光束經凹透鏡折射可成為下列何種光束?","opts":["像散光束","平行光束","會聚光束","發散光束"],"ans":3,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"106-國生-32","year":106,"examType":"國生","sourceNumber":32,"source":"106 國生第 32 題","chapter":"第6章｜厚透鏡光學性質","q":"一個+5.00 D 和+8.00 D 的薄透鏡相距1 cm,此光學系統的等效屈光力大約是多少?","opts":["+7.60","+9.60 D","+12.60 D","+11.60 D"],"ans":2,"formula":"Fₑ=F₁+F₂−(t/n)F₁F₂","exp":"先確認厚度以公尺代入，再分辨題目要求等效、前頂點或後頂點屈光力。"},{"uid":"106-特生-32","year":106,"examType":"特生","sourceNumber":32,"source":"106 特生第 32 題","chapter":"第4章｜薄透鏡","q":"一物體置於焦距為20 cm 的凹透鏡前30 cm 處,則其成像的位置在何處?","opts":["鏡前12 cm","鏡後12 cm","鏡前60 cm","鏡後60 cm"],"ans":0,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"106-特師-36","year":106,"examType":"特師","sourceNumber":36,"source":"106 特師第 36 題","chapter":"第4章｜薄透鏡","q":"一個高度為 30 公分的物體,放在一個+10.00 D 的凸透鏡前方20 公分,其成像何者正確?","opts":["與物體在鏡片的同側,高度15 公分","與物體在鏡片的同側,高度30 公分","與物體在鏡片的對側,高度15 公分","與物體在鏡片的對側,高度30 公分"],"ans":3,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"106-特師-38","year":106,"examType":"特師","sourceNumber":38,"source":"106 特師第 38 題","chapter":"第4章｜薄透鏡","q":"有關鏡片製造方程式(the lensmaker’s equation),下列何者錯誤?","opts":["成像的位置取決於物體的位置","鏡片放在空氣中與放在水中的折射能力會不同","物體靠近鏡片多少距離,成像就遠離鏡片多少距離","鏡片的折射能力取決於折射係數與表面曲率"],"ans":2,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"106-特師-44","year":106,"examType":"特師","sourceNumber":44,"source":"106 特師第 44 題","chapter":"第4章｜薄透鏡","q":"當使用直接眼底鏡觀察一位正視眼病人的視網膜時,其成像為何?","opts":["直立放大虛像","直立放大實像","直立縮小虛像","倒立放大虛像"],"ans":0,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"107-特師-3","year":107,"examType":"特師","sourceNumber":3,"source":"107 特師第 3 題","chapter":"第2章｜球面折射","q":"一根蠟燭位於屈光力為 -4.00 D 的球面玻璃(n=1.5)左方40 cm,試計算其成像的位置?","opts":["玻璃折射面前方23 cm","玻璃折射面前方15.4 cm","玻璃折射面後方23 cm","玻璃折射面後方15.4 cm"],"ans":0,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"107-國師-4","year":107,"examType":"國師","sourceNumber":4,"source":"107 國師第 4 題","chapter":"第5章｜多折射面光學系統","q":"兩片透鏡組成的透鏡組,其中一-6.00 D 的透鏡位於+9.00 D 的透鏡左方10 cm 處,當物體位於透鏡左方25cm 處時,請問成像的位 置為何?","opts":["+9.00 D 的透鏡右方25 cm 處","+9.00 D 的透鏡右方11.1 cm 處","-6.00 D 的透鏡右方15 cm 處","-6.00 D 的透鏡左方10 cm 處"],"ans":0,"formula":"逐面使用 L′=L+F","exp":"前一片透鏡形成的像，會成為下一片透鏡的物；傳遞距離不可忽略。"},{"uid":"107-國生-8","year":107,"examType":"國生","sourceNumber":8,"source":"107 國生第 8 題","chapter":"第5章｜多折射面光學系統","q":"一個+2.00 D 的薄透鏡和一個+6.00 D 的兩同軸薄透鏡若緊密相貼在一起,一個物體放在這個系統前50 cm的位置,求成像的位置 與性質?","opts":["在第二透鏡後側+16.7 cm 實像","在第二透鏡後側+16.7 cm 虛像","在第二透鏡後側+13.3 cm 實像","在第二透鏡後側+13.3 cm 虛像"],"ans":0,"formula":"逐面使用 L′=L+F","exp":"前一片透鏡形成的像，會成為下一片透鏡的物；傳遞距離不可忽略。"},{"uid":"107-特師-8","year":107,"examType":"特師","sourceNumber":8,"source":"107 特師第 8 題","chapter":"第4章｜薄透鏡","q":"用一個 +30.00 D 的凸透鏡看報紙,若放在距離報紙2 cm 處,其成像位置為何?","opts":["與報紙在鏡片的同側,距離鏡片5 cm","與報紙在鏡片的同側,距離鏡片10 cm","與報紙在鏡片的對側,距離鏡片5 cm","與報紙在鏡片的對側,距離鏡片10 cm"],"ans":0,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"107-國師-9","year":107,"examType":"國師","sourceNumber":9,"source":"107 國師第 9 題","chapter":"第4章｜薄透鏡","q":"配戴一個+3.00 D 的近用眼鏡,搭配一 +10.00 D 的放大鏡觀察文字,已知眼鏡與放大鏡之間的距離為10 cm,則此光學系統的等 效屈光力(equivalent power)為多少?","opts":["+10.00 D","+11.00 D","+12.50 D","+15.00 D"],"ans":0,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"107-特生-9","year":107,"examType":"特生","sourceNumber":9,"source":"107 特生第 9 題","chapter":"第4章｜薄透鏡","q":"一個實物如果要經由凸透鏡產生比實物大的虛像,物體應該要放在:","opts":["焦點上","焦點內","焦點於兩倍焦距間","兩倍焦距外"],"ans":1,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"107-國師-10","year":107,"examType":"國師","sourceNumber":10,"source":"107 國師第 10 題","chapter":"第2章｜球面折射","q":"隔著 5 cm 厚的平板玻璃(n=1.5)從正上方閱讀玻璃下方的文字,則看起來文字的深度及大小為何?","opts":["3.3 cm,放大","3.3 cm,一樣大","5 cm,放大","5 cm,一樣大"],"ans":1,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"107-特師-10","year":107,"examType":"特師","sourceNumber":10,"source":"107 特師第 10 題","chapter":"第6章｜厚透鏡光學性質","q":"三組鏡片的中心厚度均為2 mm,分別如下: 前表面屈光度 +2.00 D;後表面屈光度 -8.00 D 前表面屈光度 +4.00 D;後表面屈光度 -10.00 D 前表面屈光度 +6.00 D;後表面屈光度 -12.00 D 有關後頂點屈光力(back vertex power)絕對值大小的比較,下列何者正確?","opts":["2>1","3>2","1>3","1=2=3"],"ans":2,"formula":"Fₑ=F₁+F₂−(t/n)F₁F₂","exp":"先確認厚度以公尺代入，再分辨題目要求等效、前頂點或後頂點屈光力。"},{"uid":"107-特生-12","year":107,"examType":"特生","sourceNumber":12,"source":"107 特生第 12 題","chapter":"第4章｜薄透鏡","q":"一 15 mm 高的物體位在+25.00 D 鏡片前30 cm,它的影像大小為多少?","opts":["+4.61 mm","-2.31 mm","-9.76 mm","-13.00 mm"],"ans":1,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"107-國生-13","year":107,"examType":"國生","sourceNumber":13,"source":"107 國生第 13 題","chapter":"第6章｜厚透鏡光學性質","q":"空氣中(n=1)兩個薄透鏡(F1=+6.00 D; F2=-4.00 D)構成一透鏡組,兩個透鏡之間相距20 mm。若物體在遠方,此透鏡組的後頂 點屈光力(BVP)為多少 D?","opts":["+4.52 D","+6.00 D","+2.80 D","+3.50 D"],"ans":2,"formula":"頂點屈光力需保留 t/n 項","exp":"頂點屈光力以鏡片表面為參考，不能直接用兩表面度數相加取代。"},{"uid":"107-國生-14","year":107,"examType":"國生","sourceNumber":14,"source":"107 國生第 14 題","chapter":"第4章｜薄透鏡","q":"一物位於薄透鏡左側24 cm 處,成像位於透鏡左側8 cm 處,此透鏡的焦距為何?","opts":["-16 cm","-12 cm","-6 cm","-3 cm"],"ans":1,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"107-特生-14","year":107,"examType":"特生","sourceNumber":14,"source":"107 特生第 14 題","chapter":"第4章｜薄透鏡","q":"假設一個無限薄的鏡片,度數是+20 D,置於空氣環境中。若無限遠光線平行自左邊經過此鏡片,其成像位置為何處?為實像或虛 像?","opts":["左側5 cm,實像","右側5 cm,實像","右側5 cm,虛像","右側0.05 cm,實像"],"ans":1,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"107-國師-15","year":107,"examType":"國師","sourceNumber":15,"source":"107 國師第 15 題","chapter":"第2章｜球面折射","q":"光線由左至右進入一球面(曲率半徑為+5 cm)的厚大玻璃物體(n=1.5),一物高16 cm 位於該玻璃物體 前方50 cm 處,其成像位置在玻璃物體的何處?","opts":["折射面前12.5 cm","折射面前18.75 cm","折射面後12.5 cm","折射面後18.75 cm"],"ans":3,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"107-國師-16","year":107,"examType":"國師","sourceNumber":16,"source":"107 國師第 16 題","chapter":"第4章｜薄透鏡","q":"承上題,請問成像高度為多少cm?","opts":["4 cm","8 cm","32 cm","64 cm"],"ans":0,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"107-特生-16","year":107,"examType":"特生","sourceNumber":16,"source":"107 特生第 16 題","chapter":"第4章｜薄透鏡","q":"一個位於空氣環境中之薄鏡片,如果其屈光力是+25 D,此鏡片之第二焦點(secondary focal point)位於何處?(假設平行光線來 自鏡片左側)","opts":["0.04 cm,鏡片左側","0.04 cm,鏡片右側","4 cm,鏡片左側","4 cm,鏡片右側"],"ans":3,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"107-特師-19","year":107,"examType":"特師","sourceNumber":19,"source":"107 特師第 19 題","chapter":"第4章｜薄透鏡","q":"在空氣介質中,軸上的物體置於 +6.00 D 薄透鏡的左邊20 cm 處,則成像位置在何處?","opts":["在透鏡右方40 cm","在透鏡右方100 cm","在透鏡左方40 cm","在透鏡左方100 cm"],"ans":1,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"107-特生-20","year":107,"examType":"特生","sourceNumber":20,"source":"107 特生第 20 題","chapter":"第4章｜薄透鏡","q":"物體置放於凹透鏡二倍焦距時,成像為何?","opts":["縮小正立實像","縮小倒立實像","放大倒立虛像","縮小正立虛像"],"ans":3,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"107-國師-21","year":107,"examType":"國師","sourceNumber":21,"source":"107 國師第 21 題","chapter":"第2章｜球面折射","q":"有一曲率半徑為+0.25 m 的凸折射面,物體置於該折射面左邊50 cm 軸上。折射面右邊是1.75 的介質,左邊是空氣。請問成像 的位置在那裡?","opts":["在折射面右方175 cm","在折射面右方100 cm","在折射面左方175 cm","在折射面左方100 cm"],"ans":0,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"107-國生-22","year":107,"examType":"國生","sourceNumber":22,"source":"107 國生第 22 題","chapter":"第4章｜薄透鏡","q":"根據幾何光學,物在兩倍焦距外,經過凸透鏡後成像位置於透鏡後方之何處?","opts":["一倍焦距與鏡片間","一倍焦距到兩倍焦距之間","兩倍焦點上","兩倍焦距外"],"ans":1,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"107-國師-24","year":107,"examType":"國師","sourceNumber":24,"source":"107 國師第 24 題","chapter":"第4章｜薄透鏡","q":"一個 4 cm 高的物體放置於+8.00 D 的透鏡前方25 cm 處,有關其成像的敘述,下列何者正確?","opts":["與物體在鏡片同側","影像相對於物體是倒立","影像相對於物體大","影像是虛像"],"ans":1,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"107-特生-27","year":107,"examType":"特生","sourceNumber":27,"source":"107 特生第 27 題","chapter":"第4章｜薄透鏡","q":"下列關於凹透鏡的成像敘述何者為正確?","opts":["一實物放置於凹透鏡前,其成像可能是實像或是虛像,正立或是倒立","一實物放置於凹透鏡前,其成像可能是正立或是倒立的實像","一實物放置於凹透鏡前,其成像可能是正立或是倒立的虛像","一實物放置於凹透鏡前,其成像是正立的虛像"],"ans":3,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"108-國師-3","year":108,"examType":"國師","sourceNumber":3,"source":"108 國師第 3 題","chapter":"第4章｜薄透鏡","q":"一高度為 10 cm 的物體,置於一個+20.0 D 的凸透鏡前方10 cm,其成像應為下列何者?","opts":["正立虛像,高度 10 cm","倒立實像,高度 10 cm","正立虛像,高度 5 cm","倒立實像,高度 5 cm"],"ans":1,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"108-特師-3","year":108,"examType":"特師","sourceNumber":3,"source":"108 特師第 3 題","chapter":"第5章｜多折射面光學系統","q":"一片第二焦距為+40.00 cm的薄透鏡與第二片薄透鏡接合,此複合透鏡的第二焦距為+25.00 cm,則第二片薄透鏡的第二焦距為多 少?","opts":["+1.50 cm","+6.50 cm","+15.38 cm","+66.67 cm"],"ans":3,"formula":"逐面使用 L′=L+F","exp":"前一片透鏡形成的像，會成為下一片透鏡的物；傳遞距離不可忽略。"},{"uid":"108-國師-5","year":108,"examType":"國師","sourceNumber":5,"source":"108 國師第 5 題","chapter":"第5章｜多折射面光學系統","q":"一個由兩片透鏡所組成光學透鏡組,已知第一個透鏡屈光度為+5.00 D,第二個透鏡的屈光度為-15.00 D,兩透鏡間距為20 cm,若 物體位於第一個透鏡前方40 cm 時,下列敘述何者正確?","opts":["此透鏡組可用來作為克普勒望遠鏡","成像位於第二個透鏡右方10 cm 處","此系統的放大率為1/2","其成像的性質為倒立實像"],"ans":2,"formula":"逐面使用 L′=L+F","exp":"前一片透鏡形成的像，會成為下一片透鏡的物；傳遞距離不可忽略。"},{"uid":"108-國師-7","year":108,"examType":"國師","sourceNumber":7,"source":"108 國師第 7 題","chapter":"第4章｜薄透鏡","q":"一物體高 10 cm 位在+10 D 鏡片前40 cm,其成像及高度為何?","opts":["鏡後13.3 cm,高度30 cm","鏡後8 cm,高度2 cm","鏡後13.3 cm,高度3.3 cm","鏡後8 cm,高度50 cm"],"ans":2,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"108-特師-7","year":108,"examType":"特師","sourceNumber":7,"source":"108 特師第 7 題","chapter":"延伸｜反射與臨床成像","q":"一物體位於曲率半徑40 cm的凹面鏡前100 cm處。物體將於何處成像?","opts":["鏡前25 cm","鏡後25 cm","鏡前50 cm","鏡後50 cm"],"ans":0,"formula":"反射定律與鏡面成像","exp":"先辨識鏡面種類，再判斷焦點、實虛像與放大率。"},{"uid":"108-特師-9","year":108,"examType":"特師","sourceNumber":9,"source":"108 特師第 9 題","chapter":"第4章｜薄透鏡","q":"一物體置於焦距為20 cm的凸透鏡前33 cm處,其成像為何?","opts":["縮小實像","縮小虛像","放大虛像","放大實像"],"ans":3,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"108-特師-10","year":108,"examType":"特師","sourceNumber":10,"source":"108 特師第 10 題","chapter":"第2章｜球面折射","q":"漁夫捕魚,當從岸上觀看,估計魚位於水面下45 cm時,則魚的實際深度約位於水面下何處?","opts":["30 cm","45 cm","60 cm","70 cm"],"ans":2,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"108-特師-16","year":108,"examType":"特師","sourceNumber":16,"source":"108 特師第 16 題","chapter":"第6章｜厚透鏡光學性質","q":"一眼用玻璃鏡片(n=1.6),前表面屈光度為+10.00 D,後表面屈光度為-3.00 D,中心厚度為3 cm。此鏡片的後頂端屈光度(back vertex power)為多少?","opts":["+8.42 D","+9.31 D","+12.31 D","+15.31 D"],"ans":1,"formula":"Fₑ=F₁+F₂−(t/n)F₁F₂","exp":"先確認厚度以公尺代入，再分辨題目要求等效、前頂點或後頂點屈光力。"},{"uid":"108-國師-23","year":108,"examType":"國師","sourceNumber":23,"source":"108 國師第 23 題","chapter":"第2章｜球面折射","q":"何先生跑去河邊抓魚,看到魚在水面下25 cm 處,魚實際在水面下的深度約為多少?","opts":["20.0 cm","25.0 cm","28.5 cm","33.3 cm"],"ans":3,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"109-國師-9","year":109,"examType":"國師","sourceNumber":9,"source":"109 國師第 9 題","chapter":"延伸｜反射與臨床成像","q":"有關折射的敘述,下列何者錯誤?","opts":["光在不同介質中行進的速度不同","當光線進入不同介質的入射角度為0 時,光線行進路徑不會發生偏移","當光線由真空進入密度較大的介質時,光線行進路徑將偏離法線","在真空以外的介質會有色散(color dispersion)的現象"],"ans":2,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"109-國師-10","year":109,"examType":"國師","sourceNumber":10,"source":"109 國師第 10 題","chapter":"第2章｜球面折射","q":"空氣中有一個左端為凸球面之塑膠長棒,曲率半徑為8 公分,折射率為1.5,假設一3 公分高的物體放置於球面左端30 公分。下列敘述何者錯誤?","opts":["物的聚散度為-3.33 D","球面度數為+6.25 D","像在球面右方34.2 公分處","是一個放大倒立實像"],"ans":2,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"109-國師-12","year":109,"examType":"國師","sourceNumber":12,"source":"109 國師第 12 題","chapter":"第6章｜厚透鏡光學性質","q":"依照厚透鏡公式(thick lens equation),折射率為1.5,前表面曲率半徑為7.5mm,後表面曲率半徑為8.0mm,透鏡中心厚度為0.4 mm 的隱形眼鏡,置於空氣中的度數最接近下列何者?","opts":["+11.75 屈光度(diopter)","+128.00 屈光度","+4.00 屈光度","+5.25 屈光度"],"ans":3,"formula":"Fₑ=F₁+F₂−(t/n)F₁F₂","exp":"先確認厚度以公尺代入，再分辨題目要求等效、前頂點或後頂點屈光力。"},{"uid":"109-國師-13","year":109,"examType":"國師","sourceNumber":13,"source":"109 國師第 13 題","chapter":"第1章｜基本名詞與概念","q":"有關針孔(pinhole)的敘述,下列何者錯誤?","opts":["可用光線直線進行來解釋","孔徑太小會產生繞射現象","其成像為直立的實像","其作用為加強景深"],"ans":2,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"109-國師-18","year":109,"examType":"國師","sourceNumber":18,"source":"109 國師第 18 題","chapter":"第4章｜薄透鏡","q":"在空氣中,一透鏡之第二焦距與光源同側,距離透鏡40 公分處,此透鏡之屈光力為何?","opts":["+2.50 D","-2.50 D","+25.00 D","-25.00 D"],"ans":1,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"109-國師-26","year":109,"examType":"國師","sourceNumber":26,"source":"109 國師第 26 題","chapter":"延伸｜反射與臨床成像","q":"有關放置於空氣中+20.00 D 的會聚透鏡,下列敘述何者錯誤?","opts":["物體在透鏡前3 公分處,影像相對於物體是放大正立虛像","物體在透鏡前8 公分處,影像相對於物體是放大倒立實像","物體在透鏡前10 公分處,影像相對於物體是相等大小的倒立實像","物體在透鏡前12 公分處,影像相對於物體是放大倒立實像"],"ans":3,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"109-國師-27","year":109,"examType":"國師","sourceNumber":27,"source":"109 國師第 27 題","chapter":"第6章｜厚透鏡光學性質","q":"光在一材質中傳播速度為15 萬公里/秒,拿此材質來製作鏡片,前表面研磨成+4.00D,後表面研磨成-10.00D,中心厚度為4 mm,其鏡片之前頂點球面度數屈光度(front vertex power)約為多少?","opts":["-5.80D","-5.90D","-6.00D","-6.20D"],"ans":0,"formula":"Fₑ=F₁+F₂−(t/n)F₁F₂","exp":"先確認厚度以公尺代入，再分辨題目要求等效、前頂點或後頂點屈光力。"},{"uid":"109-國師-37","year":109,"examType":"國師","sourceNumber":37,"source":"109 國師第 37 題","chapter":"第2章｜球面折射","q":"角膜弧度測量儀測得一角膜弧度曲率半徑為7 mm,如角膜的折射率以1.3375 計算,此角膜屈光度約為:","opts":["50.2D","48.2D","45.2D","40.2D 厚透鏡"],"ans":1,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"110-國考-2","year":110,"examType":"國考","sourceNumber":2,"source":"110 國考第 2 題","chapter":"第6章｜厚透鏡光學性質","q":"王女士的角膜前表面曲率半徑為7.7mm,後表面曲率半徑為6.8 mm,角膜厚度為0.5 mm,房水折射率為1.336,角膜折射率為1.376,則角膜屈折力為何?","opts":["42.63 D","43.05 D","43.47 D","43.89 D"],"ans":1,"formula":"Fₑ=F₁+F₂−(t/n)F₁F₂","exp":"先確認厚度以公尺代入，再分辨題目要求等效、前頂點或後頂點屈光力。"},{"uid":"110-國考-3","year":110,"examType":"國考","sourceNumber":3,"source":"110 國考第 3 題","chapter":"第1章｜基本名詞與概念","q":"一副透光率為25%的黑色鏡片,其鏡片厚度為2 mm,在不考慮表面反射條件下,則鏡片的每1 mm 厚度透光率為何?","opts":["6%","50%","63%","75%"],"ans":1,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"110-國考-7","year":110,"examType":"國考","sourceNumber":7,"source":"110 國考第 7 題","chapter":"第1章｜基本名詞與概念","q":"有關折射率的敘述,下列何者錯誤?","opts":["與在介質中傳播的速度有關","短波長的光在介質中傳播的速度較快","與色像差有關","與溫度高低的差異相關性很小"],"ans":1,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"110-國考-8","year":110,"examType":"國考","sourceNumber":8,"source":"110 國考第 8 題","chapter":"第1章｜基本名詞與概念","q":"有關折射率n(refractive index),下列何者錯誤?","opts":["n = 1 指真空或空氣中","n 愈大代表光在物質中的速率越快","n 愈小的物質,其折射角愈大","n 愈大的物質將造成光線偏折聚焦之距離加長"],"ans":1,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"110-國考-13","year":110,"examType":"國考","sourceNumber":13,"source":"110 國考第 13 題","chapter":"延伸｜反射與臨床成像","q":"光學中光線由玻璃介質(光密介質)進入空氣介質(光疏介質)時,折射光會:","opts":["垂直法線","偏向法線","遠離法線","平行法線"],"ans":2,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"110-國考-14","year":110,"examType":"國考","sourceNumber":14,"source":"110 國考第 14 題","chapter":"第2章｜球面折射","q":"若二雙凸鏡片折射率分別為1.56 與1.74,其厚度相同、曲率半徑相同,何者屈光力較大?","opts":["兩者相等","折射率1.56 之鏡片","折射率1.74 之鏡片","無法判斷"],"ans":2,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"110-國考-36","year":110,"examType":"國考","sourceNumber":36,"source":"110 國考第 36 題","chapter":"第6章｜厚透鏡光學性質","q":"假設角膜前表面曲率半徑為7.8mm,角膜後表面曲率半徑為6.5mm,角膜介質折射率為1.376,房水介質折射率為1.336,角膜厚度為0.5mm,以厚鏡片公式計算,此眼角膜(在空氣介質中)的屈折力約為多少?","opts":["42.17 D","46.89 D","40.10 D","48.21 D"],"ans":0,"formula":"Fₑ=F₁+F₂−(t/n)F₁F₂","exp":"先確認厚度以公尺代入，再分辨題目要求等效、前頂點或後頂點屈光力。"},{"uid":"111-國考-5","year":111,"examType":"國考","sourceNumber":5,"source":"111 國考第 5 題","chapter":"延伸｜反射與臨床成像","q":"-4.00 D 透鏡,其物體(object)與影像(image)的對稱點(symmetry point)分別為何?","opts":["前者位在透鏡前(左側)25 cm,後者位在透鏡後(右側)25 cm","前者位在透鏡後(右側)25 cm,後者位在透鏡前(左側)25 cm","前者位在透鏡前(左側)50 cm,後者位在透鏡後(右側)50 cm","前者位在透鏡後(右側)50 cm,後者位在透鏡前(左側)50 cm"],"ans":3,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"111-國考-7","year":111,"examType":"國考","sourceNumber":7,"source":"111 國考第 7 題","chapter":"第4章｜薄透鏡","q":"在空氣中,一透鏡第一焦距長為-20 cm,若物體經過此透鏡後產生一個放大 4 倍且為正立虛像的影像,則 物體位置應在透鏡前幾公分處?","opts":["5 cm","10 cm","15 cm","20 cm"],"ans":2,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"111-國考-8","year":111,"examType":"國考","sourceNumber":8,"source":"111 國考第 8 題","chapter":"第1章｜基本名詞與概念","q":"某一鏡片的單一表面反射率為 5%,則此一鏡片的折射率最接近下列何者?","opts":["1.50","1.57","1.60","1.67"],"ans":1,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"111-國考-10","year":111,"examType":"國考","sourceNumber":10,"source":"111 國考第 10 題","chapter":"第2章｜球面折射","q":"一雙凹薄透鏡放置在空氣中,其折射率為 1.6,前後表面曲率半徑均為 10 cm,則此薄透鏡的屈光度為何?","opts":["-8 D","-10 D","-12 D","-16 D"],"ans":2,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"111-國考-11","year":111,"examType":"國考","sourceNumber":11,"source":"111 國考第 11 題","chapter":"第1章｜基本名詞與概念","q":"當光線進入以下材料鏡片時,在何者的行進速度最慢?","opts":["冕牌玻璃","塑膠鏡片 CR39","聚碳酸酯鏡片","Trivex 鏡片"],"ans":2,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"111-國考-15","year":111,"examType":"國考","sourceNumber":15,"source":"111 國考第 15 題","chapter":"第4章｜薄透鏡","q":"一透鏡第一焦距為鏡前 10 cm,物體放在透鏡前 5 cm,有關其影像之敘述,下列何者錯誤?","opts":["與物體在鏡片同側","相對於物體是倒立","影像相對於物體大","影像是虛像"],"ans":1,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"111-國考-17","year":111,"examType":"國考","sourceNumber":17,"source":"111 國考第 17 題","chapter":"第6章｜厚透鏡光學性質","q":"光在一材質中傳播速度為 15 萬公里/秒,拿此材質來製作鏡片,前表面磨製成+4.00 DS,後表面磨製成-9.00 DS, 中心厚度為 5 mm,其鏡片之前頂點屈光力(front vertex power)為何?","opts":["-4.80 DS","-4.96 DS","-5.00 DS","-5.11 DS"],"ans":0,"formula":"Fₑ=F₁+F₂−(t/n)F₁F₂","exp":"先確認厚度以公尺代入，再分辨題目要求等效、前頂點或後頂點屈光力。"},{"uid":"111-國考-19","year":111,"examType":"國考","sourceNumber":19,"source":"111 國考第 19 題","chapter":"第3章｜聚散度關係","q":"一光線在空氣中傳遞時,在 A 點位置之聚散度為+5.00 D,當光繼續傳遞 30 cm 後,其聚散度為何?","opts":["-3.33 D","-10.0 D","+1.67 D","+8.33 D"],"ans":1,"formula":"L=n/l；L′=L+F","exp":"先判斷光束發散或會聚，再依光線所在介質選擇折射率與距離正負號。"},{"uid":"111-國考-32","year":111,"examType":"國考","sourceNumber":32,"source":"111 國考第 32 題","chapter":"第2章｜球面折射","q":"已知角膜前表面的曲率半徑為 7.60 mm,後表面曲率半徑為 6.50 mm,則此角膜屈光度約為何?(角膜折 射率 1.376,房水折射率 1.336)","opts":["+44.09 D","+43.32 D","+42.68 D","+42.06 D"],"ans":1,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"111-國考-35","year":111,"examType":"國考","sourceNumber":35,"source":"111 國考第 35 題","chapter":"第2章｜球面折射","q":"以模型眼計算眼角膜屈光力,假設角膜前表面曲率半徑為 7.7 mm,後表面曲率半徑為 6.6 mm,角膜介質 折射率為 1.3376,水與房水介質折射率為 1.336。請問此角膜在水中的屈光力約為多少?","opts":["43 D","-0.034 D","20 D","38 D"],"ans":1,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"111-國考-36","year":111,"examType":"國考","sourceNumber":36,"source":"111 國考第 36 題","chapter":"第2章｜球面折射","q":"有一無水晶體眼,計算後發現正視需要植入+19.50 DS 人工水晶體。欲使用折射率為 1.50 的平凸型人工水 晶體,請問該人工水晶體凸面的曲率半徑應為多少?(空氣和房水的折射率分別為 1.00 和 1.336)","opts":["8.0 mm","8.2 mm","8.4 mm","8.6 mm"],"ans":2,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"112-國考-5","year":112,"examType":"國考","sourceNumber":5,"source":"112 國考第 5 題","chapter":"第2章｜球面折射","q":"瞳孔與角膜的距離 3.6 mm,瞳孔直徑 3 mm,房水折射率 1.333,角膜曲率半徑為 7.8 mm,請問瞳孔看起 來距離角膜多遠?其大小看起來為何?","opts":["瞳孔距離角膜 3.32 mm,大小 3.46 mm","瞳孔距離角膜 3.05 mm,大小 3.39 mm","瞳孔距離角膜 3.85 mm,大小 3.52 mm","瞳孔距離角膜 3.73 mm,大小 3.28 mm"],"ans":1,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"112-國考-6","year":112,"examType":"國考","sourceNumber":6,"source":"112 國考第 6 題","chapter":"第2章｜球面折射","q":"某患者赴眼科診所做視力檢查,當水晶體在放鬆時的前表面曲率半徑為 10 mm,後表面曲率半徑為-6 mm, 水晶體厚度為 3.6 mm,房水及玻璃體折射率為 1.336,水晶體平均折射率為 1.4085,則此時水晶體的屈光 力約為何?","opts":["18.41 D","18.76 D","19.11 D","19.46 D"],"ans":2,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"112-國考-8","year":112,"examType":"國考","sourceNumber":8,"source":"112 國考第 8 題","chapter":"第1章｜基本名詞與概念","q":"光在某材質之行進速度為 2×108 m/s,此材質於水中單一面反射率為下列何者?(光在空氣中的行進速度 為 3×108 m/s)","opts":["3.4%","1.5%","0.35%","0.72%"],"ans":2,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"112-國考-9","year":112,"examType":"國考","sourceNumber":9,"source":"112 國考第 9 題","chapter":"延伸｜反射與臨床成像","q":"檢查隅角時,為有效觀察,會加上隅角鏡檢查,請問使用隅角鏡時加入生理食鹽水主要可降低下列何項光 學特性,使得更容易觀察?","opts":["干涉","繞射","色散","全反射"],"ans":3,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"112-國考-18","year":112,"examType":"國考","sourceNumber":18,"source":"112 國考第 18 題","chapter":"延伸｜反射與臨床成像","q":"有關光經過平面之折射定律及反射定律,下列何者錯誤?","opts":["折射定律之入射光、折射光在法線的兩側","反射定律之入射光、折射光和法線都在入射面上","反射定律也可看成是折射定律的一個特例","反射定律之入射角與折射角不相等"],"ans":3,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"112-國考-19","year":112,"examType":"國考","sourceNumber":19,"source":"112 國考第 19 題","chapter":"延伸｜反射與臨床成像","q":"未鍍膜的樹脂透鏡(n=1.72),約有多少百分比的入射光線,可通過其前表面不被反射?","opts":["91.7%","93.0%","94.9%","96.0%"],"ans":1,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"112-國考-20","year":112,"examType":"國考","sourceNumber":20,"source":"112 國考第 20 題","chapter":"第1章｜基本名詞與概念","q":"承上題,若該未鍍膜的樹脂透鏡(n=1.72),需要鍍抗反射膜,請問該薄膜的折射率約為何?","opts":["1.22","1.26","1.31","1.37"],"ans":2,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"112-國考-23","year":112,"examType":"國考","sourceNumber":23,"source":"112 國考第 23 題","chapter":"第3章｜聚散度關係","q":"關於此透鏡系統的光束聚散度敘述,下列何者錯誤?","opts":["位於無窮遠的點光源經過此透鏡垂直子午面的折射,會形成聚散度+3.00 D","位於無窮遠的點光源經過此透鏡水平子午面的折射,會形成聚散度+5.00 D","位於 1m 遠的點光源經過此透鏡垂直子午面的折射,會形成聚散度+2.00 D","位於 1m 遠的點光源經過此透鏡垂直子午面的折射,會形成聚散度+4.00 D"],"ans":3,"formula":"L=n/l；L′=L+F","exp":"先判斷光束發散或會聚，再依光線所在介質選擇折射率與距離正負號。"},{"uid":"112-國考-26","year":112,"examType":"國考","sourceNumber":26,"source":"112 國考第 26 題","chapter":"第6章｜厚透鏡光學性質","q":"一透鏡前、後表面屈光力分別為+8.00 D、-3.00 D,中心厚度為 5 mm,折射率為 1.6,其後頂點屈光力為多少?","opts":["+4.60 D","+4.80 D","+5.00 D","+5.20 D"],"ans":3,"formula":"Fₑ=F₁+F₂−(t/n)F₁F₂","exp":"先確認厚度以公尺代入，再分辨題目要求等效、前頂點或後頂點屈光力。"},{"uid":"112-國考-34","year":112,"examType":"國考","sourceNumber":34,"source":"112 國考第 34 題","chapter":"延伸｜反射與臨床成像","q":"有關 Purkinje 影像的敘述,下列何者錯誤?","opts":["Purkinje I、II、III 影像為正立虛像,Purkinje IV 影像為倒立實像","當眼球在調節時,水晶體前表面的曲率半徑減小,Purkinje III 影像的尺寸也會縮小","透過觀察 Purkinje II 影像,可以量測斜視角度","角膜地形圖是藉由 Purkinje I 影像來測定角膜的形狀"],"ans":2,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"112-國考-36","year":112,"examType":"國考","sourceNumber":36,"source":"112 國考第 36 題","chapter":"延伸｜反射與臨床成像","q":"某光源位於角膜前表面 50 cm,假設角膜前表面的半徑為 7.80 mm,其 Purkinje I 影像的位置,在角膜後幾 mm?","opts":["3.90 mm","3.87 mm","3.83 mm","3.75 mm"],"ans":1,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"113-國考-2","year":113,"examType":"國考","sourceNumber":2,"source":"113 國考第 2 題","chapter":"第4章｜薄透鏡","q":"一物體置於薄透鏡前 18 cm 處,成像位於透鏡前 6 cm 處,此透鏡的焦距為何?","opts":["-3 cm","-6 cm","-9 cm","-12 cm"],"ans":2,"formula":"F=1/f；L′=L+F；m=L/L′","exp":"以焦距和物距先預測實虛、正倒與大小，再用聚散度或薄透鏡公式核算。"},{"uid":"113-國考-10","year":113,"examType":"國考","sourceNumber":10,"source":"113 國考第 10 題","chapter":"延伸｜反射與臨床成像","q":"下列關於折射的敘述,何者錯誤?","opts":["光線由光密介質進入光疏介質,折射光會偏離法線","不同波長的光在介質中傳播時速度不同","在介質中,波長越短所對應的折射率越小","光線由光密介質進入光疏介質時,在交界面可能產生全反射"],"ans":2,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"113-國考-12","year":113,"examType":"國考","sourceNumber":12,"source":"113 國考第 12 題","chapter":"第2章｜球面折射","q":"空氣中一片薄透鏡,折射率為 1.5,屈光度為+3.00DS。已知前凸表面曲率半徑為 10 公分,則此透鏡側面 形狀和後表面曲率半徑為何?","opts":["新月形,20 公分","雙凸形,20 公分","新月形,25 公分","雙凸形,50 公分"],"ans":2,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"113-國考-13","year":113,"examType":"國考","sourceNumber":13,"source":"113 國考第 13 題","chapter":"第1章｜基本名詞與概念","q":"下列為未鍍膜光學透鏡在空氣中之表面反射率,其光線在那個透鏡的行進速度最快?","opts":["4%","5.3%","6.7%","8.2%"],"ans":0,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"113-國考-14","year":113,"examType":"國考","sourceNumber":14,"source":"113 國考第 14 題","chapter":"第1章｜基本名詞與概念","q":"下列為光在介質中的行進速度,何者之折射率最大?","opts":["150,000 公里/秒","176,470 公里/秒","179,640 公里/秒","187,500 公里/秒"],"ans":0,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"113-國考-15","year":113,"examType":"國考","sourceNumber":15,"source":"113 國考第 15 題","chapter":"第1章｜基本名詞與概念","q":"若一光線從冕牌玻璃(n=1.52)射入空氣中,在空氣中的折射光線與法線的夾角為 30.00°,則入射光與法 線的夾角為何?","opts":["16.14°","39.96°","19.20°","49.46°"],"ans":2,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"113-國考-16","year":113,"examType":"國考","sourceNumber":16,"source":"113 國考第 16 題","chapter":"延伸｜反射與臨床成像","q":"透鏡形狀非常多種類,為了減少會影響視力的像差,大部分的眼鏡鏡片會選擇何種形狀的透鏡?","opts":["雙凸透鏡","雙凹透鏡","平凸透鏡","新月形透鏡"],"ans":3,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"113-國考-20","year":113,"examType":"國考","sourceNumber":20,"source":"113 國考第 20 題","chapter":"第1章｜基本名詞與概念","q":"鏡片在空氣中的前表面屈折力+3.00 D,後表面屈折力-6.00 D,此鏡片的折射率 1.6,水的折射率 1.33,則 鏡片放進水裡的屈折力為何?","opts":["+1.65 D","-1.65 D","+1.35 D","-1.35 D"],"ans":3,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"113-國考-21","year":113,"examType":"國考","sourceNumber":21,"source":"113 國考第 21 題","chapter":"第6章｜厚透鏡光學性質","q":"在空氣中的一個雙凸厚透鏡,其前表面屈光力為+2 D,後表面屈光力為+5D,透鏡折射率為 1.6,等效屈光 力為+6.875 D,則透鏡的厚度為何?","opts":["2 cm","3 cm","4 cm","5 cm"],"ans":0,"formula":"Fₑ=F₁+F₂−(t/n)F₁F₂","exp":"先確認厚度以公尺代入，再分辨題目要求等效、前頂點或後頂點屈光力。"},{"uid":"113-國考-36","year":113,"examType":"國考","sourceNumber":36,"source":"113 國考第 36 題","chapter":"第1章｜基本名詞與概念","q":"下列四種不同折射率物質:水:1.33;角膜:1.37;塑膠:1.49;冕玻璃:1.52,則光在何種介質中速度最慢?","opts":["水","角膜","塑膠","冕玻璃"],"ans":3,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"113-國考-46","year":113,"examType":"國考","sourceNumber":46,"source":"113 國考第 46 題","chapter":"延伸｜反射與臨床成像","q":"當光束通過不均勻物體時,從側面可見到光的現象,此現象稱為:","opts":["干涉","散射","繞射","偏振"],"ans":1,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"113-國考-48","year":113,"examType":"國考","sourceNumber":48,"source":"113 國考第 48 題","chapter":"第1章｜基本名詞與概念","q":"一個需要鍍抗反射膜的 CR-39 塑膠鏡片(n=1.498),下列何者可以做為抗反射膜的厚度?","opts":["1/2 波長","1/3 波長","1/4 波長","1/5 波長"],"ans":2,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"113-國考-49","year":113,"examType":"國考","sourceNumber":49,"source":"113 國考第 49 題","chapter":"第1章｜基本名詞與概念","q":"承上題,該薄膜的折射率為何?","opts":["1.22","1.49","2.1","3.2"],"ans":0,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"114-國考-7","year":114,"examType":"國考","sourceNumber":7,"source":"114 國考第 7 題","chapter":"延伸｜反射與臨床成像","q":"一+5.00 D 透鏡位於-2.00 D 透鏡前 15 公分處,若有一個實物體(real object)位於+5.00 D 透鏡前 40 公分 處,其影像位在第二片透鏡(-2.00 D)後幾公分?","opts":["26.17","40","50","200"],"ans":2,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"114-國考-8","year":114,"examType":"國考","sourceNumber":8,"source":"114 國考第 8 題","chapter":"第1章｜基本名詞與概念","q":"某鏡片材質每 1 mm 透光率為 80%,鏡片總厚度為 3 mm,則此鏡片總透光率為何?","opts":["64%","51.2%","40.2%","30%"],"ans":1,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"114-國考-10","year":114,"examType":"國考","sourceNumber":10,"source":"114 國考第 10 題","chapter":"延伸｜反射與臨床成像","q":"一實物與凹面鏡在空氣中(n=1)中,實物在凹面鏡(曲率半徑 1 公尺)左側 25 公分,則最後成像大小、 性質為何?","opts":["2 倍大、虛像","0.5 倍大、虛像","2 倍大、實像","0.5 倍大、實像"],"ans":0,"formula":"反射定律與鏡面成像","exp":"先辨識鏡面種類，再判斷焦點、實虛像與放大率。"},{"uid":"114-國考-11","year":114,"examType":"國考","sourceNumber":11,"source":"114 國考第 11 題","chapter":"第1章｜基本名詞與概念","q":"光線在某一介質中行進速度為每秒 20 萬公里,試問此介質在真空中折射率為何?","opts":["3","2","1.5","1.2"],"ans":2,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"114-國考-12","year":114,"examType":"國考","sourceNumber":12,"source":"114 國考第 12 題","chapter":"延伸｜反射與臨床成像","q":"當光線進入下列未鍍膜鏡片時,不考慮材質吸收的情況下,何者光線的穿透率最高?","opts":["塑膠鏡片 CR39","冕牌玻璃","聚碳酸酯鏡片","Trivex 鏡片"],"ans":0,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"114-國考-16","year":114,"examType":"國考","sourceNumber":16,"source":"114 國考第 16 題","chapter":"第1章｜基本名詞與概念","q":"光線從空氣中以 60 度角入射玻璃,而在玻璃裡的折射角為 30 度,則此玻璃的折射率為何?","opts":["1.15","1.62","1.73","2.31"],"ans":2,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"114-國考-17","year":114,"examType":"國考","sourceNumber":17,"source":"114 國考第 17 題","chapter":"第1章｜基本名詞與概念","q":"有關常見的鏡片折射率,下列何者錯誤?","opts":["Ophthalmic plastic(CR39)折射率為 1.568","冕牌玻璃(Crown glass)折射率為 1.523","聚碳酸脂(polycarbonate)折射率為 1.586","Trivex 折射率為 1.532"],"ans":0,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"114-國考-25","year":114,"examType":"國考","sourceNumber":25,"source":"114 國考第 25 題","chapter":"第3章｜聚散度關係","q":"下列關於光束的聚散度之敘述,何者錯誤?","opts":["發散光的聚散度為負值","發散光其光線發散量是「與光源點距離的倒數」,而距離的單位是公尺","平行光的聚散度是 0","平行光的聚散度是無窮大"],"ans":3,"formula":"L=n/l；L′=L+F","exp":"先判斷光束發散或會聚，再依光線所在介質選擇折射率與距離正負號。"},{"uid":"115-國考-9","year":115,"examType":"國考","sourceNumber":9,"source":"115 國考第 9 題","chapter":"延伸｜反射與臨床成像","q":"根據司乃耳定律(Snell' s Law),空氣中的光(n = 1.00)以6°的入射角,入射到平坦的水面(n = 1.33),折射角為何?","opts":["4.5°","6°","7.5°","9°"],"ans":0,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"115-國考-10","year":115,"examType":"國考","sourceNumber":10,"source":"115 國考第 10 題","chapter":"第1章｜基本名詞與概念","q":"假設光線從A介質進入B介質時發生全反射,此時下列那一個條件不符合?","opts":["A介質相較於B介質折射率低","光在A介質相較於B介質速度慢","入射角需大於臨界角","此時不發生折射"],"ans":0,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"115-國考-15","year":115,"examType":"國考","sourceNumber":15,"source":"115 國考第 15 題","chapter":"第1章｜基本名詞與概念","q":"關於常見介質的折射率,下列敘述何者正確?","opts":["空氣>水>塑膠鏡片(CR39)","水>塑膠鏡片(CR39)>空氣","塑膠鏡片(CR39)>水>空氣","塑膠鏡片(CR39)>空氣>水"],"ans":2,"formula":"n=c/v；n₁sinθ₁=n₂sinθ₂","exp":"先辨識介質折射率、光速與角度相對法線的關係，再判斷折射或全反射。"},{"uid":"115-國考-17","year":115,"examType":"國考","sourceNumber":17,"source":"115 國考第 17 題","chapter":"延伸｜反射與臨床成像","q":"一束光線經由塑膠鏡片(n = 1.498)射入空氣(n = 1)中,假設入射角為60o,關於折射現象下 列何者正確?","opts":["折射角會小於60o","折射角會等於60o","折射角會平行法線","會產生全內反射現象"],"ans":3,"formula":"先判斷光路，再選擇對應公式","exp":"本題屬基本光學或臨床成像延伸，建議先畫簡圖並確認實像、虛像與方向。"},{"uid":"115-國考-22","year":115,"examType":"國考","sourceNumber":22,"source":"115 國考第 22 題","chapter":"第2章｜球面折射","q":"一新月形凹透鏡的前後表面的曲率半徑分別為20 cm和10 cm,且鏡片的折射率為1.60,則鏡片的屈 光度為何?","opts":["-3.00 D","-4.00 D","-5.00 D","-6.00 D"],"ans":0,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"},{"uid":"115-國考-37","year":115,"examType":"國考","sourceNumber":37,"source":"115 國考第 37 題","chapter":"第2章｜球面折射","q":"以模型眼計算眼角膜屈光力,假設角膜前表面曲率半徑為7.7 mm,後表面的曲率半徑為6.6 mm,空 氣折射率為1.0,角膜介質折射率為1.3376,房水介質折射率為1.336。則角膜的屈光力約為多少?","opts":["45.60 D","43.60 D","41.60 D","38.60 D"],"ans":1,"formula":"F=(n′−n)/r；L′=L+F","exp":"曲率半徑與屈光力成反比；計算前先確認兩側折射率及曲率半徑正負。"}];
+// 逐題完整解析資料。這段會由建置程序內嵌到 index.html，維持單檔離線使用。
+const makeSolution=(formula,steps,answer,visual)=>({formula,steps,answer,visual});
+const flowVisual=(...nodes)=>({kind:'flow',nodes});
+const axisVisual=(items,note='位置關係依題目數值標示；圖中比例為教學示意。')=>({kind:'axis',items,note});
+const refractionVisual=(n1,n2,a1,a2,state='折射')=>({kind:'refraction',n1,n2,a1,a2,state});
+const twoLensVisual=data=>({kind:'two-lens',...data});
+const detailedSolutions={
+  '106-特師-1':makeSolution('L=n/l；L′=L+F；m=L/L′',[
+    '物在鏡前 1 m，入射光為發散光：L=1/(−1)=−1.00 D。',
+    '凹透鏡 F=−3.00 D，所以 L′=−1.00−3.00=−4.00 D，形成鏡前虛像。',
+    '橫向放大率 m=L/L′=(−1)/(−4)=+0.25；像徑=40×0.25=10 cm。'
+  ],'正立、縮小為原來 1/4，答案 B：10 cm。',axisVisual([['物鐘','−100 cm','object'],['−3.00 D','0','lens'],['虛像','−25 cm','virtual']])),
+  '106-國生-3':makeSolution('L=n/l；L′=L+F；m=L/L′',[
+    '物距 40 cm=0.40 m，因此 L=1/(−0.40)=−2.50 D。',
+    'L′=−2.50+6.00=+3.50 D，像距 l′=1/3.50=0.286 m，在鏡片右側形成實像。',
+    'm=L/L′=−2.50/3.50=−0.714；像高=5×(−0.714)=−3.57 cm。負號表示倒立。'
+  ],'倒立、像高約 3.5 cm，答案 C。',axisVisual([['物 5 cm','−40 cm','object'],['+6.00 D','0','lens'],['實像 3.57 cm','+28.6 cm','image-down']])),
+  '106-特師-4':makeSolution('h′/h=−v/u',[
+    '物高 h=200 cm，物距 u=4 m=400 cm；針孔到像面的距離 v=10 cm。',
+    '由相似三角形，|h′|/200=10/400，所以 |h′|=5 cm。',
+    '光線在針孔交叉，像高的符號為負，表示倒立實像；題目只問大小。'
+  ],'成像高度 5 cm，答案 A。',axisVisual([['樹 200 cm','−400 cm','object'],['針孔','0','aperture'],['倒立實像 5 cm','+10 cm','image-down']])),
+  '106-國生-5':makeSolution('平面鏡：像距=物距；m=+1',[
+    '平面鏡反射後的光線反向延長，交於鏡後的虛像位置。',
+    '平面鏡的像與物關於鏡面對稱，因此物在鏡前 50 cm，像就在鏡後 50 cm。',
+    '影像同時是正立、等大、左右反轉的虛像。'
+  ],'影像在鏡後 50 cm，答案 C。',axisVisual([['人','−50 cm','object'],['平面鏡','0','mirror'],['虛像','+50 cm','virtual']])),
+  '106-特師-6':makeSolution('f=R/2；1/f=1/dₒ+1/dᵢ；m=−dᵢ/dₒ',[
+    '凹面鏡曲率半徑 R=50 cm，所以焦距 f=25 cm。',
+    '1/dᵢ=1/25−1/100=3/100，得到 dᵢ=33.3 cm，為鏡前實像。',
+    'm=−33.3/100=−1/3；題目選項列的是放大率大小。'
+  ],'放大率大小為 1/3，答案 B。',axisVisual([['物','−100 cm','object'],['實像','−33.3 cm','image-down'],['F','−25 cm','focus'],['凹面鏡','0','mirror']])),
+  '106-國師-8':makeSolution('1/f=1/dₒ+1/dᵢ',[
+    '設焦距為 f cm。物在第一焦點前 8 cm，所以 dₒ=f+8；像在第二焦點後 50 cm，所以 dᵢ=f+50。',
+    '代入 1/f=1/(f+8)+1/(f+50)，整理得 (f+8)(f+50)=f(2f+58)。',
+    '化簡為 f²=400，取會聚透鏡正焦距 f=20 cm=0.20 m。',
+    '屈光力 F=1/0.20=+5.00 D。'
+  ],'答案 B：+5 D。',flowVisual('dₒ=f+8','薄透鏡公式','dᵢ=f+50','f=20 cm','F=+5 D')),
+  '106-特師-17':makeSolution('F=(n−1)(1/r₁−1/r₂)',[
+    '半徑先換成公尺：r₁=+0.05 m、r₂=+0.125 m；新月形兩曲率中心在同一側。',
+    'F=(1.5−1)[1/0.05−1/0.125]=0.5(20−8)。',
+    '計算得到 F=+6.00 D。'
+  ],'透鏡屈光力為 6 D，答案 A。',flowVisual('r₁=+0.05 m','n=1.5','r₂=+0.125 m','F=+6 D')),
+  '106-特生-23':makeSolution('遠視矯正：在眼前增加正聚散度',[
+    '遠視眼在未調節時，平行光的焦點傾向落在視網膜後方，代表眼的總屈光力相對不足。',
+    '凸透鏡是正透鏡，能預先會聚入眼光線，使焦點向前移到視網膜。',
+    '凹透鏡會發散光線，反而讓焦點更往後。'
+  ],'應配戴凸透鏡，因凸透鏡能會聚光線，答案 D。',flowVisual('遠視：焦點偏後','加入＋透鏡','光線先會聚','焦點前移至視網膜')),
+  '106-特生-24':makeSolution('凹面鏡：物在焦內時 dₒ<f',[
+    '物體位於凹面鏡與焦點之間，反射光仍為發散，不能在鏡前真正相交。',
+    '把反射光反向延長，會在鏡後得到正立虛像。',
+    '此位置的放大率 |m|>1，所以影像放大。'
+  ],'形成放大、正立、虛像，答案 D。',axisVisual([['F','−f','focus'],['物','焦內','object'],['凹面鏡','0','mirror'],['放大虛像','鏡後','virtual']])),
+  '106-特生-25':makeSolution('凸面鏡對實物：dᵢ<0、0<m<1',[
+    '凸面鏡讓反射光發散，實際光線不在鏡前相交。',
+    '反向延長線在鏡後相交，故為虛像；放大率為正，故正立。',
+    '凸面鏡對任何實物的 |m| 都小於 1，因此縮小。'
+  ],'縮小、正立、虛像，答案 C。',axisVisual([['物','鏡前','object'],['凸面鏡','0','mirror'],['縮小虛像','鏡後','virtual']])),
+  '106-特生-26':makeSolution('物在 2F：dₒ=2f ⇒ dᵢ=2f',[
+    '將 dₒ=2f 代入 1/f=1/dₒ+1/dᵢ。',
+    '1/dᵢ=1/f−1/(2f)=1/(2f)，所以 dᵢ=2f。',
+    '此時 m=−1，形成倒立、等大的實像。'
+  ],'成像位於另一側二倍焦距上，答案 C。',axisVisual([['物','−2F','object'],['F','−F','focus'],['凸透鏡','0','lens'],['F′','+F','focus'],['等大實像','+2F','image-down']])),
+  '106-特生-28':makeSolution('凸透鏡成像區間規則',[
+    '要求「實像」，物體必須位於焦點外。',
+    '物在 2F 外時，像縮小；物在 2F 時，像等大。',
+    '物在 F 與 2F 之間時，像落在 2F 外，倒立且放大。'
+  ],'物體應放在焦點與二倍焦距之間，答案 C。',axisVisual([['2F','−2F','focus'],['物','F～2F','object'],['F','−F','focus'],['凸透鏡','0','lens'],['放大實像','>+2F','image-down']])),
+  '106-特生-29':makeSolution('平面鏡：m=+1、dᵢ=−dₒ',[
+    '平面鏡後沒有真實光線會聚，因此影像是虛像。',
+    '放大率 m=+1；正號表示正立，大小與原物相同。',
+    '像與物到鏡面的距離相等。'
+  ],'形成正立虛像，答案 C。',axisVisual([['物','鏡前','object'],['平面鏡','0','mirror'],['等大虛像','鏡後','virtual']])),
+  '106-特生-30':makeSolution('平行光 L=0；L′=L+F',[
+    '平行光的入射聚散度 L=0。',
+    '凹透鏡 F<0，所以 L′=F<0。',
+    '負聚散度代表出射光為發散光，看似由鏡前焦點發出。'
+  ],'平行光束經凹透鏡後成為發散光束，答案 D。',flowVisual('平行光 L=0','凹透鏡 F<0','L′<0','發散光束')),
+  '106-國生-32':makeSolution('Fₑ=F₁+F₂−dF₁F₂（空氣）',[
+    '鏡片間距 d=1 cm=0.01 m。',
+    'Fₑ=5.00+8.00−0.01×5.00×8.00。',
+    'Fₑ=13.00−0.40=+12.60 D。'
+  ],'等效屈光力約 +12.60 D，答案 C。',flowVisual('+5.00 D','間距 0.01 m','+8.00 D','−0.40 D 厚度修正','+12.60 D')),
+  '106-特生-32':makeSolution('1/f=1/dₒ+1/dᵢ',[
+    '凹透鏡焦距 f=−20 cm，實物距 dₒ=+30 cm。',
+    '1/dᵢ=1/(−20)−1/30=−1/12，所以 dᵢ=−12 cm。',
+    '負像距表示影像與物體同側，即鏡前虛像。'
+  ],'影像位於鏡前 12 cm，答案 A。',axisVisual([['物','−30 cm','object'],['虛像','−12 cm','virtual'],['凹透鏡','0','lens']])),
+  '106-特師-36':makeSolution('f=1/F；1/f=1/dₒ+1/dᵢ；m=−dᵢ/dₒ',[
+    'F=+10.00 D，所以 f=0.10 m=10 cm。物距 20 cm=2f。',
+    '物在 2f 時，dᵢ=20 cm，位於透鏡另一側。',
+    'm=−20/20=−1，像高為 −30 cm；負號表示倒立，大小仍為 30 cm。'
+  ],'與物體在鏡片對側，高度 30 cm，答案 D。',axisVisual([['物 30 cm','−20 cm','object'],['+10.00 D','0','lens'],['倒立像 30 cm','+20 cm','image-down']])),
+  '106-特師-38':makeSolution('F=(n鏡片/n介質−1)(1/r₁−1/r₂)；1/f=1/dₒ+1/dᵢ',[
+    '鏡片本身的屈光力取決於相對折射率與兩面曲率；換到水中，相對折射率改變，所以屈光力也改變。',
+    '對固定鏡片，成像位置仍取決於物體位置。',
+    '物距與像距受倒數關係約束，物體移動多少，影像不會普遍等量反向移動。'
+  ],'「物體靠近多少，成像就遠離多少」錯誤，答案 C。',flowVisual('物距改變','1/dₒ 與 1/dᵢ 非線性','像距不等量改變')),
+  '106-特師-44':makeSolution('直接眼底鏡：觀察者看見放大的視網膜虛像',[
+    '正視眼病人的視網膜位於眼的後焦面；由視網膜發出的光離眼後近似平行。',
+    '直接眼底鏡讓檢查者直接觀察此出射光，所見影像不投射到外部屏幕，因此屬虛像。',
+    '直接眼底鏡的典型影像為直立且放大。'
+  ],'直立、放大、虛像，答案 A。',flowVisual('視網膜物點','眼屈光系統','近似平行出射','眼底鏡觀察','直立放大虛像')),
+  '107-特師-3':makeSolution('L=n/l；L′=L+F；l′=n′/L′',[
+    '物在空氣中、折射面前 0.40 m：L=1/(−0.40)=−2.50 D。',
+    '表面屈光力 F=−4.00 D，所以 L′=−2.50−4.00=−6.50 D。',
+    '像方介質是玻璃 n′=1.5：l′=1.5/(−6.50)=−0.231 m。負號表示折射面前方虛像。'
+  ],'像在玻璃折射面前方約 23 cm，答案 A。',axisVisual([['物','−40 cm','object'],['虛像','−23.1 cm','virtual'],['−4.00 D 折射面','0','surface']])),
+  '107-國師-4':makeSolution('逐片使用 L′=L+F；傳遞後重新計算 L',[
+    '第一片為 −6.00 D，物在其前 25 cm：L₁=−1/0.25=−4.00 D，L₁′=−10.00 D；一次像在第一片左方 10 cm。',
+    '第二片在第一片右方 10 cm，因此這個一次像位於第二片左方 20 cm：L₂=−1/0.20=−5.00 D。',
+    '第二片 F₂=+9.00 D：L₂′=−5.00+9.00=+4.00 D，l₂′=1/4=0.25 m。'
+  ],'最終像在 +9.00 D 透鏡右方 25 cm，答案 A。',axisVisual([['物','−25 cm','object'],['一次像','−10 cm','virtual'],['−6.00 D','0','lens'],['+9.00 D','+10 cm','lens'],['最終實像','+35 cm','image-down']],'座標以第一片透鏡為 0；一次像是第一片單獨成像的位置。')),
+  '107-國生-8':makeSolution('相貼薄透鏡 F=F₁+F₂；L′=L+F',[
+    '兩片緊密相貼，總屈光力 F=+2.00+6.00=+8.00 D。',
+    '物距 50 cm：L=−1/0.50=−2.00 D。',
+    'L′=−2.00+8.00=+6.00 D，像距 l′=1/6=0.1667 m=16.7 cm；正值為鏡後實像。'
+  ],'在第二透鏡後側 16.7 cm 形成實像，答案 A。',axisVisual([['物','−50 cm','object'],['+2D 與 +6D','0','lens'],['實像','+16.7 cm','image-down']])),
+  '107-特師-8':makeSolution('1/f=1/dₒ+1/dᵢ',[
+    'F=+30.00 D，所以 f=1/30 m=3.33 cm。',
+    '報紙距離 dₒ=2 cm，小於焦距；1/dᵢ=1/3.33−1/2=0.30−0.50=−0.20 cm⁻¹。',
+    'dᵢ=−5 cm，負號表示影像與報紙在鏡片同側。'
+  ],'影像在報紙同側、距鏡片 5 cm，答案 A。',axisVisual([['放大虛像','−5 cm','virtual'],['報紙','−2 cm','object'],['+30.00 D','0','lens']])),
+  '107-國師-9':makeSolution('Fₑ=F₁+F₂−dF₁F₂（空氣）',[
+    'F₁=+3.00 D、F₂=+10.00 D，間距 d=10 cm=0.10 m。',
+    'Fₑ=3+10−0.10×3×10。',
+    'Fₑ=13−3=+10.00 D。'
+  ],'等效屈光力為 +10.00 D，答案 A。',flowVisual('+3.00 D','間距 0.10 m','+10.00 D','厚度修正 −3.00 D','Fₑ=+10.00 D')),
+  '107-特生-9':makeSolution('凸透鏡要形成放大虛像：0<dₒ<f',[
+    '凸透鏡的實物在焦點外時，出射光可在另一側會聚成實像。',
+    '物在焦點內時，出射光仍發散；反向延長得到與物同側的正立虛像。',
+    '此虛像的放大率大於 1。'
+  ],'物體應放在焦點內，答案 B。',axisVisual([['放大虛像','物側更遠','virtual'],['物','焦點內','object'],['凸透鏡','0','lens']])),
+  '107-國師-10':makeSolution('視深=真實深度×n觀察側/n物側；軸向橫向倍率=1',[
+    '文字在玻璃內、從空氣中垂直觀察：視深=5×1.00/1.50=3.33 cm。',
+    '平板的兩面平行，正上方近軸觀察不改變橫向大小。',
+    '因此只會看起來變淺，不會放大。'
+  ],'看起來深 3.3 cm，大小一樣，答案 B。',axisVisual([['真實文字','−5 cm','object'],['視位置','−3.3 cm','virtual'],['玻璃表面','0','surface']])),
+  '107-特師-10':makeSolution('Fᵥ′=F₂+F₁/(1−tF₁/n)',[
+    '三組薄透鏡相加都約為 −6 D，但厚度修正會隨前表面正屈光力 F₁ 改變。',
+    '在相同 t 與 n 下，F₁ 由 +2、+4 到 +6 D 增加時，F₁/(1−tF₁/n) 的正向修正增加，使負的後頂點屈光力絕對值逐漸減小。',
+    '因此第 1 組的 |Fᵥ′| 大於第 3 組。'
+  ],'絕對值比較為 1>3，答案 C。',flowVisual('組1：+2/−8','|BVP| 最大','組2：+4/−10','組3：+6/−12','|BVP| 最小')),
+  '107-特生-12':makeSolution('L=n/l；L′=L+F；m=L/L′',[
+    '物距 30 cm：L=−1/0.30=−3.333 D。',
+    'L′=−3.333+25.00=+21.667 D。',
+    'm=L/L′=−3.333/21.667=−0.15385；h′=15×(−0.15385)=−2.31 mm。'
+  ],'影像大小（含方向符號）為 −2.31 mm，答案 B。',axisVisual([['物 15 mm','−30 cm','object'],['+25.00 D','0','lens'],['倒立像 2.31 mm','+4.62 cm','image-down']])),
+  '107-國生-13':makeSolution('Fᵥ′=F₂+F₁/(1−dF₁)（空氣中的分離薄透鏡）',[
+    'F₁=+6.00 D、F₂=−4.00 D、間距 d=20 mm=0.020 m。',
+    'Fᵥ′=−4+6/(1−0.020×6)=−4+6/0.88。',
+    'Fᵥ′=−4+6.818=+2.818 D，依選項取約 +2.80 D。'
+  ],'後頂點屈光力約 +2.80 D，答案 C。',flowVisual('+6.00 D','間距 20 mm','−4.00 D','BVP=+2.82 D')),
+  '107-國生-14':makeSolution('1/f=1/dₒ+1/dᵢ',[
+    '物在左側 24 cm，取 dₒ=+24 cm；像也在左側，為虛像，取 dᵢ=−8 cm。',
+    '1/f=1/24+1/(−8)=1/24−3/24=−2/24=−1/12。',
+    '因此 f=−12 cm。'
+  ],'焦距為 −12 cm，答案 B。',axisVisual([['物','−24 cm','object'],['虛像','−8 cm','virtual'],['薄透鏡','0','lens']])),
+  '107-特生-14':makeSolution('f=1/F',[
+    'F=+20 D，所以 f=1/20 m=0.05 m=5 cm。',
+    '正屈光力代表會聚透鏡；左側平行光經鏡片後在右側第二焦點會聚。',
+    '實際光線相交，因此是實像。'
+  ],'成像在鏡片右側 5 cm，為實像，答案 B。',axisVisual([['平行光','−∞','object'],['+20 D','0','lens'],['F′ 實像','+5 cm','image-down']])),
+  '107-國師-15':makeSolution('F=(n′−n)/r；L′=L+F；l′=n′/L′',[
+    '物在空氣中 50 cm：L=−1/0.50=−2.00 D。',
+    'F=(1.50−1.00)/0.05=+10.00 D，所以 L′=−2+10=+8.00 D。',
+    'l′=1.50/8=0.1875 m=18.75 cm，正值在玻璃內、折射面後方。'
+  ],'像在折射面後 18.75 cm，答案 D。',axisVisual([['物 16 cm','−50 cm','object'],['+10 D 球面','0','surface'],['實像','+18.75 cm','image-down']])),
+  '107-國師-16':makeSolution('m=L/L′',[
+    '承上題，物方聚散度 L=−2.00 D，像方聚散度 L′=+8.00 D。',
+    '橫向放大率 m=L/L′=−2/8=−0.25。',
+    '像高 h′=m×16=−4 cm；負號表示倒立，題目問高度大小。'
+  ],'成像高度為 4 cm，答案 A。',axisVisual([['物 16 cm','−50 cm','object'],['球面','0','surface'],['倒立像 4 cm','+18.75 cm','image-down']])),
+  '107-特生-16':makeSolution('f′=n′/F；空氣中 f′=1/F',[
+    '鏡片位於空氣中，F=+25 D。',
+    '第二焦距 f′=1/25 m=0.04 m=4 cm。',
+    '正透鏡接受左側平行光，第二焦點在鏡片右側。'
+  ],'第二焦點在鏡片右側 4 cm，答案 D。',axisVisual([['+25 D','0','lens'],['第二焦點 F′','+4 cm','focus']])),
+  '107-特師-19':makeSolution('L=n/l；L′=L+F；l′=n′/L′',[
+    '物在鏡前 20 cm：L=−1/0.20=−5.00 D。',
+    'L′=−5.00+6.00=+1.00 D。',
+    'l′=1/1=+1.00 m=100 cm，在透鏡右方形成實像。'
+  ],'成像在透鏡右方 100 cm，答案 B。',axisVisual([['物','−20 cm','object'],['+6.00 D','0','lens'],['實像','+100 cm','image-down']])),
+  '107-特生-20':makeSolution('凹透鏡對實物：dᵢ<0、0<m<1',[
+    '凹透鏡對任何有限距離實物都使出射光發散。',
+    '反向延長後在物側得到虛像；m 為正，所以正立。',
+    '其 |m|<1，所以即使物在二倍焦距，仍為縮小像。'
+  ],'縮小、正立、虛像，答案 D。',axisVisual([['物','−2|F|','object'],['縮小虛像','物側近鏡','virtual'],['凹透鏡','0','lens']])),
+  '107-國師-21':makeSolution('F=(n′−n)/r；L′=L+F；l′=n′/L′',[
+    '物在空氣中、折射面左方 0.50 m：L=−1/0.50=−2.00 D。',
+    'F=(1.75−1.00)/0.25=+3.00 D，所以 L′=+1.00 D。',
+    'l′=1.75/1.00=+1.75 m=175 cm。'
+  ],'像在折射面右方 175 cm，答案 A。',axisVisual([['物','−50 cm','object'],['凸折射面','0','surface'],['實像','+175 cm','image-down']])),
+  '107-國生-22':makeSolution('凸透鏡成像區間規則',[
+    '物在 2F 外，入射光相對較接近平行。',
+    '經凸透鏡後在另一側會聚於 F′ 與 2F′ 之間。',
+    '此像為倒立、縮小的實像。'
+  ],'成像在一倍焦距到二倍焦距之間，答案 B。',axisVisual([['物','<−2F','object'],['凸透鏡','0','lens'],['實像','+F～+2F','image-down']])),
+  '107-國師-24':makeSolution('f=1/F；1/f=1/dₒ+1/dᵢ',[
+    'F=+8.00 D，所以 f=12.5 cm；物距 25 cm=2f。',
+    '物在 2f 時，像在另一側 2f，為實像。',
+    'm=−1，因此影像倒立且與物等大；四個選項中只有「倒立」正確。'
+  ],'答案 B：影像相對物體倒立。',axisVisual([['物 4 cm','−25 cm','object'],['+8.00 D','0','lens'],['倒立像 4 cm','+25 cm','image-down']])),
+  '107-特生-27':makeSolution('凹透鏡 F<0；對實物 L<0，因此 L′<0',[
+    '實物產生的入射光為發散光，L<0。',
+    '凹透鏡再加入負屈光力，L′=L+F 必然仍小於 0。',
+    '所以像在物側、為虛像；m=L/L′ 為正且小於 1，故正立縮小。'
+  ],'實物經凹透鏡形成正立虛像，答案 D。',flowVisual('實物 L<0','凹透鏡 F<0','L′<0','正立縮小虛像')),
+  '108-國師-3':makeSolution('f=1/F；物在 2f 時 dᵢ=2f、m=−1',[
+    'F=+20.0 D，所以 f=5 cm。',
+    '物距 10 cm=2f，因此像距也是 10 cm，在透鏡另一側。',
+    'm=−1，像高為 −10 cm：大小 10 cm、方向倒立，且為實像。'
+  ],'倒立實像，高度 10 cm，答案 B。',axisVisual([['物 10 cm','−10 cm','object'],['+20.0 D','0','lens'],['倒立實像 10 cm','+10 cm','image-down']])),
+  '108-特師-3':makeSolution('相貼透鏡 F總=F₁+F₂；F=1/f',[
+    '第一片第二焦距 +40 cm，F₁=1/0.40=+2.50 D。',
+    '複合透鏡焦距 +25 cm，F總=1/0.25=+4.00 D。',
+    'F₂=F總−F₁=4.00−2.50=+1.50 D，因此 f₂=1/1.50=0.6667 m。'
+  ],'第二片的第二焦距為 +66.67 cm，答案 D。',flowVisual('f₁=40 cm → +2.50 D','F總=+4.00 D','F₂=+1.50 D','f₂=66.67 cm')),
+  '108-國師-5':makeSolution('逐片使用 L′=L+F；總放大率 m=m₁m₂',[
+    '第一片：L₁=−1/0.40=−2.50 D；L₁′=−2.50+5.00=+2.50 D，一次像在第一片右方 40 cm。',
+    '第二片在右方 20 cm，因此一次像位於第二片右方 20 cm，是第二片的虛物：L₂=+1/0.20=+5.00 D。',
+    'L₂′=+5.00−15.00=−10.00 D，最終像在第二片左方 10 cm。m₁=−1，m₂=5/(−10)=−0.5，總 m=+0.5。'
+  ],'此系統的放大率為 1/2，答案 C。',axisVisual([['物','−40 cm','object'],['+5.00 D','0','lens'],['最終像','+10 cm','virtual'],['−15.00 D','+20 cm','lens'],['一次像','+40 cm','intermediate image-down']],'座標以第一片為 0；一次像在第二片右側，故對第二片是虛物。')),
+  '108-國師-7':makeSolution('L=n/l；L′=L+F；m=L/L′',[
+    '物距 40 cm：L=−1/0.40=−2.50 D。',
+    'L′=−2.50+10.00=+7.50 D，像距=1/7.50=0.133 m=13.3 cm。',
+    'm=−2.50/7.50=−1/3，像高=10×(−1/3)=−3.3 cm。'
+  ],'鏡後 13.3 cm，像高 3.3 cm（倒立），答案 C。',axisVisual([['物 10 cm','−40 cm','object'],['+10 D','0','lens'],['倒立像 3.3 cm','+13.3 cm','image-down']])),
+  '108-特師-7':makeSolution('f=R/2；1/f=1/dₒ+1/dᵢ',[
+    '凹面鏡 R=40 cm，所以 f=20 cm。',
+    '物距 dₒ=100 cm；1/dᵢ=1/20−1/100=4/100。',
+    'dᵢ=25 cm，正值代表鏡前實像。'
+  ],'物體在鏡前 25 cm 成像，答案 A。',axisVisual([['物','−100 cm','object'],['實像','−25 cm','image-down'],['F','−20 cm','focus'],['凹面鏡','0','mirror']])),
+  '108-特師-9':makeSolution('凸透鏡：f<dₒ<2f ⇒ dᵢ>2f、|m|>1',[
+    '焦距 f=20 cm，二倍焦距 2f=40 cm。',
+    '物距 33 cm 介於 f 與 2f 之間。',
+    '因此影像位於另一側 2f 之外，為倒立、放大的實像。'
+  ],'形成放大實像，答案 D。',axisVisual([['2F','−40 cm','focus'],['物','−33 cm','object'],['F','−20 cm','focus'],['凸透鏡','0','lens'],['放大實像','>+40 cm','image-down']])),
+  '108-特師-10':makeSolution('視深=真實深度×n空氣/n水',[
+    '從空氣看水中的魚，魚的視深比真實深度淺。',
+    '45 cm=真實深度×1/1.33。',
+    '真實深度=45×1.33=59.85 cm，約 60 cm。'
+  ],'魚實際約在水面下 60 cm，答案 C。',axisVisual([['真魚','−60 cm','object'],['看到的魚','−45 cm','virtual'],['水面','0','surface']])),
+  '108-特師-16':makeSolution('Fᵥ′=F₂+F₁/(1−tF₁/n)',[
+    't=3 cm=0.03 m，F₁=+10.00 D、F₂=−3.00 D、n=1.6。',
+    'Fᵥ′=−3+10/[1−(0.03×10/1.6)]。',
+    '分母=0.8125，所以 Fᵥ′=−3+12.3077=+9.31 D。'
+  ],'後頂點屈光力約 +9.31 D，答案 B。',flowVisual('F₁=+10 D','t=0.03 m，n=1.6','F₂=−3 D','BVP=+9.31 D')),
+  '108-國師-23':makeSolution('視深=真實深度×n空氣/n水',[
+    '看到的 25 cm 是視深。',
+    '25=真實深度×1/1.33。',
+    '真實深度=25×1.33=33.25 cm，約 33.3 cm。'
+  ],'魚實際在水面下約 33.3 cm，答案 D。',axisVisual([['真實位置','−33.3 cm','object'],['視位置','−25 cm','virtual'],['水面','0','surface']])),
+
+  '109-國師-9':makeSolution('Snell 定律：n₁sinθ₁=n₂sinθ₂',[
+    '光在不同介質中的速度不同；正入射 θ₁=0° 時，方向不偏折。',
+    '由低折射率進入高折射率介質時，折射角變小，光線靠近法線。',
+    '真空進入較高折射率介質不會偏離法線，因此選項 C 的方向相反。'
+  ],'錯誤敘述是「由真空進入密介質時偏離法線」，答案 C。',flowVisual('低 n／速度快','進入高 n','折射角變小','靠近法線')),
+  '109-國師-10':makeSolution('F=(n′−n)/r；L′=L+F；l′=n′/L′',[
+    '物距 30 cm：L=−1/0.30=−3.33 D。球面 F=(1.5−1)/0.08=+6.25 D。',
+    'L′=−3.33+6.25=+2.917 D；像距 l′=1.5/2.917=0.514 m=51.4 cm。',
+    'm=L/L′=−3.33/2.917≈−1.14，所以是放大倒立實像。',
+    '因此「像在右方 34.2 cm」與計算不符。'
+  ],'錯誤選項為 C；正確像距約為球面右方 51.4 cm。',axisVisual([['物 3 cm','−30 cm','object'],['+6.25 D 球面','0','surface'],['倒立實像','+51.4 cm','image-down']])),
+  '109-國師-12':makeSolution('Fₑ=F₁+F₂−(t/n)F₁F₂',[
+    '此隱形眼鏡是新月形：r₁=+0.0075 m、r₂=+0.0080 m。F₁=(1.5−1)/0.0075=+66.67 D。',
+    'F₂=(1−1.5)/0.0080=−62.50 D；t=0.0004 m。',
+    'Fₑ=66.67−62.50−(0.0004/1.5)(66.67×−62.50)=5.28 D。',
+    '選項以四捨五入列為 +5.25 D；原始題庫的選項文字夾入下一年度標題，這裡已按數值解讀。'
+  ],'最接近 +5.25 D，答案 D。',flowVisual('F₁=+66.67 D','t=0.4 mm','F₂=−62.50 D','Fₑ≈+5.28 D')),
+  '109-國師-13':makeSolution('針孔成像：相似三角形與光線直進',[
+    '物體上下端的光通過針孔後交叉，所以屏上的實像上下顛倒。',
+    '縮小孔徑可阻擋離軸光線、增加景深；但過小會加重繞射。',
+    '因此「直立的實像」不符合針孔成像。'
+  ],'錯誤敘述為「成像為直立實像」，答案 C。',axisVisual([['物','針孔前','object'],['針孔','0','aperture'],['倒立實像','像面','image-down']])),
+  '109-國師-18':makeSolution('F=1/f′（空氣）',[
+    '第二焦點與入射光源在同側，表示第二焦距位於鏡片左側，f′=−40 cm=−0.40 m。',
+    'F=1/(−0.40)=−2.50 D。',
+    '負屈光力代表發散透鏡。'
+  ],'屈光力為 −2.50 D，答案 B。',axisVisual([['第二焦點 F′','−40 cm','focus'],['負透鏡','0','lens']])),
+  '109-國師-26':makeSolution('f=1/F；凸透鏡成像區間規則',[
+    'F=+20.00 D，所以 f=5 cm、2f=10 cm。',
+    'dₒ=3 cm<f：放大正立虛像；dₒ=8 cm 介於 f 與 2f：放大倒立實像。',
+    'dₒ=10 cm=2f：等大倒立實像；dₒ=12 cm>2f：縮小倒立實像。',
+    '所以把 12 cm 的影像說成「放大」是錯的。'
+  ],'錯誤敘述為選項 D。',flowVisual('f=5 cm','3 cm：放大虛像','8 cm：放大實像','10 cm：等大實像','12 cm：縮小實像')),
+  '109-國師-27':makeSolution('n=c/v；Fᵥ=F₁+F₂/(1−tF₂/n)',[
+    'n=30萬/15萬=2.00；t=4 mm=0.004 m。',
+    'Fᵥ=4+[−10]/[1−0.004×(−10)/2]。',
+    '分母=1.02，所以 Fᵥ=4−9.8039=−5.80 D。'
+  ],'前頂點屈光力約 −5.80 D，答案 A。',flowVisual('v=15萬 km/s → n=2','F₁=+4 D','t=4 mm','F₂=−10 D','Fᵥ=−5.80 D')),
+  '109-國師-37':makeSolution('角膜弧度儀換算：F=(n角膜計−1)/r',[
+    'r=7 mm=0.007 m，採角膜計折射率 1.3375。',
+    'F=(1.3375−1)/0.007=0.3375/0.007。',
+    'F=48.21 D，約 48.2 D。'
+  ],'角膜屈光度約 48.2 D，答案 B。',flowVisual('r=7 mm','nₖ=1.3375','F=0.3375/0.007','48.2 D')),
+  '110-國考-2':makeSolution('Fₑ=F₁+F₂−(t/n角膜)F₁F₂',[
+    'F₁=(1.376−1.000)/0.0077=+48.83 D。',
+    'F₂=(1.336−1.376)/0.0068=−5.88 D；t=0.0005 m。',
+    'Fₑ=48.83−5.88−(0.0005/1.376)(48.83×−5.88)=43.05 D。'
+  ],'角膜屈折力約 43.05 D，答案 B。',flowVisual('前表面 +48.83 D','厚度 0.5 mm','後表面 −5.88 D','總力 43.05 D')),
+  '110-國考-3':makeSolution('T總=(T每毫米)ᵈ',[
+    '設每 1 mm 透光率為 T；厚度 2 mm 的總透光率為 T²=0.25。',
+    'T=√0.25=0.50。',
+    '換回百分比為 50%。'
+  ],'每 1 mm 厚度的透光率為 50%，答案 B。',flowVisual('第 1 mm：T','第 2 mm：再乘 T','T²=25%','T=50%')),
+  '110-國考-7':makeSolution('n(λ)=c/v(λ)；正常色散時短波長 n 較大',[
+    '折射率與介質中的傳播速度直接相關：n=c/v。',
+    '一般透明材料在可見光呈正常色散，短波長光的折射率較大。',
+    'n 較大代表速度較慢，所以「短波長傳播較快」錯誤。'
+  ],'錯誤敘述為選項 B。',flowVisual('波長變短','n 增大','v=c/n 減小','色散增強')),
+  '110-國考-8':makeSolution('n=c/v；Snell：n₁sinθ₁=n₂sinθ₂',[
+    '由 n=c/v 可直接判斷：n 越大，光在物質中的速度越慢。',
+    '因此選項 B「n 越大速度越快」與定義相反，是官方答案。',
+    '審核提醒：選項 D「偏折聚焦之距離加長」措辭不精確；若限定同形狀會聚鏡片，n 增大通常使屈光力增大、焦距縮短。原題可能有用詞或轉錄歧義，應以原考卷語境核對。'
+  ],'依官方答案選 B；此題的 D 選項另有措辭歧義。',flowVisual('n=c/v','n↑','v↓','官方錯誤：n↑卻說 v↑')),
+  '110-國考-13':makeSolution('Snell 定律與折射方向',[
+    '玻璃的折射率高於空氣。',
+    '由高 n 進入低 n 時，為滿足 Snell 定律，折射角大於入射角。',
+    '角度均相對法線量，因此折射光遠離法線。'
+  ],'折射光遠離法線，答案 C。',refractionVisual('玻璃 n高','空氣 n低','θ₁','θ₂>θ₁','遠離法線')),
+  '110-國考-14':makeSolution('薄透鏡製造式：F=(n−1)(1/r₁−1/r₂)',[
+    '兩片鏡片厚度與曲率半徑相同，幾何因子相同。',
+    '屈光力只需比較 (n−1)；1.74−1 大於 1.56−1。',
+    '因此折射率 1.74 的雙凸鏡片屈光力較大。'
+  ],'折射率 1.74 的鏡片屈光力較大，答案 C。',flowVisual('相同曲率','n=1.56','比較 n−1','n=1.74','1.74 的 F 較大')),
+  '110-國考-36':makeSolution('Fₑ=F₁+F₂−(t/n角膜)F₁F₂',[
+    'F₁=(1.376−1.000)/0.0078=+48.21 D。',
+    'F₂=(1.336−1.376)/0.0065=−6.15 D。',
+    '加入 t=0.0005 m 的厚度修正：Fₑ=48.21−6.15−(0.0005/1.376)(48.21×−6.15)≈42.17 D。'
+  ],'角膜屈折力約 42.17 D，答案 A。',flowVisual('前表面 +48.21 D','厚度 0.5 mm','後表面 −6.15 D','總力 ≈42.17 D')),
+  '111-國考-5':makeSolution('對稱點位於兩側 2f；f=1/F',[
+    'F=−4.00 D，所以焦距大小 |f|=0.25 m=25 cm。',
+    '物像對稱、等大的共軛位置在 2|f|=50 cm。',
+    '對負透鏡，物體對稱點位於像側（右側）50 cm，影像對稱點位於物側（左側）50 cm。'
+  ],'前者在右側 50 cm，後者在左側 50 cm，答案 D。',axisVisual([['影像對稱點','−50 cm','image-down'],['−4.00 D','0','lens'],['物體對稱點','+50 cm','object']])),
+  '111-國考-7':makeSolution('1/f=1/dₒ+1/dᵢ；m=−dᵢ/dₒ',[
+    '第一焦距在鏡前 20 cm，正透鏡焦距 f=+20 cm。',
+    '正立放大 4 倍：m=+4=−dᵢ/dₒ，所以 dᵢ=−4dₒ。',
+    '代入 1/20=1/dₒ−1/(4dₒ)=3/(4dₒ)，得到 dₒ=15 cm。'
+  ],'物體在透鏡前 15 cm，答案 C。',axisVisual([['放大虛像','−60 cm','virtual'],['物','−15 cm','object'],['正透鏡','0','lens']])),
+  '111-國考-8':makeSolution('R=[(n−1)/(n+1)]²',[
+    '單一表面反射率 R=0.05，令 x=√R=0.2236。',
+    '(n−1)/(n+1)=x，整理得 n=(1+x)/(1−x)。',
+    'n=1.2236/0.7764=1.576，最接近 1.57。'
+  ],'折射率約 1.57，答案 B。',flowVisual('R=5%','√R=0.2236','n=(1+√R)/(1−√R)','n≈1.576')),
+  '111-國考-10':makeSolution('F=(n−1)(1/r₁−1/r₂)',[
+    '雙凹透鏡：r₁=−0.10 m、r₂=+0.10 m。',
+    'F=(1.6−1)[1/(−0.10)−1/(+0.10)]。',
+    'F=0.6(−10−10)=−12 D。'
+  ],'薄透鏡屈光度為 −12 D，答案 C。',flowVisual('r₁=−0.10 m','n−1=0.6','r₂=+0.10 m','F=−12 D')),
+  '111-國考-11':makeSolution('v=c/n；折射率越大速度越慢',[
+    '常見近似折射率：CR39 約 1.498、冕牌玻璃約 1.523、Trivex 約 1.532、聚碳酸酯約 1.586。',
+    '聚碳酸酯的 n 最大。',
+    '由 v=c/n，可知它的光速最慢。'
+  ],'光在聚碳酸酯鏡片中最慢，答案 C。',flowVisual('CR39 1.498','冕玻璃 1.523','Trivex 1.532','聚碳酸酯 1.586 → 最慢')),
+  '111-國考-15':makeSolution('1/f=1/dₒ+1/dᵢ；m=−dᵢ/dₒ',[
+    '第一焦點在鏡前 10 cm，為正透鏡 f=10 cm；物距 dₒ=5 cm<f。',
+    '1/dᵢ=1/10−1/5=−1/10，所以 dᵢ=−10 cm，與物同側、為虛像。',
+    'm=−(−10)/5=+2，影像正立、放大。',
+    '因此「相對物體倒立」錯誤。'
+  ],'錯誤敘述為選項 B。',axisVisual([['放大虛像','−10 cm','virtual'],['物','−5 cm','object'],['正透鏡','0','lens']])),
+  '111-國考-17':makeSolution('n=c/v；Fᵥ=F₁+F₂/(1−tF₂/n)',[
+    'n=30萬/15萬=2.00；t=5 mm=0.005 m。',
+    'Fᵥ=4+[−9]/[1−0.005×(−9)/2]=4−9/1.0225。',
+    'Fᵥ=4−8.802=−4.80 D。'
+  ],'前頂點屈光力約 −4.80 DS，答案 A。',flowVisual('n=2.00','F₁=+4 DS','t=5 mm','F₂=−9 DS','Fᵥ=−4.80 DS')),
+  '111-國考-19':makeSolution('傳遞聚散度：先找會聚點，再由新距離求 L=n/l',[
+    'A 點 L=+5.00 D，表示光將在前方 l=1/5=0.20 m=20 cm 會聚。',
+    '光再前進 30 cm，已越過焦點 10 cm，成為由後方焦點發出的發散光。',
+    '新的 l=−0.10 m，所以 L=1/(−0.10)=−10.0 D。'
+  ],'傳遞 30 cm 後聚散度為 −10.0 D，答案 B。',axisVisual([['A 點 L=+5D','0','surface'],['會聚點','+20 cm','focus'],['觀察點','+30 cm','surface']],'光越過 +20 cm 的會聚點後，在 +30 cm 處已成為發散光。')),
+  '111-國考-32':makeSolution('角膜薄面近似：F=F₁+F₂',[
+    'F₁=(1.376−1.000)/0.00760=+49.47 D。',
+    'F₂=(1.336−1.376)/0.00650=−6.15 D。',
+    'F≈49.47−6.15=+43.32 D。'
+  ],'角膜屈光度約 +43.32 D，答案 B。',flowVisual('前表面 +49.47 D','後表面 −6.15 D','相加','+43.32 D')),
+  '111-國考-35':makeSolution('水中角膜薄面近似：F=F₁+F₂',[
+    '角膜前後的水與房水折射率都約 1.336，角膜 n=1.3376，折射率差極小。',
+    'F₁=(1.3376−1.336)/0.0077=+0.208 D。',
+    'F₂=(1.336−1.3376)/0.0066=−0.242 D；相加約 −0.034 D。'
+  ],'角膜在水中的屈光力約 −0.034 D，答案 B。',flowVisual('水 1.336','角膜 1.3376','房水 1.336','兩面幾乎抵消','−0.034 D')),
+  '111-國考-36':makeSolution('平凸薄透鏡於房水：F=(n鏡片−n房水)/r',[
+    '平面 r=∞，只剩凸面提供屈光力。折射率差=1.50−1.336=0.164。',
+    '19.50=0.164/r。',
+    'r=0.164/19.50=0.00841 m=8.41 mm。'
+  ],'凸面曲率半徑約 8.4 mm，答案 C。',flowVisual('nIOL−n房水=0.164','F=19.50 D','r=0.164/19.50','8.4 mm')),
+  '112-國考-5':makeSolution('L=n/l；L′=L+F；m=L/L′',[
+    '由眼內往空氣看，瞳孔物方聚散度 L=1.333/(−0.0036)=−370.3 D。',
+    '角膜面反向傳播的屈光力約 +42.7 D，所以 L′≈−327.6 D；視位置 l′=1/L′≈−0.00305 m，即距角膜 3.05 mm。',
+    'm=L/L′≈1.13；視直徑=3.00×1.13≈3.39 mm。'
+  ],'看起來距角膜 3.05 mm、大小 3.39 mm，答案 B。',axisVisual([['真實瞳孔','−3.60 mm','object'],['瞳孔視位置','−3.05 mm','virtual'],['角膜','0','surface']])),
+  '112-國考-6':makeSolution('Fₑ=F₁+F₂−(t/n水晶體)F₁F₂',[
+    'F₁=(1.4085−1.336)/0.010=+7.25 D。',
+    'F₂=(1.336−1.4085)/(−0.006)=+12.08 D。',
+    'Fₑ=7.25+12.08−(0.0036/1.4085)(7.25×12.08)=19.11 D。'
+  ],'水晶體屈光力約 19.11 D，答案 C。',flowVisual('前表面 +7.25 D','厚度 3.6 mm','後表面 +12.08 D','總力 19.11 D')),
+  '112-國考-8':makeSolution('n=c/v；R=[(n₂−n₁)/(n₂+n₁)]²',[
+    '材料折射率 n₂=3×10⁸/(2×10⁸)=1.50；水的 n₁ 約 1.33。',
+    'R=[(1.50−1.33)/(1.50+1.33)]²=(0.17/2.83)²。',
+    'R≈0.00361=0.361%，最接近 0.35%。'
+  ],'水中單一面反射率約 0.35%，答案 C。',flowVisual('v=2×10⁸ → n=1.50','水 n=1.33','Fresnel 反射','R≈0.36%')),
+  '112-國考-9':makeSolution('全反射需高 n→低 n 且 θᵢ>θc',[
+    '角膜／淚液與空氣的折射率差大，前房角的光容易在介面發生全反射，直接觀察受阻。',
+    '隅角鏡搭配生理食鹽水形成光學接觸，減少介面折射率突變。',
+    '臨界角條件因此改變，原本被全反射困住的光可進入隅角鏡。'
+  ],'生理食鹽水主要降低全反射影響，答案 D。',flowVisual('角膜／空氣界面','全反射','加入生理食鹽水','折射率匹配','光可出射')),
+  '112-國考-18':makeSolution('反射定律：θᵢ=θᵣ；Snell：n₁sinθ₁=n₂sinθ₂',[
+    '反射光、入射光與法線都在同一入射面，且分居法線兩側。',
+    '反射定律的核心是入射角等於反射角。',
+    '所以選項 D 說兩角不相等是錯誤；原題選項把「反射光」誤寫成「折射光」，解析依反射定律原意。'
+  ],'錯誤敘述為選項 D。',refractionVisual('入射側','反射側','θᵢ','θᵣ=θᵢ','反射')),
+  '112-國考-19':makeSolution('R=[(n−1)/(n+1)]²；T=1−R',[
+    '空氣到樹脂 n=1.72：R=[(1.72−1)/(1.72+1)]²=(0.72/2.72)²。',
+    'R≈0.0701=7.01%。',
+    '忽略吸收時，前表面未反射的比例 T≈100%−7.01%=92.99%。'
+  ],'約 93.0% 可通過前表面，答案 B。',flowVisual('入射 100%','反射 7.0%','通過 93.0%')),
+  '112-國考-20':makeSolution('單層抗反射膜最佳折射率：n膜≈√(n空氣n鏡片)',[
+    '空氣 n₀≈1.00，樹脂鏡片 nₛ=1.72。',
+    'n膜≈√(1.00×1.72)=√1.72。',
+    'n膜≈1.311。'
+  ],'薄膜折射率約 1.31，答案 C。',flowVisual('空氣 1.00','抗反射膜 1.31','樹脂 1.72','兩界面反射相消')),
+  '112-國考-23':makeSolution('L′=L+F（各主子午線分開計算）',[
+    '由選項可還原垂直子午線屈光力為 +3.00 D、水平子午線為 +5.00 D；無限遠物 L=0，故輸出分別為 +3 D 與 +5 D。',
+    '1 m 實物的入射聚散度 L=−1.00 D。垂直子午線 L′=−1+3=+2.00 D。',
+    '所以把垂直子午線結果寫成 +4.00 D 是錯的。',
+    '審核提醒：目前來源題幹缺少「此透鏡系統」的前置處方資料；上述 +3/+5 D 是由選項與官方答案還原，建議補回原題圖或前文。'
+  ],'錯誤敘述為選項 D；本題題幹來源不完整。',flowVisual('垂直 F=+3 D','1 m 實物 L=−1 D','L′=+2 D','不是 +4 D')),
+  '112-國考-26':makeSolution('Fᵥ′=F₂+F₁/(1−tF₁/n)',[
+    'F₁=+8.00 D、F₂=−3.00 D、t=5 mm=0.005 m、n=1.6。',
+    'Fᵥ′=−3+8/[1−(0.005×8/1.6)]=−3+8/0.975。',
+    'Fᵥ′=−3+8.205=+5.205 D。'
+  ],'後頂點屈光力約 +5.20 D，答案 D。',flowVisual('F₁=+8 D','t=5 mm，n=1.6','F₂=−3 D','BVP=+5.20 D')),
+  '112-國考-34':makeSolution('Purkinje 影像來源：角膜前後面與水晶體前後面反射',[
+    'Purkinje I、II、III 為正立虛像；Purkinje IV 因水晶體後面反射而為倒立實像。',
+    '調節時水晶體前表面變陡，Purkinje III 影像會改變；角膜地形圖可利用角膜前表面的 Purkinje I。',
+    '斜視角的臨床反光定位主要觀察角膜前表面反光（Purkinje I／Hirschberg），不是 Purkinje II。'
+  ],'錯誤敘述為選項 C。',flowVisual('I：角膜前面','II：角膜後面','III：水晶體前面','IV：水晶體後面')),
+  '112-國考-36':makeSolution('球面鏡近軸：f=R/2；1/f=1/dₒ+1/dᵢ',[
+    'Purkinje I 是角膜前表面形成的凸面鏡虛像；R=7.80 mm，f=−R/2=−3.90 mm。',
+    '物距 dₒ=500 mm：1/dᵢ=1/(−3.90)−1/500。',
+    'dᵢ≈−3.87 mm；負號表示在角膜後方的虛像。'
+  ],'Purkinje I 位於角膜後約 3.87 mm，答案 B。',axisVisual([['光源','−500 mm','object'],['角膜前表面','0','mirror'],['Purkinje I','+3.87 mm','virtual']])),
+
+  '113-國考-2':makeSolution('1/f=1/dₒ+1/dᵢ',[
+    '物在透鏡前 18 cm，dₒ=+18 cm；像也在透鏡前 6 cm，為虛像，dᵢ=−6 cm。',
+    '1/f=1/18+1/(−6)=1/18−3/18=−2/18=−1/9。',
+    '因此 f=−9 cm，表示負透鏡。'
+  ],'焦距為 −9 cm，答案 C。',axisVisual([['物','−18 cm','object'],['虛像','−6 cm','virtual'],['薄透鏡','0','lens']])),
+  '113-國考-10':makeSolution('正常色散：短波長通常有較大的 n、較慢的 v',[
+    '高 n 介質到低 n 介質時，折射光遠離法線，且入射角夠大時可全反射。',
+    '材料的 n 隨波長而變，因此不同波長在介質中的速度不同。',
+    '正常色散下波長越短，折射率通常越大，不是越小。'
+  ],'錯誤敘述為選項 C。',flowVisual('波長變短','折射率增大','速度降低','色散更明顯')),
+  '113-國考-12':makeSolution('F=(n−1)(1/r₁−1/r₂)',[
+    'n=1.5、F=+3.00 D、前表面 r₁=+0.10 m。',
+    '3=0.5[10−1/r₂]，所以 6=10−1/r₂，得到 1/r₂=4。',
+    'r₂=+0.25 m=25 cm；前後曲率中心同側，為新月形。'
+  ],'新月形、後表面曲率半徑 25 cm，答案 C。',flowVisual('r₁=+10 cm','前表面 +5 D','總力 +3 D','後表面 −2 D','r₂=+25 cm')),
+  '113-國考-13':makeSolution('R=[(n−1)/(n+1)]²；v=c/n',[
+    '未鍍膜表面反射率 R 隨折射率差增大而增加。',
+    '四個選項中 4% 反射率最小，代表折射率最低。',
+    '由 v=c/n，n 最低者光速最快。'
+  ],'表面反射率 4% 的透鏡中光速最快，答案 A。',flowVisual('R 最小 4%','n 最小','v=c/n 最大','光速最快')),
+  '113-國考-14':makeSolution('n=c/v',[
+    '同樣以真空光速 c 為分子，介質速度 v 越小，折射率 n 越大。',
+    '四個速度中 150,000 km/s 最小。',
+    '其折射率約 300,000/150,000=2.00，也是最大。'
+  ],'150,000 公里/秒所對應的折射率最大，答案 A。',flowVisual('v=150,000 km/s','n=300,000/150,000','n=2.00','最大')),
+  '113-國考-15':makeSolution('n₁sinθ₁=n₂sinθ₂',[
+    '玻璃側 n₁=1.52，空氣側 n₂=1.00，折射角 θ₂=30°。',
+    'sinθ₁=(1.00/1.52)sin30°=0.5/1.52=0.32895。',
+    'θ₁=sin⁻¹(0.32895)=19.20°。'
+  ],'入射角約 19.20°，答案 C。',refractionVisual('玻璃 1.52','空氣 1.00','19.20°','30.00°','遠離法線')),
+  '113-國考-16':makeSolution('眼鏡鏡片形狀設計：彎月形可降低斜向像差',[
+    '眼鏡使用時，視線會穿過離軸區域，若形狀選擇不當會增加斜向像散等像差。',
+    '新月形（meniscus）前後面向同一方向彎曲，可在指定基彎下改善周邊成像。',
+    '因此大多數眼鏡鏡片採新月形，而非單純雙凸或雙凹。'
+  ],'答案 D：新月形透鏡。',flowVisual('視線離軸','周邊像差','選擇合適基彎','新月形鏡片')),
+  '113-國考-20':makeSolution('介質改變時，表面屈光力按折射率差縮放',[
+    '鏡片 n=1.60。在空氣中兩面總力為 +3−6=−3.00 D。',
+    '放入水中，折射率差由 1.60−1.00=0.60 變為 1.60−1.33=0.27。',
+    '形狀不變，F水=F空氣×0.27/0.60=−3.00×0.45=−1.35 D。'
+  ],'鏡片在水中的屈折力為 −1.35 D，答案 D。',flowVisual('空氣中 −3.00 D','折射率差 0.60→0.27','乘 0.45','水中 −1.35 D')),
+  '113-國考-21':makeSolution('Fₑ=F₁+F₂−(t/n)F₁F₂',[
+    '已知 6.875=2+5−(t/1.6)(2×5)。',
+    '7−6.875=0.125=(10/1.6)t=6.25t。',
+    't=0.125/6.25=0.020 m=2 cm。'
+  ],'透鏡厚度為 2 cm，答案 A。',flowVisual('F₁+F₂=7 D','實際 Fₑ=6.875 D','厚度修正 0.125 D','t=0.020 m')),
+  '113-國考-36':makeSolution('v=c/n',[
+    '折射率越大，光在介質中的速度越慢。',
+    '題列 n：水 1.33、角膜 1.37、塑膠 1.49、冕玻璃 1.52。',
+    '冕玻璃的 n 最大，因此光速最慢。'
+  ],'光在冕玻璃中速度最慢，答案 D。',flowVisual('水 1.33','角膜 1.37','塑膠 1.49','冕玻璃 1.52 → 最慢')),
+  '113-國考-46':makeSolution('散射：介質不均勻使光向多方向重新分布',[
+    '若介質完全均勻，主要光束沿原方向前進，側面通常看不見光路。',
+    '不均勻顆粒或折射率起伏把部分光偏轉到側方，觀察者因此看見光束。',
+    '這是散射；干涉、繞射與偏振的定義不同。'
+  ],'此現象稱為散射，答案 B。',flowVisual('入射光束','不均勻物體','多方向偏轉','側面可見＝散射')),
+  '113-國考-48':makeSolution('單層抗反射膜：光學厚度 n膜t=λ₀/4',[
+    '兩個界面的反射光要相差半個週期，才能產生破壞性干涉。',
+    '往返膜層的光學路程為 2n膜t；令其等於 λ₀/2，得到 n膜t=λ₀/4。',
+    '因此常稱為四分之一波長膜；若題目說實體厚度，應寫 t=λ₀/(4n膜)。'
+  ],'答案 C：1/4 波長（四分之一波光學厚度）。',flowVisual('界面反射 1','膜內往返','相差半波','破壞性干涉','1/4 波光學厚度')),
+  '113-國考-49':makeSolution('n膜≈√(n空氣n鏡片)',[
+    '空氣 n₀≈1.00，CR-39 nₛ=1.498。',
+    'n膜≈√(1.00×1.498)=1.224。',
+    '最接近選項 1.22。'
+  ],'薄膜折射率約 1.22，答案 A。',flowVisual('空氣 1.00','薄膜 √1.498','CR-39 1.498','n膜≈1.22')),
+  '114-國考-7':makeSolution('逐片使用 L′=L+F；前一片的一次像成為下一片的物',[
+    '第一片 +5.00 D：物距 40 cm，L₁=−1/0.40=−2.50 D；L₁′=−2.50+5.00=+2.50 D，所以一次像在第一片右方 40 cm。',
+    '第二片位於第一片右方 15 cm，在光到達一次像之前先攔截光線。一次像在第二片右方 25 cm，故對第二片是虛物：L₂=+1/0.25=+4.00 D。',
+    '第二片 F₂=−2.00 D：L₂′=+4.00−2.00=+2.00 D。',
+    'l₂′=1/L₂′=0.50 m=50 cm，正值表示在第二片右方形成最終實像。'
+  ],'影像在第二片透鏡後 50 cm，答案 C。',twoLensVisual({objectX:-40,lens1X:0,lens2X:15,intermediateX:40,finalX:65,lens1:'+5.00 D',lens2:'−2.00 D',note:'一次像是第一片單獨存在時的會聚位置；第二片在光會聚前先截取光束，因此一次像對第二片是右側 25 cm 的虛物。最終像座標 +65 cm，等於第二片 +15 cm 再加像距 50 cm。'})),
+  '114-國考-8':makeSolution('T總=(T每毫米)ᵈ',[
+    '每 1 mm 保留 80%=0.80 的光。',
+    '3 mm 需連乘三次：T總=0.80³。',
+    '0.80³=0.512=51.2%。'
+  ],'總透光率為 51.2%，答案 B。',flowVisual('100%','×0.80 → 80%','×0.80 → 64%','×0.80 → 51.2%')),
+  '114-國考-10':makeSolution('凹面鏡：f=R/2；1/f=1/dₒ+1/dᵢ；m=−dᵢ/dₒ',[
+    'R=1 m，所以焦距 f=0.50 m=50 cm。物距 dₒ=25 cm，小於焦距。',
+    '1/dᵢ=1/50−1/25=−1/50，所以 dᵢ=−50 cm，為鏡後虛像。',
+    'm=−(−50)/25=+2；正號表示正立，大小為 2 倍。'
+  ],'形成 2 倍大、正立虛像，答案 A。',axisVisual([['F','−50 cm','focus'],['物','−25 cm','object'],['凹面鏡','0','mirror'],['2倍虛像','+50 cm','virtual']])),
+  '114-國考-11':makeSolution('n=c/v',[
+    '真空光速約 300,000 km/s，介質中速度為 200,000 km/s。',
+    'n=300,000/200,000=1.5。',
+    '折射率沒有單位。'
+  ],'介質折射率為 1.5，答案 C。',flowVisual('c=300,000 km/s','v=200,000 km/s','n=c/v','n=1.5')),
+  '114-國考-12':makeSolution('未鍍膜表面 R=[(n−1)/(n+1)]²；n 越低，穿透率越高',[
+    '忽略吸收時，材料差異主要來自兩表面反射。',
+    '常見 n：約 CR39 1.498、冕玻璃 1.523、Trivex 1.532、聚碳酸酯 1.586。',
+    'CR39 的 n 最低、與空氣差最小，表面反射最少，因此穿透率最高。'
+  ],'塑膠鏡片 CR39 的穿透率最高，答案 A。',flowVisual('CR39 n最低','表面反射最少','未吸收光最多','穿透率最高')),
+  '114-國考-16':makeSolution('n₁sinθ₁=n₂sinθ₂',[
+    '空氣 n₁≈1.00，θ₁=60°；玻璃 θ₂=30°。',
+    'n₂=sin60°/sin30°=0.8660/0.5。',
+    'n₂=1.732，約 1.73。'
+  ],'玻璃折射率約 1.73，答案 C。',refractionVisual('空氣 1.00','玻璃 1.73','60°','30°','靠近法線')),
+  '114-國考-17':makeSolution('常見鏡片折射率記憶',[
+    'Ophthalmic plastic／CR-39 的折射率約 1.498，不是 1.568。',
+    '冕牌玻璃約 1.523、聚碳酸酯約 1.586、Trivex 約 1.532。',
+    '因此只有選項 A 的數值不正確。'
+  ],'錯誤敘述為選項 A。',flowVisual('CR39 1.498','冕玻璃 1.523','Trivex 1.532','PC 1.586')),
+  '114-國考-25':makeSolution('L=n/l；平行光的會聚點在無限遠',[
+    '發散光的 l<0，所以 L<0；會聚光的 l>0，所以 L>0。',
+    '平行光可視為會聚／發散點在無限遠。',
+    'L=n/∞=0，不是無窮大。'
+  ],'錯誤敘述為「平行光的聚散度是無窮大」，答案 D。',flowVisual('l→∞','L=n/l','L→0','平行光')),
+  '115-國考-9':makeSolution('n₁sinθ₁=n₂sinθ₂',[
+    'n₁=1.00、θ₁=6°、n₂=1.33。',
+    'sinθ₂=(1.00/1.33)sin6°≈0.0786。',
+    'θ₂=sin⁻¹(0.0786)≈4.51°。'
+  ],'折射角約 4.5°，答案 A。',refractionVisual('空氣 1.00','水 1.33','6°','4.5°','靠近法線')),
+  '115-國考-10':makeSolution('全反射條件：nA>nB 且 θᵢ>θc',[
+    '全反射只可能由高折射率介質 A 射向低折射率介質 B。',
+    '因 v=c/n，A 中 n 較高也代表光速較慢。',
+    '入射角大於臨界角時沒有折射光，只剩反射光。',
+    '所以「A 的折射率較低」不符合條件。'
+  ],'不符合的是選項 A。',flowVisual('nA>nB','vA<vB','θᵢ>θc','無折射光／全反射')),
+  '115-國考-15':makeSolution('常見折射率：空氣≈1.00、水≈1.33、CR39≈1.498',[
+    '比較數值即可：1.498>1.33>1.00。',
+    '折射率越大，介質中的光速越慢。',
+    '因此正確排序為 CR39>水>空氣。'
+  ],'答案 C：塑膠鏡片（CR39）>水>空氣。',flowVisual('空氣 1.00','水 1.33','CR39 1.498','由小到大')),
+  '115-國考-17':makeSolution('sinθc=n₂/n₁（n₁>n₂）',[
+    '光由塑膠 n₁=1.498 進入空氣 n₂=1.00，符合高 n 到低 n。',
+    'θc=sin⁻¹(1/1.498)≈41.8°。',
+    '入射角 60°>41.8°，超過臨界角，因此沒有折射光進入空氣。'
+  ],'會產生全內反射，答案 D。',refractionVisual('塑膠 1.498','空氣 1.00','60°','θc≈41.8°','全反射')),
+  '115-國考-22':makeSolution('F=(n−1)(1/r₁−1/r₂)',[
+    '新月形凹透鏡兩曲率中心同側，取 r₁=+0.20 m、r₂=+0.10 m。',
+    'F=(1.60−1)[1/0.20−1/0.10]。',
+    'F=0.60(5−10)=−3.00 D。'
+  ],'透鏡屈光度為 −3.00 D，答案 A。',flowVisual('r₁=+0.20 m','n−1=0.60','r₂=+0.10 m','F=−3.00 D')),
+  '115-國考-37':makeSolution('角膜薄面近似：F=F₁+F₂',[
+    '前表面 F₁=(1.3376−1.000)/0.0077=+43.844 D。',
+    '後表面 F₂=(1.336−1.3376)/0.0066=−0.242 D。',
+    '總屈光力≈43.844−0.242=43.602 D。'
+  ],'角膜屈光力約 43.60 D，答案 B。',flowVisual('前表面 +43.844 D','後表面 −0.242 D','相加','43.60 D'))
+};
+
+const missingDetailedSolutions=questions.filter(q=>!detailedSolutions[q.uid]).map(q=>q.uid);
+if(missingDetailedSolutions.length)console.warn('缺少逐題解析：',missingDetailedSolutions);
+
+let quizList=[...questions],qIndex=0,answeredSession={},activeMode='all';
+const rawState=JSON.parse(localStorage.getItem('opticsQuizState')||'{}');
+const state={version:2,total:+rawState.total||0,correct:+rawState.correct||0,wrongIds:Array.isArray(rawState.wrongIds)?rawState.wrongIds.filter(x=>typeof x==='string'):[],chapters:rawState.chapters||{},days:rawState.days||{}};
+function saveState(){localStorage.setItem('opticsQuizState',JSON.stringify(state));updateDashboard()}
+function dateKey(){const d=new Date(),p=n=>String(n).padStart(2,'0');return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`}
+function record(q,ok){if(answeredSession[q.uid])return;answeredSession[q.uid]=true;state.total++;if(ok)state.correct++;else if(!state.wrongIds.includes(q.uid))state.wrongIds.push(q.uid);if(ok&&state.wrongIds.includes(q.uid))state.wrongIds=state.wrongIds.filter(x=>x!==q.uid);state.chapters[q.chapter]??={total:0,correct:0};state.chapters[q.chapter].total++;if(ok)state.chapters[q.chapter].correct++;state.days[dateKey()]=(state.days[dateKey()]||0)+1;saveState();renderChapterBars()}
+function escapeSolutionText(value){return String(value??'').replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]))}
+function axisSolutionVisual(v){const items=v.items.map(([label,pos,kind])=>`<div class="axis-item ${escapeSolutionText(kind)}"><div class="axis-label"><b>${escapeSolutionText(label)}</b><span>${escapeSolutionText(pos)}</span></div><div class="axis-symbol" aria-hidden="true"></div></div>`).join('');return `<div class="solution-visual"><div class="visual-caption"><b>位置圖</b><span>光由左往右（鏡面題依標示判讀）</span></div><div class="axis-scroll"><div class="position-axis" style="--axis-count:${v.items.length}">${items}</div></div><p class="visual-note">${escapeSolutionText(v.note)}</p></div>`}
+function flowSolutionVisual(v){return `<div class="solution-visual"><div class="visual-caption"><b>解題關係圖</b><span>依本題資料整理</span></div><div class="solution-flow">${v.nodes.map((node,i)=>`${i?'<span class="flow-arrow">→</span>':''}<span class="flow-node">${escapeSolutionText(node)}</span>`).join('')}</div></div>`}
+function refractionSolutionVisual(v){return `<div class="solution-visual"><div class="visual-caption"><b>${escapeSolutionText(v.state)}圖</b><span>角度皆由法線量起</span></div><svg class="refraction-diagram" viewBox="0 0 760 260" role="img" aria-label="${escapeSolutionText(v.n1)} 到 ${escapeSolutionText(v.n2)} 的${escapeSolutionText(v.state)}示意圖"><rect width="760" height="130" fill="#f9fcff"/><rect y="130" width="760" height="130" fill="#eaf5fb"/><line x1="40" y1="130" x2="720" y2="130" stroke="#73879b" stroke-width="3"/><line x1="380" y1="18" x2="380" y2="242" stroke="#8ba0b3" stroke-width="2" stroke-dasharray="7 6"/><path d="M190 28 L380 130" fill="none" stroke="#d97706" stroke-width="5" stroke-linecap="round"/><path d="M380 130 L${v.state.includes('反射')?'560 28':'500 232'}" fill="none" stroke="#2563a1" stroke-width="5" stroke-linecap="round"/><circle cx="380" cy="130" r="7" fill="#17324d"/><text x="58" y="42" class="diagram-text">${escapeSolutionText(v.n1)}</text><text x="58" y="218" class="diagram-text">${escapeSolutionText(v.n2)}</text><text x="292" y="94" class="diagram-angle">${escapeSolutionText(v.a1)}</text><text x="420" y="${v.state.includes('反射')?'92':'190'}" class="diagram-angle">${escapeSolutionText(v.a2)}</text><text x="392" y="30" class="diagram-small">法線</text></svg></div>`}
+function twoLensSolutionVisual(v){const values=[v.objectX,v.lens1X,v.lens2X,v.intermediateX,v.finalX],min=Math.min(...values),max=Math.max(...values),px=x=>60+(x-min)/(max-min)*640,ox=px(v.objectX),x1=px(v.lens1X),x2=px(v.lens2X),ix=px(v.intermediateX),fx=px(v.finalX),objectTop=76,axisY=150,intermediateY=208,finalY=232,y1=objectTop+(intermediateY-objectTop)*(x2-x1)/(ix-x1),y2=axisY+(intermediateY-axisY)*(x2-x1)/(ix-x1);return `<div class="solution-visual"><div class="visual-caption"><b>兩片透鏡完整光路圖</b><span>實線為實際光路；橘色虛線為第一片原本的會聚方向</span></div><div class="two-lens-scroll"><svg class="two-lens-diagram" viewBox="0 0 760 310" role="img" aria-label="實物經正五屈光度與負二屈光度透鏡的分段成像圖"><defs><marker id="arrowBlue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2f80ed"/></marker><marker id="arrowPurple" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#7c3aed"/></marker></defs><line x1="35" y1="${axisY}" x2="725" y2="${axisY}" class="diagram-axis"/><path d="M${ox} ${objectTop} L${x1} ${objectTop} L${x2} ${y1.toFixed(1)} L${fx} ${finalY}" class="actual-ray ray-a"/><path d="M${ox} ${objectTop} L${x1} ${axisY} L${x2} ${y2.toFixed(1)} L${fx} ${finalY}" class="actual-ray ray-b"/><path d="M${x2} ${y1.toFixed(1)} L${ix} ${intermediateY} M${x2} ${y2.toFixed(1)} L${ix} ${intermediateY}" class="would-ray"/><line x1="${ox}" y1="${axisY}" x2="${ox}" y2="${objectTop}" class="object-arrow" marker-end="url(#arrowBlue)"/><line x1="${x1}" y1="42" x2="${x1}" y2="252" class="lens-line"/><path d="M${x1-9} 50 Q${x1} 40 ${x1+9} 50 M${x1-9} 244 Q${x1} 254 ${x1+9} 244" class="lens-cap"/><line x1="${x2}" y1="42" x2="${x2}" y2="252" class="lens-line negative"/><path d="M${x2-9} 42 Q${x2} 54 ${x2+9} 42 M${x2-9} 252 Q${x2} 240 ${x2+9} 252" class="lens-cap negative"/><line x1="${ix}" y1="${axisY}" x2="${ix}" y2="${intermediateY}" class="intermediate-arrow"/><path d="M${ix-7} ${intermediateY-10} L${ix} ${intermediateY} L${ix+7} ${intermediateY-10}" class="intermediate-head"/><line x1="${fx}" y1="${axisY}" x2="${fx}" y2="${finalY}" class="final-arrow" marker-end="url(#arrowPurple)"/><text x="${ox}" y="34" text-anchor="middle" class="diagram-text">實物 −40 cm</text><text x="${x1}" y="22" text-anchor="middle" class="diagram-text">${escapeSolutionText(v.lens1)}｜0 cm</text><text x="${x2}" y="34" text-anchor="middle" class="diagram-text">${escapeSolutionText(v.lens2)}｜+15 cm</text><text x="${ix}" y="276" text-anchor="middle" class="diagram-angle">一次像 +40 cm</text><text x="${ix}" y="294" text-anchor="middle" class="diagram-small">第二片右方 25 cm（虛物）</text><text x="${fx}" y="276" text-anchor="middle" class="diagram-angle">最終實像 +65 cm</text><text x="${fx}" y="294" text-anchor="middle" class="diagram-small">即第二片後 50 cm</text></svg></div><p class="visual-note">${escapeSolutionText(v.note)}</p></div>`}
+function solutionVisualHTML(v){if(!v)return'';if(v.kind==='axis')return axisSolutionVisual(v);if(v.kind==='refraction')return refractionSolutionVisual(v);if(v.kind==='two-lens')return twoLensSolutionVisual(v);return flowSolutionVisual(v)}
+function detailedSolutionHTML(q){const s=detailedSolutions[q.uid];if(!s)return `<div class="solution-warning">本題完整解析尚未建立，請依來源題庫核對。</div>`;return `<div class="solution-head"><div><span class="solution-kicker">FULL SOLUTION</span><h4>本題完整解析</h4></div><span class="reviewed-badge">逐題審核</span></div>${solutionVisualHTML(s.visual)}<div class="solution-formula"><span>核心公式／原理</span><b>${escapeSolutionText(s.formula)}</b></div><ol class="solution-steps">${s.steps.map((step,i)=>`<li><span>${i+1}</span><p>${escapeSolutionText(step)}</p></li>`).join('')}</ol><div class="solution-answer"><span>結論</span><b>${escapeSolutionText(s.answer)}</b></div><div class="solution-source">來源：${escapeSolutionText(q.source)}｜識別碼：${escapeSolutionText(q.uid)}</div>`}
+function setDetailedSolution(open){const box=document.getElementById('visualHint'),btn=document.getElementById('visualHintBtn');if(!quizList.length)return;if(!open){box.className='visual-hint';box.innerHTML='';btn.textContent='顯示完整解析';return}box.innerHTML=detailedSolutionHTML(quizList[qIndex]);box.className='visual-hint show';btn.textContent='收合完整解析'}
+function renderQuiz(){const hint=document.getElementById('visualHint'),hintBtn=document.getElementById('visualHintBtn');hint.className='visual-hint';hint.innerHTML='';hintBtn.textContent='顯示完整解析';document.getElementById('quizCount').textContent=`共 ${quizList.length} 題`;if(!quizList.length){hintBtn.disabled=true;document.getElementById('quizMeta').innerHTML='';document.getElementById('quizQuestion').textContent='目前沒有符合條件的題目。';document.getElementById('quizOptions').innerHTML='';document.getElementById('quizExplain').className='quiz-explain';document.getElementById('qCounter').textContent='0 / 0';return}hintBtn.disabled=false;qIndex=Math.max(0,Math.min(qIndex,quizList.length-1));const q=quizList[qIndex];document.getElementById('quizMeta').innerHTML=`<span class="chapter-badge">${q.chapter}</span><span class="tag">${q.source}</span><span class="tag">識別碼 ${q.uid}</span>`;document.getElementById('quizQuestion').textContent=q.q;document.getElementById('quizOptions').innerHTML=q.opts.map((o,i)=>`<button data-opt="${i}">${String.fromCharCode(65+i)}. ${o}</button>`).join('');document.getElementById('quizExplain').className='quiz-explain';document.getElementById('quizExplain').innerHTML='';document.getElementById('qCounter').textContent=`${qIndex+1} / ${quizList.length}`}
+document.getElementById('visualHintBtn').addEventListener('click',()=>setDetailedSolution(!document.getElementById('visualHint').classList.contains('show')));
+document.getElementById('quizOptions').addEventListener('click',e=>{const b=e.target.closest('[data-opt]');if(!b||!quizList.length)return;const q=quizList[qIndex],i=+b.dataset.opt,ok=i===q.ans;[...document.querySelectorAll('#quizOptions button')].forEach((x,j)=>{x.disabled=true;if(j===q.ans)x.classList.add('correct');else if(j===i)x.classList.add('wrong')});const ex=document.getElementById('quizExplain');ex.className='quiz-explain show';ex.innerHTML=`<b>${ok?'✓ 答對了':'✗ 再想一下'}</b><br><b>正確答案：</b>${String.fromCharCode(65+q.ans)}. ${escapeSolutionText(q.opts[q.ans])}<br><span>下方已展開逐步計算與本題圖解。</span>`;setDetailedSolution(true);record(q,ok)});
+
+document.getElementById('nextQ').onclick=()=>{if(quizList.length){qIndex=(qIndex+1)%quizList.length;renderQuiz()}};document.getElementById('prevQ').onclick=()=>{if(quizList.length){qIndex=(qIndex-1+quizList.length)%quizList.length;renderQuiz()}};
+const yearFilter=document.getElementById('yearFilter'),chapterFilter=document.getElementById('chapterFilter'),typeFilter=document.getElementById('typeFilter'),questionSearch=document.getElementById('questionSearch');
+[...new Set(questions.map(q=>q.year))].sort().forEach(y=>yearFilter.add(new Option(`${y} 年`,y)));
+[...new Set(questions.map(q=>q.chapter))].sort().forEach(c=>chapterFilter.add(new Option(c,c)));
+[...new Set(questions.map(q=>q.examType))].sort().forEach(t=>typeFilter.add(new Option(t,t)));
+function filteredQuestions(){let list=activeMode==='wrong'?questions.filter(q=>state.wrongIds.includes(q.uid)):[...questions];if(yearFilter.value)list=list.filter(q=>String(q.year)===yearFilter.value);if(chapterFilter.value)list=list.filter(q=>q.chapter===chapterFilter.value);if(typeFilter.value)list=list.filter(q=>q.examType===typeFilter.value);const term=questionSearch.value.trim().toLowerCase();if(term)list=list.filter(q=>(q.q+' '+q.source+' '+q.chapter).toLowerCase().includes(term));if(activeMode==='random')list=list.sort(()=>Math.random()-.5).slice(0,10);return list}
+function applyFilters(){quizList=filteredQuestions();qIndex=0;answeredSession={};renderQuiz()}
+document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{activeMode=b.dataset.mode;applyFilters()});
+[yearFilter,chapterFilter,typeFilter].forEach(x=>x.addEventListener('change',applyFilters));questionSearch.addEventListener('input',applyFilters);
+function renderChapterBars(){const box=document.getElementById('chapterBars');const entries=Object.entries(state.chapters);box.innerHTML=entries.length?entries.map(([c,s])=>{const r=Math.round(s.correct/s.total*100);return `<div class="bar-row"><span>${c.replace(/^第\d章｜/,'')}</span><div class="mini-bar"><span style="width:${r}%"></span></div><b>${r}%</b></div>`}).join(''):'<span class="muted">完成題目後會顯示各章節正確率。</span>'}
+
+// ---------- Dashboard ----------
+function updateDashboard(){const total=state.total||0,rate=total?Math.round((state.correct||0)/total*100):0;document.getElementById('statTotal').textContent=total;document.getElementById('statRate').textContent=rate+'%';document.getElementById('statToday').textContent=state.days?.[dateKey()]||0;let weak='尚無資料',wr=101;Object.entries(state.chapters||{}).forEach(([c,s])=>{const r=s.correct/s.total*100;if(r<wr){wr=r;weak=c}});document.getElementById('statWeak').textContent=weak}updateDashboard();
+
+// ---------- Formula sheet ----------
+const formulas=[
+['折射率 Refractive Index','n = c / v',['n 無單位','折射率越高，光速越慢','同一介質中 v 固定']],
+['Snell’s Law','n₁ sinθ₁ = n₂ sinθ₂',['角度相對法線','低 n → 高 n：靠近法線','高 n → 低 n：可能全反射']],
+['臨界角','sinθc = n₂ / n₁',['僅 n₁ > n₂ 時存在','θi > θc → 全反射']],
+['聚散度 Vergence','L = n / l',['距離 l 用 m','發散取負、會聚取正','單位 D']],
+['球面屈光力','F = (n₂ − n₁) / r',['r 用 m','圓心在右 r>0；左 r<0']],
+['聚散度成像','L′ = L + F',['先求物方 L','再求像方 L′','l′ = n′/L′']],
+['焦距與屈光力','f = 1 / F',['F 用 D、f 得 m','+20 D → 5 cm']],
+['薄透鏡','1/f = 1/dₒ + 1/dᵢ',['實像 dᵢ>0；虛像 dᵢ<0','m = −dᵢ/dₒ']],
+['多表面傳遞','L₂ = L₁′/(1−dL₁′)',['d 用 m','前一面像為下一面物','逐面追蹤聚散度']],
+['厚透鏡等效屈光力','Fₑ = F₁ + F₂ − (t/n)F₁F₂',['t 用 m','厚度不可忽略時使用']],
+['後頂點屈光力','Fᵥ′ = F₂ + F₁/(1−tF₁/n)',['常用於後頂點參考','注意 t/n 項']],
+['前頂點屈光力','Fᵥ = F₁ + F₂/(1−tF₂/n)',['由前頂點參考','與等效屈光力不同']],
+['主平面位置','A₁H=(t/n)(F₂/Fₑ)；A₂H′=−(t/n)(F₁/Fₑ)',['距離由鏡片頂點量起','主平面可位於鏡片外']]
+];
+document.getElementById('formulaList').innerHTML=formulas.map(([t,eq,notes])=>`<div class="card formula-card"><h4>${t}</h4><div class="eq">${eq}</div><ul>${notes.map(n=>`<li>${n}</li>`).join('')}</ul></div>`).join('');
+
+renderQuiz();renderChapterBars();
+</script>
+<footer style="padding:20px;text-align:center;color:#64748b;font-size:12px">逐題完整解析版｜2026-08-08 更新。教材依《Geometrical and Visual Optics》第3版前6章概念重整；題目與答案來自106–115年完整題庫。內容採摘要、公式與互動轉化，不取代原書。</footer>
+</body>
+</html>
