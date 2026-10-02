@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="只聚焦第7章球面屈光不正：近視、遠視、透鏡等效性、雷射與外科手術屈光矯正。含五組互動實驗及24題逐步解析。">
+<title>第7章 球面屈光不正｜視覺光學互動教室</title>
+<style>
+:root{--navy:#173f6b;--deep:#102d4d;--teal:#147d78;--blue:#2865b2;--orange:#bc6013;--purple:#7d49ad;--ink:#1d2d3d;--muted:#5c6f81;--bg:#f3f7fa;--line:#d7e3ec;--radius:18px}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 system-ui,-apple-system,"Segoe UI","Microsoft JhengHei",sans-serif}button,input,select{font:inherit}button,a,input,select,summary{touch-action:manipulation}button{cursor:pointer}a{color:var(--navy)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #cf781f;outline-offset:3px}button:disabled{cursor:default;opacity:.7}h1,h2,h3,h4{line-height:1.4}h1,h2,h3{margin:0 0 12px}h2{font-size:clamp(27px,3.5vw,40px)}h3{font-size:21px}p{margin:9px 0 15px}small,.small{font-size:13px}svg{font-family:inherit}svg text{fill:var(--ink);font-size:17px}svg .axis{stroke:#93a9b9;stroke-width:1.5}svg .ray{fill:none;stroke:var(--orange);stroke-width:2.7}svg .virtual{stroke-dasharray:7 6}svg .dim{stroke:#7693a8;stroke-width:1.2}svg .label{font-size:15px;fill:var(--muted)}[hidden]{display:none!important}.skip{position:fixed;left:10px;top:-80px;z-index:99;background:white;padding:8px}.skip:focus{top:10px}.side{position:fixed;left:0;top:0;bottom:0;width:248px;padding:27px 18px;background:linear-gradient(180deg,var(--deep),var(--navy));color:white;overflow:auto;z-index:40}.brand{font-size:19px;font-weight:800}.side p{color:#c7d9ea;font-size:13px}.side a{color:#e4f2ff}.nav{display:grid;gap:5px;margin:24px 0}.nav a{display:block;padding:9px 12px;border-radius:10px;text-decoration:none;font-size:14px}.nav a:hover,.nav a[aria-current=page]{background:#ffffff20;color:white}.side-foot{border-top:1px solid #ffffff30;padding-top:18px;font-size:12px}.main{margin-left:248px;padding:24px 34px 60px;max-width:1700px}.top{display:flex;align-items:center;gap:18px;margin-bottom:24px}.top small{color:var(--muted)}.progress{height:7px;background:#dce7ed;border-radius:9px;overflow:hidden;max-width:600px}.progress span{height:100%;display:block;background:var(--teal);width:0}.menu{display:none}.top-progress{flex:1}.topline{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}.btn{display:inline-block;border:1px solid var(--line);background:white;color:var(--navy);border-radius:11px;padding:10px 17px;font-weight:700;text-decoration:none}.btn.primary{background:var(--navy);color:white;border-color:var(--navy)}.btn.teal{background:var(--teal);color:white;border-color:var(--teal)}.btn.small{font-size:13px;padding:7px 12px}.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.hero{padding:35px;border-radius:25px;background:linear-gradient(120deg,#14395c,#1a5979);color:white;position:relative;overflow:hidden}.hero h1{font-size:clamp(38px,5vw,62px);letter-spacing:.04em;margin:16px 0}.hero p{color:#d9e9f2;max-width:680px}.kicker{font-size:12px;letter-spacing:.15em;font-weight:800;color:var(--teal);margin-bottom:7px}.hero .kicker{color:#9eddd6}.hero .btn{background:#fff}.hero-line{width:160px;height:3px;background:#89cfc5;margin:22px 0}.lead{color:var(--muted);max-width:920px}.grid{display:grid;gap:18px}.two{grid-template-columns:repeat(2,minmax(0,1fr))}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.four{grid-template-columns:repeat(4,minmax(0,1fr))}.section{margin-top:24px}.card{border:1px solid var(--line);background:white;border-radius:var(--radius);padding:23px;min-width:0}.card.tint{background:#eef8f6}.card h4{margin:12px 0 4px}.stat b{font-size:32px;display:block;color:var(--navy);line-height:1.5}.stat span{font-size:13px;color:var(--muted)}.tag{display:inline-block;font-size:12px;border-radius:20px;background:#e8f4f2;color:#126c66;padding:3px 9px;margin-right:5px}.muted{color:var(--muted)}.callout{border-left:4px solid var(--teal);background:#eff8f6;padding:15px 18px;border-radius:0 12px 12px 0;margin:16px 0}.warn{border-left-color:var(--orange);background:#fff7ed}.eq{padding:15px 18px;border-radius:12px;background:var(--deep);color:white;font-size:19px;overflow-wrap:anywhere;margin:12px 0}.eq small{display:block;color:#c3dce9;font-size:13px}.formula-grid .eq{font-size:17px}.steps{padding-left:24px}.steps li{padding-left:3px;margin:7px 0}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:14px;min-width:500px}td,th{padding:12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}th{background:#ecf3f8;color:var(--navy)}tr:last-child td{border-bottom:0}.controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:15px 0}.controls label{font-size:13px;font-weight:700;display:block}.controls input,.controls select{display:block;width:100%;border:1px solid #b6cbd9;border-radius:9px;padding:9px;background:white;color:var(--ink);margin-top:5px}.controls input[type=range]{padding:5px 0}.figure{border:1px solid var(--line);border-radius:13px;overflow:auto;background:#fcfeff;margin:15px 0}.figure svg{display:block;width:100%;min-width:610px;height:auto}.fig-note{font-size:12px;color:var(--muted);margin:7px 0 0}.readout{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.readout>div{padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:#f6fafc;font-size:13px}.readout b{display:block;color:var(--navy);font-size:20px;overflow-wrap:anywhere}.result{line-height:1.9;background:#f0f7fa;border:1px solid #d5e6ed;border-radius:12px;padding:16px;margin-top:14px}.error{color:#9c321e;background:#fff2ec;padding:14px;border-radius:10px;margin-top:12px}.complete{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}details{border:1px solid var(--line);border-radius:13px;padding:15px 18px;background:white;margin-top:12px}summary{font-weight:800;cursor:pointer}.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.flow>div{padding:14px;background:#edf5f8;border-radius:12px}.flow b{display:block;color:var(--navy)}.quiz-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.quiz-toolbar select,.quiz-toolbar input{min-width:140px;border:1px solid var(--line);border-radius:10px;padding:9px;max-width:100%;background:white}.qmeta{color:var(--muted);font-size:13px;margin-bottom:12px}.question{font-size:21px;font-weight:700;line-height:1.8}.options{display:grid;gap:10px;margin:18px 0}.option{border:1px solid var(--line);border-radius:12px;background:white;text-align:left;padding:14px 17px;color:var(--ink)}.option:disabled{opacity:1}.option.correct{border-color:#30816a;background:#eaf7f0}.option.wrong{border-color:#b44736;background:#fff0ec}.answer-msg{padding:12px;border-radius:10px;background:#f0f6fa;margin-bottom:12px;font-weight:700}.solution{border:1px solid #bdd9e8;background:#f5fafc;border-radius:15px;padding:23px;margin-top:16px}.solution h3{color:var(--navy)}.solution .figure{background:white}.quiz-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px}.bars{display:grid;gap:10px}.bar{display:grid;grid-template-columns:100px 1fr 80px;gap:12px;align-items:center;font-size:13px}.track{background:#e6eef3;border-radius:6px;height:9px;overflow:hidden}.track span{display:block;height:100%;background:var(--teal)}.storage{font-size:13px;border-radius:8px;background:#fff4df;padding:10px;margin:8px 0}.sources li{margin-bottom:12px}.print-only{display:none}@media(min-width:1450px){.main{padding-left:48px;padding-right:48px}}@media(max-width:1080px){.two,.three{grid-template-columns:1fr}.four{grid-template-columns:repeat(2,minmax(0,1fr))}.side{width:220px}.main{margin-left:220px;padding:22px}.flow{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:760px){.side{transform:translateX(-100%);width:275px;transition:transform .2s}.side.open{transform:translateX(0);box-shadow:0 0 0 100vmax #102d4d55}.main{margin-left:0;padding:16px}.menu{display:inline-block}.top{position:sticky;top:0;z-index:25;background:#f3f7faf5;margin:0 -2px 18px;padding:8px 0}.hero{padding:24px}.controls{grid-template-columns:repeat(2,minmax(0,1fr))}.readout{grid-template-columns:1fr}.card{padding:18px}.figure svg{min-width:620px}.solution{padding:16px}.quiz-toolbar>*{flex:1}.bar{grid-template-columns:84px 1fr 70px}.question{font-size:18px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}@media print{.side,.top,.complete,.quiz-toolbar,.quiz-bottom,.no-print{display:none!important}.main{margin:0;padding:0}.panel[hidden]{display:block!important}.panel{break-before:page}.panel:first-of-type{break-before:auto}.hero,.eq{background:white;color:black;border:1px solid #999}.hero p,.hero .kicker,.eq small{color:#333}.card{box-shadow:none;break-inside:avoid}.two,.three,.four{grid-template-columns:1fr}.figure svg{min-width:0}.print-only{display:block}.controls{display:none}.solution[hidden]{display:block!important}}
+/* Show the complete drawing on small screens; an optional zoom retains readable labels. */
+.btn.menu{display:none}.figure{position:relative}.figure.zoomed svg{min-width:900px}
+.diagram-tools{display:flex;justify-content:flex-end;margin-top:8px}.diagram-tools button{font-size:12px;padding:4px 10px}
+@media(max-width:760px){.btn.menu{display:inline-block}.figure svg{min-width:0}.figure.zoomed svg{min-width:760px}.diagram-tools{justify-content:space-between;gap:10px;align-items:center}.diagram-tools::before{content:'完整圖解 · 可按放大後左右滑動';font-size:11px;color:var(--muted)}}
+@media print{.diagram-tools{display:none}.figure.zoomed svg{min-width:0}}
+
+/* Chapter 7 refinements */
+.card table{min-width:450px}.side-foot{line-height:1.8}.figure svg{min-width:0}.main{max-width:1680px}.eq{line-height:1.8}.table-wrap table{min-width:620px}.card .table-wrap table{min-width:480px}details .figure{margin-top:12px}.bar{grid-template-columns:110px 1fr 85px}@media(max-width:760px){.controls{grid-template-columns:1fr 1fr}.four{grid-template-columns:1fr 1fr}.stat b{font-size:28px}.bar{grid-template-columns:95px 1fr 75px}.figure.zoomed svg{min-width:820px}}
+
+/* Vertex-distance overlay: presentation inherits the classroom, ray colors remain explicit. */
+.vx-presets{margin:15px 0}.vx-legend{display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-size:13px;margin:12px 0}.vx-line{display:inline-block;width:25px;border-top:3px solid #15191f;vertical-align:middle;margin-right:5px}.vx-line.red{border-color:#d02738}.vx-line.dashed{border-top:2px dashed #74869a}.vx-red,#vx-result .readout .vx-red{color:#d02738}.vx-display-controls{font-size:13px}.vx-display-controls label{display:flex;align-items:center;gap:5px}.vx-display-controls button[aria-pressed=true]{background:#e9f0fa;border-color:#315db3}#vx-new-range{accent-color:#d02738}#vx-figure.zoomed svg{min-width:1250px}#vx-node-note:not([hidden]){padding:12px;background:#eef5fc;border-left:3px solid #315db3;border-radius:0 8px 8px 0}@media print{#vx-figure.zoomed svg{min-width:0}}
+</style></head><body>
+
+<a href="#content" class="skip">跳至教材內容</a>
+<aside class="side" id="sidebar">
+  <div class="brand">視覺光學互動教室</div><p>CHAPTER 7<br>球面屈光不正 · 深入版</p>
+  <a href="index.html">← 回到基礎光學教室</a>
+  <nav class="nav" aria-label="本章內容">
+    <a href="#overview" data-page="overview">本章地圖與學習目標</a>
+    <a href="#model" data-page="model">導讀　簡化眼與符號｜95</a>
+    <a href="#myopia" data-page="myopia">01　近視｜97</a>
+    <a href="#hyperopia" data-page="hyperopia">02　遠視｜102</a>
+    <a href="#effectivity" data-page="effectivity">03　透鏡等效性｜105</a>
+    <a href="#surgery" data-page="surgery">04　雷射與外科矯正｜110</a>
+    <a href="#quiz" data-page="quiz">本章練習與完整解析</a>
+    <a href="#summary" data-page="summary">結論與公式速查｜112</a>
+    <a href="#sources" data-page="sources">資料來源與版本說明</a>
+  </nav>
+  <div class="side-foot">只涵蓋第 7 章<br>單檔離線 · 不上傳學習紀錄<br>24 題均為教學自編</div>
+</aside>
+<main class="main" id="content" tabindex="-1">
+<div class="top"><button class="btn menu" id="menu" aria-expanded="false" aria-controls="sidebar">☰ 章節</button><div class="top-progress"><div class="topline"><span>本章學習進度 · 自行標記完成</span><span id="progress-label">0 / 7</span></div><div class="progress"><span id="progress-bar"></span></div></div><button class="btn small no-print" id="print">列印教材</button></div>
+<div class="storage" id="storage-note" role="status" hidden></div>
+<noscript><div class="error">請啟用 JavaScript 使用章節切換、互動圖與練習。</div></noscript>
+
+<section class="panel" id="overview">
+<div class="hero"><div class="kicker">CHAPTER 7 / SPHERICAL AMETROPIA</div><h1>球面屈光不正</h1><p>一個核心問題：眼的屈光力，是否與視網膜的位置相配？<br>從簡化眼出發，逐步理解近視、遠視、透鏡等效性與角膜屈光矯正。</p><div class="hero-line"></div><div class="actions"><a href="#model" class="btn">從簡化眼開始 →</a><a href="#effectivity" class="btn">透鏡等效性實驗</a><a href="#quiz" class="btn">本章練習</a></div></div>
+<div class="grid four section"><div class="card stat"><span>按課本順序</span><b>4 節</b><span>專注第 7 章</span></div><div class="card stat"><span>互動實驗</span><b>5 組</b><span>含分階段光路與即時推導</span></div><div class="card stat"><span>教學自編題</span><b>24 題</b><span>每題圖解、代入與易錯點</span></div><div class="card stat"><span>你的累積正確率</span><b id="overall-rate">—</b><span id="overall-count">尚未作答</span></div></div>
+<div class="card section"><h3>依課本目錄安排，不跨章擴寫</h3><div class="flow"><div><b>01 近視 · p.97</b>眼軸與屈光力<br>實遠點、負鏡矯正</div><div><b>02 遠視 · p.102</b>虛遠點與會聚入射光<br>正鏡矯正</div><div><b>03 透鏡等效性 · p.105</b>固定遠點，改變鏡片平面<br>移鏡與換鏡分開判斷</div><div><b>04 手術屈光矯正 · p.110</b>角膜變平／變陡<br>把頂點距離觀念接回來</div></div><p class="small muted section">導讀對應 pp.95–96；最後銜接 p.112 結論。本版不納入第 8 章調節計算、第 9 章散光與 Sturm 光錐。</p></div>
+<div class="grid two section"><div class="card"><h3>本章結束時，你應能回答</h3><ol class="steps"><li>為什麼同樣是 60 D 的眼，可能正視、近視，也可能遠視？</li><li>眼的像方焦點 F′ 與遠點 FP，為什麼不是同一個點？</li><li>近視為什麼用負鏡，遠視為什麼用正鏡？</li><li>換成隱形眼鏡時，為什麼負度數變小、正度數變大？</li><li>同一片鏡片往眼移，與換一片鏡片維持原效果，有何不同？</li><li>為什麼不能直接把眼鏡處方數字當成雷射矯正的光學目標？</li></ol></div><div class="card"><h3>建議學習節奏</h3><p>每節先回答「預測一下」，再操作互動圖，最後依「條件 → 聚散度 → 位置 → 矯正」完成推導。閱讀不是完成的證據；能自行重算，再按本節完成。</p><div class="callout"><b>建議配置，約 100 分鐘</b><br>導讀 10 → 近視 20 → 遠視 15 → 透鏡等效性 25 → 手術原理 15 → 練習回饋 15。</div><p class="small muted">沒有本章完整歷屆原題來源，因此不標示國考年度、題號或出題占比。題目是為本章概念重新編寫，不是課本習題的逐字轉錄。</p></div></div>
+</section>
+
+<section class="panel" id="model" hidden>
+<div class="kicker">導讀 / pp.95–96</div><h2>簡化眼：先把參照點說清楚</h2><p class="lead">本章討論「球面」屈光不正：各子午線視為相同。除非另有說明，均假設看無限遠、調節放鬆，並採近軸光學。</p>
+<div class="grid two"><div class="card"><h3>課本的 reduced eye</h3><p>把角膜與放鬆的水晶體合併成一個等效球面折射面。這是解題模型，不是真實眼球剖面。</p><div class="table-wrap"><table><thead><tr><th>量</th><th>本章使用值</th><th>意義</th></tr></thead><tbody><tr><td>物方 n</td><td>1.000</td><td>空氣中的物點、遠點</td></tr><tr><td>像方 n′</td><td>1.333</td><td>簡化眼內的介質</td></tr><tr><td>曲率半徑 ρ</td><td>＋5.55 mm</td><td>F＝(n′−n)/ρ＝＋60 D</td></tr><tr><td>正視像方焦距 f′</td><td>約＋22.22 mm</td><td>f′＝n′/F</td></tr><tr><td>物方焦距 f</td><td>約−16.67 mm</td><td>f＝−n/F</td></tr></tbody></table></div><p class="small muted">課本把等效面位在角膜後約 1.67 mm 的差異忽略。本教材亦採該近似；下文「眼平面」與「角膜平面」依此模型處理。ℓ′ 是等效面到視網膜的距離，不可直接替代臨床量測的眼軸長。</p></div><div class="card"><h3>只需要先懂這條關係</h3><div class="eq">U＋F＝V<small>物方聚散度 ＋ 屈光力 ＝ 像方聚散度；三者單位均為 D。</small></div><p>U 是入射光的物方聚散度，F 是眼的屈光力，V 是出射光的像方聚散度。要讓影像恰好落在視網膜，出射光必須滿足：</p><div class="eq">V<sub>retina</sub>＝n′/ℓ′<br>R＋F＝V<sub>retina</sub><br>R＝V<sub>retina</sub>−F＝n′/ℓ′−F<small>成像在視網膜時 U＝R；R 是調節放鬆時所需的物方聚散度，也就是遠點聚散度。</small></div><p>先問「視網膜需要多少會聚力」，再減去「眼已經有多少」。剩下的差值才是屈光不正，不是把眼的 60 D 當成眼鏡度數。</p></div></div>
+<div class="card section"><h3>符號與單位：在同一張座標上思考</h3><div class="table-wrap"><table><thead><tr><th>符號</th><th>定義</th><th>正負與單位</th></tr></thead><tbody><tr><td>U</td><td>物方（入射）聚散度</td><td>發散為負、會聚為正、平行光為 0；D</td></tr><tr><td>F</td><td>放鬆眼的等效屈光力</td><td>本章模型眼通常為正；D</td></tr><tr><td>V</td><td>像方（出射）聚散度</td><td>V＝U＋F；聚焦視網膜時 V＝n′/ℓ′；D</td></tr><tr><td>F<sub>s</sub>、F<sub>c</sub></td><td>眼鏡平面、角膜平面的矯正鏡片屈光力</td><td>近視矯正為負、遠視矯正為正；D；與眼本身的 F 分開標示</td></tr><tr><td>ℓ′</td><td>等效眼平面 → 視網膜</td><td>光向右走，眼內位置為正；m</td></tr><tr><td>R</td><td>遠點聚散度</td><td>近視負、遠視正；D</td></tr><tr><td>r<sub>FP</sub></td><td>從眼平面量到遠點</td><td>眼前負、眼後正；m；r<sub>FP</sub>＝1/R</td></tr><tr><td>d</td><td>眼鏡後頂點至角膜</td><td>本章用正的間距；mm 必須先除以 1000</td></tr></tbody></table></div><div class="callout warn"><b>遠點在眼後，為什麼仍用 n＝1？</b><br>遠點是物方光束的實物／虛物共軛點；它描述入眼前「空氣中的光束」原本如何行進，不是眼內成像的介質。所以 r<sub>FP</sub>＝1/R，不是 1.333/R。</div></div>
+<div class="card section"><h3>互動 1｜兩個參數，決定一個屈光狀態</h3><p>先固定 F，移動視網膜；再固定眼軸長，改變 F。觀察兩種方式如何造成相同的 R。</p><div class="actions"><button class="btn small" data-eye="normal">正視基準</button><button class="btn small" data-eye="long">眼軸變長</button><button class="btn small" data-eye="short">眼軸變短</button><button class="btn small" data-eye="strong">眼屈光力增加</button></div><div class="controls"><label>眼屈光力 F（D）<input id="eye-power" type="number" min="50" max="70" step=".25" value="60"></label><label>等效面至視網膜 ℓ′（mm）<input id="eye-length" type="number" min="19" max="27" step="any" value="23.22"></label></div><div class="figure" id="eye-figure"></div><div class="readout" id="eye-readout" aria-live="polite"></div><div class="result" id="eye-result"></div><p class="fig-note">實線在視網膜截止；視網膜後虛線只表示理論焦點延伸。圖按近軸公式更新，但橫向和高度比例不同。運算固定 n′＝1.333；中途不取整，可能與課本中途取整結果差末位。</p></div>
+<div class="grid two section"><div class="card"><h3>F′：眼內像方焦點</h3><p class="small muted">注意：F 表示屈光力（D），F′ 表示焦點，f′ 表示焦距（m）；三者不要混用。</p><p>把平行光送入未矯正的放鬆眼，理論聚焦位置是 f′＝n′/F。它由眼屈光力決定，不會只因視網膜往後移就跟著移。</p></div><div class="card"><h3>FP：眼外的物方共軛點</h3><p>找一束光，讓它經眼後恰好聚焦在視網膜。這束光的來源點或原本趨向的點，就是 FP。FP 由 F 和 ℓ′ 共同決定。</p></div></div>
+<details><summary>預測一下：F＝60 D，只把視網膜向後移，F′ 和 FP 如何變？</summary><p>F′ 不變；R＝n′/ℓ′−F 下降，變得更負，FP 由無限遠移到眼前。不要把視網膜、眼的焦點與遠點混成同一個標記。</p></details>
+<div class="complete" data-complete="model"><button class="btn teal">標記本節完成</button><a class="btn" href="#myopia">下一節：近視 →</a></div>
+</section>
+
+<section class="panel" id="myopia" hidden>
+<div class="kicker">01 / MYOPIA · pp.97–102</div><h2>近視：眼需要發散的入射光</h2><p class="lead">對目前的眼軸長而言，放鬆眼的會聚能力過強。平行光先聚焦、再發散，抵達視網膜時已不是點像。</p>
+<div class="grid three"><div class="card"><h3>從位置看</h3><p>無限遠物像位在視網膜前；f′＜ℓ′。</p></div><div class="card"><h3>從屈光力看</h3><p>F＞n′/ℓ′；眼的力比視網膜所需的大。</p></div><div class="card"><h3>從遠點看</h3><p>R＜0，r<sub>FP</sub>＜0；遠點是眼前的實物點。</p></div></div>
+<div class="grid two section"><div class="card"><h3>眼軸型與屈光型：不是互斥原因</h3><p><b>眼軸相對過長：</b>F 固定，ℓ′ 增加，n′/ℓ′ 降低，R 變負。</p><p><b>屈光力相對過強：</b>ℓ′ 固定，F 增加，R 也變負。可能來自曲率、折射率等因素；本章不展開病因分類。</p><div class="callout">不能只從眼的 60 D 或眼軸某一個數字判斷近視，要比較兩者是否匹配。</div></div><div class="card"><h3>負鏡片為什麼能矯正？</h3><p>負鏡片先把遠方的平行光轉成發散光，讓「過強的眼」接到較低的入射聚散度。</p><div class="eq">R（負）＋F＝n′/ℓ′</div><p>矯正片的像方虛焦點要與眼的 FP 重合。若理想矯正片與等效眼平面重合，F<sub>c</sub>＝R；眼鏡離眼有距離，則必須另做等效性換算。</p></div></div>
+<div class="card section"><h3>互動 2｜同一近視眼，三種入光方式</h3><div class="controls"><label>角膜平面遠點聚散度 R（D）<input id="my-r" type="number" min="-12" max="-.25" step=".25" value="-2.5"></label><label>觀察情境<select id="my-stage"><option value="uncorrected">① 遠方物體，未矯正</option><option value="farpoint">② 實物放在遠點</option><option value="corrected">③ 遠方物體＋同平面負鏡</option></select></label></div><div class="figure" id="my-figure"></div><div class="readout" id="my-readout" aria-live="polite"></div><div class="result" id="my-result"></div><details><summary>單獨看矯正鏡片：它把遠方物體成像到哪裡？</summary><div class="figure" id="my-correction"></div><p class="fig-note">本圖暫時移除眼，只畫矯正鏡片的成像。負鏡右側實光線發散，反向延長線在 FP 交會；加入眼後，這束光才由眼聚焦於視網膜。</p></details></div>
+<div class="grid two section"><div class="card"><span class="tag">例題 M1 · 由眼參數求近視</span><h3>F＝60 D，ℓ′＝23.22 mm</h3><ol class="steps"><li>先換單位：ℓ′＝0.02322 m。</li><li>視網膜需求：1.333/0.02322≈57.4074 D。</li><li>R＝57.4074−60≈−2.5926 D。</li><li>r<sub>FP</sub>＝1/R≈−0.3857 m，即眼前約 38.57 cm。</li><li>同平面薄矯正片約 −2.59 D；不是把眼內像距當成焦距去配鏡。</li></ol><p class="small muted">課本以中途取整的 R＝−2.59 D 再計算，得到約 38.61 cm；本教材保留未取整數值，故末位略不同。</p></div><div class="card"><span class="tag">例題 M2 · 反推眼軸長</span><h3>F＝60 D，R＝−1.00 D</h3><div class="eq">ℓ′＝n′/(F＋R)</div><ol class="steps"><li>視網膜需求＝60−1＝59 D。</li><li>ℓ′＝1.333/59≈22.5932 mm。</li><li>正視基準＝1.333/60≈22.2167 mm。</li><li>增加約 0.3766 mm，就得到此模型的 −1.00 D。</li></ol><div class="callout warn">「約 1/3 mm 對應 1 D」是粗估，不是精確常數。眼軸和度數不是全範圍線性關係，正式解題仍用公式。</div></div></div>
+<details><summary>物體比遠點更遠時，為什麼仍然模糊？</summary><p>R＝−2.50 D 的近視眼，FP 在眼前 40 cm。物體放到 1 m 時，U＝−1 D，比需要的 −2.50 D 更正；經眼後 V 過大，焦點仍在視網膜前。本節只比較調節放鬆的結果，不進入下一章的調節計算。</p></details>
+<div class="complete" data-complete="myopia"><button class="btn teal">標記本節完成</button><a class="btn" href="#hyperopia">下一節：遠視 →</a></div>
+</section>
+
+<section class="panel" id="hyperopia" hidden>
+<div class="kicker">02 / HYPEROPIA · pp.102–105</div><h2>遠視：眼需要會聚的入射光</h2><p class="lead">對目前的眼軸長而言，放鬆眼的會聚能力不足。平行光到達視網膜時還沒聚成點；理論焦點在視網膜後。</p>
+<div class="grid three"><div class="card"><h3>從位置看</h3><p>f′＞ℓ′；焦點在視網膜後，不表示光真的穿過視網膜才成像。</p></div><div class="card"><h3>從屈光力看</h3><p>F＜n′/ℓ′；眼軸相對過短、屈光力相對不足，或兩者兼有。</p></div><div class="card"><h3>從遠點看</h3><p>R＞0，r<sub>FP</sub>＞0；需要眼後的物方虛遠點。</p></div></div>
+<div class="grid two section"><div class="card"><h3>「眼後虛遠點」到底是什麼？</h3><ol class="steps"><li>先想像入眼前的光已在會聚。</li><li>若眼不擋在中途，光原本會在眼後某點相交。</li><li>真正遇到眼時，眼再增加會聚力，光改在較前方的視網膜聚焦。</li></ol><div class="callout">這個「原本會相交的位置」就是眼的虛物點 FP。不是把真實物體塞在眼後，也不是把視網膜叫作虛像。</div></div><div class="card"><h3>正鏡片為什麼能矯正？</h3><p>正鏡片先為平行光提供正聚散度，使眼接到所需的會聚光。單獨看正矯正片，它會把遠方物體形成實像在眼的 FP；對位於中途的眼而言，這個點是虛物。</p><div class="eq">R（正）＋F＝n′/ℓ′</div><p>同一個點可以是「前一片鏡片的像」與「下一個系統的虛物」。判斷實虛要說清楚是在談哪個系統。</p></div></div>
+<div class="card section"><h3>互動 3｜看見「虛物」的入射光</h3><div class="controls"><label>角膜平面遠點聚散度 R（D）<input id="hy-r" type="number" min=".25" max="12" step=".25" value="2.5"></label><label>觀察情境<select id="hy-stage"><option value="uncorrected">① 遠方物體，未矯正</option><option value="farpoint">② 需要什麼入射光？</option><option value="corrected">③ 遠方物體＋同平面正鏡</option></select></label></div><div class="figure" id="hy-figure"></div><div class="readout" id="hy-readout" aria-live="polite"></div><div class="result" id="hy-result"></div><details><summary>單獨看矯正鏡片：實像如何成為眼的虛物？</summary><div class="figure" id="hy-correction"></div><p class="fig-note">本圖暫時不放入眼。圖上的 FP 是正鏡片原本的成像位置；眼置於矯正片平面附近，會在光到達此點以前先折射。</p></details></div>
+<div class="grid two section"><div class="card"><span class="tag">例題 H1 · 由短眼軸求遠視</span><h3>F＝60 D，ℓ′＝21.22 mm</h3><ol class="steps"><li>ℓ′＝0.02122 m。</li><li>視網膜需求＝1.333/0.02122≈62.8181 D。</li><li>R＝62.8181−60≈＋2.8181 D。</li><li>r<sub>FP</sub>＝1/R≈＋0.354849 m，眼後約 35.48 cm。</li><li>同平面理想正鏡約＋2.82 D，先提供會聚光。</li></ol><p class="small muted">課本用取整後＋2.82 D 算遠點，得 35.46 cm；此處用完整精度。</p></div><div class="card"><span class="tag">例題 H2 · 由虛遠點求矯正力</span><h3>FP 在眼後 25 cm</h3><ol class="steps"><li>物方距離 r<sub>FP</sub>＝＋0.25 m。</li><li>在空氣中，R＝1/0.25＝＋4.00 D。</li><li>如果矯正片與等效眼平面重合，F<sub>c</sub>＝＋4.00 D。</li><li>若題目給的是眼鏡，必須另確認頂點距離，不能直接套同平面的結論。</li></ol><div class="callout warn">遠視不是「遠方一定看得清楚」。個人可能靠調節補償，但屈光分類應先以調節放鬆為基準；詳細調節留待第 8 章。</div></div></div>
+<div class="complete" data-complete="hyperopia"><button class="btn teal">標記本節完成</button><a class="btn" href="#effectivity">下一節：透鏡等效性 →</a></div>
+</section>
+
+<section class="panel" id="effectivity" hidden>
+<div class="kicker">03 / LENS EFFECTIVITY · pp.105–110</div><h2>透鏡等效性：遠點不動，鏡片換位置</h2><p class="lead">這裡的「等效」是指對同一眼產生相同的矯正效果，不是厚透鏡章的等效屈光力。核心條件只有一個：矯正鏡片的像方焦點必須對準眼的遠點。</p>
+<div class="card"><h3>先用位置解，不急著背公式</h3><p>以眼平面 x＝0、光向右為正。眼鏡位在 x＝−d，眼的遠點在 x＝r<sub>FP</sub>。鏡片所需像方焦距是從鏡片量到遠點：</p><div class="eq">f′<sub>s</sub>＝r<sub>FP</sub> − (−d)＝r<sub>FP</sub>＋d<br>F<sub>s</sub>＝1/(r<sub>FP</sub>＋d)</div><div class="grid two"><div class="callout"><b>近視：遠點在眼前</b><br>眼鏡比角膜更接近實遠點，|f′| 較短，需較強的負鏡。換到角膜平面後，|f′| 較長，負鏡絕對值較小。</div><div class="callout"><b>遠視：遠點在眼後</b><br>眼鏡離虛遠點更遠，f′ 較長，需較小正力。換到角膜平面後，f′ 較短，正力較大。</div></div></div>
+<div class="grid two section"><div class="card"><h3>公式路徑：眼鏡 → 角膜</h3><div class="eq">F<sub>c</sub>＝F<sub>s</sub>/(1−dF<sub>s</sub>)</div><ol class="steps"><li>平行光入射眼鏡時 U＝0；U＋F<sub>s</sub>＝V<sub>s</sub>，所以 V<sub>s</sub>＝F<sub>s</sub>。</li><li>空氣中傳遞 d：U<sub>c</sub>＝V<sub>s</sub>/(1−dV<sub>s</sub>)。</li><li>U<sub>c</sub> 是到達角膜的入射聚散度，也就是角膜平面所需等效力 F<sub>c</sub>。</li></ol></div><div class="card"><h3>反向：角膜 → 眼鏡</h3><div class="eq">F<sub>s</sub>＝F<sub>c</sub>/(1＋dF<sub>c</sub>)</div><p>也可由 r<sub>FP</sub>＝1/F<sub>c</sub> 代入位置公式得到。d 是正間距；兩公式分母正負不同，因為換算方向不同。</p><div class="callout warn">F<sub>c</sub> 是角膜平面的理想光學等效值。實際隱形眼鏡驗配還有配適等因素，不能直接把本計算器輸出當成購買處方。</div></div></div>
+<div class="card section"><h3>三種問題，分開問才不會反著背</h3><div class="table-wrap"><table><thead><tr><th>題目要做什麼？</th><th>固定什麼？</th><th>算什麼？</th></tr></thead><tbody><tr><td>平面換算</td><td>同一眼的矯正效果</td><td>眼鏡 F<sub>s</sub> ↔ 角膜 F<sub>c</sub></td></tr><tr><td>把同一片鏡片移動</td><td>鏡片本身度數不變</td><td>移動後作用在眼的有效力</td></tr><tr><td>改變頂點距離，但要保留原效果</td><td>角膜所接到的聚散度不變</td><td>換上不同度數的新鏡片</td></tr></tbody></table></div></div>
+<div class="card section" id="vx-workbench">
+<h3>互動 4｜球面鏡片等效性工作台</h3>
+<p>先以黑紅光路比較「移位後換鏡、保留效果」；也可切換問題類型，練習平面換算或觀察同一片鏡片移動的影響。</p>
+<div class="actions no-print vx-presets"><button class="btn primary" id="vx-preset">頂點距離換算</button><button class="btn" id="vx-same">回到原位置</button><button class="btn" id="vx-away">遠離眼睛</button><button class="btn" id="vx-plus">正鏡對照</button></div>
+<div class="controls">
+<label>問題類型<select id="vx-mode"><option value="toCornea">眼鏡 → 角膜等效力</option><option value="toSpectacle">角膜 → 眼鏡等效力</option><option value="move">同一片鏡片，移到新距離</option><option value="replace" selected>移到新距離，換鏡保留效果</option></select></label>
+<label><span id="vx-f-label">原鏡片 F₁（D）</span><input id="vx-f" type="number" min="-20" max="20" step=".25" value="-10"></label>
+<label><span id="vx-d-label">原頂點距離 d₁（mm）</span><input id="vx-d" type="number" min="0" max="30" step=".5" value="12"></label>
+<label id="vx-new-wrap">新頂點距離 d₂（mm）<input id="vx-new" type="number" min="0" max="30" step=".5" value="2"><input id="vx-new-range" type="range" min="0" max="30" step=".5" value="2" aria-label="拖曳調整新鏡片頂點距離"><output id="vx-movement" class="vx-red"></output></label>
+</div>
+<div id="vx-overlay-panel">
+<div class="vx-legend"><span><i class="vx-line"></i>黑色：原鏡片／原光路</span><span><i class="vx-line red"></i>紅色：新鏡片／新光路</span><span><i class="vx-line dashed"></i>虛線：幾何延長</span></div>
+<div class="actions no-print vx-display-controls"><button class="btn small" id="vx-old-only">只看黑色</button><button class="btn small" id="vx-both" aria-pressed="true">黑紅疊合</button><button class="btn small" id="vx-new-only">只看紅色</button><label><input type="checkbox" id="vx-ext" checked>顯示延長線</label><label><input type="checkbox" id="vx-dim" checked>顯示距離</label><button class="btn small" id="vx-download">下載光路圖 SVG</button></div>
+<p class="fig-note">黑紅代表前後兩次配戴，不是兩片鏡片同時串聯。紅色度數會重新計算，以保持相同效果；鏡片本身不會因移動而自動改變度數。</p>
+</div>
+<div class="figure" id="vx-figure"></div>
+<p id="vx-node-note" class="fig-note" role="status" hidden></p>
+<div class="result" id="vx-result" aria-live="polite"></div>
+<p class="fig-note" id="vx-figure-note">水平位置採共同距離比例；只改 d₂ 時，眼與 FP 固定。垂直高度與眼睛形狀為示意。可點選鏡片、遠點或尺寸線閱讀符號說明。</p>
+</div>
+<div class="grid two section"><div class="card"><span class="tag">例題 E1 · 先畫焦距再換算</span><h3>−9.00 D 眼鏡，d＝15 mm</h3><ol class="steps"><li>從眼鏡量的 f′＝1/(−9)＝−11.111… cm。</li><li>眼鏡位在眼前 1.50 cm，因此眼平面至 FP 的距離＝−11.111…−1.50＝−12.611… cm。</li><li>F<sub>c</sub>＝1/(−0.126111…)≈−7.93 D。</li><li>公式驗算：−9/[1−0.015×(−9)]＝−7.93 D。</li></ol></div><div class="card"><span class="tag">例題 E2 · 正鏡同樣看距離</span><h3>＋12.00 D 眼鏡，d＝12 mm</h3><ol class="steps"><li>f′＝1/12＝＋8.333… cm。</li><li>從角膜量到 FP 少了 1.20 cm，故 r<sub>FP</sub>＝＋7.133… cm。</li><li>F<sub>c</sub>＝1/0.071333…≈＋14.02 D。</li><li>正鏡移到角膜，要更正才維持同一眼的矯正效果。</li></ol></div></div>
+<details><summary>臨床觀察的光學解釋：推近負鏡、拉遠正鏡</summary><p>同一片負鏡靠近眼，角膜平面有效力變得更負；同一片正鏡遠離眼，有效力變得更正。這能解釋部分矯正不足者移動鏡架後覺得較清楚的現象，但不能單靠此現象診斷或自行改處方。</p><p>請留意：「同一片負鏡推近會變強」與「換隱形眼鏡時應減少負力」不矛盾。前者固定鏡片、觀察效果；後者固定效果、調整鏡片。</p></details>
+<details><summary>進一步推導：從 d₁ 換到 d₂，如何保留相同效果？</summary><div class="eq">F₂＝F₁ / [1＋(d₂−d₁)F₁]</div><p>先算 F<sub>c</sub>＝F₁/(1−d₁F₁)，再算 F₂＝F<sub>c</sub>/(1＋d₂F<sub>c</sub>)，整理即得。用它前，先確認你要的是「換鏡保留效果」，不是「同一片鏡片移動」。</p></details>
+<div class="complete" data-complete="effectivity"><button class="btn teal">標記本節完成</button><a class="btn" href="#surgery">下一節：雷射與外科矯正 →</a></div>
+</section>
+
+<section class="panel" id="surgery" hidden>
+<div class="kicker">04 / LASER & SURGICAL CORRECTION · pp.110–111</div><h2>雷射與外科手術的屈光矯正</h2><p class="lead">前面是「在眼前加一片鏡片」，這一節改問「改變角膜本身的光學作用」。兩者都能改變光束的會聚狀態，但前者添加矯正鏡片，後者改變眼本身的屈光作用。</p>
+<div class="grid two"><div class="card"><h3>近視：減少會聚作用</h3><p>近視眼原本焦點過前。角膜中央變平，曲率半徑增大，正屈光力下降，使焦點向後移。</p><div class="eq">變平 → 半徑增大 → 正力減少 → 焦點後移</div></div><div class="card"><h3>遠視：增加會聚作用</h3><p>遠視眼原本理論焦點過後。使中央相對變陡，曲率半徑減小，正屈光力增加，使焦點向前移。</p><div class="eq">變陡 → 半徑減小 → 正力增加 → 焦點前移</div></div></div>
+<div class="card section"><h3>課本列出的方式：看「改變哪一層／哪個結構」</h3><div class="table-wrap"><table><thead><tr><th>方式</th><th>概念層次的作用</th><th>本章要會的判讀</th></tr></thead><tbody><tr><td>RK<br>Radial keratotomy<br>放射狀角膜切開術</td><td>歷史上利用放射狀切口改變角膜形狀，主要用於近視。</td><td>角膜變平，降低會聚力；課本作為發展背景介紹，不是本教材的治療推薦。</td></tr><tr><td>PRK<br>Photorefractive keratectomy<br>雷射屈光性角膜切除術</td><td>處理上皮後，以準分子雷射重塑下方基質。</td><td>重點是角膜光學形狀改變；不是把眼軸縮短。</td></tr><tr><td>LASIK<br>Laser-assisted in situ keratomileusis<br>雷射原位角膜塑形術</td><td>製作角膜瓣，重塑暴露的基質，再將瓣復位。</td><td>與 PRK 的組織處理方式不同，但都藉角膜形狀改變屈光作用。</td></tr><tr><td>角膜植入物<br>Corneal implants</td><td>課本另提及以角膜植入物補償屈光不正，部分在效果不理想時可移除。</td><td>不能把「部分可移除」當作完全可逆或無風險；也不是眼內人工水晶體的同義詞。</td></tr></tbody></table></div><p class="small muted">這裡只解釋第 7 章列出的光學原理，不列操作步驟、雷射能量、切削深度、患者適應症度數或品牌比較。</p></div>
+<div class="card section"><h3>互動 5｜從眼鏡度數走到角膜平面的光學目標</h3><p>先換算平面，再思考會聚作用要增加還是減少。下方「補償比例」只是理想模型，不是臨床雷射設定。</p><div class="controls"><label>全矯正眼鏡 Fs（D）<input id="su-f" type="number" min="-15" max="15" step=".25" value="-9"></label><label>眼鏡頂點距離 d（mm）<input id="su-d" type="number" min="0" max="25" step=".5" value="15"></label><label>理想光學補償比例<input id="su-percent" type="range" min="0" max="100" step="10" value="100"><output id="su-percent-label">100%</output></label></div><div class="figure" id="su-shape"></div><div class="figure" id="su-eye"></div><div class="readout" id="su-readout" aria-live="polite"></div><div class="result" id="su-result"></div><div class="callout warn"><b>不能把這些數字直接送進手術機器。</b><br>F<sub>c</sub> 是角膜平面的等效矯正目標，不等於真實角膜前表面的屈光力改變，也不是切削量。真實手術還涉及角膜兩表面、組織生物力學、癒合與設備規劃等；本模型均未處理。</div></div>
+<div class="grid two section"><div class="card"><span class="tag">例題 S1 · 不可照抄眼鏡處方</span><h3>−9.00 D、15 mm，角膜平面是多少？</h3><ol class="steps"><li>F<sub>c</sub>＝−9/[1−0.015×(−9)]≈−7.9295 D。</li><li>光學目標是補償角膜平面的 −7.93 D，而非直接照搬 −9.00 D。</li><li>在理想單一平面模型中，需要減少會聚作用；方向為角膜中央變平。</li><li>光學目標不保證實際手術結果，也不代表眼軸或其他眼部風險消失。</li></ol></div><div class="card"><h3>原理成立，不等於人人適合</h3><p>LASIK 的目標是降低對眼鏡或隱形眼鏡的依賴，不保證完全不需眼鏡。可能出現乾眼、眩光、光暈或矯正不足／過度等問題。</p><p>是否適合需由眼科醫師作完整評估；本教材不提供個人手術建議。</p><p class="small"><a href="https://www.fda.gov/medical-devices/surgery-devices/lasik" target="_blank" rel="noopener">FDA：LASIK 原理</a> · <a href="https://www.fda.gov/medical-devices/lasik/what-are-risks-and-how-can-i-find-right-doctor-me" target="_blank" rel="noopener">FDA：風險說明</a></p></div></div>
+<div class="complete" data-complete="surgery"><button class="btn teal">標記本節完成</button><a class="btn" href="#quiz">進入本章練習 →</a></div>
+</section>
+
+<section class="panel" id="quiz" hidden>
+<div class="kicker">CHAPTER 7 / GUIDED PRACTICE</div><h2>本章練習與完整解析</h2><p class="lead">24 題教學自編題，只考簡化眼、近視、遠視、球面鏡片等效性與本章手術光學原理。每題先寫條件，再列公式、代入與結論。</p>
+<div class="quiz-toolbar"><select id="q-topic" aria-label="題型"><option value="">全部題型</option></select><input id="q-search" type="search" placeholder="搜尋題號／題幹" aria-label="搜尋題目"><button class="btn" id="q-all">全部題目</button><button class="btn" id="q-random">隨機 10 題</button><button class="btn" id="q-wrong">錯題重練</button></div><p class="small muted" id="q-summary"></p>
+<div class="card" id="quiz-card"><div class="qmeta" id="q-meta"></div><div class="question" id="q-question"></div><div class="options" id="q-options"></div><div id="q-feedback" aria-live="polite"></div><button class="btn" id="q-solution-toggle" aria-expanded="false" aria-controls="q-solution">顯示完整解析</button><div class="solution" id="q-solution" hidden></div><div class="quiz-bottom"><button class="btn" id="q-prev">← 上一題</button><span id="q-counter" class="small"></span><button class="btn primary" id="q-next">下一題 →</button></div></div>
+<div class="card section"><h3>本章題型正確率</h3><p class="small muted">同一輪每題只計分一次；重開題組可再練。錯題依最近一次答案判定。只看解析不計分；分數是學習紀錄，不是考試能力認證。</p><div class="bars" id="q-stats"></div></div>
+<div class="complete" data-complete="quiz"><button class="btn teal">標記本節完成</button><a class="btn" href="#summary">本章結論 →</a></div>
+</section>
+
+<section class="panel" id="summary" hidden>
+<div class="kicker">CHAPTER 7 / SUMMARY · p.112</div><h2>把整章收回同一個問題</h2><p class="lead">「什麼樣的光束，經過這一隻放鬆的眼，會剛好聚焦在視網膜？」答案先決定 R，再決定矯正方法與平面。</p>
+<div class="grid two formula-grid"><div class="card"><h3>① 眼與視網膜的匹配</h3><div class="eq">U＋F＝V<br>R＝n′/ℓ′−F<br>ℓ′＝n′/(F＋R)</div><p>近視 R＜0；正視 R＝0；遠視 R＞0。ℓ′ 用 m；本教材 n′＝1.333。</p></div><div class="card"><h3>② 眼內焦點與物方遠點</h3><div class="eq">f′＝n′/F<br>r<sub>FP</sub>＝1/R</div><p>f′ 是眼的像方焦距；r<sub>FP</sub> 是眼外物方共軛點。R＝0 時遠點在無限遠。</p></div><div class="card"><h3>③ 位置法與平面換算</h3><div class="eq">f′<sub>s</sub>＝r<sub>FP</sub>＋d<br>F<sub>c</sub>＝F<sub>s</sub>/(1−dF<sub>s</sub>)<br>F<sub>s</sub>＝F<sub>c</sub>/(1＋dF<sub>c</sub>)</div><p>光向右走，眼平面 x＝0，眼鏡 x＝−d。d 是正間距，單位 m。</p></div><div class="card"><h3>④ 換距離、保留效果</h3><div class="eq">F₂＝F₁/[1＋(d₂−d₁)F₁]</div><p>只適用「用新鏡片保留原矯正效果」。若只是移動同一片鏡片，固定 F，分別計算兩個位置的 F<sub>c</sub>。</p></div></div>
+<div class="card section"><h3>解題前後各檢查一次</h3><ol class="steps"><li>目前在談的是眼的力 F、矯正力 F，還是遠點聚散度 R？</li><li>題目假設調節放鬆嗎？物在無限遠或遠點？</li><li>距離從眼平面或眼鏡量起？單位已換成 m 嗎？</li><li>是在「移同一片鏡片」，還是「換鏡片維持效果」？</li><li>負矯正應對應近視，正矯正應對應遠視；推回光路是否合理？</li><li>角膜手術題先換算平面，不把眼鏡度數當成切削參數。</li></ol></div>
+<div class="complete" data-complete="summary"><button class="btn teal">標記本節完成</button><a class="btn" href="#quiz">回到練習 →</a></div>
+</section>
+
+<section class="panel" id="sources" hidden>
+<div class="kicker">SOURCES / CHAPTER-BOUND SCOPE</div><h2>資料來源與版本說明</h2><div class="card"><h3>本版的範圍</h3><p>以使用者指定的 <a href="https://www.hochitw.com/products/f38cc492-830f-4cbb-acf1-ced0a03e9704" target="_blank" rel="noopener">合記出版社目錄</a>為章節邊界：第 7 章 p.95，近視 p.97、遠視 p.102、透鏡等效性 p.105、雷射與外科手術的屈光矯正 p.110，至 p.112 結論。</p><p>本地英文本 Steven H. Schwartz, <em>Geometrical and Visual Optics</em>, 3rd edition，pp.95–112，作為公式、模型與圖意核對依據。中文教材為重新組織編寫，非整章翻譯；圖解由本程式繪製，不公開課本頁面或原插圖。</p><h3>來源對照</h3><ul class="sources"><li>簡化眼與正視：pp.95–97；近視與實遠點：pp.97–102；遠視與虛遠點：pp.102–105。</li><li>透鏡等效性、頂點距離與移鏡：pp.105–110。</li><li>RK、PRK、LASIK 與角膜植入物概念：pp.110–111；結論 p.112。</li><li><a href="https://www.fda.gov/medical-devices/surgery-devices/lasik" target="_blank" rel="noopener">FDA：LASIK</a>及<a href="https://www.fda.gov/medical-devices/lasik/what-are-risks-and-how-can-i-find-right-doctor-me" target="_blank" rel="noopener">風險資訊</a>，僅補充非個人化安全提醒。查閱日：2026-10-02。</li></ul><h3>圖解說明</h3><p>頂點距離換算的黑紅疊合圖依課堂示意圖重繪：黑色為原鏡片，紅色為移位後重新換算的鏡片；兩組代表先後兩次配戴。圖的實線與虛線分別表示實際光路與幾何延長，並使用共同座標固定眼與 FP。公式依本章透鏡等效性推導；不嵌入原始手繪照片。</p><h3>版本與數值</h3><p>教學記號統一採 U＋F＝V：U 為物方聚散度、F 為屈光力、V 為像方聚散度。記號調整不改變數值、正負號約定或答案；眼本身的 F 與矯正鏡片 Fs、Fc 分開表示。</p><p>本版替換先前跨第 7–9 章的草稿。僅保留第 7 章；移除調節幅度／近點／ADD、球柱鏡處方、散光分類與 Sturm 光錐。新題號 CH7-01 至 CH7-24，全部為教學自編，並非國考或課本原題。</p><p>統一 n′＝1.333。課本常先取兩位小數再算下一步；本教材保留內部精度，所以遠點距離末位可能略異。輸出保留兩位小數，不等同商品度數級距。</p><h3>模型與使用限制</h3><p>本教材供近軸、單色、球面屈光不正教學。圖中的可對焦結論不等於實際視力；計算器不能替代專業驗光、隱形眼鏡驗配或眼科手術評估。</p><p>不使用外部程式或字型，單檔可離線開啟。新紀錄使用獨立鍵 <code>visualOptics.chapter7.v2</code>，不混入先前跨章題目的成績，也不刪除先前或原教室的紀錄。外部來源連結需連網。</p><p class="small muted">「列印教材」印出教學內容、公式與當下選取的一題解析，不是全題庫考卷。部分折疊詳解請先展開再列印。</p><button id="reset-progress" class="btn no-print">清除本章新版紀錄</button></div>
+</section>
+</main>
+
+<script>
+'use strict';
+const Optics=Object.freeze({
+  n:1.333,
+  reduced:(p,mm)=>{const r=1333/mm-p;return {r:Math.abs(r)<1e-9?0:r,focus:1333/p};},
+  axial:(p,r)=>{if(p+r<=0)throw Error('F＋R 必須大於 0。');return 1333/(p+r);},
+  far:r=>Math.abs(r)<1e-10?Infinity:1/r,
+  vertex:(f,mm,toCornea=true)=>{const den=1+(toCornea?-1:1)*mm/1000*f;if(Math.abs(den)<1e-9)throw Error('此位置為焦點，沒有有限的等效度數。');return f/den;},
+  replace:(f,d1,d2)=>{const den=1+(d2-d1)/1000*f;if(Math.abs(den)<1e-9)throw Error('此新平面需要無限大屈光力，請調整條件。');return f/den;},
+  surgical:(fs,d,percent)=>{const target=Optics.vertex(fs,d),change=target*percent/100;return {target,change,residual:target-change,axial:Optics.axial(60,target),power:60+change};}
+});
+window.Optics=Optics;
+const Lens=Object.freeze({
+ solve(f1,d1mm,d2mm){
+  if(![f1,d1mm,d2mm].every(Number.isFinite))throw Error('請輸入完整的數字。');
+  if(Math.abs(f1)<1e-10||Math.abs(f1)>20)throw Error('原鏡片需為非零度數，且介於 −20 至 ＋20 D。');
+  if(d1mm<0||d1mm>30||d2mm<0||d2mm>30)throw Error('頂點距離請介於 0 至 30 mm。');
+  const d1=d1mm/1000,d2=d2mm/1000,fp=1/f1-d1,focal2=fp+d2;
+  if(Math.abs(focal2)<1e-10)throw Error('新鏡片落在遠點，沒有有限的等效度數。');
+  const f2=1/focal2,fc1=f1/(1-d1*f1),fc2=f2/(1-d2*f2);
+  return {f1,f2,d1,d2,d1mm,d2mm,fp,focal1:1/f1,focal2,fc1,fc2,move:d1mm-d2mm};
+ },
+ geometry(s){
+  // Fixed bounds include every permitted new vertex distance, so moving d2 never moves the eye or FP on screen.
+  const lo=Math.min(s.fp,-.03),hi=Math.max(s.fp,0),scale=720/(hi-lo),x=v=>240+(v-lo)*scale;
+  return {eye:x(0),fp:x(s.fp),old:x(-s.d1),next:x(-s.d2),scale,axis:300};
+ }
+});
+const escapeXML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+const fixed=(n,d=2)=>Number(n).toFixed(d);
+const sign=(n,d=2)=>(n<-.5*10**(-d)?'−':n>.5*10**(-d)?'＋':'')+Math.abs(n).toFixed(d);
+function overlaySVG(s,{old=true,next=true,extensions=true,dimensions=true}={}){
+ const g=Lens.geometry(s),ey=g.eye,fp=g.fp,ay=g.axis,neg=s.fp<0;
+ const black='#15191f',red='#d02738',blue='#315db3',gray='#74869a';
+ const text=(x,y,t,color=black,size=21,anchor='middle')=>'<text x="'+x+'" y="'+y+'" style="fill:'+color+';font-size:'+size+'px" text-anchor="'+anchor+'">'+escapeXML(t)+'</text>';
+ const line=(x1,y1,x2,y2,color,width=2,extra='')=>'<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+color+'" stroke-width="'+width+'" '+extra+'/>';
+ const group=(id,label,body)=>'<g data-kbid="'+id+'" role="button" tabindex="0" aria-label="'+escapeXML(label)+'"><title>'+escapeXML(label)+'</title>'+body+'</g>';
+ let b='<rect width="1200" height="820" fill="#fff"/>';
+ b+='<defs><marker id="arrow-old" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="'+black+'"/></marker><marker id="arrow-new" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="'+red+'"/></marker></defs>';
+ b+=line(52,ay,1150,ay,'#98a6b8',1.6)+text(70,174,'平行光 →',gray,19,'start');
+ let eyeShape='<path d="M'+(ey+92)+' 159 Q'+(ey-92)+' 300 '+(ey+92)+' 441" stroke="#9aa9ba" stroke-width="3" fill="none"/>';
+ eyeShape+=line(ey,153,ey,454,'#7b8ca0',1.5,'stroke-dasharray="3 7"');
+ eyeShape+=text(Math.min(1060,ey+55),473,'眼／角膜平面 x＝0',gray,18);
+ b+=group('C-004','眼睛與遠點固定',eyeShape);
+ const row=(sx,f,h,color,isNew)=>{
+  let v='';
+  for(const height of [-h,h]){
+   const yy=ay+height,endY=ay+height*(ey-fp)/(sx-fp);
+   v+='<path data-ray="incoming" d="M58 '+yy+' L135 '+yy+' L'+sx+' '+yy+'" stroke="'+color+'" stroke-width="2.8" fill="none" marker-mid="url(#arrow-'+(isNew?'new':'old')+')"/>';
+   v+=line(sx,yy,ey,endY,color,3,'data-ray="actual"');
+   if(extensions){
+    v+=neg?line(fp,ay,sx,yy,color,2,'stroke-dasharray="8 7" data-ray="extension"'):line(ey,endY,fp,ay,color,2,'stroke-dasharray="8 7" data-ray="extension"');
+   }
+  }
+  // The capped vertical line denotes one thin lens in one scenario, never two serial lenses.
+  v+=line(sx,166,sx,432,color,4);
+  const cap=f<0?1:-1;
+  v+='<path d="M'+(sx-10)+' '+(166-9*cap)+' L'+sx+' 166 L'+(sx+10)+' '+(166-9*cap)+' M'+(sx-10)+' '+(432+9*cap)+' L'+sx+' 432 L'+(sx+10)+' '+(432+9*cap)+'" stroke="'+color+'" stroke-width="3" fill="none"/>';
+  const lx=isNew?860:410,ly=isNew?101:48;
+  v+=text(lx,ly,(isNew?'移動後 F₂＝':'原鏡片 F₁＝')+sign(f)+' D',color,24);
+  v+=line(lx,ly+11,sx,159,color,1.3);
+  return group(isNew?'C-002':'C-001',isNew?'紅色移動後鏡片，度數重新換算':'黑色原鏡片',v);
+ };
+ if(old)b+=row(g.old,s.f1,61,black,false);
+ if(next)b+=row(g.next,s.f2,103,red,true);
+ b+=group('C-004','兩組鏡片的第二焦點重合於同一眼的遠點',
+ '<circle cx="'+fp+'" cy="'+ay+'" r="6" fill="'+blue+'"/>'+line(fp,ay+10,fp,457,blue,1,'stroke-dasharray="3 6"')+
+ text(Math.max(190,Math.min(1030,fp)),494,'共同 FP＝第二焦點 F′',blue,21)+text(Math.max(190,Math.min(1030,fp)),523,'眼平面起算 '+sign(s.fp*100,2)+' cm',blue,17));
+ const dim=(from,to,y,label,color,id)=>{
+  let d=line(from,y,to,y,color,2)+line(from,y-7,from,y+7,color,2)+line(to,y-7,to,y+7,color,2);
+  d+=text((from+to)/2,y+28,label,color,21);
+  return group(id,label,d);
+ };
+ if(dimensions){
+  if(old)b+=dim(fp,g.old,554,'原 f′₁＝'+sign(s.focal1,3)+' m',black,'C-005');
+  if(next)b+=dim(fp,g.next,616,'新 f′₂＝'+sign(s.focal2,3)+' m',red,'C-005');
+  for(const a of [{show:old,sx:g.old,y:683,d:s.d1mm,c:black,label:'原 d₁',id:'C-001',offset:-200},{show:next,sx:g.next,y:733,d:s.d2mm,c:red,label:'新 d₂',id:'C-002',offset:155}]){
+   if(!a.show)continue;
+   const mid=(a.sx+ey)/2,labelX=Math.max(170,Math.min(1030,ey+a.offset));
+   let d=line(a.sx,a.y,ey,a.y,a.c,2)+line(a.sx,a.y-7,a.sx,a.y+7,a.c,2)+line(ey,a.y-7,ey,a.y+7,a.c,2);
+   d+=line(mid,a.y,labelX,a.y+17,a.c,1)+text(labelX,a.y+40,a.label+'＝'+fixed(a.d,1)+' mm',a.c,20);
+   b+=group(a.id,a.label+'頂點距離',d);
+  }
+ }
+ b+=text(50,797,'黑／紅：兩次不同配戴狀態；實線：實際光路；虛線：幾何延長。',gray,15,'start');
+ b+=text(1150,797,'平行光 U＝0 → V＝F',gray,15,'end');
+ return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="group" aria-label="黑紅鏡片共同遠點疊合圖"><title>球面鏡片等效性：固定眼與遠點，移位後換算鏡片</title><desc>黑色為原鏡片、紅色為移後鏡片；它們代表前後兩種狀態，不是串聯。負鏡的反向延長線交於同一眼前遠點；正鏡眼後的虛線代表若沒有眼時的會聚方向。文字與水平位置同源於計算模型，垂直高度為示意。</desc><style>text{font-family:system-ui,Microsoft JhengHei,sans-serif}g[role=button]:focus{outline:2px dotted #285fa5;outline-offset:4px;cursor:pointer}</style>'+b+'</svg>';
+}
+window.Lens=Lens;
+const $=id=>document.getElementById(id);
+const num=(x,d=2)=>Number(x).toFixed(d);
+const signed=(x,d=2)=>(Math.abs(x)<.5*10**(-d)?0:x).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d,useGrouping:false,signDisplay:'always'});
+const D=x=>signed(x)+' D';
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function svg(title,body,height=375){return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 '+height+'" role="img" aria-label="'+esc(title)+'"><title>'+esc(title)+'</title>'+body+'</svg>';}
+function line(x1,y1,x2,y2,cls='axis',extra=''){return '<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" class="'+cls+'" '+extra+'/>';}
+function txt(x,y,s,cls='',anchor='middle'){return '<text x="'+x+'" y="'+y+'" class="'+cls+'" text-anchor="'+anchor+'">'+esc(s)+'</text>';}
+function dot(x,y,color='var(--orange)'){return '<circle cx="'+x+'" cy="'+y+'" r="5" fill="'+color+'"/>';}
+function eyeSVG(p,len,mode='uncorrected',r=null){
+  const state=Optics.reduced(p,len),input=mode==='farpoint'?r:0,total=mode==='corrected'?p+r:p;
+  const imageMm=1333/(total+input),ex=225,axisY=164,scale=500/Math.max(imageMm,len,25),ret=ex+len*scale,focus=ex+imageMm*scale;
+  let b='<path d="M225 73 Q320 30 '+ret+' 60 Q'+(ret+32)+' 160 '+ret+' 261 Q320 292 225 253" fill="#edf6f9" stroke="#b9d1dd" stroke-width="2"/>';
+  b+=line(32,axisY,785,axisY)+line(ex,64,ex,265,'','stroke="var(--blue)" stroke-width="4"')+line(ret,64,ret,265,'','stroke="var(--teal)" stroke-width="5"');
+  for(const h of [-58,0,58]){
+    const y0=axisY+h*(1-input*((40-ex)/scale/1000));
+    const yr=axisY+h*(1-len/imageMm);
+    b+=line(40,y0,ex,axisY+h,'ray')+line(ex,axisY+h,ret,yr,'ray');
+    if(focus>ret+.01)b+=line(ret,yr,focus,axisY,'ray virtual');
+  }
+  b+=dot(focus,axisY)+txt(ex,33,mode==='corrected'?'眼平面＋同平面矯正片':'簡化眼等效面')+txt(ret,296,'視網膜')+txt(focus,329,'像點 '+num(imageMm)+' mm')+txt(47,91,input===0?'平行光 →':'入射 U＝'+D(input),'label','start');
+  b+=txt(410,364,'ℓ′＝'+num(len,4)+' mm；'+(mode==='corrected'?'F＋Fc＝'+D(total):'眼 F＝'+D(p))+'；像方 V＝'+D(total+input),'label');
+  return svg('簡化眼光路：像點與視網膜比較',b,389);
+}
+function correctionSVG(r){
+  const cx=350,axisY=180,fp=r<0?110:645;
+  let b=line(35,axisY,780,axisY)+line(cx,85,cx,279,'','stroke="var(--blue)" stroke-width="5"');
+  b+=txt(410,32,'先暫時移除眼，只觀察矯正鏡片的成像');
+  b+=txt(cx,68,'矯正片 Fc＝'+D(r))+txt(47,117,'遠方平行光','label','start');
+  if(Math.abs(r)<1e-9){for(const h of [-50,50])b+=line(40,axisY+h,775,axisY+h,'ray');return svg('零度數片，遠點在無限遠',b+txt(410,329,'R＝0 D：不改變平行光；遠點在無限遠'),370);}
+  for(const h of [-50,50]){
+    b+=line(40,axisY+h,cx,axisY+h,'ray');
+    b+=line(cx,axisY+h,775,axisY+h*(775-fp)/(cx-fp),'ray');
+    if(r<0)b+=line(cx,axisY+h,fp,axisY,'ray virtual');
+  }
+  b+=dot(fp,axisY)+txt(fp,315,r<0?'虛像＝眼前實遠點 FP':'實像＝眼後虛遠點 FP')+txt(fp,346,'從眼平面量 '+signed(100/r)+' cm');
+  b+=txt(410,397,r<0?'負鏡先讓光發散；虛線為反向延長。':'正鏡先讓光會聚；眼會在此光束到達 FP 前介入。','label')+txt(410,427,'位置自動縮放；實／虛像相對於鏡片，實／虛遠點相對於眼。','label');
+  return svg('矯正鏡片像方焦點與眼遠點的對應',b,450);
+}
+function distanceSVG(fs,dMm){
+  const d=dMm/1000;
+  if(Math.abs(fs)<1e-9)return svg('零度數鏡片沒有有限焦點',line(50,170,765,170)+txt(410,100,'Fs＝0 D，角膜平面仍為 0 D')+txt(410,245,'無有限焦點；遠點在無限遠'),305);
+  const r=1/fs-d,lo=Math.min(-d,0,r),hi=Math.max(-d,0,r),span=Math.max(hi-lo,.025),x=v=>100+(v-lo)/span*620,sx=x(-d),ex=x(0),fx=x(r);
+  let b=line(40,194,785,194)+line(sx,137,sx,238,'','stroke="var(--purple)" stroke-width="4"')+line(ex,139,ex,239,'','stroke="var(--teal)" stroke-width="4"')+dot(fx,194);
+  b+=txt(245,36,'眼鏡 x＝−'+num(dMm,1)+' mm')+line(245,46,sx,137,'dim')+txt(605,82,'眼平面 x＝0')+line(605,91,ex,139,'dim');
+  b+=txt(Math.max(140,Math.min(680,fx)),279,'FP：r＝'+signed(r*100)+' cm')+txt(410,328,'鏡片至 FP：f′s＝'+signed(100/fs)+' cm；Fs＝'+D(fs),'label')+txt(410,358,'眼鏡焦點與眼的遠點重合；d＝'+num(dMm,1)+' mm。','label');
+  return svg('沿同一比例標出眼鏡、眼平面與遠點',b,385);
+}
+function distanceChangeSVG(f,d1,d2,keep){
+  const f2=keep?Optics.replace(f,d1,d2):f;
+  if(Math.abs(f)<1e-9)return distanceSVG(f,d1);
+  const r1=1/f-d1/1000,r2=1/f2-d2/1000,points=[-d1/1000,-d2/1000,0,r1,r2];
+  const lo=Math.min(...points),span=Math.max(Math.max(...points)-lo,.025),x=v=>100+(v-lo)/span*620;
+  let b='';
+  [{f,d:d1,r:r1,y:156,title:'① 原鏡片',point:'原眼 FP'},{f:f2,d:d2,r:r2,y:425,title:keep?'② 換鏡保留效果':'② 移動同一片鏡片',point:keep?'同一 FP':'新鏡片焦點'}].forEach(p=>{
+    const sx=x(-p.d/1000),ex=x(0),fx=x(p.r);
+    b+=txt(40,p.y-127,p.title+'：'+D(p.f),'','start');
+    b+=line(40,p.y,785,p.y)+line(sx,p.y-35,sx,p.y+35,'','stroke="var(--purple)" stroke-width="4"')+line(ex,p.y-35,ex,p.y+35,'','stroke="var(--teal)" stroke-width="4"')+dot(fx,p.y);
+    b+=txt(245,p.y-90,'鏡片 x＝−'+num(p.d,1)+' mm')+line(245,p.y-80,sx,p.y-35,'dim')+txt(605,p.y-52,'眼平面 x＝0')+line(605,p.y-44,ex,p.y-35,'dim');
+    b+=txt(Math.max(165,Math.min(655,fx)),p.y+64,p.point+'：'+signed(p.r*100)+' cm');
+    b+=txt(410,p.y+99,'f′＝'+signed(100/p.f)+' cm；角膜有效力 Fc＝'+D(Optics.vertex(p.f,p.d)),'label');
+  });
+  b+=txt(410,564,keep?'同一距離比例：眼與 FP 都不動；新鏡片需重新對準同一 FP。':Math.abs(r2-r1)<1e-9?'同一距離比例：頂點距離不變，焦點仍對準原眼 FP。':'同一距離比例：眼不動；焦點位置改變，不再對準原眼 FP。','label');
+  return svg('鏡片移動前後的共同座標比較',b,588);
+}
+function shapeSVG(target){
+  const sign=Math.abs(target)<1e-9?0:target<0?-1:1;
+  const panels=[{cx:225,amp:68,color:'#92a7b8',title:'原角膜形狀（基準示意）'},{cx:595,amp:sign<0?38:sign>0?100:68,color:'var(--teal)',title:sign<0?'中央變平：減少會聚':sign>0?'中央變陡：增加會聚':'零目標：不需形狀補償'}];
+  let b=txt(410,29,'形狀原理示意：不是切削輪廓、尺寸或手術規劃');
+  panels.forEach((p,i)=>{const base=p.cx+64,y1=83,y2=263,mid=173;b+=line(base,y1,base,y2,'dim');b+='<path d="M'+base+' '+y1+' Q'+(base-2*p.amp)+' '+mid+' '+base+' '+y2+'" fill="none" stroke="'+p.color+'" stroke-width="5"/>';if(i===1)b+='<path d="M'+base+' '+y1+' Q'+(base-136)+' '+mid+' '+base+' '+y2+'" fill="none" stroke="#92a7b8" stroke-width="2" stroke-dasharray="7 6"/>';b+=txt(p.cx,310,p.title,'label');});
+  b+=txt(410,183,'→')+txt(410,354,'光由左向右；虛線表示原形狀，實線表示改變方向。','label');
+  return svg('角膜中央曲率變化與屈光方向',b,380);
+}
+function input(id,min,max){const e=$(id),v=Number(e.value);if(!e.value.trim()||!Number.isFinite(v)||v<min||v>max)throw Error('請在「'+e.parentElement.textContent.trim().split('\n')[0]+'」輸入 '+min+' 至 '+max+' 的數字。');return v;}
+function safe(target,clear,fn){try{fn();$(target).classList.remove('error');}catch(e){$(target).classList.add('error');$(target).textContent=e.message;clear.forEach(id=>$(id).replaceChildren());}}
+function renderEye(){safe('eye-result',['eye-figure','eye-readout'],()=>{const p=input('eye-power',50,70),len=input('eye-length',19,27),o=Optics.reduced(p,len),r=o.r,type=r===0?'正視':r<0?'近視':'遠視';$('eye-figure').innerHTML=eyeSVG(p,len);$('eye-readout').innerHTML='<div>放鬆眼的屈光狀態<b>'+type+'</b></div><div>遠點聚散度 R<b>'+D(r)+'</b></div><div>遠點位置<b>'+(r===0?'無限遠':(r<0?'眼前 ':'眼後 ')+num(Math.abs(100/r))+' cm')+'</b></div>';$('eye-result').innerHTML='① ℓ′＝'+num(len/1000,7)+' m。<br>② 視網膜所需 V＝1.333/ℓ′＝'+D(1333/len)+'。<br>③ R＝V−F＝'+D(r)+'，因此為'+type+'。<br>④ 未矯正遠方像點 f′＝1.333/F＝'+num(o.focus,4)+' mm。<br>⑤ '+(r===0?'R＝0，物方遠點在無限遠。':'物方遠點 rFP＝1/R＝'+signed(1/r,6)+' m，與眼內 f′ 不同。');});}
+function renderRefractive(kind){const prefix=kind==='myopia'?'my':'hy';safe(prefix+'-result',[prefix+'-figure',prefix+'-readout',prefix+'-correction'],()=>{const r=input(prefix+'-r',kind==='myopia'?-12:.25,kind==='myopia'?-.25:12),stage=$(prefix+'-stage').value,p=60,len=Optics.axial(p,r),active=stage!=='uncorrected';$(prefix+'-figure').innerHTML=eyeSVG(p,len,stage,r);$(prefix+'-correction').innerHTML=correctionSVG(r);$(prefix+'-readout').innerHTML='<div>固定的眼 F<b>＋60.00 D</b></div><div>眼的遠點 FP<b>'+(r<0?'眼前 ':'眼後 ')+num(Math.abs(100/r))+' cm</b></div><div>本情境像點<b>'+(active?'在視網膜':r<0?'在視網膜前':'理論位置在視網膜後')+'</b></div>';let explain=stage==='uncorrected'?'無限遠 U＝0，眼只提供 F＝60 D。':stage==='farpoint'?(r<0?'把實物放在 FP，光以 R 的負聚散度抵達眼。':'假設入射光已會聚，U＝R；虛遠點是它未遇眼時的趨向點。'):'遠方光先經同平面矯正片 Fc＝R，再交給眼。';$(prefix+'-result').innerHTML='① 此眼 R＝'+D(r)+'；rFP＝1/R＝'+signed(100/r)+' cm。<br>② 為保持同一屈光狀態，模型眼軸 ℓ′＝1.333/(60＋R)＝'+num(len,4)+' mm。<br>③ '+explain+'<br>④ 眼內像方聚散度 V＝'+D(active?60+r:60)+'；視網膜需要 '+D(60+r)+'。<br><b>結論：'+(active?'兩者相同，像落在視網膜。':'兩者不相同，遠方物像未落在視網膜。')+'</b>';});}
+let vertexOverlayState=null,vertexDisplay={old:true,next:true};
+function vertexOverlayOptions(){return {...vertexDisplay,extensions:$('vx-ext').checked,dimensions:$('vx-dim').checked};}
+function renderVertex(){
+ const mode=$('vx-mode').value,isTwo=mode==='move'||mode==='replace',overlay=mode==='replace';
+ vertexOverlayState=null;$('vx-download').disabled=true;$('vx-node-note').hidden=true;
+ $('vx-overlay-panel').hidden=!overlay;$('vx-new-wrap').hidden=!isTwo;
+ $('vx-f-label').textContent=mode==='toSpectacle'?'輸入角膜等效力 Fc（D）':isTwo?'原鏡片 F₁（D）':'輸入眼鏡度數 Fs（D）';
+ $('vx-d-label').textContent=isTwo?'原頂點距離 d₁（mm）':'頂點距離 d（mm）';
+ $('vx-movement').textContent='';
+ $('vx-figure-note').textContent=overlay?'水平位置採共同距離比例；只改 d₂ 時，眼與 FP 固定。垂直高度與眼睛形狀為示意。可點選鏡片、遠點或尺寸線閱讀符號說明。':'位置圖沿共同水平距離比例繪製；計算保留完整精度，最後才顯示兩位小數，不按商品級距取整。';
+ safe('vx-result',['vx-figure'],()=>{
+  const f=input('vx-f',-20,20),d=input('vx-d',0,30),dm=d/1000,d2=isTwo?input('vx-new',0,30):null;
+  if(isTwo){$('vx-new-range').value=d2;const delta=d-d2;$('vx-movement').textContent=Math.abs(delta)<1e-9?'與原位置相同':(delta>0?'向眼移近 ':'離眼移遠 ')+num(Math.abs(delta),1)+' mm';}
+  if(Math.abs(f)<1e-9){
+   $('vx-overlay-panel').hidden=true;$('vx-figure').innerHTML=distanceSVG(0,d);
+   $('vx-result').innerHTML='零度數鏡片不改變平行光的聚散度。<br>眼鏡與角膜平面均為 0.00 D；任意頂點距離的等效值仍為 0.00 D。<br>此時沒有有限的焦點，遠點在無限遠，不使用 1/0 計算有限位置。';
+   return;
+  }
+  let out='',fs=f;
+  if(mode==='toCornea'){
+   const fc=Optics.vertex(f,d);
+   out='① d＝'+num(dm,4)+' m。<br>② Fc＝'+signed(f)+'/[1−'+num(dm,4)+'×('+signed(f)+')]＝<b>'+D(fc)+'</b>。<br>③ 位置驗算：rFP＝1/Fs−d；取倒數可得同一個 Fc。<br>④ 這是維持同一眼矯正效果的角膜平面度數。';
+   $('vx-figure').innerHTML=distanceSVG(fs,d);
+  }else if(mode==='toSpectacle'){
+   fs=Optics.vertex(f,d,false);
+   out='① 輸入是角膜平面的 Fc，不是眼鏡度數。<br>② Fs＝'+signed(f)+'/[1＋'+num(dm,4)+'×('+signed(f)+')]＝<b>'+D(fs)+'</b>。<br>③ 遠點不變；只改變從鏡片量到遠點的焦距。';
+   $('vx-figure').innerHTML=distanceSVG(fs,d);
+  }else if(mode==='move'){
+   const fc1=Optics.vertex(f,d),fc2=Optics.vertex(f,d2);
+   out='① 鏡片本身一直是 '+D(f)+'，沒有換鏡。<br>② 原位置 Fc₁＝'+D(fc1)+'；新位置 Fc₂＝'+D(fc2)+'。<br>③ 有效力改變 Fc₂−Fc₁＝<b>'+D(fc2-fc1)+'</b>。<br>④ 有效力改變不等於鏡片本身的屈光力改變。<br><span class="small">前後圖使用同一座標比例：原鏡片焦點與眼 FP 重合；比較新位置的焦點是否仍與原 FP 重合。</span>';
+   $('vx-figure').innerHTML=distanceChangeSVG(f,d,d2,false);
+  }else{
+   const s=Lens.solve(f,d,d2);vertexOverlayState=s;
+   $('vx-figure').innerHTML=overlaySVG(s,vertexOverlayOptions());
+   $('vx-download').disabled=false;
+   out='<div class="readout"><div>黑色：原鏡片 F₁<b>'+D(s.f1)+'</b></div><div>紅色：移後需換用 F₂<b class="vx-red" id="vx-new-power">'+D(s.f2)+'</b></div><div>固定的眼遠點 FP<b id="vx-fixed-fp">'+(s.fp<0?'眼前 ':'眼後 ')+num(Math.abs(s.fp)*100)+' cm</b></div></div>';
+   out+='<ol class="steps"><li>平行光 U＝0；由 U＋F＝V，得 V＝F，故 f′＝1/F（空氣中）。</li><li>原焦距 f′₁＝1/F₁＝'+signed(s.focal1,6)+' m。</li><li>固定遠點 rFP＝f′₁−d₁＝'+signed(s.focal1,6)+'−'+num(s.d1,4)+'＝'+signed(s.fp,6)+' m。</li><li>新焦距 f′₂＝rFP＋d₂＝'+signed(s.fp,6)+'＋'+num(s.d2,4)+'＝'+signed(s.focal2,6)+' m。</li><li>新鏡片 F₂＝1/f′₂＝<b>'+D(s.f2)+'</b>；也可用 F₂＝F₁/[1＋(d₂−d₁)F₁] 驗算。</li><li>原 Fc₁＝'+D(s.fc1)+'；新 Fc₂＝'+D(s.fc2)+'。使用未取整 F₂ 計算，兩者均為 '+signed(s.fc1,4)+' D，維持同一矯正效果。</li></ol>';
+   out+='<div class="callout">'+(s.fp<0?'負鏡讓實光線向右發散；虛線向左反向延伸，交於共同 FP。它是負鏡的虛第二焦點，也是眼的實遠點。':'正鏡使入射光會聚；眼後虛線代表暫不放入眼時的原會聚方向，不是光穿過眼而不折射。共同 FP 是眼的虛遠點。')+'</div>';
+  }
+  $('vx-result').innerHTML=out;
+ });
+ for(const [id,active] of [['vx-old-only',vertexDisplay.old&&!vertexDisplay.next],['vx-new-only',vertexDisplay.next&&!vertexDisplay.old],['vx-both',vertexDisplay.old&&vertexDisplay.next]])$(id).setAttribute('aria-pressed',String(active));
+}
+function setVertexPreset(f,d1,d2){
+ $('vx-mode').value='replace';$('vx-f').value=f;$('vx-d').value=d1;$('vx-new').value=d2;$('vx-new-range').value=d2;
+ vertexDisplay={old:true,next:true};$('vx-ext').checked=true;$('vx-dim').checked=true;renderVertex();
+}
+function renderSurgery(){safe('su-result',['su-shape','su-eye','su-readout'],()=>{const fs=input('su-f',-15,15),d=input('su-d',0,25),pc=input('su-percent',0,100),s=Optics.surgical(fs,d,pc);$('su-percent-label').textContent=pc+'%';$('su-shape').innerHTML=shapeSVG(s.target);$('su-eye').innerHTML=eyeSVG(s.power,s.axial);$('su-readout').innerHTML='<div>角膜平面等效目標<b>'+D(s.target)+'</b></div><div>本次模型補償 C<b>'+D(s.change)+'</b></div><div>模型剩餘 R<b>'+D(s.residual)+'</b></div>';$('su-result').innerHTML='① 先換平面：Fc＝Fs/(1−dFs)＝'+D(s.target)+'。<br>② 以放鬆眼 F＝60 D 建立相同屈光狀態，ℓ′＝1.333/(60＋Fc)＝'+num(s.axial,4)+' mm。<br>③ 理想模型補償 C＝Fc×'+pc+'%＝'+D(s.change)+'；只在模型中令 F新＝60＋C。<br>④ 眼軸位置不動，剩餘 R＝Fc−C＝<b>'+D(s.residual)+'</b>。<br>⑤ '+(pc===100?'完全補償時，遠方像點在模型視網膜；這不是實際手術結果保證。':'尚未完全補償時，遠方像點未必落在視網膜。')+'<br><span class="small">形狀圖只顯示目標方向，不隨比例呈現真實切削輪廓。</span>';});}
+const questions=[];
+function Q(id,topic,q,opts,ans,formula,steps,end,trap,visual,assumption='調節放鬆；近軸、單色、球面模型；n＝1、n′＝1.333。'){questions.push({id:'CH7-'+String(id).padStart(2,'0'),topic,q,opts,ans,formula,steps,end,trap,visual,assumption,source:'第7章教學自編題｜非歷屆原題'});}
+Q(1,'簡化眼','F＝60 D、n′＝1.333，放鬆眼對無限遠物體的像方焦距約為何？',['16.67 mm','22.22 mm','60 mm','1.333 mm'],1,'f′＝n′/F',['無限遠物體的 U＝0。','經眼後 V＝0＋60＝60 D。','f′＝1.333/60＝0.0222167 m。','換成 mm：22.2167 mm。'],'約22.22 mm。','1/60沒有納入眼內折射率，是空氣中的焦距算法。',{type:'eye',args:[60,1333/60]});
+Q(2,'簡化眼','保持F不變，只增加等效眼平面到視網膜的距離，哪項判斷正確？',['眼內F′必定跟著視網膜移動','R增加、變得更遠視','眼內F′不動，R下降','遠點必定保持不動'],2,'f′＝n′/F；R＝n′/ℓ′−F',['F固定，所以f′固定。','ℓ′增加，n′/ℓ′下降。','R因此下降；由正視出發會變成近視。'],'F′不動，R下降。','FP和F′不能互換：FP還取決於視網膜位置。',{type:'eye',args:[60,24]});
+Q(3,'簡化眼','遠點在眼後時，為什麼仍用rFP＝1/R而非1.333/R？',['因眼內折射率總是1','因遠點描述入眼前空氣光束的物方共軛位置','因正距離都不能乘折射率','因遠視沒有真正的屈光力'],1,'rFP＝n/R，物方n＝1',['先確認所求是物方遠點，而不是眼內像點。','眼後虛遠點描述會聚入射光原本趨向之處。','這束光在進眼前的介質為空氣，n＝1。'],'使用物方折射率1。','不能單看點在圖的眼後，就一律套眼內折射率。',{type:'correction',args:[2.5]});
+Q(4,'近視','未矯正眼對無限遠的焦點在視網膜前。需要哪一類同平面矯正力？',['正力','負力','零度數','無法由焦點位置判斷'],1,'R＝n′/ℓ′−F',['焦點過前表示F相對過強。','視網膜所需聚散度比F小。','R為負；負片先使入射光發散。'],'用負力矯正近視。','「焦點在前」不等於「用正鏡片」。',{type:'eye',args:[60,24]});
+Q(5,'近視','F＝60 D、ℓ′＝24 mm的簡化眼，其遠點聚散度約為何？',['＋4.46 D','−4.46 D','＋55.54 D','−18.33 D'],1,'R＝n′/ℓ′−F',['24 mm＝0.024 m。','視網膜需求＝1.333/0.024＝55.5417 D。','R＝55.5417−60＝−4.4583 D。'],'R≈−4.46 D，近視。','55.54 D是視網膜要求的像方聚散度，不是矯正力。',{type:'eye',args:[60,24]});
+Q(6,'近視','近視眼的實遠點在眼前40 cm，理想同平面矯正力為何？',['＋2.50 D','−0.40 D','−2.50 D','＋0.40 D'],2,'R＝1/rFP',['眼前取負，rFP＝−0.40 m。','R＝1/(−0.40)＝−2.50 D。','同平面鏡片讓遠方光形成此聚散度，故Fc＝R。'],'−2.50 D。','40 cm要換成0.40 m，也不能漏掉負號。',{type:'correction',args:[-2.5]});
+Q(7,'近視','F＝60 D，角膜平面R＝−1.00 D，等效眼軸長約為何？',['21.85 mm','22.22 mm','22.59 mm','23.33 mm'],2,'ℓ′＝n′/(F＋R)',['視網膜像方需求＝60−1＝59 D。','ℓ′＝1.333/59＝0.0225932 m。','換成22.5932 mm，比正視基準稍長。'],'約22.59 mm。','不能直接用粗略「1/3 mm＝1 D」代替本題精算。',{type:'eye',args:[60,1333/59]});
+Q(8,'近視','R＝−2.50 D的未矯正眼，物體從遠點40 cm移到眼前1 m，調節仍放鬆。焦點如何？',['仍在視網膜','移到視網膜後','移到視網膜前','變成眼前虛像'],2,'U＋F＝V',['原在40 cm，U＝−2.50 D，符合R。','移到1 m，U＝−1 D，比原入射聚散度多＋1.50 D。','眼F固定，像方會聚力增加，像距縮短。'],'焦點在視網膜前。','物體變遠不表示成像位置也跟著變遠。',{type:'eyeInput',args:[60,1333/57.5,'farpoint',-1]});
+Q(9,'近視','固定等效眼軸長，眼的屈光力增加＋2.00 D，R如何變化？',['增加＋2 D','減少2 D','不變','必定變正視'],1,'ΔR＝−ΔF（ℓ′固定）',['R＝n′/ℓ′−F。','第一項固定，只有F增加。','R新＝R舊−2 D；由正視出發即為−2 D。'],'R降低2 D，朝近視方向改變。','眼的屈光力變正，矯正力反而需要往負方向走。',{type:'eye',args:[62,1333/60]});
+Q(10,'遠視','遠視眼在放鬆狀態下，為何需要正聚散度的入射光？',['眼的F相對不足，需要先會聚的光','要讓眼內焦點更往後','正聚散度代表發散','遠點在眼前'],0,'R＝n′/ℓ′−F＞0',['視網膜需求大於眼現有的F。','不足部分須由入射光提供正聚散度。','正矯正片可先使遠方平行光會聚。'],'需要會聚入射光，補足不足的會聚作用。','遠視的眼後焦點不代表要用負片繼續減少會聚。',{type:'eye',args:[60,21.22]});
+Q(11,'遠視','F＝60 D、ℓ′＝20 mm的簡化眼，R約為多少？',['−6.65 D','＋6.65 D','＋60 D','＋20 D'],1,'R＝1.333/ℓ′−60',['20 mm＝0.020 m。','視網膜需求＝1.333/0.020＝66.65 D。','R＝66.65−60＝＋6.65 D。'],'＋6.65 D，遠視。','本版n′為1.333；若改用4/3會得到不同末位，不應混用。',{type:'eye',args:[60,20]});
+Q(12,'遠視','遠點在眼後25 cm，同平面矯正力為何？',['−4.00 D','＋0.25 D','＋4.00 D','＋5.33 D'],2,'R＝1/rFP',['rFP＝＋0.25 m。','物方n＝1，所以R＝1/0.25＝＋4 D。','理想同平面正片Fc＝＋4 D。'],'＋4.00 D。','＋5.33 D來自錯用眼內折射率1.333。',{type:'correction',args:[4]});
+Q(13,'遠視','正矯正鏡片單獨形成的像位在眼的FP，但眼在光到達該點前介入。對眼而言，此FP是什麼？',['實物','虛物','視網膜上的虛像','必定是眼的F′'],1,'物的實虛由入射光束判斷',['正矯正片使光向FP會聚。','光遇到眼時尚未抵達FP。','對眼而言，入射光原本趨向的點是虛物。'],'它是眼的虛物點（虛遠點）。','前片的實像可以成為後方系統的虛物；必須指明系統。',{type:'correction',args:[2.5]});
+Q(14,'遠視','下列哪項敘述符合本章對遠視的定義？',['遠方一定清楚','只要眼軸短就一定遠視，無須看F','調節放鬆看無限遠，理論焦點在視網膜後','遠點必定在眼前'],2,'F＜n′/ℓ′（調節放鬆）',['定義須先固定調節放鬆與無限遠物體。','相對於眼軸，眼的會聚力不足。','因此理論像方焦點比視網膜更後。'],'選擇描述放鬆眼光學條件的敘述。','個人的遠方清晰度可能受調節等影響，不能當作定義。',{type:'eye',args:[60,21.22]});
+Q(15,'透鏡等效性','−9.00 D眼鏡，頂點距離15 mm，角膜平面等效力約為何？',['−10.40 D','−9.00 D','−7.93 D','＋7.93 D'],2,'Fc＝Fs/(1−dFs)',['d＝0.015 m。','分母＝1−0.015×(−9)＝1.135。','Fc＝−9/1.135＝−7.9295 D。','位置驗算：rFP＝−1/9−0.015＝−0.126111 m。'],'約−7.93 D。','不能把mm直接代入，也不能弄反換算方向。',{type:'distance',args:[-9,15]});
+Q(16,'透鏡等效性','＋12.00 D眼鏡，頂點距離12 mm，角膜平面等效力約為何？',['＋10.49 D','＋12.00 D','＋14.02 D','−14.02 D'],2,'Fc＝Fs/(1−dFs)',['d＝0.012 m。','分母＝1−0.012×12＝0.856。','Fc＝12/0.856＝14.0187 D。','正鏡移到角膜平面需更強正力以維持效果。'],'約＋14.02 D。','正鏡與負鏡的絕對值變化方向不同。',{type:'distance',args:[12,12]});
+Q(17,'透鏡等效性','角膜平面需−6.00 D，眼鏡頂點距離15 mm。眼鏡力約為何？',['−5.50 D','−6.00 D','−6.59 D','＋6.59 D'],2,'Fs＝Fc/(1＋dFc)',['輸入是Fc，目標是Fs。','分母＝1＋0.015×(−6)＝0.91。','Fs＝−6/0.91＝−6.5934 D。','眼鏡離眼較遠，需要較強負鏡。'],'約−6.59 D。','用1−dFc會得到錯誤的−5.50 D。',{type:'distance',args:[-6/.91,15]});
+Q(18,'透鏡等效性','同一片−10.00 D眼鏡由距眼12 mm移到5 mm，鏡片本身不變。角膜平面有效力如何？',['由−8.93變為−9.52 D，變得更負','由−9.52變為−8.93 D，變弱','始終−10 D','始終−8.93 D'],0,'Fc(d)＝F/(1−dF)',['原Fc＝−10/(1＋0.12)＝−8.9286 D。','新Fc＝−10/(1＋0.05)＝−9.5238 D。','同一片負鏡靠近眼，有效負力增加。'],'由約−8.93變為−9.52 D。','此題固定鏡片，不是計算要換哪一片鏡片來保持效果。',{type:'distanceChange',args:[-10,12,5,false]});
+Q(19,'透鏡等效性','同一片＋10.00 D眼鏡由5 mm移到12 mm，鏡片本身不變。角膜平面有效力如何？',['由＋11.36降為＋10.53 D','維持＋10 D','由＋10.53增為＋11.36 D','變為負力'],2,'Fc(d)＝F/(1−dF)',['5 mm處Fc＝10/0.95＝10.5263 D。','12 mm處Fc＝10/0.88＝11.3636 D。','正鏡遠離眼，有效正力增加。'],'由約＋10.53增為＋11.36 D。','判斷前先分清鏡片本身度數與作用在眼的有效度數。',{type:'distanceChange',args:[10,5,12,false]});
+Q(20,'透鏡等效性','−10.00 D眼鏡原距眼12 mm，改到5 mm並換鏡片，要求保留原矯正效果。新鏡片約為何？',['−10.75 D','−10.00 D','−9.35 D','−8.93 D'],2,'F2＝F1/[1＋(d2−d1)F1]',['d2−d1＝0.005−0.012＝−0.007 m。','F2＝−10/[1＋(−0.007)×(−10)]＝−10/1.07。','F2≈−9.3458 D。','在5 mm處再傳至眼，Fc仍為−8.9286 D。'],'換為約−9.35 D。','−9.52 D是移動原鏡後的有效力，不是保留原效果的新鏡度數。',{type:'distanceChange',args:[-10,12,5,true]});
+Q(21,'手術光學','以角膜形狀改變矯正近視，其核心方向為何？',['中央變陡，增加會聚','中央變平，減少會聚','縮短視網膜位置','把眼內折射率改成1'],1,'表面力F＝(n2−n1)/曲率半徑',['近視的會聚作用相對過強。','角膜中央變平，曲率半徑增大。','會聚力下降，讓焦點向後移。'],'中央變平，降低會聚作用。','不能把角膜屈光矯正說成把眼軸縮短。',{type:'shape',args:[-4]});
+Q(22,'手術光學','依課本的概念描述，PRK與LASIK最主要的區別為何？',['PRK縮短眼軸，LASIK改角膜','PRK只用負鏡，LASIK只用正鏡','PRK先處理上皮再重塑基質；LASIK製作角膜瓣後重塑基質','兩者都把天然水晶體取出'],2,'共同目標：改變角膜光學形狀',['兩者都可以透過角膜基質重塑調整屈光作用。','PRK在處理上皮後進行；LASIK先製作角膜瓣。','課本比較的是組織處理方式，不是眼軸或水晶體移除。'],'選擇角膜層次處理方式的區別。','不可把角膜屈光手術與水晶體置換混為一談。',{type:'shape',args:[-4]});
+Q(23,'手術光學','全矯正眼鏡−9.00 D、頂點距離15 mm。若要討論角膜平面的理想屈光補償目標，應先使用哪個值？',['−9.00 D，直接照抄','約−7.93 D，先換算平面','＋7.93 D，必須反號','切削9 mm'],1,'Fc＝Fs/(1−dFs)',['眼鏡處方是在距角膜15 mm的平面。','換算Fc＝−9/1.135≈−7.93 D。','這只代表角膜平面的等效補償目標。','不能直接由此得到雷射切削量或真實角膜前表面改變。'],'先換算約−7.93 D，再討論光學方向。','度數不是長度；光學等效目標不等於手術機器參數。',{type:'distance',args:[-9,15]});
+Q(24,'手術光學','哪項說法最符合第7章手術矯正的光學觀念及其限制？',['只要可移除植入物，就代表完全可逆且無風險','達到理想焦點就保證不再需要眼鏡','角膜矯正改變屈光作用，但不能由簡化模型保證臨床結果','球面屈光不正一律適合手術'],2,'模型的光學結論 ≠ 個人臨床保證',['簡化模型描述屈光力、入射光與視網膜的關係。','真實眼還受角膜狀態、癒合與其他因素影響。','部分植入物可移除，也不等於無風險或完全恢復原狀。','是否適合與實際結果需由眼科醫師評估。'],'光學原理成立，不代表個人結果已被保證。','不把教材計算、理想點像或可移除性當作治療承諾。',{type:'shape',args:[3]});
+window.RefractiveQuestions=questions;
+const KEY='visualOptics.chapter7.v2',units=['model','myopia','hyperopia','effectivity','surgery','quiz','summary'];
+let state={completed:[],answers:{},totals:{}};
+function notice(s){$('storage-note').hidden=false;$('storage-note').textContent=s;}
+try{const raw=localStorage.getItem(KEY);if(raw){const x=JSON.parse(raw);if(!x||!Array.isArray(x.completed)||!x.answers||!x.totals)throw Error('invalid');state.completed=[...new Set(x.completed.filter(v=>units.includes(v)))];questions.forEach(q=>{if(typeof x.answers[q.id]==='boolean')state.answers[q.id]=x.answers[q.id];const t=x.totals[q.topic];if(t&&Number.isInteger(t.n)&&Number.isInteger(t.ok)&&t.n>=t.ok&&t.ok>=0)state.totals[q.topic]={n:t.n,ok:t.ok};});}}catch(e){notice('無法讀取新版紀錄。仍可使用教材，但本次先用暫存紀錄。');}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){notice('瀏覽器不允許保存紀錄；本次仍可練習，關閉後可能不保留。');}}
+function stats(){let n=0,ok=0;Object.values(state.totals).forEach(t=>{n+=t.n;ok+=t.ok;});$('overall-rate').textContent=n?Math.round(ok/n*100)+'%':'—';$('overall-count').textContent='作答 '+n+' 次，答對 '+ok+' 次';$('q-stats').innerHTML=[...new Set(questions.map(q=>q.topic))].map(topic=>{const t=state.totals[topic]||{n:0,ok:0},pct=t.n?Math.round(t.ok/t.n*100):0;return '<div class="bar"><span>'+topic+'</span><div class="track"><span style="width:'+pct+'%"></span></div><span>'+(t.n?pct+'% ('+t.ok+'/'+t.n+')':'未作答')+'</span></div>';}).join('');}
+function progress(){const n=state.completed.length;$('progress-label').textContent=n+' / '+units.length;$('progress-bar').style.width=n/units.length*100+'%';document.querySelectorAll('[data-complete]').forEach(el=>{const yes=state.completed.includes(el.dataset.complete),b=el.querySelector('button');b.textContent=yes?'✓ 本節已完成（按此取消）':'標記本節完成';b.setAttribute('aria-pressed',String(yes));});stats();}
+function closeMenu(){$('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');}
+function navigate(){let id=location.hash.slice(1)||'overview';if(!document.getElementById(id)?.classList.contains('panel')){history.replaceState(null,'','#overview');id='overview';}document.querySelectorAll('.panel').forEach(p=>p.hidden=p.id!==id);document.querySelectorAll('[data-page]').forEach(a=>{if(a.dataset.page===id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});closeMenu();window.scrollTo(0,0);}
+let mode='all',pool=[...questions],qi=0,attempts={};
+function setPool(next=mode){mode=next;const t=$('q-topic').value,s=$('q-search').value.trim().toLowerCase();pool=questions.filter(q=>(!t||q.topic===t)&&(!s||(q.id+' '+q.q).toLowerCase().includes(s))&&(mode!=='wrong'||state.answers[q.id]===false));if(mode==='random'){for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}pool=pool.slice(0,10);}qi=0;attempts={};renderQuiz();}
+function qSVG(q){const v=q.visual;return ({eye:eyeSVG,eyeInput:eyeSVG,correction:correctionSVG,distance:distanceSVG,distanceChange:distanceChangeSVG,shape:shapeSVG}[v.type])(...v.args);}
+function diagramTools(){document.querySelectorAll('.figure').forEach(f=>{if(f.previousElementSibling?.classList.contains('diagram-tools'))return;const bar=document.createElement('div');bar.className='diagram-tools no-print';const b=document.createElement('button');b.className='btn small';b.textContent='放大圖解';b.setAttribute('aria-pressed','false');b.onclick=()=>{const zoom=f.classList.toggle('zoomed');b.textContent=zoom?'縮回完整圖':'放大圖解';b.setAttribute('aria-pressed',String(zoom));};bar.append(b);f.before(bar);});}
+function renderQuiz(){const q=pool[qi];$('q-summary').textContent=(mode==='wrong'?'錯題重練':mode==='random'?'隨機題組':'全部／篩選題組')+'｜本組 '+pool.length+' 題 · 全章 '+questions.length+' 題';$('quiz-card').hidden=!q;if(!q){$('q-summary').textContent+='｜目前沒有符合的題目。';return;}$('q-meta').textContent=q.id+' · '+q.topic+' · '+q.source;$('q-question').textContent=q.q;$('q-options').replaceChildren();const done=Object.hasOwn(attempts,q.id);q.opts.forEach((option,i)=>{const b=document.createElement('button');b.className='option';b.textContent=String.fromCharCode(65+i)+'. '+option;if(done){b.disabled=true;if(i===q.ans){b.classList.add('correct');b.textContent+=' ✓ 正確答案';}if(i===attempts[q.id]&&i!==q.ans){b.classList.add('wrong');b.textContent+=' ✕ 你的答案';}}b.onclick=()=>answer(i);$('q-options').append(b);});$('q-feedback').innerHTML=done?'<div class="answer-msg">'+(attempts[q.id]===q.ans?'答對了。':'這次未答對。')+'正確答案：'+String.fromCharCode(65+q.ans)+'。請展開解析核對思路。</div>':'';$('q-solution').hidden=true;$('q-solution-toggle').textContent='顯示完整解析';$('q-solution-toggle').setAttribute('aria-expanded','false');$('q-solution').innerHTML='<span class="tag">'+q.id+' · '+q.topic+'</span><h3>條件 → 公式 → 推導 → 結論</h3><p class="small muted">前提：'+esc(q.assumption)+'</p><div class="figure">'+qSVG(q)+'</div><p class="fig-note">圖解依本題條件／概念繪製；幾何模型不代表真實眼球比例。詳細值以下列推導為準。</p><div class="eq">'+esc(q.formula)+'</div><ol class="steps">'+q.steps.map(s=>'<li>'+esc(s)+'</li>').join('')+'</ol><div class="callout"><b>結論：</b>'+esc(q.end)+'</div><div class="callout warn"><b>易錯點：</b>'+esc(q.trap)+'</div><p class="small muted">'+q.source+'</p>';$('q-counter').textContent=(qi+1)+' / '+pool.length;$('q-prev').disabled=qi===0;$('q-next').disabled=qi===pool.length-1;diagramTools();}
+function answer(i){const q=pool[qi];if(!q||Object.hasOwn(attempts,q.id))return;attempts[q.id]=i;const yes=i===q.ans;state.answers[q.id]=yes;const t=state.totals[q.topic]||(state.totals[q.topic]={n:0,ok:0});t.n++;if(yes)t.ok++;save();progress();renderQuiz();}
+document.querySelectorAll('[data-complete]').forEach(el=>el.querySelector('button').onclick=()=>{const id=el.dataset.complete;state.completed=state.completed.includes(id)?state.completed.filter(x=>x!==id):[...state.completed,id];save();progress();});
+$('menu').onclick=()=>{$('menu').setAttribute('aria-expanded',String($('sidebar').classList.toggle('open')));};
+document.querySelectorAll('[data-page]').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+document.addEventListener('click',e=>{if($('sidebar').classList.contains('open')&&!$('sidebar').contains(e.target)&&!$('menu').contains(e.target))closeMenu();});
+document.querySelector('.skip').onclick=e=>{e.preventDefault();$('content').focus();window.scrollTo(0,0);};
+window.addEventListener('hashchange',navigate);$('print').onclick=()=>window.print();
+$('vx-preset').onclick=()=>setVertexPreset(-10,12,2);
+$('vx-away').onclick=()=>setVertexPreset(-10,12,22);
+$('vx-plus').onclick=()=>setVertexPreset(10,12,2);
+$('vx-same').onclick=()=>{if($('vx-mode').value==='toSpectacle'){safe('vx-result',['vx-figure'],()=>{const fc=input('vx-f',-20,20),d=input('vx-d',0,30);setVertexPreset(Optics.vertex(fc,d,false),d,d);});}else{if(!$('vx-f').value.trim()||!$('vx-d').value.trim()){renderVertex();return;}setVertexPreset(Number($('vx-f').value),Number($('vx-d').value),Number($('vx-d').value));}};
+$('vx-new-range').oninput=()=>{$('vx-new').value=$('vx-new-range').value;renderVertex();};
+['vx-ext','vx-dim'].forEach(id=>$(id).onchange=renderVertex);
+for(const [id,old,next] of [['vx-old-only',true,false],['vx-both',true,true],['vx-new-only',false,true]])$(id).onclick=()=>{vertexDisplay={old,next};renderVertex();};
+$('vx-download').onclick=()=>{if(!vertexOverlayState)return;const url=URL.createObjectURL(new Blob([overlaySVG(vertexOverlayState,vertexOverlayOptions())],{type:'image/svg+xml;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='頂點距離換算_黑紅光路.svg';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+const vertexNodeNotes={
+ 'C-001':'黑色是原位置的鏡片 F₁；原鏡片的第二焦點與眼的 FP 重合。',
+ 'C-002':'紅色是新位置的鏡片 F₂；因位置改變，需換用不同度數，才能保持原矯正效果。',
+ 'C-004':'眼／角膜平面 x＝0。只改新頂點距離 d₂ 時，眼與 FP 都保持固定。',
+ 'C-005':'f′ 是從鏡片量到共同 FP 的有號焦距。鏡片位置改變，這段焦距也改變，F＝1/f′。',
+};
+for(const event of ['click','keydown'])$('vx-figure').addEventListener(event,e=>{if(event==='keydown'&&e.key!=='Enter'&&e.key!==' ')return;const node=e.target.closest('[data-kbid]');if(!node)return;const note=vertexNodeNotes[node.dataset.kbid];if(!note)return;if(event==='keydown')e.preventDefault();$('vx-node-note').textContent=note;$('vx-node-note').hidden=false;});
+
+const updates=[['eye-power','eye-length',renderEye],['my-r','my-stage',()=>renderRefractive('myopia')],['hy-r','hy-stage',()=>renderRefractive('hyperopia')],['vx-mode','vx-f','vx-d','vx-new',renderVertex],['su-f','su-d','su-percent',renderSurgery]];
+updates.forEach(arr=>{const fn=arr.at(-1);arr.slice(0,-1).forEach(id=>$(id).addEventListener('input',fn));fn();});
+document.querySelectorAll('[data-eye]').forEach(b=>b.onclick=()=>{const p={normal:[60,1333/60],long:[60,23.22],short:[60,21.22],strong:[62,1333/60]}[b.dataset.eye];$('eye-power').value=p[0];$('eye-length').value=p[1];renderEye();});
+[...new Set(questions.map(q=>q.topic))].forEach(t=>{const o=document.createElement('option');o.value=t;o.textContent=t;$('q-topic').append(o);});
+$('q-topic').onchange=()=>setPool();$('q-search').oninput=()=>setPool();$('q-all').onclick=()=>{$('q-topic').value='';$('q-search').value='';setPool('all');};$('q-random').onclick=()=>setPool('random');$('q-wrong').onclick=()=>setPool('wrong');
+$('q-prev').onclick=()=>{qi=Math.max(0,qi-1);renderQuiz();};$('q-next').onclick=()=>{qi=Math.min(pool.length-1,qi+1);renderQuiz();};$('q-solution-toggle').onclick=()=>{const show=$('q-solution').hidden;$('q-solution').hidden=!show;$('q-solution-toggle').textContent=show?'收合完整解析':'顯示完整解析';$('q-solution-toggle').setAttribute('aria-expanded',String(show));};
+$('reset-progress').onclick=()=>{if(!confirm('只清除第7章新版紀錄？原教室及先前跨章版本的紀錄不受影響。'))return;state={completed:[],answers:{},totals:{}};save();setPool('all');progress();};
+progress();renderQuiz();navigate();diagramTools();
+</script>
+</body></html>
