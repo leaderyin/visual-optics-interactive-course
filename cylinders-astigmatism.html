@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="第9章柱面透鏡與散光矯正：光學十字、處方轉置、點與展延光源、Sturm光錐、散光分類、JCC與等價球面。單檔離線互動教材。">
+<meta name="course-version" content="20261003-chapter9-public1"><title>柱面透鏡與散光｜視覺光學互動教室</title>
+<style>
+:root{--navy:#173f6b;--deep:#102d4d;--teal:#137c77;--red:#c83042;--blue:#2865b2;--ink:#1e3043;--muted:#53697b;--bg:#f3f7fa;--line:#d7e3ec;--orange:#a95110}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft JhengHei",sans-serif}button,input,select{font:inherit}button,a,input,select,summary{touch-action:manipulation}button{cursor:pointer}a{color:var(--navy)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #c77a22;outline-offset:3px}h1,h2,h3,h4{line-height:1.4;margin:0 0 12px}h1{font-size:clamp(34px,4vw,56px)}h2{font-size:clamp(28px,3vw,39px)}h3{font-size:22px}p{margin:8px 0 16px}[hidden]{display:none!important}.skip{position:fixed;top:-80px;background:white;padding:10px;z-index:99}.skip:focus{top:0}.side{position:fixed;inset:0 auto 0 0;width:246px;background:linear-gradient(180deg,var(--deep),var(--navy));color:white;padding:26px 18px;overflow-y:auto;z-index:40}.brand{font-size:20px;font-weight:800}.side p,.side-foot{font-size:14px;color:#c8deed}.side a{color:#e4f2ff}.nav{display:grid;gap:4px;margin:20px 0}.nav a{padding:9px 12px;border-radius:9px;text-decoration:none;font-size:14px}.nav a:hover,.nav a[aria-current=page]{background:#ffffff22;color:white}.side-foot{border-top:1px solid #ffffff30;padding-top:15px}.main{margin-left:246px;max-width:1690px;padding:24px 34px 64px}.top{display:flex;gap:15px;align-items:center;margin-bottom:20px}.top-progress{flex:1}.topline span:last-child{flex-shrink:0;white-space:nowrap}.topline{display:flex;justify-content:space-between;gap:10px;font-size:13px}.progress{height:7px;background:#dce7ed;border-radius:8px;overflow:hidden;margin-top:5px}.progress span{display:block;background:var(--teal);height:100%;width:0}.btn{display:inline-block;background:white;color:var(--navy);border:1px solid var(--line);border-radius:10px;padding:9px 16px;font-weight:700;text-decoration:none}.btn.primary{background:var(--navy);color:white;border-color:var(--navy)}.btn.small{font-size:14px;padding:6px 11px}.btn[aria-pressed=true]{background:#e6f4f1;border-color:var(--teal)}.btn:disabled{opacity:.5;cursor:default}.menu{display:none}.actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.hero{background:linear-gradient(120deg,#133856,#1a5979);border-radius:24px;padding:30px;color:white}.hero p{color:#dcecf4;max-width:830px}.hero .kicker{color:#9fdfd4}.kicker{font-size:13px;letter-spacing:.08em;color:var(--teal);font-weight:800;margin:0 0 8px}.section{margin-top:22px}.grid{display:grid;gap:18px}.two{grid-template-columns:repeat(2,minmax(0,1fr))}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.four{grid-template-columns:repeat(4,minmax(0,1fr))}.card{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;min-width:0}.stat b{display:block;font-size:30px;color:var(--navy)}.stat span,.muted,.note{color:var(--muted)}.stat span,.note,.small{font-size:14px}.callout{padding:14px 18px;background:#eef8f6;border-left:4px solid var(--teal);border-radius:0 12px 12px 0;margin:16px 0}.warn{background:#fff5e9;border-left-color:var(--orange)}.eq{background:var(--deep);color:white;padding:15px 18px;border-radius:12px;font-size:19px;overflow-wrap:anywhere;margin:14px 0}.eq small{display:block;font-size:14px;color:#c6deeb}.steps{padding-left:25px}.steps li{margin:8px 0}.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.flow>div{padding:16px;border-radius:12px;background:#eef5f8}.flow b{display:block;color:var(--navy)}.controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:16px 0}.controls label{display:block;font-size:14px;font-weight:700}.controls input,.controls select{width:100%;display:block;border:1px solid #afc6d5;border-radius:8px;background:white;color:var(--ink);padding:8px;margin-top:6px}.controls input[type=range]{accent-color:var(--teal);padding:4px 0}.value{float:right;color:var(--teal);font-variant-numeric:tabular-nums}.readout{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.readout>div{padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#f6fafc;font-size:14px}.readout b{display:block;color:var(--navy);font-size:22px;overflow-wrap:anywhere}.result{padding:17px;background:#eef5f9;border-radius:12px;margin-top:15px;overflow-wrap:anywhere}.error{background:#fff0ed;color:#922d1f;padding:14px;border-radius:10px}.figure{border:1px solid var(--line);border-radius:14px;background:#fcfeff;overflow:auto;margin:16px 0}.figure svg{display:block;width:100%;height:auto;min-width:0;font:16px system-ui,"Microsoft JhengHei",sans-serif}.figure.zoomed svg{min-width:1040px}.diagram-tools{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:13px;color:var(--muted)}.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}.swatch{display:inline-block;width:25px;border-top:3px solid #171d27;margin-right:6px;vertical-align:middle}.swatch.red{border-color:var(--red)}.swatch.teal{border-color:var(--teal)}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;min-width:590px;font-size:15px}th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#edf4f8}details{background:white;border:1px solid var(--line);border-radius:12px;padding:15px 18px;margin-top:15px}summary{cursor:pointer;font-weight:800}.complete{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:25px;padding-top:18px}.tag{font-size:13px;color:#126b65;background:#e7f4f1;padding:3px 8px;border-radius:15px}.quiz-toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.quiz-toolbar select,.quiz-toolbar input{border:1px solid var(--line);background:white;border-radius:8px;padding:9px;max-width:100%}.question{font-size:21px;font-weight:700}.options{display:grid;gap:10px;margin:18px 0}.option{text-align:left;background:white;border:1px solid var(--line);border-radius:12px;padding:13px 17px;color:var(--ink)}.option:disabled{opacity:1}.option.correct{background:#e9f7f0;border-color:#30816a}.option.wrong{background:#fff0ed;border-color:#b44b39}.solution{border:1px solid #bdd7e7;background:#f5fafd;border-radius:14px;padding:22px;margin-top:18px}.quiz-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px}.answer-msg{font-weight:700;padding:12px;background:#edf5f8;border-radius:10px}.bars{display:grid;gap:10px}.bar{display:grid;grid-template-columns:100px 1fr 80px;gap:10px;font-size:14px;align-items:center}.track{height:9px;background:#e1ebf1;border-radius:8px;overflow:hidden}.track span{display:block;height:100%;background:var(--teal)}.storage{padding:12px;background:#fff1db;border-radius:9px;margin-bottom:15px}.source-list li{margin-bottom:12px}.print-bank{display:none}body[data-show-all=true] .panel{display:block!important}
+@media(max-width:1100px){.two,.three{grid-template-columns:1fr}.four{grid-template-columns:1fr 1fr}.side{width:225px}.main{margin-left:225px;padding:22px}.flow{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.side{transform:translateX(-100%);width:278px}.side.open{transform:translateX(0);box-shadow:0 0 0 100vmax #102d4d66}.main{margin-left:0;padding:15px}.menu{display:inline-block}.top{position:sticky;top:0;z-index:25;background:#f3f7faf5;padding:8px 0}.controls{grid-template-columns:1fr 1fr}.readout{grid-template-columns:1fr}.card{padding:17px}.hero{padding:23px}.question{font-size:19px}.solution{padding:16px}.figure.zoomed svg{min-width:960px}.topline{font-size:12px}.bar{grid-template-columns:90px 1fr 70px}.quiz-toolbar>*{flex:1;min-width:140px}}
+@media(max-width:390px){.controls,.flow{grid-template-columns:1fr}.top>.btn.small{padding:6px}.four{gap:10px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+@media print{.side,.top,.actions,.controls,.complete,.quiz-toolbar,.quiz-bottom,.diagram-tools,.no-print{display:none!important}.main{margin:0;padding:0}.panel[hidden]{display:block!important}.panel{break-before:page}.panel:first-of-type{break-before:auto}.hero,.eq{background:white;color:black;border:1px solid #999}.hero p,.hero .kicker,.eq small{color:#333}.card{break-inside:avoid}.two,.three,.four{grid-template-columns:1fr}.figure.zoomed svg{min-width:0}.print-bank{display:block}.screen-quiz{display:none}.print-question{break-inside:avoid;margin:20px 0}.print-question details{display:block}}
+
+.figure svg{min-width:580px}.figure{background:#fff}.figure.zoomed svg{min-width:1100px}.math-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.math-row>div{border:1px solid var(--line);border-radius:12px;padding:16px}.math-row b{display:block;color:var(--navy)}.axis-note{font-size:14px}.pill{border-radius:99px;padding:4px 12px;background:#e9f5f3;color:#137c77;display:inline-block}.view-status{font-size:14px;min-height:24px}.model-label{border:1px dashed #d0dce5;padding:10px 14px;border-radius:10px}.print-bank .figure svg{min-width:0}@media(max-width:760px){.math-row{grid-template-columns:1fr}.figure svg{min-width:600px}}@media print{.figure svg{min-width:0}.panel{display:block!important}.figure{overflow:visible}.print-bank{display:block}}
+</style></head><body>
+<a class="skip" href="#content">跳至教材內容</a>
+<aside class="side" id="sidebar"><div class="brand">視覺光學互動教室</div><p>CHAPTER 9<br>柱面透鏡與散光矯正</p><nav class="nav" aria-label="教材章節">
+<a href="#overview" data-page="overview">本章地圖與學習目標</a>
+<a href="#cross" data-page="cross">01 透鏡（光學）十字</a>
+<a href="#prescription" data-page="prescription">02 透鏡處方與轉置</a>
+<a href="#point" data-page="point">03 點光源與 Sturm 光錐</a>
+<a href="#extended" data-page="extended">04 展延光源與線條成像</a>
+<a href="#oblique" data-page="oblique">05 斜向子午面屈光力</a>
+<a href="#classification" data-page="classification">06 散光定義與分類</a>
+<a href="#jcc" data-page="jcc">07 傑克森交叉圓柱鏡</a>
+<a href="#equivalent" data-page="equivalent">08 等價球面度數</a>
+<a href="#vision" data-page="vision">09 散光患者所見為何？</a>
+<a href="#quiz" data-page="quiz">練習與完整解析</a>
+<a href="#summary" data-page="summary">公式速查與易錯觀念</a>
+<a href="#sources" data-page="sources">來源、假設與版本</a></nav>
+<div class="side-foot"><a href="./">返回教室首頁 ↗</a><br>單檔離線 · 公開教學版<br>32 題教學自編練習<br>不公開原始課本或題庫<br><a href="https://leaderyin.github.io/visual-optics-interactive-course/accommodation-depth.html">回顧調節與景深 ↗</a><br><a href="https://leaderyin.github.io/visual-optics-interactive-course/refractive-errors.html">回顧球面屈光不正 ↗</a></div></aside>
+<main class="main" id="content" tabindex="-1"><div class="top"><button class="btn menu" id="menu" aria-controls="sidebar" aria-expanded="false">☰ 章節</button><div class="top-progress"><div class="topline"><span>學習進度 · 自行標記完成</span><span id="progress-label">0 / 9</span></div><div class="progress"><span id="progress-bar"></span></div></div><button class="btn small" id="print">列印教材</button></div><div id="storage-note" class="storage" role="status" hidden>瀏覽器不允許儲存；本次仍可練習，但關閉後不保留紀錄。</div>
+<noscript><div class="error">互動與練習需啟用 JavaScript；仍可閱讀下方靜態文字。</div></noscript>
+<section class="panel" id="overview"><div class="hero"><div class="kicker">CYLINDRICAL LENSES & ASTIGMATISM</div><h1>柱面透鏡與散光</h1><p>一個光點，為什麼成為兩條焦線？<br>從光學十字出發，把處方、光路與視覺連成同一套解題邏輯。</p><div class="actions"><a class="btn" href="#cross">從光學十字開始</a><a class="btn" href="#point">操作焦線與最小模糊圈</a><a class="btn" href="#quiz">進入練習</a></div></div>
+<div class="grid four section"><div class="card stat"><span>對應書本範圍</span><b>Chapter 9</b><span>pp.135–157</span></div><div class="card stat"><span>由概念到應用</span><b>9 節</b><span>操作 → 列式 → 圖解</span></div><div class="card stat"><span>每題附解析及圖解</span><b>32 題</b><span>自編；非歷屆原題全文</span></div><div class="card stat"><span>累積作答正確率</span><b id="overall-rate">—</b><span id="overall-count">尚未作答</span></div></div>
+<div class="card section"><h3>本章解題的四個步驟</h3><div class="flow"><div><b>① 拆成兩主子午面</b>柱軸上是 S；垂直方向是 S＋C。</div><div><b>② 各自使用 U＋F＝V</b>兩方向共享物方 U，但 F 可以不同。</div><div><b>③ 判斷焦線及位置</b>先看 V，再換距離；焦線與成像子午面垂直。</div><div><b>④ 回到題目問的量</b>是鏡片？未矯正眼？公分？還是屈光度？</div></div></div>
+<div class="grid two section"><div class="card"><h3>承接前兩份教材</h3><p>保留 <b>U＋F＝V</b>。空氣中 U＝1/u、V＝1/v，距離一律先換公尺；眼前或鏡前實物 u＜0，越靠近鏡片 U 越負；無限遠 U＝0。</p><p>黑色表示原處方／基準，紅色表示轉置或比較狀態。兩主子午面另用藍、綠色辨識，圖旁都附文字標籤。</p></div><div class="card"><h3>本章完成後，你可以</h3><ul><li>讀出並轉換球柱鏡處方，不把柱軸當成柱鏡全力方向。</li><li>畫出兩條焦線與最小模糊圈，分辨 D 與 cm 的間隔。</li><li>從矯正處方反推未矯正眼的散光類型。</li><li>解釋 JCC 的翻轉、球面補償與等價球面的限制。</li></ul></div></div><div class="callout warn">本教材使用薄透鏡、近軸、規則散光模型。互動是光學教學，不是個人驗光、視力診斷或配鏡建議；實際視覺還受瞳孔、調節、像差與神經處理影響。</div></section>
+
+<section class="panel" id="cross"><div class="kicker">01 / LENS CROSS · p.136</div><h2>先畫光學十字，再讀處方</h2><div class="math-row"><div><b>球面透鏡 S</b>各方向屈光力相同。</div><div><b>純柱面透鏡 C × α</b>柱軸方向的柱鏡分量為 0；垂直方向為 C。</div><div><b>球柱面透鏡 S / C × α</b>柱軸方向總度數 S；垂直方向總度數 S＋C。</div></div>
+<div class="card section"><h3>互動 1｜讓光學十字跟著柱軸旋轉</h3><div class="controls"><label>球面 S（D）<input id="cross-s" type="number" min="-20" max="20" step="0.25" value="2"></label><label>柱面 C（D）<input id="cross-c" type="number" min="-20" max="20" step="0.25" value="3"></label><label>柱軸 α（°）<input id="cross-a" type="number" min="0" max="180" step="1" value="180"></label></div><div class="actions"><button class="btn small" data-preset="cross:0,3,180">純正柱鏡</button><button class="btn small" data-preset="cross:0,-3,90">純負柱鏡</button><button class="btn small" data-preset="cross:2,-3,45">斜軸球柱鏡</button><button class="btn small" data-preset="cross:-20,0,180">−20 D 球面鏡</button></div><div class="figure" id="cross-figure"></div><div class="result" id="cross-result" aria-live="polite"></div></div>
+<div class="callout">「柱軸上沒有屈光力」只適用於<b>純柱鏡的柱面分量</b>。有球面 S 時，柱軸上仍有 S 的屈光力。負柱鏡的全柱面作用為最負，不宜簡稱「最大正屈光力」。</div><p class="axis-note">角度從圖面右側水平線逆時針量起；一條子午線具有 180° 週期。輸入 0° 可操作，處方統一顯示為 180°；C＝0 時柱軸無光學意義。</p></section>
+
+<section class="panel" id="prescription"><div class="kicker">02 / PRESCRIPTION & TRANSPOSITION · pp.138–141</div><h2>轉置：換寫法，不換鏡片</h2><div class="eq">S′＝S＋C；C′＝−C；α′＝α±90°<small>將柱軸整理到 1–180°；先保留正負號再相加。</small></div>
+<div class="card"><h3>互動 2｜原處方與轉置處方，逐方向驗證</h3><div class="controls"><label>球面 S（D）<input id="rx-s" type="number" min="-20" max="20" step="0.25" value="-2"></label><label>柱面 C（D）<input id="rx-c" type="number" min="-20" max="20" step="0.25" value="-1.5"></label><label>柱軸 α（°）<input id="rx-a" type="number" min="0" max="180" step="1" value="180"></label></div><div class="figure" id="rx-figure"></div><div class="result" id="rx-result" aria-live="polite"></div></div>
+<div class="grid two section"><div class="card"><h3>從十字反寫處方</h3><ol class="steps"><li>選一個主子午面作柱軸，該面總度數就是 S。</li><li>C＝另一主子午面度數−S。</li><li>另一種寫法，改選垂直方向作柱軸即可。</li></ol><p>例：180° 為 −2.00 D，90° 為 −3.50 D。可寫 −2.00 / −1.50 ×180，也可寫 −3.50 / +1.50 ×90。</p></div><div class="card"><h3>拆成兩片交叉柱鏡</h3><p>S / C ×α 也可拆成：</p><div class="eq">S DC ×(α＋90°)<br>＋ (S＋C) DC ×α</div><p>因為每一片柱鏡只在另一片的柱軸方向提供全柱面作用。此式假設薄鏡密接、主子午面互相垂直。</p></div></div><div class="callout warn">處方的正柱鏡／負柱鏡寫法，不等於鏡片實體一定採前散光面／後散光面。轉置不會改變鏡片的兩主子午面、成像或等價球面。</div></section>
+
+<section class="panel" id="point"><div class="kicker">03 / POINT SOURCE · pp.141–143</div><h2>一個物點，兩個子午面，兩條焦線</h2><p>光線由左向右傳。先把柱軸方向標成「主子午面 1」，垂直方向標成「主子午面 2」；每個方向都獨立使用同一條公式。</p>
+<div class="eq">U＋F₁＝V₁；U＋F₂＝V₂<br>v₁＝1/V₁；v₂＝1/V₂（m）<small>V＞0：鏡後實焦線；V＜0：鏡前虛焦線；V＝0：該方向出射平行，焦線在無限遠。</small></div>
+<div class="card"><h3>互動 3｜移動屏幕，觀察 Sturm 光錐截面</h3><div class="controls"><label>球面 S（D）<input id="pt-s" type="number" min="-20" max="20" step="0.25" value="3"></label><label>柱面 C（D）<input id="pt-c" type="number" min="-20" max="20" step="0.25" value="3"></label><label>柱軸 α（°）<input id="pt-a" type="number" min="0" max="180" step="1" value="180"></label><label>物方聚散度 U（D）<input id="pt-u" type="number" min="-20" max="5" step="0.25" value="-1"></label><label>屏幕：鏡後 z（cm）<input id="pt-z" type="number" min="0.01" max="100000" step="any" value="28.5714285714"></label></div>
+<div class="actions"><button class="btn small" data-preset="pt:3,3,180,-1,28.5714285714">兩條實焦線</button><button class="btn small" data-preset="pt:2,-4,45,0,25">一實一虛</button><button class="btn small" data-preset="pt:0,4,180,0,25">一方向在無限遠</button><button class="btn small" data-preset="pt:-2,-2,90,0,25">兩條虛焦線</button><button class="btn small" data-preset="pt:4,0,180,-1,33.3333333333">球面：合為一點</button></div>
+<div class="actions section"><button class="btn" id="pt-first">屏幕移到近實焦線</button><button class="btn" id="pt-clc">移到最小模糊圈</button><button class="btn" id="pt-last">移到遠實焦線</button></div><div class="view-status" id="pt-status" role="status"></div><div class="figure" id="pt-figure"></div><div class="result" id="pt-result" aria-live="polite"></div></div>
+<div class="grid two section"><div class="card"><h3>焦線方向要「轉 90°」</h3><p>垂直子午面聚焦時，垂直高度歸零，但水平寬度尚未歸零，留下<b>水平焦線</b>。水平子午面聚焦時，留下<b>垂直焦線</b>。</p><p>一般化：形成焦線的子午面是 θ，焦線方向就是 θ＋90°。當 C＝0 時兩者同時聚焦，形成點，不再是兩條分離焦線。</p></div><div class="card"><h3>Sturm 間隔與最小模糊圈</h3><div class="eq">ΔV＝|V₂−V₁|＝|C|<br>V<sub>CLC</sub>＝(V₁＋V₂)/2＝U＋S＋C/2<br>v<sub>CLC</sub>＝1/V<sub>CLC</sub></div><p>兩個有限焦線的線性間距為 |v₂−v₁|。最小模糊圈（circle of least confusion, CLC）在<b>聚散度中點</b>，不是 (v₁＋v₂)/2。</p></div></div><div class="callout warn">圖中兩列是同一光束的兩個主子午面投影，不是兩片鏡片。近軸模型採鏡片平面的圓形孔徑、忽略繞射；虛焦線用反向延長線表示，不能放屏幕接住。跨無限遠時，不把「鏡前到鏡後的距離中點」當成實際光錐的最小模糊圈。</div></section>
+
+<section class="panel" id="extended"><div class="kicker">04 / EXTENDED SOURCE · pp.143–145</div><h2>線條是許多物點的集合</h2><p>把每一個物點的小像疊起來，就形成展延光源的影像。水平線是否容易辨認，要看<b>上下邊界</b>；垂直線則看<b>左右邊界</b>。</p>
+<div class="card"><h3>互動 4｜點、十字與字母，使用同一個方向性模糊核</h3><p>固定 U＝−1 D、S＝+3 D、C＝+3 D、α＝180°。垂直子午面先聚焦在 20 cm，水平子午面後聚焦在 50 cm。</p><div class="controls"><label>屏幕位置<select id="ex-plane"><option value="20">20 cm：水平焦線</option><option value="28.5714285714">28.57 cm：最小模糊圈</option><option value="50">50 cm：垂直焦線</option></select></label><label>物體<select id="ex-target"><option value="cross">十字</option><option value="F">字母 F</option><option value="dot">點光源</option></select></label></div><div class="figure" id="ex-figure"></div><div class="result" id="ex-result" aria-live="polite"></div><p class="model-label">圖為方向性模糊示意：以同一幾何光斑疊加到各物點，物像正規化為同樣大小，省略倒像與放大率；不是實測視網膜影像。</p></div>
+<div class="grid two section"><div class="card"><h3>垂直子午面聚焦 → 水平線邊界清楚</h3><p>20 cm 處，上下方向的模糊接近零，水平線的上下邊界較清楚。水平方向仍有模糊，線段的左右端點仍然拖長。</p></div><div class="card"><h3>水平子午面聚焦 → 垂直線邊界清楚</h3><p>50 cm 處，左右方向的模糊接近零，垂直線的左右邊界較清楚。上下方向仍有模糊，線段的上下端點仍然拖長。</p></div></div><div class="callout">不要說「水平子午面使水平線最清楚」。子午面指折射作用的方向；線條辨識常取決於與線條垂直方向的模糊。</div></section>
+
+<section class="panel" id="oblique"><div class="kicker">05 / OBLIQUE MERIDIAN · pp.145–147</div><h2>斜向子午面：先找夾角，再算 sin²</h2><div class="eq">F(θ)＝S＋C sin²(θ−α)<small>θ：欲求子午面；α：柱軸。角度以「度」輸入，不是弧度；先平方 sin，再乘 C。</small></div>
+<div class="card"><h3>互動 5｜一片鏡片的 180° 屈光力曲線</h3><div class="controls"><label>球面 S（D）<input id="ob-s" type="number" min="-20" max="20" step="0.25" value="1"></label><label>柱面 C（D）<input id="ob-c" type="number" min="-20" max="20" step="0.25" value="-4"></label><label>柱軸 α（°）<input id="ob-a" type="number" min="0" max="180" step="1" value="30"></label><label>欲求方向 θ（°）<input id="ob-t" type="range" min="0" max="180" step="1" value="60"></label></div><div class="figure" id="ob-figure"></div><div class="result" id="ob-result" aria-live="polite"></div></div>
+<div class="table-wrap section"><table><thead><tr><th>與柱軸夾角</th><th>sin²</th><th>總屈光力</th></tr></thead><tbody><tr><td>0°</td><td>0</td><td>S</td></tr><tr><td>30°</td><td>1/4</td><td>S＋C/4</td></tr><tr><td>45°</td><td>1/2</td><td>S＋C/2（數值等於等價球面）</td></tr><tr><td>60°</td><td>3/4</td><td>S＋3C/4</td></tr><tr><td>90°</td><td>1</td><td>S＋C</td></tr></tbody></table></div><div class="callout warn">斜向子午面的 sin² 值是該方向的屈光力分量，不表示該方向光線會留在同一平面並形成獨立焦點。不能把每個 F(θ) 都取倒數，聲稱出現無限多條焦線；一般只有兩個主子午面有此聚焦意義。</div></section>
+
+<section class="panel" id="classification"><div class="kicker">06 / CLASSIFICATIONS · pp.147–150</div><h2>先分清楚：這是「眼睛」還是「矯正鏡片」？</h2><p>以下輸入的是<b>完全矯正處方</b>。調節放鬆、看無限遠、忽略頂點距離：需負度數表示原眼該面偏近視；需正度數表示原眼該面偏遠視。</p>
+<div class="card"><h3>互動 6｜用兩主子午面判斷五種散光</h3><div class="controls"><label>矯正球面 S（D）<input id="cl-s" type="number" min="-20" max="20" step="0.25" value="1"></label><label>矯正柱面 C（D）<input id="cl-c" type="number" min="-20" max="20" step="0.25" value="-3"></label><label>矯正柱軸 α（°）<input id="cl-a" type="number" min="0" max="180" step="1" value="180"></label></div><div class="actions"><button class="btn small" data-preset="cl:0,-2,180">單純近視</button><button class="btn small" data-preset="cl:-2,-2,180">複合近視</button><button class="btn small" data-preset="cl:1,-3,180">混合性</button><button class="btn small" data-preset="cl:0,2,90">單純遠視</button><button class="btn small" data-preset="cl:2,2,90">複合遠視</button></div><div class="figure" id="cl-figure"></div><div class="result" id="cl-result" aria-live="polite"></div></div>
+<div class="table-wrap section"><table><thead><tr><th>兩主子午面所需矯正</th><th>未矯正焦線位置</th><th>分類</th></tr></thead><tbody><tr><td>0、負</td><td>一條在視網膜，一條在前</td><td>單純近視散光</td></tr><tr><td>負、負，且不相等</td><td>兩條都在視網膜前</td><td>複合近視散光</td></tr><tr><td>負、正</td><td>一前一後</td><td>混合性散光</td></tr><tr><td>0、正</td><td>一條在視網膜，一條在後</td><td>單純遠視散光</td></tr><tr><td>正、正，且不相等</td><td>兩條都在視網膜後</td><td>複合遠視散光</td></tr></tbody></table></div>
+<div class="grid two section"><div class="card"><h3>順散光／逆散光／斜散光</h3><p><b>順散光（WTR）：</b>眼的垂直子午面較強。負柱鏡矯正柱軸在水平附近；典型例 α＝180°。</p><p><b>逆散光（ATR）：</b>眼的水平子午面較強。負柱鏡矯正柱軸在垂直附近；典型例 α＝90°。</p><p><b>斜散光：</b>主要方向偏斜，典型例 45°、135°。</p><p class="note">本互動以負柱軸水平±30°為順、垂直±30°為逆，其餘為斜；邊界納入順／逆。不同教材／考題的角度界線可能不同，遇到指定範圍以題幹為準。</p></div><div class="card"><h3>規則與不規則，不能只看柱鏡正負</h3><p>規則散光可用一組互相垂直的主子午面及球柱鏡近似描述。不規則散光包含局部屈光力／方向不規則等情況，普通球柱鏡無法完整補償。</p><p>本程式的 S/C/軸輸入本身就是規則散光模型，<b>不會由輸入數字診斷不規則散光</b>，也不把所有散光都歸因於角膜。</p></div></div></section>
+
+<section class="panel" id="jcc"><div class="kicker">07 / JACKSON CROSSED CYLINDER · pp.150–154</div><h2>JCC：一正一負，翻轉比較</h2><p>傑克森交叉圓柱透鏡（Jackson crossed cylinder, JCC）的兩主子午面為 +j、−j。<b>±0.25 D JCC 的柱面差是 0.50 D</b>，不是 0.25 D；等價球面為 0。</p>
+<div class="eq">+j / −2j ×α ≡ −j / +2j ×(α＋90°)<br>M＝j−2j/2＝0</div>
+<div class="card"><h3>互動 7｜固定平均聚散度，比較翻轉前後</h3><p>先使用等價球面使平均聚散度置中；r 表示尚未矯正的「眼垂直屈光力−水平屈光力」。正 r 是垂直較強，負 r 是水平較強。本實驗只示範主子午面已對準的度數比較。</p><div class="controls"><label>剩餘差 r（D）<input id="jc-r" type="number" min="-20" max="20" step="0.25" value="2"></label><label>JCC 單一主子午面 j（D）<select id="jc-j"><option value="0.25">±0.25</option><option value="0.5">±0.50</option><option value="1">±1.00</option></select></label></div><div class="actions"><button class="btn primary" id="jc-flip">翻轉：目前位置 1</button><button class="btn" data-preset="jc:0,0.25">比較完全矯正後</button></div><div class="figure" id="jc-figure"></div><div class="result" id="jc-result" aria-live="polite"></div></div>
+<div class="grid two section"><div class="card"><h3>檢查軸度與度數：擺法不同</h3><p><b>軸度：</b>JCC 的兩主子午面跨在待測柱軸兩側，各差 45°；把手方向與待測柱軸對齊。</p><p><b>度數：</b>JCC 的兩主子午面對準原處方的兩主子午面；把手與待測柱軸差 45°。</p><div class="controls"><label>教學模式<select id="jc-mode"><option value="axis">軸度檢查</option><option value="power">度數檢查</option></select></label><label>待測柱軸（°）<input id="jc-axis" type="number" min="0" max="180" step="1" value="180"></label></div><div class="figure" id="jc-placement"></div><p class="note">圖示直接標 +／−「主子午面屈光力」，不是廠牌紅／白點的柱軸標記。實際儀器標記需依說明確認。本節不模擬受測者主觀反應或自動產生臨床處方。</p></div><div class="card"><h3>改柱面時，同時維持等價球面</h3><div class="eq">ΔS＝−ΔC/2</div><p>例如柱鏡增加 −0.50 D，就增加 +0.25 D 球面，平均度數保持不變。若只加負柱鏡，平均值也跟著改變，模糊的比較便混入球面離焦。</p><p>一般在球面適當、調節受控的前提下，先精修軸度，再比較柱面度數並重新檢查球面；實際流程由專業驗光訓練指導。</p><div class="callout warn">兩次一樣模糊是比較終點的線索，不是保證沒有眼疾、沒有殘餘散光或達到某一視力。</div></div></div></section>
+
+<section class="panel" id="equivalent"><div class="kicker">08 / SPHERICAL EQUIVALENCY · p.153</div><h2>等價球面：把平均移對，沒有消除差異</h2><div class="eq">M＝S＋C/2＝(F₁＋F₂)/2<small>等價球面（spherical equivalent, SE）：取兩主子午面度數的平均，不是只把柱鏡除以二。</small></div>
+<div class="card"><h3>互動 8｜不矯正、只給等價球面、完整球柱矯正</h3><div class="controls"><label>完整矯正 S（D）<input id="se-s" type="number" min="-20" max="20" step="0.25" value="1"></label><label>完整矯正 C（D）<input id="se-c" type="number" min="-20" max="20" step="0.25" value="-4"></label><label>柱軸 α（°）<input id="se-a" type="number" min="0" max="180" step="1" value="180"></label></div><div class="figure" id="se-figure"></div><div class="result" id="se-result" aria-live="polite"></div></div>
+<div class="callout">只戴 M 後，兩主子午面仍各剩下相反的 ±|C|/2 矯正需求，Sturm 的屈光度間隔仍是 |C|。完整球柱矯正才會在理想模型下讓兩方向同時聚焦。等價球面不是「散光消失」。</div><details><summary>延伸：頂點距離改變時，先換算兩主子午面</summary><p>承接第 7 章：鏡片密接角膜前的換算，需分別處理 F₁、F₂，再重寫球柱處方。</p><div class="eq">F₁c＝F₁/(1−dF₁)；F₂c＝F₂/(1−dF₂)<br>S<sub>新</sub>＝F₁c；C<sub>新</sub>＝F₂c−F₁c</div><p>d 為原鏡片到角膜的正距離（m）。不能把 S、C 各自獨立套同一公式，因為 C 是兩面差值。此延伸用於理解，不在本次題庫混入隱形眼鏡驗配細節。</p></details></section>
+
+<section class="panel" id="vision"><div class="kicker">09 / WHAT DOES A PERSON WITH ASTIGMATISM SEE? · pp.154–155</div><h2>散光的模糊，有方向性</h2><p>用相同物體比較三個光學狀態：沒有矯正、只給等價球面、完整球柱矯正。不要把某一種「鬼影」外觀當成所有散光者都會看到的影像。</p>
+<div class="card"><h3>互動 9｜旋轉散光方向，觀察線條辨識</h3><div class="controls"><label>完整矯正球面 S（D）<input id="vi-s" type="number" min="-20" max="20" step="0.25" value="0"></label><label>完整矯正柱面 C（D）<input id="vi-c" type="number" min="-20" max="20" step="0.25" value="-2"></label><label>柱軸 α（°）<input id="vi-a" type="number" min="0" max="180" step="1" value="180"></label><label>觀看物<select id="vi-target"><option value="F">字母 F</option><option value="cross">十字</option><option value="dot">點光源</option></select></label></div><div class="figure" id="vi-figure"></div><div class="result" id="vi-result" aria-live="polite"></div><p class="model-label">理想幾何模糊核示意，固定光學平面與圓形孔徑；不模擬調節、繞射、高階像差、對比敏感度、視力值或實際病人的主觀所見。圖示模糊量有顯示上限；不能用螢幕上的清晰度驗配。</p></div>
+<div class="callout">例：未矯正眼需要 pl / −2.00 ×180。水平子午面可在視網膜上聚焦；垂直子午面過強，先聚焦再發散。點像在視網膜上呈垂直拖長，垂直線的左右邊界較清楚，F 的兩橫畫之間卻較難分開。</div></section>
+
+<section class="panel" id="quiz"><div class="kicker">PRACTICE / 32 ORIGINAL QUESTIONS</div><h2>練習與完整解析</h2><p>依既有題庫的常見能力設計新題。每題都有數值步驟、光學圖及易錯提醒；不是歷屆原題的逐字重製或完整收錄。</p><div class="screen-quiz"><div class="quiz-toolbar"><label>範圍 <select id="quiz-topic"><option value="all">全部主題</option></select></label><button class="btn" id="quiz-random">隨機 10 題</button><button class="btn" id="quiz-wrong">只練待訂正題</button><button class="btn" id="quiz-all">恢復全部</button></div><div class="card" id="quiz-card"></div><div class="quiz-bottom"><button class="btn" id="quiz-prev">上一題</button><span id="quiz-position"></span><button class="btn primary" id="quiz-next">下一題</button></div><div class="card section"><h3>本章學習紀錄</h3><p id="quiz-stats"></p><p class="note">紀錄只存在這個瀏覽器，未上傳，也不與其他電腦同步。訂正後答對會移出待訂正清單；歷史答對率仍保留。</p><button class="btn small" id="quiz-reset">清除此章紀錄</button></div></div><div class="print-bank" id="print-bank"></div></section>
+
+<section class="panel" id="summary"><div class="kicker">QUICK REFERENCE</div><h2>解題速查：先問方向，再算度數</h2><div class="table-wrap"><table><thead><tr><th>題型</th><th>步驟／公式</th><th>檢查點</th></tr></thead><tbody>
+<tr><td>光學十字</td><td>α：S；α＋90°：S＋C</td><td>C 不是另一主子午面的總度數</td></tr><tr><td>處方轉置</td><td>(S＋C) / (−C) ×(α±90°)</td><td>每個方向的屈光力均不變</td></tr><tr><td>點光源</td><td>U＋F₁＝V₁；U＋F₂＝V₂</td><td>不是直接用鏡片焦距代替有限物距的像距</td></tr><tr><td>焦線方向</td><td>形成子午面＋90°</td><td>C＝0 時兩焦線合為點</td></tr><tr><td>Sturm 間隔</td><td>D：|C|；m：|1/V₁−1/V₂|</td><td>零聚散度代表無限遠，不能除以零</td></tr><tr><td>最小模糊圈</td><td>先平均 V，再取倒數</td><td>不是兩個像距平均</td></tr><tr><td>斜向屈光力</td><td>S＋C sin²(θ−α)</td><td>只算分量，不另造斜向焦線</td></tr><tr><td>散光分類</td><td>先由矯正 S、S＋C 看正負</td><td>順逆看眼的強子午面，或轉成負柱軸</td></tr><tr><td>JCC</td><td>±j；主子午面差 2j；M＝0</td><td>鏡片翻轉不等於處方轉置</td></tr><tr><td>等價球面</td><td>M＝S＋C/2；ΔS＝−ΔC/2</td><td>等價球面不消除散光差</td></tr></tbody></table></div></section>
+
+<section class="panel" id="sources"><div class="kicker">SOURCES & MODEL BOUNDARIES</div><h2>來源、假設與版本</h2><div class="card"><ul class="source-list"><li>主架構：<i>Geometrical and Visual Optics</i>, 3rd edition，第 9 章 pp.135–157；對應使用者提供的中文目錄。以既有本機 PDF 核對處方、成像、斜向屈光力、分類、JCC 及等價球面。</li><li>題型參考：使用者既有「散光測驗－完整－含答案」Word 題庫。原檔有題號／答案與圖形缺漏風險，本版不直接匯入；32 題為另行設計、重新計算的教學題。</li><li>補充核對：<a href="https://eyerounds.org/video/Refraction/Intro-Optics-Refract-Errors/index.htm" target="_blank" rel="noopener">University of Iowa EyeRounds：Introduction to Optics and Refractive Errors</a>（處方、光學十字與分類）。</li><li>JCC 擺位補充：<a href="https://eyewiki.aao.org/Cross-cylinder_technique_for_subjective_refraction" target="_blank" rel="noopener">AAO EyeWiki：Cross-Cylinder Technique for Subjective Refraction</a>。本版採兩主子午面 ±j 與 M＝0 的定義，以本機教科書算例交叉核對。</li></ul>
+<h3>模型邊界</h3><ol class="steps"><li>薄透鏡、近軸、空氣中成像；眼球比較採 n′＝1.333、60 D 對應固定視網膜，以 60−所需矯正度數表示未矯正眼主子午面度數，忽略頂點距離。</li><li>點源投影依公式繪製；兩主子午面的尺度相同。側視投影的上下是各子午面局部座標，不等於頁面中的絕對垂直方向。光斑截面依柱軸旋轉。</li><li>圓形孔徑、兩主子午面共面同孔徑；最小模糊圈採屈光度中點。虛像／無限遠不虛構可接收的屏幕。</li><li>視覺模擬為方向性幾何模糊示意，不是臨床預測。JCC 模型不自動輸出處方。</li><li>S、C 可輸入 −20～+20 D，主子午面總度數可能超出此範圍；不截斷計算。空白、超界及無限遠另行提示。</li></ol><p>版本：2026-10-03 · Chapter 9 公開版 1。所有說明與 SVG 圖為新製；沒有嵌入原書頁面、題庫全文或私人檔案。無外部字型、追蹤碼、API 或登入需求；章節及練習可離線使用，參考網站連結需網路。</p></div></section>
+<footer class="section note">柱面透鏡與散光 · 視覺光學互動教室 · 教學用途</footer></main>
+<script>
+
+'use strict';
+const Optics = {
+  axis: a => ((a % 180 + 180) % 180) || 180,
+  power: (s,c,a,t) => s + c * Math.sin((t-a)*Math.PI/180)**2,
+  transpose(s,c,a) { return {s:s+c,c:-c,a:this.axis(a+90)}; },
+  image(s,c,a,u) {
+    const f=[s,s+c], v=f.map(x=>x+u), m=(v[0]+v[1])/2;
+    const distance=x=>Math.abs(x)<1e-10?Infinity:1/x;
+    return {f,v,m,d:v.map(distance),clc:distance(m),axes:[this.axis(a),this.axis(a+90)],interval:Math.abs(c)};
+  },
+  classification(s,c) {
+    const p=[s,s+c].map(x=>Math.abs(x)<1e-9?0:x);
+    if(Math.abs(c)<1e-9) return p[0]===0?'正視（無散光）':p[0]<0?'球面近視（無散光）':'球面遠視（無散光）';
+    if(p.includes(0)) return Math.min(...p)<0?'單純近視散光':'單純遠視散光';
+    if(p.every(x=>x<0)) return '複合近視散光';
+    if(p.every(x=>x>0)) return '複合遠視散光';
+    return '混合性散光';
+  },
+  orientation(c,a) {
+    if(Math.abs(c)<1e-9) return '無柱面差，不分類順／逆散光';
+    const m=this.axis(c<0?a:a+90);
+    return m<=30||m>=150?'順散光（WTR）':m>=60&&m<=120?'逆散光（ATR）':'斜散光';
+  },
+  jcc(r,j) { return {one:Math.abs(r+2*j),two:Math.abs(r-2*j),mean:60}; },
+  residual(s,c,mode) { const m=s+c/2; return mode==='full'?[0,0]:mode==='sphere'?[s-m,s+c-m]:[s,s+c]; },
+  kernel(r1,r2,a,k=12) {
+    // Uniform circular pupil transformed into an elliptical geometric PSF.
+    const ca=Math.cos(a*Math.PI/180),sa=Math.sin(a*Math.PI/180),p=[];
+    for(let y=-15;y<=15;y++) for(let x=-15;x<=15;x++) if(x*x+y*y<=225)
+      p.push([(x*r1*ca-y*r2*sa)*k/15,(-x*r1*sa-y*r2*ca)*k/15]);
+    return p;
+  }
+};
+const fmt=(v,d=2)=>Number.isFinite(v)?(Math.abs(v)<.5*10**-d?0:v).toFixed(d):'∞';
+const D=v=>(v>0?'+':'')+fmt(v)+' D';
+const axis=a=>String(Optics.axis(a)).padStart(3,'0')+'°';
+const rx=(s,c,a)=>Math.abs(c)<1e-9?D(s).replace(' D',' DS'):D(s)+' / '+D(c)+' ×'+axis(a);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const C={ink:'#202b3b',red:'#bf3044',blue:'#2465b2',teal:'#08776e',gray:'#748394',line:'#d5e1ea',orange:'#9e5008'};
+let svgSerial=0;
+function txt(x,y,t,color=C.ink,size=17,anchor='start'){return '<text x="'+x+'" y="'+y+'" fill="'+color+'" font-size="'+size+'" text-anchor="'+anchor+'">'+esc(t)+'</text>';}
+function line(x1,y1,x2,y2,col=C.ink,w=2,dash=''){return '<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+col+'" stroke-width="'+w+'"'+(dash?' stroke-dasharray="'+dash+'"':'')+'/>';}
+function svg(body,title,h=350){return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 '+h+'" role="img" aria-label="'+esc(title)+'"><title>'+esc(title)+'</title>'+body+'</svg>';}
+function dot(x,y,r=5,col=C.red){return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+col+'"/>';}
+function direction(cx,cy,r,a,col,w=4){const t=a*Math.PI/180,dx=r*Math.cos(t),dy=-r*Math.sin(t);return line(cx-dx,cy-dy,cx+dx,cy+dy,col,w);}
+function crossBody(s,c,a,cx=230,cy=175,r=98,col1=C.blue,col2=C.teal){
+  let b='<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="#f5f9fc" stroke="'+C.line+'"/>';
+  for(const t of [0,30,60,90,120,150]) b+=direction(cx,cy,r,t,C.line,1);
+  b+=direction(cx,cy,r,a,col1)+direction(cx,cy,r,a+90,col2)+dot(cx,cy,4,C.ink);
+  b+=txt(cx+r+15,cy+6,'180°',C.gray,14)+txt(cx,cy-r-15,'90°',C.gray,14,'middle');
+  return b;
+}
+function crossDiagram(s,c,a,comparison=false){
+  let b=txt(30,32,comparison?'同一片鏡片，兩種處方':'先標兩主子午面，再填總度數',C.ink,21);
+  b+=crossBody(s,c,a);
+  b+=txt(415,92,'主子午面 1（柱軸方向）',C.blue,18)+txt(415,123,axis(a)+'：S ＝ '+D(s),C.blue,22);
+  b+=txt(415,180,'主子午面 2（垂直柱軸）',C.teal,18)+txt(415,211,axis(a+90)+'：S＋C ＝ '+D(s+c),C.teal,22);
+  b+=txt(38,307,'原處方：'+rx(s,c,a),C.ink,18);
+  if(comparison){const q=Optics.transpose(s,c,a);b+=txt(38,344,'轉置後：'+rx(q.s,q.c,q.a),C.red,18);}
+  else b+=txt(415,263,Math.abs(c)<1e-9?'C＝0：每個方向相同，柱軸無意義':'兩主子午面相差 90°；度數差＝'+D(c),C.gray,16);
+  return svg(b,'光學十字，柱軸 '+axis(a)+' 度數 '+D(s)+'，垂直方向 '+D(s+c),comparison?375:340);
+}
+function powerGraph(s,c,a,t,compare=false){
+  const q=Optics.transpose(s,c,a),lo=Math.min(s,s+c)-1,hi=Math.max(s,s+c)+1;
+  const X=x=>70+x/180*760,Y=y=>250-(y-lo)/(hi-lo)*185;
+  let b=txt(30,30,compare?'黑色原處方與紅色轉置處方完全重合':'不同方向的屈光力分量',C.ink,21);
+  for(let n=0;n<=4;n++){let v=lo+(hi-lo)*n/4;b+=line(70,Y(v),830,Y(v),C.line,1)+txt(60,Y(v)+5,fmt(v),C.gray,13,'end');}
+  for(const d of [0,30,60,90,120,150,180]) b+=txt(X(d),276,d+'°',C.gray,14,'middle');
+  const pts=Array.from({length:181},(_,i)=>X(i)+','+Y(Optics.power(s,c,a,i))).join(' ');
+  b+='<polyline points="'+pts+'" fill="none" stroke="'+(compare?C.ink:C.blue)+'" stroke-width="4"/>';
+  if(compare)b+='<polyline points="'+Array.from({length:181},(_,i)=>X(i)+','+Y(Optics.power(q.s,q.c,q.a,i))).join(' ')+'" fill="none" stroke="'+C.red+'" stroke-width="2.5" stroke-dasharray="8 5"/>';
+  else b+=line(X(t),250,X(t),Y(Optics.power(s,c,a,t)),C.red,2,'5 3')+dot(X(t),Y(Optics.power(s,c,a,t)))+txt(450,318,'θ＝'+t+'° → '+D(Optics.power(s,c,a,t)),C.red,19,'middle');
+  return svg(b,'子午面屈光力曲線',340);
+}
+function distanceLabel(v){return Math.abs(v)<1e-10?'無限遠（平行）':(v>0?'鏡後實':'鏡前虛')+' '+fmt(Math.abs(100/v))+' cm';}
+function ellipseBody(cx,cy,r1,r2,a,scale=65){
+  const peak=Math.max(Math.abs(r1),Math.abs(r2),1e-10);
+  const q1=Math.abs(r1)/peak*scale,q2=Math.abs(r2)/peak*scale;
+  if(Math.max(Math.abs(r1),Math.abs(r2))<1e-7) return dot(cx,cy,4,C.red);
+  if(q1<.01)return direction(cx,cy,q2,a+90,C.red,4);
+  if(q2<.01)return direction(cx,cy,q1,a,C.red,4);
+  return '<ellipse cx="'+cx+'" cy="'+cy+'" rx="'+Math.max(q1,.5)+'" ry="'+Math.max(q2,.5)+'" transform="rotate('+(-a)+' '+cx+' '+cy+')" fill="#efabb344" stroke="'+C.red+'" stroke-width="2.5"/>';
+}
+function pointDiagram(s,c,a,u,zcm){
+  const im=Optics.image(s,c,a,u),z=zcm/100,id='clip'+(++svgSerial);
+  const finite=im.d.filter(Number.isFinite);
+  let lo=Math.min(0,...finite),hi=Math.max(z,.05,...finite);
+  const pad=(hi-lo)*.1;lo-=pad;hi+=pad;
+  const X=x=>50+(x-lo)/(hi-lo)*550,lx=X(0);
+  let b=txt(25,28,'兩個主子午面投影（同一鏡片、相同距離尺度）',C.ink,19);
+  im.v.forEach((v,i)=>{
+    const cy=106+i*142,col=i?C.teal:C.blue;
+    b+=txt(25,58+i*142,'主子午面 '+(i+1)+'：'+axis(im.axes[i])+'，V＝'+D(v),col,17);
+    b+='<defs><clipPath id="'+id+i+'"><rect x="45" y="'+(cy-39)+'" width="560" height="78"/></clipPath></defs>';
+    b+=line(45,cy,605,cy,C.gray,1)+line(lx,cy-38,lx,cy+38,C.ink,3);
+    b+='<g clip-path="url(#'+id+i+')">';
+    for(const h of [-24,24]){
+      b+=line(lx,cy-h,X(hi),cy-h*(1-v*hi),col,2.5);
+      const inc=Math.max(lo,-.08);
+      b+=line(X(inc),cy-h*(1-u*inc),lx,cy-h,col,1.4);
+      if(v<0)b+=line(lx,cy-h,X(im.d[i]),cy,col,1.8,'5 4');
+    }
+    b+='</g>'+line(X(z),cy-35,X(z),cy+35,C.red,2,'4 3');
+    if(Number.isFinite(im.d[i]))b+=dot(X(im.d[i]),cy,5,col);
+    b+=txt(25,161+i*142,distanceLabel(v)+'；焦線方向 '+axis(im.axes[i]+90),col,16);
+  });
+  b+=line(630,45,630,305,C.line,1)+txt(759,65,'屏幕截面（正面看）',C.red,18,'middle');
+  b+=ellipseBody(759,157,1-im.v[0]*z,1-im.v[1]*z,a);
+  b+=txt(759,252,'鏡後 '+fmt(zcm)+' cm',C.red,17,'middle')+txt(759,282,'截面自動放大；形狀按比例',C.gray,13,'middle');
+  b+=txt(30,342,'● 焦線位置　│ 黑：鏡片　┊ 紅：屏幕　虛線：虛像的反向延長',C.gray,15);
+  b+=txt(30,371,'CLC：V＝'+D(im.m)+' → '+distanceLabel(im.m),C.ink,18);
+  if(Math.abs(c)<1e-9)b+=txt(30,399,'C＝0：兩方向相同，焦線重合為點（若 V＝0，則在無限遠）。',C.orange,16);
+  return svg(b,'點光源兩主子午面光路及屏幕光斑',425);
+}
+function vergenceDiagram(values,labels,title,ref=0){
+  let lo=Math.min(ref,...values)-1,hi=Math.max(ref,...values)+1;
+  if(hi-lo<3){lo-=1;hi+=1;}
+  const X=x=>100+(x-lo)/(hi-lo)*700;
+  let b=txt(30,30,title,C.ink,20);
+  values.forEach((v,i)=>{let y=87+i*70;
+    b+=line(100,y,800,y,C.line,2)+line(X(ref),y-21,X(ref),y+21,C.ink,2,'4 4');
+    b+=dot(X(v),y,6,i%2?C.teal:C.blue)+txt(30,y-25,labels[i]+'：'+D(v),i%2?C.teal:C.blue,16);
+  });
+  b+=txt(100,82+values.length*70,'左較負 ← 有號屈光度尺度 → 右較正；虛線參考 '+D(ref),C.gray,15);
+  return svg(b,title,112+values.length*70);
+}
+function eyeDiagram(s,c,a,correction='none'){
+  const r=Optics.residual(s,c,correction),p=r.map(v=>60-v),dist=p.map(v=>1.333/v);
+  const end=Math.max(1.333/60,...dist)*1.14,X=z=>65+z/end*540,ret=X(1.333/60);
+  let b=txt(25,30,'固定視網膜，觀看無限遠（U＝0）',C.ink,20);
+  p.forEach((v,i)=>{const cy=105+i*138,col=i?C.teal:C.blue,fx=X(dist[i]);
+    b+=txt(25,57+i*138,'子午面 '+axis(a+i*90)+'：眼總度數 '+D(v),col,16)+line(65,cy-33,65,cy+33,C.ink,3)+line(25,cy,605,cy,C.gray,1)+line(ret,cy-42,ret,cy+42,C.red,3);
+    for(const h of [-25,25]){b+=line(25,cy-h,65,cy-h,col,1.5)+line(65,cy-h,fx,cy,col,2);
+      const ze=Math.min(end,dist[i]*2);b+=line(fx,cy,X(ze),cy-h*(1-ze/dist[i]),col,2);}
+    b+=dot(fx,cy,5,col)+txt(25,165+i*138,'所需矯正 '+D(r[i])+' → '+(Math.abs(r[i])<1e-9?'焦線在視網膜上':r[i]<0?'焦線在視網膜前':'焦線在視網膜後'),col,16);
+  });
+  b+=txt(747,72,'紅線：視網膜',C.red,19,'middle')+ellipseBody(747,168,r[0],r[1],a)+txt(747,280,'視網膜點像（形狀示意）',C.gray,14,'middle');
+  return svg(b,'未矯正或矯正後的眼，兩子午面與固定視網膜',335);
+}
+function targetShape(type,x,y){
+  if(type==='dot')return '<circle cx="'+x+'" cy="'+y+'" r="4"/>';
+  if(type==='cross')return '<path d="M'+(x-52)+' '+(y-7)+'h45v-45h14v45h45v14h-45v45h-14v-45h-45z"/>';
+  return '<path d="M'+(x-30)+' '+(y-55)+'h65v17h-45v27h38v16h-38v50h-20z"/>';
+}
+function blurTarget(cx,cy,type,r1,r2,a,scale=12){
+  const offsets=Optics.kernel(r1,r2,a,scale);
+  // Equal-weight shifted silhouettes show a geometric PSF. Not a retinal acuity prediction.
+  return '<g fill="'+C.ink+'">'+offsets.map(([dx,dy])=>'<g opacity="'+(1/offsets.length)+'" transform="translate('+dx+' '+dy+')">'+targetShape(type,cx,cy)+'</g>').join('')+'</g>';
+}
+function visionDiagram(s,c,a,type){
+  const max=Math.max(Math.abs(s),Math.abs(s+c),Math.abs(c)/2),scale=Math.min(13,48/(max||1));
+  let b=txt(25,30,'同一物體，在三種矯正狀態下的方向性模糊示意',C.ink,20);
+  ['none','sphere','full'].forEach((mode,i)=>{
+    const x=150+i*300,r=Optics.residual(s,c,mode),title=['未矯正','只給等價球面','完整球柱矯正'][i];
+    b+='<rect x="'+(x-127)+'" y="53" width="254" height="230" rx="12" fill="#fafcfe" stroke="'+C.line+'"/>';
+    b+=txt(x,83,title,C.ink,18,'middle')+blurTarget(x,165,type,r[0],r[1],a,scale)+txt(x,267,'剩餘 '+D(r[0])+' / '+D(r[1]),C.gray,14,'middle');
+  });
+  b+=txt(30,320,'同一比較組使用相同模糊比例；高屈光度時自動縮放。非視力或主觀所見的預測。',C.gray,15);
+  return svg(b,'未矯正、等價球面與完整球柱矯正的模糊比較',350);
+}
+function extendedDiagram(zcm,type){
+  const z=zcm/100,k1=1-2*z,k2=1-5*z;
+  let b=txt(30,30,'原物體 → 每一點的光斑 → 疊加的影像',C.ink,21);
+  b+='<g fill="'+C.ink+'">'+targetShape(type,145,158)+'</g>'+txt(145,270,'原物體（正規化）',C.gray,17,'middle');
+  b+=ellipseBody(450,158,k1,k2,180,57)+txt(450,270,'屏幕上的點像',C.gray,17,'middle');
+  b+=blurTarget(750,158,type,k1,k2,180,30)+txt(750,270,'展延物的模糊示意',C.gray,17,'middle');
+  b+=txt(30,321,'屏幕 '+fmt(zcm)+' cm；水平尺寸比例 '+fmt(Math.abs(k1))+'；垂直尺寸比例 '+fmt(Math.abs(k2)),C.ink,17);
+  return svg(b,'展延光源：各物點光斑疊加',350);
+}
+function jccDiagram(r,j,flip=1){
+  let b=txt(30,30,'平均聚散度維持 60 D，只比較兩主子午面之差',C.ink,20);
+  const m=Optics.jcc(r,j);
+  [1,2].forEach((n,i)=>{
+    let x=230+i*440,sgn=n===1?1:-1;
+    b+='<rect x="'+(x-202)+'" y="51" width="404" height="278" rx="16" fill="'+(n===flip?'#eef7f5':'#fafcfe')+'" stroke="'+(n===flip?C.teal:C.line)+'" stroke-width="2"/>';
+    b+=txt(x,83,'位置 '+n+(n===flip?'（目前顯示）':''),C.ink,19,'middle');
+    b+=direction(x,176,66,90,sgn>0?C.red:C.blue)+direction(x,176,66,180,sgn>0?C.blue:C.red);
+    b+=txt(x,102,'垂直加 '+D(sgn*j),C.ink,15,'middle');
+    b+=txt(x,270,'水平加 '+D(-sgn*j),C.ink,15,'middle')+txt(x,305,'剩餘差：'+D(i?m.two:m.one),C.ink,21,'middle');
+  });
+  return svg(b,'JCC 兩個翻轉位置的屈光力比較',350);
+}
+function placementDiagram(a,mode){
+  const p=mode==='axis'?a+45:a,handle=mode==='axis'?a:a+45;
+  let b=txt(25,30,mode==='axis'?'軸度檢查：兩主子午面跨在待測柱軸兩側':'度數檢查：兩主子午面對準原主子午面',C.ink,18);
+  b+=crossBody(0,0,p,240,185,95,C.red,C.blue)+direction(240,185,124,a,C.ink,2);
+  const t=handle*Math.PI/180;
+  b+=line(240+101*Math.cos(t),185-101*Math.sin(t),240+158*Math.cos(t),185-158*Math.sin(t),C.gray,10);
+  b+=txt(435,115,'黑線：待測柱軸 '+axis(a),C.ink,18)+txt(435,159,'JCC 正主子午面 '+axis(p),C.red,18)+txt(435,203,'JCC 負主子午面 '+axis(p+90),C.blue,18)+txt(435,247,'灰色把手方向 '+axis(handle),C.gray,18);
+  return svg(b,'JCC 軸度與度數檢查擺位',330);
+}
+
+const QUESTIONS=[
+{topic:'光學十字',prompt:'純柱鏡 pl / +3.00 ×090，在 90° 子午面上的屈光力為何？',options:['+3.00 D','0.00 D','−3.00 D','+1.50 D'],answer:1,formula:'F(α)＝S',steps:['90° 正是柱軸。','純柱鏡 S＝0；柱面在柱軸上的分量為 0。','總度數＝0＋0＝0.00 D。'],pitfall:'軸度標記不是全柱面作用的方向。',diagram:['cross',0,3,90]},
+{topic:'光學十字',prompt:'−1.00 / −2.00 ×030 的 120° 子午面總度數為何？',options:['−1.00 D','−2.00 D','−3.00 D','+1.00 D'],answer:2,formula:'F(α＋90°)＝S＋C',steps:['120° 與柱軸 30° 垂直。','此方向包含完整的柱面分量 −2.00 D。','總度數＝−1.00−2.00＝−3.00 D。'],pitfall:'另一主子午面不是只填 C。',diagram:['cross',-1,-2,30]},
+{topic:'光學十字',prompt:'+2.00 / −4.00 ×180 的水平與垂直子午面度數依序為何？',options:['+2.00、−2.00 D','−2.00、+2.00 D','+2.00、−4.00 D','−4.00、+2.00 D'],answer:0,formula:'水平 S；垂直 S＋C',steps:['柱軸 180° 為水平方向，因此水平度數為 +2.00 D。','垂直 90° 為另一主子午面。','垂直度數＝+2.00−4.00＝−2.00 D。'],pitfall:'先標方向，再填正負號。',diagram:['cross',2,-4,180]},
+{topic:'光學十字',prompt:'一片 −6.00 DS 球面鏡，將標示方向由 30° 轉到 120°，光學效果如何？',options:['多出 −6.00 DC','度數變成 +6.00 DS','產生混合性散光','各子午面仍為 −6.00 D'],answer:3,formula:'C＝0 → F(θ)＝S',steps:['DS 表示只有球面度數。','C＝0，所有方向的屈光力相同。','沒有獨特柱軸，旋轉不改變這個理想球面鏡的屈光力。'],pitfall:'不要把無意義的柱軸變化解讀成光學改變。',diagram:['cross',-6,0,30]},
+{topic:'處方轉置',prompt:'−1.00 / −2.00 ×160 轉為正柱鏡寫法，何者正確？',options:['−3.00 / +2.00 ×160','−3.00 / +2.00 ×070','+1.00 / −2.00 ×070','−1.00 / +2.00 ×070'],answer:1,formula:'S′＝S＋C，C′＝−C，α′＝α±90°',steps:['S′＝−1.00−2.00＝−3.00 D。','C′＝+2.00 D。','160°−90°＝70°；因此為 −3.00 / +2.00 ×070。'],pitfall:'只改柱鏡正負而不改 S 或軸度，不是轉置。',diagram:['rx',-1,-2,160]},
+{topic:'處方轉置',prompt:'+3.00 / +2.00 ×040 的負柱鏡等效寫法為何？',options:['+1.00 / −2.00 ×130','+5.00 / −2.00 ×040','+5.00 / −2.00 ×130','+3.00 / −2.00 ×130'],answer:2,formula:'新球面＝原兩主子午面中的另一度數',steps:['球面相加：+3.00＋2.00＝+5.00 D。','柱鏡反號：−2.00 D。','柱軸 40°＋90°＝130°；回代 40° 仍為 +3.00 D。'],pitfall:'轉置後每一方向屈光力都應保持不變。',diagram:['rx',3,2,40]},
+{topic:'處方轉置',prompt:'光學十字：20° 為 +1.00 D，110° 為 −2.00 D。負柱鏡處方為何？',options:['+1.00 / −3.00 ×020','−2.00 / −3.00 ×110','+1.00 / −2.00 ×020','−2.00 / +1.00 ×110'],answer:0,formula:'C＝另一面−柱軸面',steps:['負柱鏡寫法以較正的 +1.00 D 為 S。','柱軸在 +1.00 D 的 20°。','C＝−2.00−(+1.00)＝−3.00 D。'],pitfall:'柱鏡是兩面相減，不是直接抄另一面的度數。',diagram:['cross',1,-3,20]},
+{topic:'處方轉置',prompt:'薄鏡密接：+2.00 DC ×090 與 +5.00 DC ×180 合併，何者等效？',options:['+5.00 / +2.00 ×180','+7.00 DS','+2.00 / +5.00 ×090','+2.00 / +3.00 ×180'],answer:3,formula:'同一方向的屈光力相加',steps:['第一片在水平提供 +2.00 D，第二片水平為 0。','第二片在垂直提供 +5.00 D，第一片垂直為 0。','十字是水平 +2、垂直 +5，因此 +2.00 / +3.00 ×180。'],pitfall:'兩片柱鏡的柱軸不同，不能只把柱鏡數值相加。',diagram:['cross',2,3,180]},
+{topic:'點源成像',prompt:'點光源在 +5.00 / +3.00 ×180 鏡前 50 cm。較近的實焦線在何處、方向為何？',options:['鏡後 33.33 cm，水平','鏡後 16.67 cm，水平','鏡後 16.67 cm，垂直','鏡前 16.67 cm，水平'],answer:1,formula:'U＝−2 D；V強＝−2＋8＝+6 D',steps:['物距 −0.50 m，U＝−2.00 D。','垂直子午面 +8 D，像方 V＝+6 D，v＝1/6 m＝16.67 cm。','垂直子午面聚焦留下水平焦線；較弱方向在 33.33 cm 才聚焦。'],pitfall:'強子午面與焦線方向互相垂直。',diagram:['point',5,3,180,-2,100/6]},
+{topic:'點源成像',prompt:'同樣為 +5.00 / +3.00 ×180、物在鏡前 50 cm，較遠實焦線為何？',options:['鏡後 20 cm，水平','鏡後 16.67 cm，水平','鏡後 33.33 cm，垂直','鏡後 33.33 cm，水平'],answer:2,formula:'V水平＝−2＋5＝+3 D',steps:['水平子午面度數為 +5 D。','U＋F＝−2＋5＝+3 D，所以像距為 1/3 m。','水平子午面聚焦留下垂直焦線，距鏡片 33.33 cm。'],pitfall:'有限距離的物體不能直接使用 1/F 作像距。',diagram:['point',5,3,180,-2,100/3]},
+{topic:'點源成像',prompt:'+3.00 / +3.00 ×180 的鏡前 100 cm 有點光源。最小模糊圈位於何處？',options:['鏡後 28.57 cm','鏡後 35.00 cm','鏡後 20.00 cm','鏡後 50.00 cm'],answer:0,formula:'VCLC＝(2＋5)/2＝3.5 D',steps:['U＝−1 D；兩面 V 分別為 +2 D 與 +5 D。','先平均聚散度得到 +3.50 D。','像距＝100/3.50＝28.57 cm；不是 (20＋50)/2＝35 cm。'],pitfall:'最小模糊圈位於屈光度中點，不是公分中點。',diagram:['point',3,3,180,-1,100/3.5]},
+{topic:'點源成像',prompt:'上題兩焦線在鏡後 20 cm 與 50 cm。Sturm 間隔的線性長度與屈光度差依序為何？',options:['70 cm、7 D','30 cm、7 D','70 cm、3 D','30 cm、3 D'],answer:3,formula:'|v₂−v₁|；|V₂−V₁|',steps:['線性長度＝50−20＝30 cm。','兩像方聚散度＝100/20＝5 D；100/50＝2 D。','屈光度差＝5−2＝3 D，等於柱鏡絕對值。'],pitfall:'cm 與 D 是不同量，不能混用。',diagram:['point',3,3,180,-1,35]},
+{topic:'點源成像',prompt:'平行光通過 pl / +4.00 ×180。哪個描述正確？',options:['兩面都聚焦在鏡後 25 cm','垂直面鏡後 25 cm 聚焦；水平面出射平行','水平面鏡後 25 cm 聚焦；垂直面出射平行','兩面都在鏡前 25 cm 聚焦'],answer:1,formula:'U＝0；V₁＝0，V₂＝+4 D',steps:['水平為柱軸方向，F₁＝0。','水平出射 V₁＝0，對應無限遠。','垂直面 V₂＝+4 D，25 cm 處形成水平焦線。'],pitfall:'V＝0 不等於像距 0；它代表無限遠。',diagram:['point',0,4,180,0,25]},
+{topic:'點源成像',prompt:'平行光通過 +2.00 / −4.00 ×045，兩主子午面像方聚散度為 +2、−2 D。哪個描述正確？',options:['兩條都是實焦線','最小模糊圈在鏡片平面','一實一虛；平均聚散度 0 D，無有限 CLC 平面','CLC 在鏡後 25 cm'],answer:2,formula:'(+2−2)/2＝0 D',steps:['+2 D 對應鏡後實焦線 50 cm。','−2 D 對應鏡前虛焦線 50 cm。','平均 0 D，不可用兩位置平均得 0 cm；沒有有限的 CLC 平面。'],pitfall:'0 D 與 0 cm 完全不同，也不能以屏幕接虛焦線。',diagram:['point',2,-4,45,0,25]},
+{topic:'展延光源',prompt:'點光源形成水平焦線的平面上，十字物的哪一部分邊界相對較清楚？',options:['水平線的上下邊界','水平線的左右端點','垂直線的左右邊界','所有邊界同時清晰'],answer:0,formula:'垂直模糊為零 → 水平線上下邊界較清楚',steps:['水平焦線表示垂直方向已收斂。','各物點仍沿水平方向展開。','水平線上下邊界較清楚，左右端點仍拖長。'],pitfall:'不能由焦線名稱直接判斷是哪個子午面聚焦。',diagram:['extended',20,'cross']},
+{topic:'展延光源',prompt:'未矯正眼的完整處方為 pl / −2.00 ×180。理想模型下，遠方點光源在視網膜上較可能如何展開？',options:['水平拖長','完全清楚的點','沒有任何光到達視網膜','垂直拖長'],answer:3,formula:'水平已聚焦；垂直先聚焦再發散',steps:['水平矯正需求為 0，水平子午面在視網膜上聚焦。','垂直需要 −2 D，表示原眼垂直過強，先在視網膜前聚焦。','到達視網膜時垂直已發散，點像呈垂直拖長。'],pitfall:'不是每個順散光都呈同一外觀；這裡限定單純近視與放鬆看遠。',diagram:['vision',0,-2,180,'F']},
+{topic:'斜向屈光力',prompt:'pl / −4.00 ×030 在 60° 子午面的屈光力分量為何？',options:['−4.00 D','−1.00 D','−2.00 D','−3.00 D'],answer:1,formula:'C sin²30°＝C/4',steps:['夾角為 60°−30°＝30°。','sin²30°＝0.25。','F＝0−4×0.25＝−1.00 D。'],pitfall:'算的是與柱軸夾角，不是直接算 sin²60°。',diagram:['oblique',0,-4,30,60]},
+{topic:'斜向屈光力',prompt:'+1.00 / −4.00 ×030 在 75° 子午面的屈光力分量為何？',options:['−3.00 D','+1.00 D','−1.00 D','+3.00 D'],answer:2,formula:'S＋C sin²45°',steps:['75°−30°＝45°。','柱面分量＝−4×0.5＝−2 D。','加回 S＝+1 D，總屈光力為 −1 D。'],pitfall:'不要忘記球面分量。',diagram:['oblique',1,-4,30,75]},
+{topic:'斜向屈光力',prompt:'+2.00 / +4.00 ×180 在 60° 子午面的屈光力分量為何？',options:['+5.00 D','+3.00 D','+4.00 D','+6.00 D'],answer:0,formula:'S＋3C/4',steps:['60° 子午面與水平柱軸的最小夾角為 60°。','sin²60°＝0.75。','F＝2＋4×0.75＝+5 D。'],pitfall:'sin²60° 不是 sin120°。',diagram:['oblique',2,4,180,60]},
+{topic:'斜向屈光力',prompt:'算出一個非主子午面的 F(θ) 後，下列哪個推論不恰當？',options:['它包含球面 S 的貢獻','夾角 45° 時數值等於 S＋C/2','相差 180° 的方向屈光力相同','每個方向都可用 1/F(θ) 找到獨立焦線'],answer:3,formula:'斜向屈光力分量 ≠ 獨立焦線',steps:['球柱鏡的兩主子午面互相垂直。','一般斜向光線經折射不保持在原來子午平面。','因此 sin² 公式不代表存在無限多個獨立焦線。'],pitfall:'分量計算的適用意義，與主子午面聚焦不同。',diagram:['oblique',1,-4,30,60]},
+{topic:'散光分類',prompt:'完整矯正為 −1.00 / −2.00 ×180，在調節放鬆看遠時屬於何者？',options:['混合性、逆散光','複合近視、順散光','單純近視、順散光','複合遠視、逆散光'],answer:1,formula:'兩面需求 −1、−3 D',steps:['水平需求 −1 D、垂直需求 −3 D，兩者皆近視。','兩負且不同，為複合近視散光。','垂直需要較多負矯正，原眼垂直較強，為順散光。'],pitfall:'順散光看眼的強子午面，不是鏡片較正方向。',diagram:['eye',-1,-2,180]},
+{topic:'散光分類',prompt:'完整矯正為 +1.00 / −3.00 ×090，應分類為何？',options:['複合近視、順散光','單純遠視、逆散光','混合性、逆散光','複合遠視、順散光'],answer:2,formula:'90° +1 D；180° −2 D',steps:['垂直需求 +1 D，水平需求 −2 D。','一正一負，為混合性散光。','水平需要更負矯正，原眼水平較強，為逆散光。'],pitfall:'不能只依 S 正負決定整隻眼的散光種類。',diagram:['eye',1,-3,90]},
+{topic:'散光分類',prompt:'pl / +2.00 ×090 是哪一類完整矯正處方？',options:['單純遠視、順散光','單純遠視、逆散光','單純近視、順散光','混合性、斜散光'],answer:0,formula:'轉成負柱鏡：+2.00 / −2.00 ×180',steps:['垂直 90° 需求 0；水平 180° 需求 +2 D。','一面正視、一面遠視，為單純遠視散光。','原眼垂直較強；轉成負柱軸 180°，驗證是順散光。'],pitfall:'不可把正柱鏡軸 90° 直接套進負柱鏡的順逆口訣。',diagram:['eye',0,2,90]},
+{topic:'散光分類',prompt:'下列何者是規則散光的模型特徵？',options:['任何柱鏡都可完全矯正所有不規則散光','C 為負就代表不規則散光','只能起因於角膜','可用互相垂直的兩主子午面描述'],answer:3,formula:'兩主子午面相差 90°',steps:['規則散光以兩個互相垂直的主子午面描述。','球柱鏡可補償此理想二方向屈光差。','不規則變化可能超出單一球柱鏡模型，不能只憑 C 的正負診斷。'],pitfall:'「規則」描述光學結構，不是柱鏡正負。',diagram:['cross',1,-2,45]},
+{topic:'JCC 與補償',prompt:'±0.50 D 的 JCC，其兩主子午面度數差與等價球面依序為何？',options:['0.50 D、0 D','1.00 D、0 D','1.00 D、+0.50 D','0.50 D、−0.50 D'],answer:1,formula:'差＝|+j−(−j)|＝2j；M＝0',steps:['兩主子午面是 +0.50 與 −0.50 D。','差值＝1.00 D。','平均值＝0 D；可寫成 +0.50 / −1.00 的球柱形式。'],pitfall:'JCC 標示 ±j 不是球柱處方裡的柱面差。',diagram:['jcc',0,.5,1]},
+{topic:'JCC 與補償',prompt:'已置中眼的垂直屈光力比水平強 1.00 D。加入 ±0.25 D JCC，垂直加負時的剩餘差為何？',options:['1.50 D','1.00 D','0.50 D','0 D'],answer:2,formula:'|r−2j|＝|1−0.5|',steps:['垂直加 −0.25 D，水平同時加 +0.25 D。','兩方向的差減少 0.50 D，而不是只減少 0.25 D。','剩餘差＝1.00−0.50＝0.50 D。'],pitfall:'JCC 同時改變兩個方向。',diagram:['jcc',1,.25,2]},
+{topic:'JCC 與補償',prompt:'為維持原等價球面，柱面由 −1.00 改成 −1.50 D，球面應如何改？',options:['增加 +0.25 D','增加 −0.25 D','增加 +0.50 D','不變'],answer:0,formula:'ΔS＝−ΔC/2',steps:['ΔC＝−1.50−(−1.00)＝−0.50 D。','ΔS＝−(−0.50)/2＝+0.25 D。','因此平均度數變化為 +0.25−0.50/2＝0。'],pitfall:'柱鏡增加負度數時，球面補償方向為正。',diagram:['se',0,-.5,180]},
+{topic:'JCC 與補償',prompt:'以 JCC 精修既有柱軸時，JCC 的兩主子午面如何擺放？',options:['一面直接對準待測柱軸','兩面都與待測柱軸平行','隨意擺放即可','跨在待測柱軸兩側，各差 45°'],answer:3,formula:'軸度檢查：兩面夾待測軸 ±45°',steps:['此題問軸度檢查，不是柱面度數比較。','將 JCC 兩主子午面分置待測柱軸兩側各 45°。','把手與待測柱軸對齊；度數檢查才將兩面對準原主子午面。'],pitfall:'不要把軸度與度數兩種擺位混用。',diagram:['placement',180,'axis']},
+{topic:'等價球面',prompt:'+1.00 / −4.00 ×180 的等價球面為何？',options:['−3.00 D','−1.00 D','+3.00 D','−2.00 D'],answer:1,formula:'M＝S＋C/2',steps:['S＝+1.00 D，C＝−4.00 D。','C/2＝−2.00 D。','M＝+1.00−2.00＝−1.00 D。'],pitfall:'要加回 S，且柱鏡負號不可丟掉。',diagram:['se',1,-4,180]},
+{topic:'等價球面',prompt:'完整矯正為 +1.00 / −4.00 ×180，只給等價球面 −1.00 DS 後，還剩多少散光差？',options:['0 D','2 D','4 D','6 D'],answer:2,formula:'加球面不改變兩主子午面的差',steps:['完整需求兩面為 +1、−3 D。','扣除已給的 −1 D，剩餘需求為 +2、−2 D。','兩面差仍是 4 D；平均已置中，但散光沒有消失。'],pitfall:'等價球面不等於完整球柱矯正。',diagram:['vision',1,-4,180,'dot']},
+{topic:'等價球面',prompt:'+2.00 / −4.00 ×045 的等價球面為 0 D，哪個結論正確？',options:['仍有 4 D 散光差','眼睛一定完全正視','任何方向都不需矯正','只可能是單純近視'],answer:0,formula:'平均為 0 不代表兩面均為 0',steps:['兩面需求為 +2 D、−2 D。','平均雖是 0 D，兩面並沒有相等。','此例為混合性散光，屈光差仍為 4 D。'],pitfall:'不能用單一平均值取代完整處方資訊。',diagram:['eye',2,-4,45]},
+{topic:'等價球面',prompt:'將某球柱處方改寫成等效的另一種柱鏡形式，等價球面如何變化？',options:['增加半個柱鏡','減少半個柱鏡','正負號反轉','不變'],answer:3,formula:'(S＋C)＋(−C)/2＝S＋C/2',steps:['轉置後球面為 S＋C。','轉置後柱面為 −C。','新平均值＝S＋C−C/2＝S＋C/2，與原值相同。'],pitfall:'轉置只換表達法，不換鏡片。',diagram:['rx',-2,-1.5,180]}
+].map((q,i)=>({...q,id:i+1}));
+function questionDiagram(q){
+ const [kind,...p]=q.diagram;
+ return kind==='cross'?crossDiagram(...p):kind==='rx'?crossDiagram(...p,true):kind==='point'?pointDiagram(...p):kind==='extended'?extendedDiagram(...p):kind==='oblique'?powerGraph(...p):kind==='eye'?eyeDiagram(...p):kind==='vision'?visionDiagram(...p):kind==='jcc'?jccDiagram(...p):kind==='placement'?placementDiagram(...p):vergenceDiagram([p[0],p[0]+p[1],p[0]+p[1]/2],['主子午面 1','主子午面 2','等價球面'],'兩主子午面與屈光度平均');
+}
+
+// UI_START
+const $=id=>document.getElementById(id);
+// Isolate implementation checks from the learner's real progress.
+const STORAGE='visual-optics-chapter9-v1'+(new URLSearchParams(location.search).get('qa')==='1'?'-qa':'');
+let state={done:[],history:{},last:{}};
+try {const raw=JSON.parse(localStorage.getItem(STORAGE)||'null');if(raw&&Array.isArray(raw.done)&&raw.history&&raw.last)state=raw;}catch{$('storage-note').hidden=false;}
+function save(){try{localStorage.setItem(STORAGE,JSON.stringify(state));}catch{$('storage-note').hidden=false;}}
+function read(id){
+  const e=$(id),v=e.value.trim(),n=Number(v);
+  if(v===''||!Number.isFinite(n)||(e.min!==''&&n<Number(e.min))||(e.max!==''&&n>Number(e.max))) throw Error('請在「'+e.parentElement.textContent.trim()+'」輸入有效數值'+(e.min!==''?'（'+e.min+'～'+e.max+'）':'')+'。');
+  return n;
+}
+function figure(id,markup){$(id).innerHTML=markup;}
+function safe(prefix,fn){
+  try{fn();}catch(e){$(prefix+'-result').innerHTML='<div class="error">'+esc(e.message)+'</div>';$(prefix+'-figure').innerHTML=svg(txt(30,70,'請先修正輸入條件',C.red,22),'輸入錯誤',130);}
+}
+const fields={cross:['s','c','a'],rx:['s','c','a'],pt:['s','c','a','u','z'],ob:['s','c','a','t'],cl:['s','c','a'],jc:['r','j'],se:['s','c','a'],vi:['s','c','a']};
+const vals=prefix=>fields[prefix].map(k=>read(prefix+'-'+k));
+const renders={
+cross:()=>safe('cross',()=>{const [s,c,a]=vals('cross');figure('cross-figure',crossDiagram(s,c,a));$('cross-result').innerHTML='<b>'+rx(s,c,a)+'</b><ol class="steps"><li>柱軸 '+axis(a)+'：柱面分量為 0，總度數＝'+D(s)+'。</li><li>垂直方向 '+axis(a+90)+'：總度數＝'+D(s)+'＋('+D(c)+')＝'+D(s+c)+'。</li><li>兩主子午面相差 '+fmt(Math.abs(c))+' D；'+(Math.abs(c)<1e-9?'C＝0，沒有獨特柱軸。':'改變柱軸會旋轉十字，不改變這兩個度數。')+'</li></ol>';}),
+rx:()=>safe('rx',()=>{const [s,c,a]=vals('rx'),q=Optics.transpose(s,c,a);figure('rx-figure',crossDiagram(s,c,a,true)+powerGraph(s,c,a,0,true));$('rx-result').innerHTML='<ol class="steps"><li>S′＝'+D(s)+'＋('+D(c)+')＝'+D(q.s)+'。</li><li>C′＝−('+D(c)+')＝'+D(q.c)+'。</li><li>α′＝'+axis(q.a)+'。新處方：<b>'+rx(q.s,q.c,q.a)+'</b>。</li><li>驗算：原柱軸方向仍為 '+D(s)+'，垂直方向仍為 '+D(s+c)+'。</li></ol>'+(Math.abs(c)<1e-9?'<p>C＝0：此處方只有球面，軸度不影響光學效果。</p>':'');}),
+pt:()=>safe('pt',()=>{const [s,c,a,u,z]=vals('pt'),im=Optics.image(s,c,a,u);figure('pt-figure',pointDiagram(s,c,a,u,z));
+  const real=im.v.every(v=>v>1e-9);
+  $('pt-result').innerHTML='<div class="readout"><div>主子午面 1<b>'+D(u)+'＋'+D(s)+'＝'+D(im.v[0])+'</b>'+distanceLabel(im.v[0])+'</div><div>主子午面 2<b>'+D(u)+'＋'+D(s+c)+'＝'+D(im.v[1])+'</b>'+distanceLabel(im.v[1])+'</div><div>CLC 聚散度<b>'+D(im.m)+'</b>'+distanceLabel(im.m)+'</div></div><ol class="steps"><li>先用 U＋F＝V 分別求 V₁、V₂。'+(u>0?'U＞0 代表入射會聚光束（虛物），不是鏡前實物。':u===0?'U＝0：入射平行光。':'物體在鏡前 '+fmt(Math.abs(100/u))+' cm。')+'</li><li>兩主子午面焦線方向分別為 '+axis(a+90)+' 與 '+axis(a)+'。</li><li>Sturm 屈光度間隔＝'+fmt(im.interval)+' D。'+(im.d.every(Number.isFinite)?'兩有號焦線位置的距離差＝'+fmt(Math.abs(im.d[0]-im.d[1])*100)+' cm。':'其中一方向在無限遠，沒有有限的線性間隔。')+'</li><li>CLC 先算 ('+D(im.v[0])+'＋'+D(im.v[1])+')/2＝'+D(im.m)+'，再換像距；不能平均公分。</li></ol>'+(!real?'<p class="error">目前並非兩條鏡後實焦線：請區分虛像、無限遠與可用屏幕接收的位置。正的 CLC 可在鏡後出現等軸截面；負值只代表反向延長的虛截面；0 D 代表無有限 CLC 平面。</p>':'')+(Math.abs(c)<1e-9?'<p>球面鏡特例：Sturm 間隔為 0，兩條焦線退化為同一點。</p>':'');
+  $('pt-first').disabled=!im.d.some(v=>Number.isFinite(v)&&v>0);
+  $('pt-last').disabled=$('pt-first').disabled;
+  $('pt-clc').disabled=!(Number.isFinite(im.clc)&&im.clc>0);
+}),
+ob:()=>safe('ob',()=>{const [s,c,a,t]=vals('ob'),diff=Math.min(Math.abs(t-a)%180,180-Math.abs(t-a)%180),f=Optics.power(s,c,a,t);figure('ob-figure',powerGraph(s,c,a,t));$('ob-result').innerHTML='<ol class="steps"><li>欲求 '+t+'°，柱軸 '+axis(a)+'；最小夾角＝'+diff+'°。</li><li>sin²('+diff+'°)＝'+fmt(Math.sin(diff*Math.PI/180)**2,4)+'。</li><li>柱面分量＝'+D(c)+' × '+fmt(Math.sin(diff*Math.PI/180)**2,4)+'＝'+D(f-s)+'。</li><li>加回球面：'+D(s)+'＋('+D(f-s)+')＝<b>'+D(f)+'</b>。</li></ol>';}),
+cl:()=>safe('cl',()=>{const [s,c,a]=vals('cl'),q=c>0?Optics.transpose(s,c,a):{s,c,a};figure('cl-figure',eyeDiagram(s,c,a));$('cl-result').innerHTML='<div class="readout"><div>屈光分類<b>'+Optics.classification(s,c)+'</b></div><div>方向分類<b>'+Optics.orientation(c,a)+'</b></div><div>負柱鏡寫法<b>'+rx(q.s,q.c,q.a)+'</b></div></div><ol class="steps"><li>完全矯正需求：'+axis(a)+' 為 '+D(s)+'，'+axis(a+90)+' 為 '+D(s+c)+'。</li><li>對照兩數正負，判斷原眼兩焦線與視網膜的關係。</li><li>眼的強子午面，是需要「更負／較少正」矯正的方向，不是矯正鏡片較正的方向。</li></ol>';}),
+jc:()=>safe('jc',()=>{const [r,j]=vals('jc'),m=Optics.jcc(r,j);figure('jc-figure',jccDiagram(r,j,jcFlip));$('jc-result').innerHTML='<ol class="steps"><li>置中後：眼垂直 '+D(60+r/2)+'，水平 '+D(60-r/2)+'；平均 60 D。</li><li>位置 1：垂直加 '+D(j)+'、水平加 '+D(-j)+'；剩餘差 |r＋2j|＝'+D(m.one)+'。</li><li>位置 2：垂直加 '+D(-j)+'、水平加 '+D(j)+'；剩餘差 |r−2j|＝'+D(m.two)+'。</li><li><b>'+ (Math.abs(m.one-m.two)<1e-9?'兩位置幾何模糊相同。':m.one<m.two?'理想模型下位置 1 的散光差較小。':'理想模型下位置 2 的散光差較小。')+'</b> 這是模型比較，不是實際受測者回答。</li></ol>';}),
+se:()=>safe('se',()=>{const [s,c,a]=vals('se'),m=s+c/2;figure('se-figure',vergenceDiagram([s,s+c,s-m,s+c-m,0,0],['未矯正：面 1 需求','未矯正：面 2 需求','只給 M：面 1 剩餘','只給 M：面 2 剩餘','完整矯正：面 1 剩餘','完整矯正：面 2 剩餘'],'所需矯正度數（不是眼本身屈光力）'));$('se-result').innerHTML='<div class="eq">M＝'+D(s)+'＋('+D(c)+')/2＝'+D(m)+'</div><ol class="steps"><li>兩面需求為 '+D(s)+'、'+D(s+c)+'，平均為 '+D(m)+'。</li><li>只給 M 後，剩餘需求為 '+D(-c/2)+'、'+D(c/2)+'；平均為 0。</li><li>兩面的差仍為 '+fmt(Math.abs(c))+' D，'+(Math.abs(c)<1e-9?'本例無散光，因此球面即完整矯正。':'所以等價球面只把 CLC 移到視網膜，沒有完整矯正散光。')+'</li></ol>';}),
+vi:()=>safe('vi',()=>{const [s,c,a]=vals('vi');figure('vi-figure',visionDiagram(s,c,a,$('vi-target').value));$('vi-result').innerHTML='<p>完整矯正處方：<b>'+rx(s,c,a)+'</b>。未矯正分類為 '+Optics.classification(s,c)+'。</p><p>只給等價球面 '+D(s+c/2)+' 時，兩方向仍各剩下 '+D(-c/2)+'、'+D(c/2)+' 的需求。完整矯正後在理想模型中才回到點狀光斑。</p><p>旋轉軸度會改變模糊方向，不改變散光度數的大小；在 CLC 平面圓形模糊核沒有偏好的方向。</p>';})
+};
+let jcFlip=1;
+for(const prefix of Object.keys(fields)){for(const k of fields[prefix]) $(prefix+'-'+k).addEventListener('input',()=>{renders[prefix]();if(prefix==='pt')$('pt-status').textContent='';});renders[prefix]();}
+document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{const [prefix,raw]=b.dataset.preset.split(':');raw.split(',').forEach((v,i)=>$(prefix+'-'+fields[prefix][i]).value=v);renders[prefix]();if(prefix==='pt')$('pt-status').textContent='';}));
+['first','clc','last'].forEach(which=>$('pt-'+which).addEventListener('click',()=>{try{const [s,c,a,u]=vals('pt'),im=Optics.image(s,c,a,u),real=im.d.filter(v=>Number.isFinite(v)&&v>0).sort((a,b)=>a-b);const z=which==='clc'?im.clc:which==='first'?real[0]:real.at(-1);if(!Number.isFinite(z)||z<=0)throw Error('目前沒有可放屏幕的鏡後有限位置。');if(z*100>100000)throw Error('位置超出此屏幕控制的顯示範圍；請參考下方精確計算。');$('pt-z').value=z*100;renders.pt();$('pt-status').textContent='屏幕已移到鏡後 '+fmt(z*100)+' cm。';}catch(e){$('pt-status').textContent=e.message;}}));
+function renderExtended(){const z=Number($('ex-plane').value);figure('ex-figure',extendedDiagram(z,$('ex-target').value));$('ex-result').innerHTML=z<21?'<b>水平焦線：</b>上下模糊歸零，水平線的上下邊界較清楚；左右端點仍模糊。':z>49?'<b>垂直焦線：</b>左右模糊歸零，垂直線的左右邊界較清楚；上下端點仍模糊。':'<b>最小模糊圈：</b>兩方向模糊相等，但不等於沒有模糊。28.57 cm 是由 1/[(2＋5)/2] 求得，不是 (20＋50)/2＝35 cm。';}
+['ex-plane','ex-target'].forEach(id=>$(id).addEventListener('change',renderExtended));renderExtended();
+$('vi-target').addEventListener('change',renders.vi);
+$('jc-flip').addEventListener('click',()=>{jcFlip=3-jcFlip;$('jc-flip').textContent='翻轉：目前位置 '+jcFlip;renders.jc();});
+function renderPlacement(){try{figure('jc-placement',placementDiagram(read('jc-axis'),$('jc-mode').value));}catch(e){figure('jc-placement',svg(txt(30,60,e.message,C.red,16),'輸入錯誤',130));}}
+$('jc-axis').addEventListener('input',renderPlacement);$('jc-mode').addEventListener('change',renderPlacement);renderPlacement();
+
+let pool=[...QUESTIONS],qi=0,selection=null;
+const topics=[...new Set(QUESTIONS.map(q=>q.topic))];
+topics.forEach(t=>{const o=document.createElement('option');o.value=t;o.textContent=t;$('quiz-topic').append(o);});
+function explanation(q){
+ return '<div class="eq">'+esc(q.formula)+'</div><ol class="steps">'+q.steps.map(s=>'<li>'+esc(s)+'</li>').join('')+'</ol><div class="figure">'+questionDiagram(q)+'</div><div class="callout warn">易錯提醒：'+esc(q.pitfall)+'</div>';
+}
+function stats(){
+ const hist=Object.values(state.history),attempts=hist.reduce((s,x)=>s+(Number(x.total)||0),0),correct=hist.reduce((s,x)=>s+(Number(x.correct)||0),0),wrong=QUESTIONS.filter(q=>state.last[q.id]===false).length;
+ $('overall-rate').textContent=attempts?Math.round(correct/attempts*100)+'%':'—';
+ $('overall-count').textContent=attempts+' 次作答 · '+Object.keys(state.history).length+' 題已練習';
+ $('quiz-stats').textContent='已作答 '+Object.keys(state.history).length+' / '+QUESTIONS.length+' 題；累計 '+attempts+' 次，答對 '+correct+' 次；待訂正 '+wrong+' 題。';
+}
+function quizRender(){
+ selection=null;const q=pool[qi];$('quiz-prev').disabled=qi===0;$('quiz-next').disabled=qi>=pool.length-1;
+ $('quiz-position').textContent=pool.length?(qi+1)+' / '+pool.length:'0 / 0';
+ if(!q){$('quiz-card').innerHTML='<h3>此範圍目前沒有待練題目。</h3><p>可選擇「恢復全部」或更換主題。原有作答紀錄沒有刪除。</p>';return;}
+ $('quiz-card').innerHTML='<div class="pill">'+esc(q.topic)+' · 題目 '+q.id+'</div><p class="question">'+esc(q.prompt)+'</p><div class="options">'+q.options.map((o,i)=>'<button class="option" data-answer="'+i+'">'+String.fromCharCode(65+i)+'. '+esc(o)+'</button>').join('')+'</div><div id="answer-msg" role="status"></div><button class="btn" id="show-solution">查看完整解析（不計分）</button><div class="solution" id="solution" hidden><h3>解題步驟</h3>'+explanation(q)+'</div>';
+ $('quiz-card').querySelectorAll('[data-answer]').forEach(b=>b.addEventListener('click',()=>{
+  if(selection!==null)return;selection=Number(b.dataset.answer);const ok=selection===q.answer;
+  const h=state.history[q.id]||{total:0,correct:0};h.total++;if(ok)h.correct++;state.history[q.id]=h;state.last[q.id]=ok;save();stats();
+  $('quiz-card').querySelectorAll('[data-answer]').forEach(x=>{x.disabled=true;const i=Number(x.dataset.answer);if(i===q.answer)x.classList.add('correct');else if(i===selection)x.classList.add('wrong');});
+  $('answer-msg').className='answer-msg';$('answer-msg').textContent=ok?'答對了。請確認你的列式與圖形判斷都一致。':'本題正解為 '+String.fromCharCode(65+q.answer)+'。請比較下方推導並訂正。';$('solution').hidden=false;$('show-solution').hidden=true;addZoom();
+ }));
+ $('show-solution').addEventListener('click',()=>{
+  selection=-1;$('quiz-card').querySelectorAll('[data-answer]').forEach(x=>{x.disabled=true;if(Number(x.dataset.answer)===q.answer)x.classList.add('correct');});
+  $('solution').hidden=false;$('show-solution').hidden=true;$('answer-msg').textContent='正解 '+String.fromCharCode(65+q.answer)+'；這次查看解析不計入作答。';addZoom();
+ });addZoom();
+}
+const filtered=()=>QUESTIONS.filter(q=>$('quiz-topic').value==='all'||q.topic===$('quiz-topic').value);
+function setPool(p){pool=p;qi=0;quizRender();}
+$('quiz-topic').addEventListener('change',()=>setPool(filtered()));
+$('quiz-all').addEventListener('click',()=>{$('quiz-topic').value='all';setPool([...QUESTIONS]);});
+$('quiz-random').addEventListener('click',()=>{const p=filtered();for(let i=p.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[p[i],p[j]]=[p[j],p[i]];}setPool(p.slice(0,10));});
+$('quiz-wrong').addEventListener('click',()=>setPool(filtered().filter(q=>state.last[q.id]===false)));
+$('quiz-prev').addEventListener('click',()=>{if(qi>0){qi--;quizRender();}});
+$('quiz-next').addEventListener('click',()=>{if(qi<pool.length-1){qi++;quizRender();}});
+$('quiz-reset').addEventListener('click',()=>{if(confirm('只清除此章的作答與學習完成紀錄？其他教材不受影響。')){state={done:[],history:{},last:{}};save();stats();progress();quizRender();}});
+function addZoom(){
+ document.querySelectorAll('.figure').forEach(f=>{if(f.nextElementSibling?.classList.contains('diagram-tools'))return;
+ const tools=document.createElement('div');tools.className='diagram-tools';tools.innerHTML='<span>小螢幕可左右滑動圖形；需要時可放大。</span><button class="btn small" aria-pressed="false">放大圖解</button>';
+ const b=tools.querySelector('button');b.addEventListener('click',()=>{const on=f.classList.toggle('zoomed');b.setAttribute('aria-pressed',on);b.textContent=on?'收合圖解':'放大圖解';});f.after(tools);
+ });
+}
+const learn=['cross','prescription','point','extended','oblique','classification','jcc','equivalent','vision'];
+function progress(){const count=learn.filter(id=>state.done.includes(id)).length;$('progress-label').textContent=count+' / '+learn.length;$('progress-bar').style.width=(count/learn.length*100)+'%';document.querySelectorAll('[data-complete]').forEach(b=>{const on=state.done.includes(b.dataset.complete);b.textContent=on?'✓ 已標記完成':'標記本節完成';b.setAttribute('aria-pressed',on);});}
+learn.forEach((id,i)=>{const d=document.createElement('div');d.className='complete';d.innerHTML='<button class="btn" data-complete="'+id+'">標記本節完成</button><a class="btn primary" href="#'+(learn[i+1]||'quiz')+'">下一節 →</a>';$(id).append(d);d.querySelector('button').addEventListener('click',()=>{state.done=state.done.includes(id)?state.done.filter(x=>x!==id):[...state.done,id];save();progress();});});
+function route(){
+ let id=location.hash.slice(1);if(!document.querySelector('.panel[id="'+CSS.escape(id)+'"]'))id='overview';
+ document.querySelectorAll('.panel').forEach(p=>p.hidden=p.id!==id);
+ document.querySelectorAll('[data-page]').forEach(a=>{if(a.dataset.page===id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+ $('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');
+ window.scrollTo(0,0);document.title=(document.querySelector('[data-page="'+id+'"]')?.textContent||'柱面透鏡與散光')+'｜視覺光學互動教室';
+}
+$('menu').addEventListener('click',()=>{$('menu').setAttribute('aria-expanded',$('sidebar').classList.toggle('open'));});
+window.addEventListener('hashchange',route);
+function printBank(){if(!$('print-bank').children.length)$('print-bank').innerHTML=QUESTIONS.map(q=>'<article class="print-question"><h3>'+q.id+'. '+esc(q.prompt)+'</h3><p>'+q.options.map((o,i)=>String.fromCharCode(65+i)+'. '+esc(o)).join('　')+'</p><p>答案：'+String.fromCharCode(65+q.answer)+'</p>'+explanation(q)+'</article>').join('');}
+window.addEventListener('beforeprint',printBank);$('print').addEventListener('click',()=>{printBank();window.print();});
+quizRender();stats();progress();addZoom();route();
+
+
+</script></body></html>

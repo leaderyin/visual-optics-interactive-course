@@ -60,3 +60,20 @@
 學習紀錄使用獨立鍵 `visualOptics.accommodationDepth.v1`，不覆寫其他章節。紀錄保存在各自的瀏覽器中，不會從本機預覽自動搬到公開網站，也不跨裝置同步。
 
 本次僅公開教材 HTML 與說明；課本、Word 題庫與教師附件未上傳。模型供光學教學，不取代臨床檢查、個人驗配或診斷。
+
+## 第 9 章：柱面透鏡與散光
+
+[開啟柱面透鏡與散光教材](https://leaderyin.github.io/visual-optics-interactive-course/cylinders-astigmatism.html) · [焦線與最小模糊圈互動](https://leaderyin.github.io/visual-optics-interactive-course/cylinders-astigmatism.html#point)
+
+`cylinders-astigmatism.html` 為單檔離線教材，依第 9 章目錄製作 9 節主要互動，沿用 U＋F＝V、中文優先標示、逐步列式與完整圖解。
+
+- 光學十字、球柱鏡處方與正負柱鏡轉置。
+- 點光源的兩主子午面光路、焦線方向、Sturm 間隔與最小模糊圈；區分實像、虛像與無限遠。
+- 展延光源、斜向子午面 sin² 屈光力分量、散光定義與分類。
+- JCC 翻轉比較、軸度與度數檢查擺位、球面補償。
+- 等價球面與方向性模糊示意，說明平均置中不等於消除散光。
+- 32 題自編練習，附圖、推導及易錯提醒；支援主題篩選、隨機 10 題及待訂正題。
+
+球面與柱面輸入各支援 −20～+20 D。學習紀錄使用獨立鍵 `visual-optics-chapter9-v1`，保存在各自瀏覽器；不跨裝置同步，也不從本機預覽自動搬移。
+
+2026-10-03 公開版：只公開教材與說明，不上傳原始課本或 Word 題庫。光路與視覺示意採理想近軸規則散光模型，不是個人診斷或驗配工具。32 題皆為自編，非完整歷屆試題收錄。
