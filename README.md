@@ -113,3 +113,20 @@
 模型區分眼平面R、鏡片後頂點Fv與前表面F₁。Knapp距離從眼等效面量，不能直接當角膜頂點距離。薄約化眼的中心光線模型及主觀不等像限制均有說明；教材不生成個人處方。所有數值最後才取整，另說明課本p.253中間取整造成的差異。
 
 2026-10-05公開版：僅發布教材與必要入口、說明；原書、題庫、私人擷取文字與工作檔未上傳。
+
+
+## 反射與 Purkinje 影像
+
+[開啟反射教材](https://leaderyin.github.io/visual-optics-interactive-course/reflection.html) · [Purkinje 四像互動](https://leaderyin.github.io/visual-optics-interactive-course/reflection.html#purkinje)
+
+反射定律、鏡面旋轉、平面鏡、凹凸面鏡、法向表面反射率與 Purkinje–Sanson 影像。成像統一沿用 U＋F＝V；固定向右為正，空氣中反射前 n＝+1、反射後 n′＝−1，F＝(n′−n)/r，v＝n′/V。負號表示傳播方向反轉；眼內反射採所在介質的 n′＝−n，去程與回程折射需逐面處理。
+
+Purkinje 小節可切換四個反射面、比較正倒／實虛及典型外觀，並觀察調節時 PIII 縮小的示意情境。20 題原創練習，含 8 題 Purkinje 專項，可複習錯題及保存本機紀錄。鏡面為近軸模型，四像外觀為辨識示意，不是完整眼模型的量測結果。版本：20261006-reflection-purkinje-v1。
+
+## 像差
+
+[開啟像差教材](https://leaderyin.github.io/visual-optics-interactive-course/aberrations.html)
+
+包含球面像差、彗形像差、斜向散光與最小彌散圈、像場彎曲、桶狀／枕狀畸變、縱向／橫向色差、瞳孔與繞射，共 7 個互動單元及 16 題原創練習。可調整孔徑、視野及觀察平面，獨立比較各項誤差。幾何點列與各項強度是教學模型，不是臨床 PSF 或實測波前。版本：20261006-aberrations-v1。
+
+兩章均為單檔離線教材；外部來源需網路，學習紀錄只存於各自瀏覽器，不跨裝置同步。2026-10-06：完成近軸反射有號聚散度檢核及桌面／手機操作測試。
