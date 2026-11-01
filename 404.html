@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>教材連結導引｜視覺光學互動教室</title>
+<script>
+(function () {
+  // Compatibility for the URL embedded in the submitted AIEA evidence PDF, page 18.
+  // Only this known typographical error is redirected; preserve its query and section.
+  var path;
+  try { path = decodeURIComponent(window.location.pathname); } catch (_) { return; }
+  if (path === '/visual-optics-interactive-course/cylinders-astigmatism.html（') {
+    window.location.replace('/visual-optics-interactive-course/cylinders-astigmatism.html' + window.location.search + (window.location.hash || '#point'));
+  }
+}());
+</script>
+<style>
+body{margin:0;background:#f4f7fb;color:#18324d;font:18px/1.8 system-ui,sans-serif}main{max-width:650px;margin:10vh auto;padding:32px;background:white;border-radius:18px}h1{font-size:28px}a{color:#075d9e}li{margin:.6em 0}@media(max-width:700px){main{margin:24px 16px;padding:24px}}
+</style>
+</head>
+<body><main>
+<h1>教材連結導引</h1>
+<p>此連結未找到對應頁面，請從下方進入教材。</p>
+<ul>
+<li><a href="/visual-optics-interactive-course/cylinders-astigmatism.html#point">柱面透鏡與散光：點光源與 Sturm 光錐</a></li>
+<li><a href="/visual-optics-interactive-course/">視覺光學互動教室首頁</a></li>
+</ul>
+</main></body>
+</html>
